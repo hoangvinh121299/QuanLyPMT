@@ -38,8 +38,8 @@ namespace GUI
             this.drugBtn = new System.Windows.Forms.Button();
             this.examBtn = new System.Windows.Forms.Button();
             this.workPlacePnl = new System.Windows.Forms.Panel();
-            this.column2Pnl = new System.Windows.Forms.Panel();
-            this.column1Pnl = new System.Windows.Forms.Panel();
+            this.column2FlowlayoytPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.column1FlowlayoytPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.funcPnel = new System.Windows.Forms.Panel();
             this.metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             this.workPlacePnl.SuspendLayout();
@@ -49,7 +49,7 @@ namespace GUI
             // exitBtn
             // 
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitBtn.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exitBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.exitBtn.ForeColor = System.Drawing.Color.White;
             this.exitBtn.Image = global::GUI.Properties.Resources.exit;
             this.exitBtn.Location = new System.Drawing.Point(1088, 0);
@@ -64,7 +64,7 @@ namespace GUI
             // aboutBtn
             // 
             this.aboutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aboutBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.aboutBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.aboutBtn.ForeColor = System.Drawing.Color.White;
             this.aboutBtn.Image = global::GUI.Properties.Resources.info;
             this.aboutBtn.Location = new System.Drawing.Point(943, 0);
@@ -79,7 +79,7 @@ namespace GUI
             // patientBtn
             // 
             this.patientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.patientBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.patientBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.patientBtn.ForeColor = System.Drawing.Color.White;
             this.patientBtn.Image = global::GUI.Properties.Resources.people1;
             this.patientBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -91,11 +91,12 @@ namespace GUI
             this.patientBtn.Text = "Quản lý bệnh nhân";
             this.patientBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.patientBtn.UseVisualStyleBackColor = false;
+            this.patientBtn.Click += new System.EventHandler(this.patientBtn_Click);
             // 
             // accountBtn
             // 
             this.accountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.accountBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.accountBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.accountBtn.ForeColor = System.Drawing.Color.White;
             this.accountBtn.Image = global::GUI.Properties.Resources.team;
             this.accountBtn.Location = new System.Drawing.Point(789, 0);
@@ -110,7 +111,7 @@ namespace GUI
             // sickBtn
             // 
             this.sickBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sickBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sickBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.sickBtn.ForeColor = System.Drawing.Color.White;
             this.sickBtn.Image = global::GUI.Properties.Resources.malaria;
             this.sickBtn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -126,7 +127,7 @@ namespace GUI
             // reportBtn
             // 
             this.reportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reportBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.reportBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.reportBtn.ForeColor = System.Drawing.Color.White;
             this.reportBtn.Image = global::GUI.Properties.Resources.business_report;
             this.reportBtn.Location = new System.Drawing.Point(634, 0);
@@ -157,7 +158,7 @@ namespace GUI
             // examBtn
             // 
             this.examBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.examBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.examBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.examBtn.ForeColor = System.Drawing.Color.White;
             this.examBtn.Image = global::GUI.Properties.Resources.examination;
             this.examBtn.Location = new System.Drawing.Point(492, 0);
@@ -172,31 +173,32 @@ namespace GUI
             // workPlacePnl
             // 
             this.workPlacePnl.AutoSize = true;
-            this.workPlacePnl.Controls.Add(this.column2Pnl);
-            this.workPlacePnl.Controls.Add(this.column1Pnl);
+            this.workPlacePnl.Controls.Add(this.column2FlowlayoytPanel);
+            this.workPlacePnl.Controls.Add(this.column1FlowlayoytPanel);
             this.workPlacePnl.Controls.Add(this.funcPnel);
             this.workPlacePnl.Location = new System.Drawing.Point(0, 82);
             this.workPlacePnl.Name = "workPlacePnl";
-            this.workPlacePnl.Size = new System.Drawing.Size(1229, 709);
+            this.workPlacePnl.Size = new System.Drawing.Size(1229, 693);
             this.workPlacePnl.TabIndex = 8;
             // 
-            // column2Pnl
+            // column2FlowlayoytPanel
             // 
-            this.column2Pnl.BackColor = System.Drawing.Color.White;
-            this.column2Pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.column2Pnl.Location = new System.Drawing.Point(635, 89);
-            this.column2Pnl.Name = "column2Pnl";
-            this.column2Pnl.Size = new System.Drawing.Size(573, 576);
-            this.column2Pnl.TabIndex = 11;
+            this.column2FlowlayoytPanel.BackColor = System.Drawing.Color.White;
+            this.column2FlowlayoytPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.column2FlowlayoytPanel.Location = new System.Drawing.Point(637, 77);
+            this.column2FlowlayoytPanel.Name = "column2FlowlayoytPanel";
+            this.column2FlowlayoytPanel.Size = new System.Drawing.Size(572, 600);
+            this.column2FlowlayoytPanel.TabIndex = 11;
+            this.column2FlowlayoytPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
-            // column1Pnl
+            // column1FlowlayoytPanel
             // 
-            this.column1Pnl.BackColor = System.Drawing.Color.White;
-            this.column1Pnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.column1Pnl.Location = new System.Drawing.Point(15, 89);
-            this.column1Pnl.Name = "column1Pnl";
-            this.column1Pnl.Size = new System.Drawing.Size(598, 576);
-            this.column1Pnl.TabIndex = 10;
+            this.column1FlowlayoytPanel.BackColor = System.Drawing.Color.White;
+            this.column1FlowlayoytPanel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.column1FlowlayoytPanel.Location = new System.Drawing.Point(15, 78);
+            this.column1FlowlayoytPanel.Name = "column1FlowlayoytPanel";
+            this.column1FlowlayoytPanel.Size = new System.Drawing.Size(616, 600);
+            this.column1FlowlayoytPanel.TabIndex = 10;
             // 
             // funcPnel
             // 
@@ -245,16 +247,20 @@ namespace GUI
             this.AllowResize = false;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.BorderColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1224, 775);
             this.Controls.Add(this.metroSetControlBox1);
             this.Controls.Add(this.workPlacePnl);
-            this.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.HeaderColor = System.Drawing.Color.MediumSpringGreen;
             this.Name = "MainForm";
             this.ShowBorder = true;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.SmallLineColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(210)))));
+            this.SmallLineColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(210)))));
             this.Text = "Quản lý phòng mạch tư";
-            this.TextColor = System.Drawing.SystemColors.GrayText;
+            this.TextColor = System.Drawing.Color.Black;
             this.workPlacePnl.ResumeLayout(false);
             this.funcPnel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -273,9 +279,9 @@ namespace GUI
         private System.Windows.Forms.Button patientBtn;
         private System.Windows.Forms.Panel workPlacePnl;
         private System.Windows.Forms.Panel funcPnel;
-        private System.Windows.Forms.Panel column2Pnl;
-        private System.Windows.Forms.Panel column1Pnl;
         private MetroSet_UI.Controls.MetroSetControlBox metroSetControlBox1;
+        private System.Windows.Forms.FlowLayoutPanel column2FlowlayoytPanel;
+        private System.Windows.Forms.FlowLayoutPanel column1FlowlayoytPanel;
     }
 }
 

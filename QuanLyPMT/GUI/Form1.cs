@@ -17,5 +17,16 @@ namespace GUI
             InitializeComponent();
         }
 
+        private void patientBtn_Click(object sender, EventArgs e)
+        {
+            QuanLyBenhNhan quanLyBenhNhan = new QuanLyBenhNhan();
+            column1FlowlayoytPanel.Controls.Clear();
+            column1FlowlayoytPanel.Controls.Add(quanLyBenhNhan);
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
