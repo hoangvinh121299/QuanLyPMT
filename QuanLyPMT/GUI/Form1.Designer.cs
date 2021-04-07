@@ -123,6 +123,7 @@ namespace GUI
             this.sickBtn.Text = "Quản lý loại bệnh";
             this.sickBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.sickBtn.UseVisualStyleBackColor = false;
+            this.sickBtn.Click += new System.EventHandler(this.sickBtn_Click);
             // 
             // reportBtn
             // 
@@ -154,6 +155,7 @@ namespace GUI
             this.drugBtn.Text = "Quản lý tồn kho thuốc";
             this.drugBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.drugBtn.UseVisualStyleBackColor = false;
+            this.drugBtn.Click += new System.EventHandler(this.drugBtn_Click);
             // 
             // examBtn
             // 
@@ -184,7 +186,8 @@ namespace GUI
             // column2FlowlayoytPanel
             // 
             this.column2FlowlayoytPanel.BackColor = System.Drawing.Color.White;
-            this.column2FlowlayoytPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.column2FlowlayoytPanel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.column2FlowlayoytPanel.ForeColor = System.Drawing.Color.Black;
             this.column2FlowlayoytPanel.Location = new System.Drawing.Point(637, 77);
             this.column2FlowlayoytPanel.Name = "column2FlowlayoytPanel";
             this.column2FlowlayoytPanel.Size = new System.Drawing.Size(572, 600);
