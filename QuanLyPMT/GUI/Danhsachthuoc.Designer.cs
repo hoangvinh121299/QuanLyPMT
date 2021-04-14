@@ -167,6 +167,7 @@ namespace GUI
             // 
             this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deleteBtn.ForeColor = System.Drawing.Color.Black;
             this.deleteBtn.Image = global::GUI.Properties.Resources.delete;
             this.deleteBtn.Location = new System.Drawing.Point(438, 73);
             this.deleteBtn.Name = "deleteBtn";

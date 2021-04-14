@@ -38,10 +38,9 @@ namespace GUI
             this.drugBtn = new System.Windows.Forms.Button();
             this.examBtn = new System.Windows.Forms.Button();
             this.workPlacePnl = new System.Windows.Forms.Panel();
-            this.column2FlowlayoytPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.column1FlowlayoytPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.funcPnel = new System.Windows.Forms.Panel();
             this.metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
+            this.displayPanel = new System.Windows.Forms.Panel();
             this.workPlacePnl.SuspendLayout();
             this.funcPnel.SuspendLayout();
             this.SuspendLayout();
@@ -123,7 +122,6 @@ namespace GUI
             this.sickBtn.Text = "Quản lý loại bệnh";
             this.sickBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.sickBtn.UseVisualStyleBackColor = false;
-            this.sickBtn.Click += new System.EventHandler(this.sickBtn_Click);
             // 
             // reportBtn
             // 
@@ -155,7 +153,6 @@ namespace GUI
             this.drugBtn.Text = "Quản lý tồn kho thuốc";
             this.drugBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.drugBtn.UseVisualStyleBackColor = false;
-            this.drugBtn.Click += new System.EventHandler(this.drugBtn_Click);
             // 
             // examBtn
             // 
@@ -175,33 +172,12 @@ namespace GUI
             // workPlacePnl
             // 
             this.workPlacePnl.AutoSize = true;
-            this.workPlacePnl.Controls.Add(this.column2FlowlayoytPanel);
-            this.workPlacePnl.Controls.Add(this.column1FlowlayoytPanel);
+            this.workPlacePnl.Controls.Add(this.displayPanel);
             this.workPlacePnl.Controls.Add(this.funcPnel);
             this.workPlacePnl.Location = new System.Drawing.Point(0, 82);
             this.workPlacePnl.Name = "workPlacePnl";
-            this.workPlacePnl.Size = new System.Drawing.Size(1229, 693);
+            this.workPlacePnl.Size = new System.Drawing.Size(1233, 696);
             this.workPlacePnl.TabIndex = 8;
-            // 
-            // column2FlowlayoytPanel
-            // 
-            this.column2FlowlayoytPanel.BackColor = System.Drawing.Color.White;
-            this.column2FlowlayoytPanel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.column2FlowlayoytPanel.ForeColor = System.Drawing.Color.Black;
-            this.column2FlowlayoytPanel.Location = new System.Drawing.Point(637, 77);
-            this.column2FlowlayoytPanel.Name = "column2FlowlayoytPanel";
-            this.column2FlowlayoytPanel.Size = new System.Drawing.Size(572, 600);
-            this.column2FlowlayoytPanel.TabIndex = 11;
-            this.column2FlowlayoytPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
-            // 
-            // column1FlowlayoytPanel
-            // 
-            this.column1FlowlayoytPanel.BackColor = System.Drawing.Color.White;
-            this.column1FlowlayoytPanel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.column1FlowlayoytPanel.Location = new System.Drawing.Point(15, 78);
-            this.column1FlowlayoytPanel.Name = "column1FlowlayoytPanel";
-            this.column1FlowlayoytPanel.Size = new System.Drawing.Size(616, 600);
-            this.column1FlowlayoytPanel.TabIndex = 10;
             // 
             // funcPnel
             // 
@@ -245,6 +221,14 @@ namespace GUI
             this.metroSetControlBox1.ThemeAuthor = "Narwin";
             this.metroSetControlBox1.ThemeName = "MetroLite";
             // 
+            // displayPanel
+            // 
+            this.displayPanel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.displayPanel.Location = new System.Drawing.Point(1, 78);
+            this.displayPanel.Name = "displayPanel";
+            this.displayPanel.Size = new System.Drawing.Size(1229, 615);
+            this.displayPanel.TabIndex = 10;
+            // 
             // MainForm
             // 
             this.AllowResize = false;
@@ -283,8 +267,7 @@ namespace GUI
         private System.Windows.Forms.Panel workPlacePnl;
         private System.Windows.Forms.Panel funcPnel;
         private MetroSet_UI.Controls.MetroSetControlBox metroSetControlBox1;
-        private System.Windows.Forms.FlowLayoutPanel column2FlowlayoytPanel;
-        private System.Windows.Forms.FlowLayoutPanel column1FlowlayoytPanel;
+        private System.Windows.Forms.Panel displayPanel;
     }
 }
 
