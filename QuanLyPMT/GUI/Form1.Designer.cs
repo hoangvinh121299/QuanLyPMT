@@ -38,9 +38,9 @@ namespace GUI
             this.drugBtn = new System.Windows.Forms.Button();
             this.examBtn = new System.Windows.Forms.Button();
             this.workPlacePnl = new System.Windows.Forms.Panel();
+            this.displayPanel = new System.Windows.Forms.Panel();
             this.funcPnel = new System.Windows.Forms.Panel();
             this.metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
-            this.displayPanel = new System.Windows.Forms.Panel();
             this.workPlacePnl.SuspendLayout();
             this.funcPnel.SuspendLayout();
             this.SuspendLayout();
@@ -122,6 +122,7 @@ namespace GUI
             this.sickBtn.Text = "Quản lý loại bệnh";
             this.sickBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.sickBtn.UseVisualStyleBackColor = false;
+            this.sickBtn.Click += new System.EventHandler(this.sickBtn_Click);
             // 
             // reportBtn
             // 
@@ -153,6 +154,7 @@ namespace GUI
             this.drugBtn.Text = "Quản lý tồn kho thuốc";
             this.drugBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.drugBtn.UseVisualStyleBackColor = false;
+            this.drugBtn.Click += new System.EventHandler(this.drugBtn_Click);
             // 
             // examBtn
             // 
@@ -178,6 +180,14 @@ namespace GUI
             this.workPlacePnl.Name = "workPlacePnl";
             this.workPlacePnl.Size = new System.Drawing.Size(1233, 696);
             this.workPlacePnl.TabIndex = 8;
+            // 
+            // displayPanel
+            // 
+            this.displayPanel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.displayPanel.Location = new System.Drawing.Point(1, 78);
+            this.displayPanel.Name = "displayPanel";
+            this.displayPanel.Size = new System.Drawing.Size(1229, 615);
+            this.displayPanel.TabIndex = 10;
             // 
             // funcPnel
             // 
@@ -220,14 +230,6 @@ namespace GUI
             this.metroSetControlBox1.Text = "metroSetControlBox1";
             this.metroSetControlBox1.ThemeAuthor = "Narwin";
             this.metroSetControlBox1.ThemeName = "MetroLite";
-            // 
-            // displayPanel
-            // 
-            this.displayPanel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.displayPanel.Location = new System.Drawing.Point(1, 78);
-            this.displayPanel.Name = "displayPanel";
-            this.displayPanel.Size = new System.Drawing.Size(1229, 615);
-            this.displayPanel.TabIndex = 10;
             // 
             // MainForm
             // 

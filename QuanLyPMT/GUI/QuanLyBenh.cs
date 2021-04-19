@@ -19,7 +19,16 @@ namespace GUI
 
         private void QuanLyBenh_Load(object sender, EventArgs e)
         {
-
+            loadForm();
         }
+        private void loadForm()
+        {
+            addBtn.Visible = true;
+            editBtn.Visible = true;
+
+            saveBtn.Visible = false;
+            cancelBtn.Visible = false;
+        }
+
     }
 }

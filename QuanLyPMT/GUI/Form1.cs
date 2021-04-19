@@ -24,5 +24,18 @@ namespace GUI
             displayPanel.Controls.Add(quanLyBenhNhan);
         }
 
+        private void drugBtn_Click(object sender, EventArgs e)
+        {
+            QuanLyThuoc quanLyThuoc = new QuanLyThuoc();
+            displayPanel.Controls.Clear();
+            displayPanel.Controls.Add(quanLyThuoc);
+        }
+
+        private void sickBtn_Click(object sender, EventArgs e)
+        {
+            QuanLyBenh quanLyBenh = new QuanLyBenh();
+            displayPanel.Controls.Clear();
+            displayPanel.Controls.Add(quanLyBenh);
+        }
     }
 }

@@ -47,7 +47,7 @@ namespace GUI
             this.examBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.danhSachBenhNhanDgv = new System.Windows.Forms.DataGridView();
-            this.numeric = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,7 +143,7 @@ namespace GUI
             // 
             this.metroSetLabel6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel6.IsDerivedStyle = true;
-            this.metroSetLabel6.Location = new System.Drawing.Point(10, 210);
+            this.metroSetLabel6.Location = new System.Drawing.Point(10, 223);
             this.metroSetLabel6.Name = "metroSetLabel6";
             this.metroSetLabel6.Size = new System.Drawing.Size(84, 23);
             this.metroSetLabel6.Style = MetroSet_UI.Enums.Style.Light;
@@ -157,7 +157,7 @@ namespace GUI
             // 
             this.metroSetLabel7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel7.IsDerivedStyle = true;
-            this.metroSetLabel7.Location = new System.Drawing.Point(10, 257);
+            this.metroSetLabel7.Location = new System.Drawing.Point(10, 259);
             this.metroSetLabel7.Name = "metroSetLabel7";
             this.metroSetLabel7.Size = new System.Drawing.Size(70, 23);
             this.metroSetLabel7.Style = MetroSet_UI.Enums.Style.Light;
@@ -183,27 +183,32 @@ namespace GUI
             // 
             // nameTxtBox
             // 
+            this.nameTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nameTxtBox.Location = new System.Drawing.Point(150, 35);
             this.nameTxtBox.Name = "nameTxtBox";
-            this.nameTxtBox.Size = new System.Drawing.Size(227, 21);
+            this.nameTxtBox.Size = new System.Drawing.Size(239, 25);
             this.nameTxtBox.TabIndex = 8;
+            this.nameTxtBox.Leave += new System.EventHandler(this.nameTxtBox_Leave);
             // 
             // CMNDtextBOX1
             // 
+            this.CMNDtextBOX1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CMNDtextBOX1.Location = new System.Drawing.Point(150, 81);
             this.CMNDtextBOX1.Name = "CMNDtextBOX1";
-            this.CMNDtextBOX1.Size = new System.Drawing.Size(227, 21);
+            this.CMNDtextBOX1.Size = new System.Drawing.Size(239, 25);
             this.CMNDtextBOX1.TabIndex = 9;
             // 
             // phoneTxtBox
             // 
-            this.phoneTxtBox.Location = new System.Drawing.Point(150, 210);
+            this.phoneTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.phoneTxtBox.Location = new System.Drawing.Point(150, 212);
             this.phoneTxtBox.Name = "phoneTxtBox";
-            this.phoneTxtBox.Size = new System.Drawing.Size(227, 21);
+            this.phoneTxtBox.Size = new System.Drawing.Size(239, 25);
             this.phoneTxtBox.TabIndex = 11;
             // 
             // noteCbbox
             // 
+            this.noteCbbox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.noteCbbox.Location = new System.Drawing.Point(10, 327);
             this.noteCbbox.Multiline = true;
             this.noteCbbox.Name = "noteCbbox";
@@ -213,9 +218,10 @@ namespace GUI
             // birthDateTimePicker
             // 
             this.birthDateTimePicker.CalendarFont = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.birthDateTimePicker.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.birthDateTimePicker.Location = new System.Drawing.Point(150, 170);
             this.birthDateTimePicker.Name = "birthDateTimePicker";
-            this.birthDateTimePicker.Size = new System.Drawing.Size(227, 21);
+            this.birthDateTimePicker.Size = new System.Drawing.Size(239, 25);
             this.birthDateTimePicker.TabIndex = 18;
             // 
             // adddBtn
@@ -225,7 +231,7 @@ namespace GUI
             this.adddBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.adddBtn.ForeColor = System.Drawing.Color.White;
             this.adddBtn.Image = global::GUI.Properties.Resources.add;
-            this.adddBtn.Location = new System.Drawing.Point(490, 73);
+            this.adddBtn.Location = new System.Drawing.Point(490, 18);
             this.adddBtn.Name = "adddBtn";
             this.adddBtn.Size = new System.Drawing.Size(118, 42);
             this.adddBtn.TabIndex = 23;
@@ -241,7 +247,7 @@ namespace GUI
             this.updateBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.updateBtn.ForeColor = System.Drawing.Color.Black;
             this.updateBtn.Image = global::GUI.Properties.Resources.edit;
-            this.updateBtn.Location = new System.Drawing.Point(490, 223);
+            this.updateBtn.Location = new System.Drawing.Point(490, 168);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(118, 40);
             this.updateBtn.TabIndex = 24;
@@ -257,7 +263,7 @@ namespace GUI
             this.examBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.examBtn.ForeColor = System.Drawing.Color.White;
             this.examBtn.Image = global::GUI.Properties.Resources.examination__1_;
-            this.examBtn.Location = new System.Drawing.Point(490, 148);
+            this.examBtn.Location = new System.Drawing.Point(490, 93);
             this.examBtn.Name = "examBtn";
             this.examBtn.Size = new System.Drawing.Size(118, 46);
             this.examBtn.TabIndex = 26;
@@ -282,10 +288,10 @@ namespace GUI
             this.danhSachBenhNhanDgv.AllowUserToDeleteRows = false;
             this.danhSachBenhNhanDgv.AllowUserToResizeColumns = false;
             this.danhSachBenhNhanDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.danhSachBenhNhanDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.danhSachBenhNhanDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.danhSachBenhNhanDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.danhSachBenhNhanDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.numeric,
+            this.STT,
             this.GHICHU,
             this.SDT,
             this.DIACHI,
@@ -294,21 +300,25 @@ namespace GUI
             this.CMND,
             this.NGAYSINH,
             this.GIOITINH});
-            this.danhSachBenhNhanDgv.Location = new System.Drawing.Point(-1, 24);
+            this.danhSachBenhNhanDgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.danhSachBenhNhanDgv.GridColor = System.Drawing.Color.Black;
+            this.danhSachBenhNhanDgv.Location = new System.Drawing.Point(3, 21);
             this.danhSachBenhNhanDgv.MultiSelect = false;
             this.danhSachBenhNhanDgv.Name = "danhSachBenhNhanDgv";
             this.danhSachBenhNhanDgv.ReadOnly = true;
+            this.danhSachBenhNhanDgv.RowHeadersVisible = false;
             this.danhSachBenhNhanDgv.RowTemplate.Height = 25;
             this.danhSachBenhNhanDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.danhSachBenhNhanDgv.Size = new System.Drawing.Size(567, 450);
+            this.danhSachBenhNhanDgv.Size = new System.Drawing.Size(566, 459);
             this.danhSachBenhNhanDgv.TabIndex = 0;
             this.danhSachBenhNhanDgv.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachBenhNhanDgv_RowEnter);
+            this.danhSachBenhNhanDgv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.danhSachBenhNhanDgv_RowPostPaint);
             // 
-            // numeric
+            // STT
             // 
-            this.numeric.HeaderText = "STT";
-            this.numeric.Name = "numeric";
-            this.numeric.ReadOnly = true;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
             // 
             // GHICHU
             // 
@@ -344,10 +354,12 @@ namespace GUI
             // 
             // HOTEN
             // 
+            this.HOTEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.HOTEN.DataPropertyName = "HOTEN";
             this.HOTEN.HeaderText = "Họ và tên";
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.ReadOnly = true;
+            this.HOTEN.Width = 5;
             // 
             // CMND
             // 
@@ -407,10 +419,10 @@ namespace GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(625, 5);
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(625, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 18);
+            this.label1.Size = new System.Drawing.Size(163, 19);
             this.label1.TabIndex = 27;
             this.label1.Text = "Tìm kiếm bệnh nhân";
             // 
@@ -431,11 +443,13 @@ namespace GUI
             // 
             // addressTextbox
             // 
-            this.addressTextbox.Location = new System.Drawing.Point(150, 257);
+            this.addressTextbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addressTextbox.Location = new System.Drawing.Point(150, 259);
             this.addressTextbox.Multiline = true;
             this.addressTextbox.Name = "addressTextbox";
-            this.addressTextbox.Size = new System.Drawing.Size(227, 22);
+            this.addressTextbox.Size = new System.Drawing.Size(239, 22);
             this.addressTextbox.TabIndex = 33;
+            this.addressTextbox.Leave += new System.EventHandler(this.addressTextbox_Leave);
             // 
             // saveBtn
             // 
@@ -444,7 +458,7 @@ namespace GUI
             this.saveBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Image = global::GUI.Properties.Resources.save;
-            this.saveBtn.Location = new System.Drawing.Point(490, 73);
+            this.saveBtn.Location = new System.Drawing.Point(490, 18);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(118, 40);
             this.saveBtn.TabIndex = 34;
@@ -459,20 +473,22 @@ namespace GUI
             this.cancelBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cancelBtn.ForeColor = System.Drawing.Color.White;
             this.cancelBtn.Image = global::GUI.Properties.Resources.logout;
-            this.cancelBtn.Location = new System.Drawing.Point(490, 137);
+            this.cancelBtn.Location = new System.Drawing.Point(490, 82);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(118, 40);
             this.cancelBtn.TabIndex = 35;
             this.cancelBtn.Text = "Huỷ bỏ ";
             this.cancelBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // femaleBtn
             // 
             this.femaleBtn.AutoSize = true;
+            this.femaleBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.femaleBtn.Location = new System.Drawing.Point(150, 134);
             this.femaleBtn.Name = "femaleBtn";
-            this.femaleBtn.Size = new System.Drawing.Size(42, 19);
+            this.femaleBtn.Size = new System.Drawing.Size(48, 22);
             this.femaleBtn.TabIndex = 37;
             this.femaleBtn.TabStop = true;
             this.femaleBtn.Text = "Nữ";
@@ -551,7 +567,11 @@ namespace GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button deleteBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeric;
+        private System.Windows.Forms.TextBox addressTextbox;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.RadioButton femaleBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
@@ -560,9 +580,5 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYSINH;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIOITINH;
-        private System.Windows.Forms.TextBox addressTextbox;
-        private System.Windows.Forms.Button saveBtn;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.RadioButton femaleBtn;
     }
 }

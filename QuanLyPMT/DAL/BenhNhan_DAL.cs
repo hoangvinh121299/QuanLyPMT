@@ -40,9 +40,9 @@ namespace DAL
                     cmdInsert.Parameters.Add("@NGAYSINH", SqlDbType.DateTime).Value = NGAYSINH;
                     cmdInsert.Parameters.Add("@HOTEN", SqlDbType.NVarChar).Value = HOTEN;
                     cmdInsert.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = GIOITINH;
-                    cmdInsert.Parameters.Add("@DIACHI", SqlDbType.VarChar).Value = DIACHI;
+                    cmdInsert.Parameters.Add("@DIACHI", SqlDbType.NVarChar).Value = DIACHI;
                     cmdInsert.Parameters.Add("@SDT", SqlDbType.VarChar).Value = SDT;
-                    cmdInsert.Parameters.Add("@GHICHU", SqlDbType.VarChar).Value = GHICHU;
+                    cmdInsert.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = GHICHU;
 
                     cmdInsert.ExecuteNonQuery();
                     connection.Close();
@@ -70,9 +70,9 @@ namespace DAL
                     cmdInsert.Parameters.Add("@NGAYSINH", SqlDbType.DateTime).Value = NGAYSINH;
                     cmdInsert.Parameters.Add("@HOTEN", SqlDbType.NVarChar).Value = HOTEN;
                     cmdInsert.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = GIOITINH;
-                    cmdInsert.Parameters.Add("@DIACHI", SqlDbType.VarChar).Value = DIACHI;
+                    cmdInsert.Parameters.Add("@DIACHI", SqlDbType.NVarChar).Value = DIACHI;
                     cmdInsert.Parameters.Add("@SDT", SqlDbType.VarChar).Value = SDT;
-                    cmdInsert.Parameters.Add("@GHICHU", SqlDbType.VarChar).Value = GHICHU;
+                    cmdInsert.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = GHICHU;
                     cmdInsert.ExecuteNonQuery();
                     connection.Close();
                 }

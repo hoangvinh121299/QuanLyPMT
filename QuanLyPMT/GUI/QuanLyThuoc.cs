@@ -15,9 +15,28 @@ namespace GUI
         public QuanLyThuoc()
         {
             InitializeComponent();
+            loadForm();
         }
 
         private void sexCbbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void loadForm()
+        {
+            addBtn.Visible = true;
+            editBtn.Visible = true;
+           
+            saveBtn.Visible = false;
+            cancelBtn.Visible = false;
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuanLyThuoc_Load(object sender, EventArgs e)
         {
 
         }
