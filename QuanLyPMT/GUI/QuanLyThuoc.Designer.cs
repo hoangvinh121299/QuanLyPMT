@@ -306,7 +306,7 @@ namespace GUI
             this.noteTextbox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.noteTextbox.Multiline = true;
             this.noteTextbox.Name = "noteTextbox";
-            this.noteTextbox.Size = new System.Drawing.Size(601, 235);
+            this.noteTextbox.Size = new System.Drawing.Size(607, 235);
             this.noteTextbox.TabIndex = 0;
             // 
             // groupBox2
