@@ -143,14 +143,14 @@ namespace GUI
             {
                 fromTable.MATHUOC   = Convert.ToInt32(danhSachThuocDgv.Rows[index].Cells["MALT"].Value.ToString());
                 fromForm.MATHUOC    = Convert.ToInt32(danhSachThuocDgv.Rows[index].Cells["MALT"].Value.ToString());
-                fromTable.TENTHUOC  = danhSachThuocDgv.Rows[index].Cells["TENLT"].Value.ToString();
-                fromTable.DONVT     = danhSachThuocDgv.Rows[index].Cells["DONVT"].Value.ToString();
-                fromTable.DUONGDUNG = danhSachThuocDgv.Rows[index].Cells["DUONGDUNG"].Value.ToString();
-                fromTable.TONKHO    = Convert.ToInt32(danhSachThuocDgv.Rows[index].Cells["TONKHO"].Value.ToString());
-                fromTable.GHICHU    = danhSachThuocDgv.Rows[index].Cells["GHICHU"].Value.ToString();
-                fromTable.GIANHAP   = float.Parse(danhSachThuocDgv.Rows[index].Cells["GIANHAP"].Value.ToString());
-                fromTable.GIABAN    = float.Parse(danhSachThuocDgv.Rows[index].Cells["GIABAN"].Value.ToString());
-                fromTable.NHACUNGCAP= danhSachThuocDgv.Rows[index].Cells["NHACUNGCAP"].Value.ToString();
+                fromTable.TENTHUOC  = danhSachThuocDgv.Rows[index].Cells["name"].Value.ToString();
+                fromTable.DONVT     = danhSachThuocDgv.Rows[index].Cells["unit"].Value.ToString();
+                fromTable.DUONGDUNG = danhSachThuocDgv.Rows[index].Cells["useway"].Value.ToString();
+                fromTable.TONKHO    = Convert.ToInt32(danhSachThuocDgv.Rows[index].Cells["amount"].Value.ToString());
+                //fromTable.GHICHU    = danhSachThuocDgv.Rows[index].Cells["note"].Value.ToString();
+                fromTable.GIANHAP   = float.Parse(danhSachThuocDgv.Rows[index].Cells["priceIn"].Value.ToString());
+                fromTable.GIABAN    = float.Parse(danhSachThuocDgv.Rows[index].Cells["priceOut"].Value.ToString());
+                //fromTable.NHACUNGCAP= danhSachThuocDgv.Rows[index].Cells["supplier"].Value.ToString();
             }
             setValueToForm();
         }
@@ -269,10 +269,6 @@ namespace GUI
             noteTextbox.Enabled = true;
         }
 
-        private void danhSachThuocDgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-          // danhSachThuocDgv.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
-        }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
@@ -315,6 +311,10 @@ namespace GUI
             string tmp;
             tmp = nameTextbox.Text;
             showSearchResult(tmp);
+        }
+        private void danhSachThuocDgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            danhSachThuocDgv.Rows[e.RowIndex].Cells["numeric"].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

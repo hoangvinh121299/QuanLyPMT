@@ -88,7 +88,7 @@ namespace DAL
         //xoa thuoc
         public void deleteThuoc(int MATHUOC)
         {
-            string deleteTable = "delete LOAITHUOC where MABN = @MATHUOC";
+            string deleteTable = "delete LOAITHUOC where MALT = @MATHUOC";
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))

@@ -50,13 +50,6 @@ namespace GUI
             this.noteTextbox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.danhSachThuocDgv = new System.Windows.Forms.DataGridView();
-            this.numeric = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.useWay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchBtn = new System.Windows.Forms.Button();
             this.nameTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +57,13 @@ namespace GUI
             this.deleteButton = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.numeric = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.useWay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachThuocDgv)).BeginInit();
@@ -347,55 +347,6 @@ namespace GUI
             this.danhSachThuocDgv.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachThuocDgv_RowEnter);
             this.danhSachThuocDgv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.danhSachThuocDgv_RowPostPaint);
             // 
-            // numeric
-            // 
-            this.numeric.HeaderText = "STT";
-            this.numeric.MinimumWidth = 6;
-            this.numeric.Name = "numeric";
-            this.numeric.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Tên thuốc";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // useWay
-            // 
-            this.useWay.HeaderText = "Đường dùng";
-            this.useWay.MinimumWidth = 6;
-            this.useWay.Name = "useWay";
-            this.useWay.ReadOnly = true;
-            // 
-            // amount
-            // 
-            this.amount.HeaderText = "Số lượng tồn ";
-            this.amount.MinimumWidth = 6;
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            // 
-            // unit
-            // 
-            this.unit.HeaderText = "Đơn vị tính ";
-            this.unit.MinimumWidth = 6;
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            // 
-            // priceIn
-            // 
-            this.priceIn.HeaderText = "Giá nhập";
-            this.priceIn.MinimumWidth = 6;
-            this.priceIn.Name = "priceIn";
-            this.priceIn.ReadOnly = true;
-            // 
-            // priceOut
-            // 
-            this.priceOut.HeaderText = "Giá bán";
-            this.priceOut.MinimumWidth = 6;
-            this.priceOut.Name = "priceOut";
-            this.priceOut.ReadOnly = true;
-            // 
             // searchBtn
             // 
             this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -485,6 +436,62 @@ namespace GUI
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // numeric
+            // 
+            this.numeric.DataPropertyName = "STT";
+            this.numeric.HeaderText = "STT";
+            this.numeric.MinimumWidth = 6;
+            this.numeric.Name = "numeric";
+            this.numeric.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "TENLT";
+            this.name.HeaderText = "Tên thuốc";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // useWay
+            // 
+            this.useWay.DataPropertyName = "DUONGDUNG";
+            this.useWay.HeaderText = "Đường dùng";
+            this.useWay.MinimumWidth = 6;
+            this.useWay.Name = "useWay";
+            this.useWay.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.DataPropertyName = "TONKHO";
+            this.amount.HeaderText = "Số lượng tồn ";
+            this.amount.MinimumWidth = 6;
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
+            // unit
+            // 
+            this.unit.DataPropertyName = "DONVT";
+            this.unit.HeaderText = "Đơn vị tính ";
+            this.unit.MinimumWidth = 6;
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            // 
+            // priceIn
+            // 
+            this.priceIn.DataPropertyName = "GIANHAP";
+            this.priceIn.HeaderText = "Giá nhập";
+            this.priceIn.MinimumWidth = 6;
+            this.priceIn.Name = "priceIn";
+            this.priceIn.ReadOnly = true;
+            // 
+            // priceOut
+            // 
+            this.priceOut.DataPropertyName = "GIABAN";
+            this.priceOut.HeaderText = "Giá bán";
+            this.priceOut.MinimumWidth = 6;
+            this.priceOut.Name = "priceOut";
+            this.priceOut.ReadOnly = true;
+            // 
             // QuanLyThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -554,13 +561,6 @@ namespace GUI
         private System.Windows.Forms.TextBox noteTextbox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView danhSachThuocDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeric;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn useWay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceIn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceOut;
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.TextBox nameTextbox;
         private System.Windows.Forms.Label label2;
@@ -568,5 +568,12 @@ namespace GUI
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeric;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn useWay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceOut;
     }
 }
