@@ -27,7 +27,7 @@ namespace DAL
 
         // them thuoc
 
-        public void addThuoc (string TENTHUOC,string DONVT,string DUONGDUNG,int TONKHO,int GIANHAP,int GIABAN,string NHACUNGCAP,string GHICHU)
+        public void addThuoc (string TENTHUOC,string DONVT,string DUONGDUNG,int TONKHO,float GIANHAP,float GIABAN,string NHACUNGCAP,string GHICHU)
         {
             string insertInto = "INSERT INTO LOAITHUOC VALUES (@TENTHUOC,@DONVT,@DUONGDUNG,@TONKHO,@GHICHU,@GIANHAP,@GIABAN,@NHACUNGCAP)";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
@@ -41,8 +41,8 @@ namespace DAL
                     cmdInsert.Parameters.Add("@DUONGDUNG", SqlDbType.NVarChar).Value = DUONGDUNG;
                     cmdInsert.Parameters.Add("@TONKHO", SqlDbType.Int).Value = TONKHO;
                     cmdInsert.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = GHICHU;
-                    cmdInsert.Parameters.Add("@GIANHAP", SqlDbType.Int).Value = GIANHAP;
-                    cmdInsert.Parameters.Add("@GIABAN", SqlDbType.Int).Value = GIABAN;
+                    cmdInsert.Parameters.Add("@GIANHAP", SqlDbType.Float).Value = GIANHAP;
+                    cmdInsert.Parameters.Add("@GIABAN", SqlDbType.Float).Value = GIABAN;
                     cmdInsert.Parameters.Add("@NHACUNGCAP", SqlDbType.NVarChar).Value = NHACUNGCAP;
 
                     cmdInsert.ExecuteNonQuery();
@@ -56,7 +56,7 @@ namespace DAL
         }
 
         //Cap nhat thong tin thuoc 
-        public void updateThuoc(int MATHUOC,string TENTHUOC, string DONVT, string DUONGDUNG, int TONKHO, int GIANHAP, int GIABAN, string NHACUNGCAP, string GHICHU)
+        public void updateThuoc(int MATHUOC,string TENTHUOC, string DONVT, string DUONGDUNG, int TONKHO, float GIANHAP, float GIABAN, string NHACUNGCAP, string GHICHU)
         {
             string updateInto = "update loaithuoc set TENLT=@TENTHUOC,DONVT=@DONVT,DUONGDUNG=@DUONGDUNG,TONKHO=@TONKHO,GHICHU=@GHICHU,GIANHAP=@GIANHAP,GIABAN=@GIABAN,NHACUNGCAP=@NHACUNGCAP WHERE MALT=@MATHUOC";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
@@ -71,8 +71,8 @@ namespace DAL
                     cmdInsert.Parameters.Add("@DUONGDUNG", SqlDbType.NVarChar).Value = DUONGDUNG;
                     cmdInsert.Parameters.Add("@TONKHO", SqlDbType.Int).Value = TONKHO;
                     cmdInsert.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = GHICHU;
-                    cmdInsert.Parameters.Add("@GIANHAP", SqlDbType.Int).Value = GIANHAP;
-                    cmdInsert.Parameters.Add("@GIABAN", SqlDbType.Int).Value = GIABAN;
+                    cmdInsert.Parameters.Add("@GIANHAP", SqlDbType.Float).Value = GIANHAP;
+                    cmdInsert.Parameters.Add("@GIABAN", SqlDbType.Float).Value = GIABAN;
                     cmdInsert.Parameters.Add("@NHACUNGCAP", SqlDbType.NVarChar).Value = NHACUNGCAP;
 
                     cmdInsert.ExecuteNonQuery();

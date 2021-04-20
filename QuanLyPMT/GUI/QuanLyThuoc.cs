@@ -148,8 +148,8 @@ namespace GUI
                 fromTable.DUONGDUNG = danhSachThuocDgv.Rows[index].Cells["DUONGDUNG"].Value.ToString();
                 fromTable.TONKHO    = Convert.ToInt32(danhSachThuocDgv.Rows[index].Cells["TONKHO"].Value.ToString());
                 fromTable.GHICHU    = danhSachThuocDgv.Rows[index].Cells["GHICHU"].Value.ToString();
-                fromTable.GIANHAP   = Convert.ToInt32(danhSachThuocDgv.Rows[index].Cells["GIANHAP"].Value.ToString());
-                fromTable.GIABAN    = Convert.ToInt32(danhSachThuocDgv.Rows[index].Cells["GIABAN"].Value.ToString());
+                fromTable.GIANHAP   = float.Parse(danhSachThuocDgv.Rows[index].Cells["GIANHAP"].Value.ToString());
+                fromTable.GIABAN    = float.Parse(danhSachThuocDgv.Rows[index].Cells["GIABAN"].Value.ToString());
                 fromTable.NHACUNGCAP= danhSachThuocDgv.Rows[index].Cells["NHACUNGCAP"].Value.ToString();
             }
             setValueToForm();
@@ -160,8 +160,8 @@ namespace GUI
             fromForm.DONVT = unitCbb.Text;
             fromForm.DUONGDUNG = useWayCbb.Text;
             fromForm.TONKHO = Convert.ToInt32(amountTxtBox.Text);
-            fromForm.GIANHAP = Convert.ToInt32(priceInTxtBox.Text);
-            fromForm.GIABAN = Convert.ToInt32(priceOutTxtBox.Text);
+            fromForm.GIANHAP = float.Parse(priceInTxtBox.Text);
+            fromForm.GIABAN = float.Parse(priceOutTxtBox.Text);
             fromForm.NHACUNGCAP = suppliertxtBox.Text;
             fromForm.GHICHU = noteTextbox.Text;
         }
@@ -271,7 +271,7 @@ namespace GUI
 
         private void danhSachThuocDgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-           danhSachThuocDgv.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
+          // danhSachThuocDgv.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
