@@ -76,7 +76,7 @@ namespace GUI
             this.editBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.editBtn.ForeColor = System.Drawing.Color.Black;
             this.editBtn.Image = global::GUI.Properties.Resources.edit;
-            this.editBtn.Location = new System.Drawing.Point(488, 84);
+            this.editBtn.Location = new System.Drawing.Point(488, 68);
             this.editBtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(118, 40);
@@ -84,6 +84,7 @@ namespace GUI
             this.editBtn.Text = "Cập nhật";
             this.editBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.editBtn.UseVisualStyleBackColor = false;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // addBtn
             // 
@@ -100,6 +101,7 @@ namespace GUI
             this.addBtn.Text = "Thêm";
             this.addBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // useWayCbb
             // 
@@ -110,7 +112,7 @@ namespace GUI
             this.useWayCbb.Location = new System.Drawing.Point(168, 137);
             this.useWayCbb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.useWayCbb.Name = "useWayCbb";
-            this.useWayCbb.Size = new System.Drawing.Size(121, 23);
+            this.useWayCbb.Size = new System.Drawing.Size(121, 25);
             this.useWayCbb.TabIndex = 40;
             this.useWayCbb.SelectedIndexChanged += new System.EventHandler(this.sexCbbox_SelectedIndexChanged);
             // 
@@ -119,7 +121,7 @@ namespace GUI
             this.priceOutTxtBox.Location = new System.Drawing.Point(168, 261);
             this.priceOutTxtBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.priceOutTxtBox.Name = "priceOutTxtBox";
-            this.priceOutTxtBox.Size = new System.Drawing.Size(171, 21);
+            this.priceOutTxtBox.Size = new System.Drawing.Size(171, 25);
             this.priceOutTxtBox.TabIndex = 38;
             // 
             // nameTxtBox
@@ -127,7 +129,7 @@ namespace GUI
             this.nameTxtBox.Location = new System.Drawing.Point(168, 39);
             this.nameTxtBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.nameTxtBox.Name = "nameTxtBox";
-            this.nameTxtBox.Size = new System.Drawing.Size(171, 21);
+            this.nameTxtBox.Size = new System.Drawing.Size(171, 25);
             this.nameTxtBox.TabIndex = 35;
             // 
             // metroSetLabel7
@@ -182,7 +184,7 @@ namespace GUI
             this.metroSetLabel4.Location = new System.Drawing.Point(14, 137);
             this.metroSetLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroSetLabel4.Name = "metroSetLabel4";
-            this.metroSetLabel4.Size = new System.Drawing.Size(96, 23);
+            this.metroSetLabel4.Size = new System.Drawing.Size(105, 23);
             this.metroSetLabel4.Style = MetroSet_UI.Enums.Style.Light;
             this.metroSetLabel4.StyleManager = null;
             this.metroSetLabel4.TabIndex = 30;
@@ -244,7 +246,7 @@ namespace GUI
             this.unitCbb.Location = new System.Drawing.Point(168, 85);
             this.unitCbb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.unitCbb.Name = "unitCbb";
-            this.unitCbb.Size = new System.Drawing.Size(121, 23);
+            this.unitCbb.Size = new System.Drawing.Size(121, 25);
             this.unitCbb.TabIndex = 50;
             // 
             // amountTxtBox
@@ -252,7 +254,7 @@ namespace GUI
             this.amountTxtBox.Location = new System.Drawing.Point(168, 181);
             this.amountTxtBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.amountTxtBox.Name = "amountTxtBox";
-            this.amountTxtBox.Size = new System.Drawing.Size(171, 21);
+            this.amountTxtBox.Size = new System.Drawing.Size(171, 25);
             this.amountTxtBox.TabIndex = 51;
             // 
             // priceInTxtBox
@@ -260,7 +262,7 @@ namespace GUI
             this.priceInTxtBox.Location = new System.Drawing.Point(168, 222);
             this.priceInTxtBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.priceInTxtBox.Name = "priceInTxtBox";
-            this.priceInTxtBox.Size = new System.Drawing.Size(171, 21);
+            this.priceInTxtBox.Size = new System.Drawing.Size(171, 25);
             this.priceInTxtBox.TabIndex = 52;
             // 
             // suppliertxtBox
@@ -268,7 +270,7 @@ namespace GUI
             this.suppliertxtBox.Location = new System.Drawing.Point(168, 305);
             this.suppliertxtBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.suppliertxtBox.Name = "suppliertxtBox";
-            this.suppliertxtBox.Size = new System.Drawing.Size(171, 21);
+            this.suppliertxtBox.Size = new System.Drawing.Size(171, 25);
             this.suppliertxtBox.TabIndex = 54;
             // 
             // metroSetLabel9
@@ -338,49 +340,59 @@ namespace GUI
             this.danhSachThuocDgv.Location = new System.Drawing.Point(0, 19);
             this.danhSachThuocDgv.Name = "danhSachThuocDgv";
             this.danhSachThuocDgv.ReadOnly = true;
+            this.danhSachThuocDgv.RowHeadersWidth = 51;
             this.danhSachThuocDgv.RowTemplate.Height = 25;
             this.danhSachThuocDgv.Size = new System.Drawing.Size(572, 464);
             this.danhSachThuocDgv.TabIndex = 0;
+            this.danhSachThuocDgv.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachThuocDgv_RowEnter);
+            this.danhSachThuocDgv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.danhSachThuocDgv_RowPostPaint);
             // 
             // numeric
             // 
             this.numeric.HeaderText = "STT";
+            this.numeric.MinimumWidth = 6;
             this.numeric.Name = "numeric";
             this.numeric.ReadOnly = true;
             // 
             // name
             // 
             this.name.HeaderText = "Tên thuốc";
+            this.name.MinimumWidth = 6;
             this.name.Name = "name";
             this.name.ReadOnly = true;
             // 
             // useWay
             // 
             this.useWay.HeaderText = "Đường dùng";
+            this.useWay.MinimumWidth = 6;
             this.useWay.Name = "useWay";
             this.useWay.ReadOnly = true;
             // 
             // amount
             // 
             this.amount.HeaderText = "Số lượng tồn ";
+            this.amount.MinimumWidth = 6;
             this.amount.Name = "amount";
             this.amount.ReadOnly = true;
             // 
             // unit
             // 
             this.unit.HeaderText = "Đơn vị tính ";
+            this.unit.MinimumWidth = 6;
             this.unit.Name = "unit";
             this.unit.ReadOnly = true;
             // 
             // priceIn
             // 
             this.priceIn.HeaderText = "Giá nhập";
+            this.priceIn.MinimumWidth = 6;
             this.priceIn.Name = "priceIn";
             this.priceIn.ReadOnly = true;
             // 
             // priceOut
             // 
             this.priceOut.HeaderText = "Giá bán";
+            this.priceOut.MinimumWidth = 6;
             this.priceOut.Name = "priceOut";
             this.priceOut.ReadOnly = true;
             // 
@@ -397,13 +409,14 @@ namespace GUI
             this.searchBtn.Text = "Tìm kiếm ";
             this.searchBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // nameTextbox
             // 
             this.nameTextbox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nameTextbox.Location = new System.Drawing.Point(769, 39);
             this.nameTextbox.Name = "nameTextbox";
-            this.nameTextbox.Size = new System.Drawing.Size(181, 26);
+            this.nameTextbox.Size = new System.Drawing.Size(181, 30);
             this.nameTextbox.TabIndex = 58;
             // 
             // label2
@@ -412,7 +425,7 @@ namespace GUI
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(655, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 18);
+            this.label2.Size = new System.Drawing.Size(96, 23);
             this.label2.TabIndex = 57;
             this.label2.Text = "Tên thuốc";
             // 
@@ -422,7 +435,7 @@ namespace GUI
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(625, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 19);
+            this.label1.Size = new System.Drawing.Size(156, 24);
             this.label1.TabIndex = 56;
             this.label1.Text = "Tìm kiếm thuốc\r\n";
             // 
@@ -439,6 +452,7 @@ namespace GUI
             this.deleteButton.Text = "Xoá";
             this.deleteButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // cancelBtn
             // 
@@ -446,13 +460,14 @@ namespace GUI
             this.cancelBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cancelBtn.ForeColor = System.Drawing.Color.White;
             this.cancelBtn.Image = global::GUI.Properties.Resources.logout;
-            this.cancelBtn.Location = new System.Drawing.Point(488, 83);
+            this.cancelBtn.Location = new System.Drawing.Point(488, 160);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(118, 40);
             this.cancelBtn.TabIndex = 63;
             this.cancelBtn.Text = "Huỷ bỏ ";
             this.cancelBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // saveBtn
             // 
@@ -461,17 +476,18 @@ namespace GUI
             this.saveBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Image = global::GUI.Properties.Resources.save;
-            this.saveBtn.Location = new System.Drawing.Point(488, 20);
+            this.saveBtn.Location = new System.Drawing.Point(488, 114);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(118, 40);
             this.saveBtn.TabIndex = 62;
             this.saveBtn.Text = "Xác nhận";
             this.saveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // QuanLyThuoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));

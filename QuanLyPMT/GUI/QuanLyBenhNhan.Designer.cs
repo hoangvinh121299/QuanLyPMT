@@ -186,7 +186,7 @@ namespace GUI
             this.nameTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nameTxtBox.Location = new System.Drawing.Point(150, 35);
             this.nameTxtBox.Name = "nameTxtBox";
-            this.nameTxtBox.Size = new System.Drawing.Size(239, 25);
+            this.nameTxtBox.Size = new System.Drawing.Size(239, 29);
             this.nameTxtBox.TabIndex = 8;
             this.nameTxtBox.Leave += new System.EventHandler(this.nameTxtBox_Leave);
             // 
@@ -195,7 +195,7 @@ namespace GUI
             this.CMNDtextBOX1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CMNDtextBOX1.Location = new System.Drawing.Point(150, 81);
             this.CMNDtextBOX1.Name = "CMNDtextBOX1";
-            this.CMNDtextBOX1.Size = new System.Drawing.Size(239, 25);
+            this.CMNDtextBOX1.Size = new System.Drawing.Size(239, 29);
             this.CMNDtextBOX1.TabIndex = 9;
             // 
             // phoneTxtBox
@@ -203,7 +203,7 @@ namespace GUI
             this.phoneTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.phoneTxtBox.Location = new System.Drawing.Point(150, 212);
             this.phoneTxtBox.Name = "phoneTxtBox";
-            this.phoneTxtBox.Size = new System.Drawing.Size(239, 25);
+            this.phoneTxtBox.Size = new System.Drawing.Size(239, 29);
             this.phoneTxtBox.TabIndex = 11;
             // 
             // noteCbbox
@@ -221,7 +221,7 @@ namespace GUI
             this.birthDateTimePicker.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.birthDateTimePicker.Location = new System.Drawing.Point(150, 170);
             this.birthDateTimePicker.Name = "birthDateTimePicker";
-            this.birthDateTimePicker.Size = new System.Drawing.Size(239, 25);
+            this.birthDateTimePicker.Size = new System.Drawing.Size(239, 29);
             this.birthDateTimePicker.TabIndex = 18;
             // 
             // adddBtn
@@ -247,7 +247,7 @@ namespace GUI
             this.updateBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.updateBtn.ForeColor = System.Drawing.Color.Black;
             this.updateBtn.Image = global::GUI.Properties.Resources.edit;
-            this.updateBtn.Location = new System.Drawing.Point(490, 168);
+            this.updateBtn.Location = new System.Drawing.Point(490, 175);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(118, 40);
             this.updateBtn.TabIndex = 24;
@@ -263,7 +263,7 @@ namespace GUI
             this.examBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.examBtn.ForeColor = System.Drawing.Color.White;
             this.examBtn.Image = global::GUI.Properties.Resources.examination__1_;
-            this.examBtn.Location = new System.Drawing.Point(490, 93);
+            this.examBtn.Location = new System.Drawing.Point(490, 81);
             this.examBtn.Name = "examBtn";
             this.examBtn.Size = new System.Drawing.Size(118, 46);
             this.examBtn.TabIndex = 26;
@@ -302,14 +302,15 @@ namespace GUI
             this.GIOITINH});
             this.danhSachBenhNhanDgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.danhSachBenhNhanDgv.GridColor = System.Drawing.Color.Black;
-            this.danhSachBenhNhanDgv.Location = new System.Drawing.Point(3, 21);
+            this.danhSachBenhNhanDgv.Location = new System.Drawing.Point(3, 25);
             this.danhSachBenhNhanDgv.MultiSelect = false;
             this.danhSachBenhNhanDgv.Name = "danhSachBenhNhanDgv";
             this.danhSachBenhNhanDgv.ReadOnly = true;
             this.danhSachBenhNhanDgv.RowHeadersVisible = false;
+            this.danhSachBenhNhanDgv.RowHeadersWidth = 51;
             this.danhSachBenhNhanDgv.RowTemplate.Height = 25;
             this.danhSachBenhNhanDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.danhSachBenhNhanDgv.Size = new System.Drawing.Size(566, 459);
+            this.danhSachBenhNhanDgv.Size = new System.Drawing.Size(566, 455);
             this.danhSachBenhNhanDgv.TabIndex = 0;
             this.danhSachBenhNhanDgv.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachBenhNhanDgv_RowEnter);
             this.danhSachBenhNhanDgv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.danhSachBenhNhanDgv_RowPostPaint);
@@ -317,6 +318,7 @@ namespace GUI
             // STT
             // 
             this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
             // 
@@ -324,6 +326,7 @@ namespace GUI
             // 
             this.GHICHU.DataPropertyName = "GHICHU";
             this.GHICHU.HeaderText = "ghichu";
+            this.GHICHU.MinimumWidth = 6;
             this.GHICHU.Name = "GHICHU";
             this.GHICHU.ReadOnly = true;
             this.GHICHU.Visible = false;
@@ -332,6 +335,7 @@ namespace GUI
             // 
             this.SDT.DataPropertyName = "SDT";
             this.SDT.HeaderText = "sdt";
+            this.SDT.MinimumWidth = 6;
             this.SDT.Name = "SDT";
             this.SDT.ReadOnly = true;
             this.SDT.Visible = false;
@@ -340,6 +344,7 @@ namespace GUI
             // 
             this.DIACHI.DataPropertyName = "DIACHI";
             this.DIACHI.HeaderText = "diachi";
+            this.DIACHI.MinimumWidth = 6;
             this.DIACHI.Name = "DIACHI";
             this.DIACHI.ReadOnly = true;
             this.DIACHI.Visible = false;
@@ -348,6 +353,7 @@ namespace GUI
             // 
             this.MABN.DataPropertyName = "MABN";
             this.MABN.HeaderText = "mabenhnhan";
+            this.MABN.MinimumWidth = 6;
             this.MABN.Name = "MABN";
             this.MABN.ReadOnly = true;
             this.MABN.Visible = false;
@@ -357,14 +363,16 @@ namespace GUI
             this.HOTEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.HOTEN.DataPropertyName = "HOTEN";
             this.HOTEN.HeaderText = "Họ và tên";
+            this.HOTEN.MinimumWidth = 6;
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.ReadOnly = true;
-            this.HOTEN.Width = 5;
+            this.HOTEN.Width = 6;
             // 
             // CMND
             // 
             this.CMND.DataPropertyName = "CMND";
             this.CMND.HeaderText = "Số CMND";
+            this.CMND.MinimumWidth = 6;
             this.CMND.Name = "CMND";
             this.CMND.ReadOnly = true;
             // 
@@ -372,6 +380,7 @@ namespace GUI
             // 
             this.NGAYSINH.DataPropertyName = "NGAYSINH";
             this.NGAYSINH.HeaderText = "Ngày sinh";
+            this.NGAYSINH.MinimumWidth = 6;
             this.NGAYSINH.Name = "NGAYSINH";
             this.NGAYSINH.ReadOnly = true;
             // 
@@ -379,6 +388,7 @@ namespace GUI
             // 
             this.GIOITINH.DataPropertyName = "GT";
             this.GIOITINH.HeaderText = "Giới tính";
+            this.GIOITINH.MinimumWidth = 6;
             this.GIOITINH.Name = "GIOITINH";
             this.GIOITINH.ReadOnly = true;
             // 
@@ -403,7 +413,7 @@ namespace GUI
             this.CMNDtextBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CMNDtextBox2.Location = new System.Drawing.Point(770, 35);
             this.CMNDtextBox2.Name = "CMNDtextBox2";
-            this.CMNDtextBox2.Size = new System.Drawing.Size(181, 26);
+            this.CMNDtextBox2.Size = new System.Drawing.Size(181, 30);
             this.CMNDtextBox2.TabIndex = 29;
             // 
             // label2
@@ -412,7 +422,7 @@ namespace GUI
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(656, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 18);
+            this.label2.Size = new System.Drawing.Size(98, 23);
             this.label2.TabIndex = 28;
             this.label2.Text = "Số CMND";
             // 
@@ -422,7 +432,7 @@ namespace GUI
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(625, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 19);
+            this.label1.Size = new System.Drawing.Size(202, 24);
             this.label1.TabIndex = 27;
             this.label1.Text = "Tìm kiếm bệnh nhân";
             // 
@@ -473,7 +483,7 @@ namespace GUI
             this.cancelBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cancelBtn.ForeColor = System.Drawing.Color.White;
             this.cancelBtn.Image = global::GUI.Properties.Resources.logout;
-            this.cancelBtn.Location = new System.Drawing.Point(490, 82);
+            this.cancelBtn.Location = new System.Drawing.Point(490, 129);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(118, 40);
             this.cancelBtn.TabIndex = 35;
@@ -488,7 +498,7 @@ namespace GUI
             this.femaleBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.femaleBtn.Location = new System.Drawing.Point(150, 134);
             this.femaleBtn.Name = "femaleBtn";
-            this.femaleBtn.Size = new System.Drawing.Size(48, 22);
+            this.femaleBtn.Size = new System.Drawing.Size(57, 27);
             this.femaleBtn.TabIndex = 37;
             this.femaleBtn.TabStop = true;
             this.femaleBtn.Text = "Nữ";
@@ -496,7 +506,7 @@ namespace GUI
             // 
             // QuanLyBenhNhan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
