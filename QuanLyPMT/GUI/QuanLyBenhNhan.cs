@@ -328,6 +328,11 @@ namespace GUI
             temp = CMNDtextBox2.Text;
             showSearchResult(temp);
         }
+
+        private void historyExamDgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            historyExamDgv.Rows[e.RowIndex].Cells["numericID"].Value = (e.RowIndex + 1).ToString();
+        }
         //Something new here to test QuanLyBenhNhan branch
     }
 }

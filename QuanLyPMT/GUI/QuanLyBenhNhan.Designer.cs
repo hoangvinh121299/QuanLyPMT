@@ -64,7 +64,7 @@ namespace GUI
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.historyExamDgv = new System.Windows.Forms.DataGridView();
             this.maleBtn = new System.Windows.Forms.RadioButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numericID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYTAIKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NVLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -479,7 +479,7 @@ namespace GUI
             this.historyExamDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.historyExamDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.historyExamDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.numericID,
             this.NGAYKHAM,
             this.NGAYTAIKHAM,
             this.NVLAP});
@@ -491,6 +491,7 @@ namespace GUI
             this.historyExamDgv.RowTemplate.Height = 25;
             this.historyExamDgv.Size = new System.Drawing.Size(614, 288);
             this.historyExamDgv.TabIndex = 0;
+            this.historyExamDgv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.historyExamDgv_RowPostPaint);
             // 
             // maleBtn
             // 
@@ -504,10 +505,11 @@ namespace GUI
             this.maleBtn.Text = "Nam";
             this.maleBtn.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // numericID
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.numericID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.numericID.HeaderText = "STT";
+            this.numericID.Name = "numericID";
             // 
             // NGAYKHAM
             // 
@@ -523,6 +525,7 @@ namespace GUI
             // 
             // NVLAP
             // 
+            this.NVLAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NVLAP.DataPropertyName = "HOTEN";
             this.NVLAP.HeaderText = "Nhân viên lập";
             this.NVLAP.Name = "NVLAP";
@@ -613,7 +616,7 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn GIOITINH;
         private System.Windows.Forms.RadioButton maleBtn;
         private System.Windows.Forms.DataGridView historyExamDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numericID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKHAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTAIKHAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn NVLAP;
