@@ -35,6 +35,10 @@ namespace GUI
         {
             danhSachBenhNhanDgv.DataSource = benhNhan_BUS.searchBenhNhan(CMND).Tables[0];
         }
+        void showHistoryExam(int MABENHNHAN)
+        {
+            historyExamDgv.DataSource= benhNhan_BUS.getHistoryExam(MABENHNHAN).Tables[0];
+        }
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show
@@ -61,27 +65,31 @@ namespace GUI
                 fromTable.HOTEN = danhSachBenhNhanDgv.Rows[index].Cells["HOTEN"].Value.ToString();
                 fromTable.DIACHI = danhSachBenhNhanDgv.Rows[index].Cells["DIACHI"].Value.ToString();
                 fromTable.SDT = danhSachBenhNhanDgv.Rows[index].Cells["SDT"].Value.ToString();
-                fromTable.GHICHU =  danhSachBenhNhanDgv.Rows[index].Cells["GHICHU"].Value.ToString();
+               
             }
             setValueToForm();
+            showHistoryExam(fromForm.MABENHNHAN);
         }
         private void setValueToForm()
         {
             CMNDtextBOX1.Text = fromTable.CMND;
-            CMNDtextBox2.Text = fromTable.CMND;
+           
             nameTxtBox.Text = fromTable.HOTEN;
             if (fromTable.GIOITINH == "Nữ")
             {
                 femaleBtn.Checked = true;
+                maleBtn.Checked = false;
             }
             else
             {
                 femaleBtn.Checked = false;
+                maleBtn.Checked = true;
+
             }
             birthDateTimePicker.Text = fromTable.NGAYSINH.ToString();
             addressTextbox.Text = fromTable.DIACHI;
             phoneTxtBox.Text = fromTable.SDT;
-            noteCbbox.Text = fromTable.GHICHU;
+           
         }
         private void setValuefromForm()
         {
@@ -93,14 +101,14 @@ namespace GUI
             {
                 fromForm.GIOITINH = "Nữ";
             }
-            else
+            else if(maleBtn.Checked)
             {
                 fromForm.GIOITINH = "Nam";
             }
             fromForm.NGAYSINH = DateTime.Parse(birthDateTimePicker.Text);
             fromForm.DIACHI = addressTextbox.Text;
             fromForm.SDT = phoneTxtBox.Text;
-            fromForm.GHICHU = noteCbbox.Text;
+           
         }
         private void adddBtn_Click(object sender, EventArgs e)
         {
@@ -140,8 +148,9 @@ namespace GUI
             nameTxtBox.Enabled = false;
             CMNDtextBOX1.Enabled = false;
             femaleBtn.Enabled = false;
+            maleBtn.Enabled = false;
             phoneTxtBox.Enabled = false;
-            noteCbbox.Enabled = false;
+            CMNDtextBox2.Enabled = true;
             addressTextbox.Enabled = false;
             birthDateTimePicker.Enabled = false;
             danhSachBenhNhanDgv.AutoResizeColumns();
@@ -154,7 +163,7 @@ namespace GUI
             CMNDtextBOX1.Enabled = true;
             femaleBtn.Enabled = true;
             phoneTxtBox.Enabled = true;
-            noteCbbox.Enabled = true;
+            CMNDtextBox2.Enabled = false;
             addressTextbox.Enabled = true;
             birthDateTimePicker.Enabled = true;
 
@@ -199,8 +208,8 @@ namespace GUI
                                                  fromForm.HOTEN,
                                                  fromForm.GIOITINH,
                                                  fromForm.DIACHI,
-                                                 fromForm.SDT,
-                                                 fromForm.GHICHU);
+                                                 fromForm.SDT
+                                                 );
                         showData();
                         loadForm();
                         return;
@@ -288,7 +297,7 @@ namespace GUI
             femaleBtn.Checked = false;
             phoneTxtBox.Text = null;
             addressTextbox.Text = null;
-            noteCbbox.Text = null;
+      
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -311,6 +320,13 @@ namespace GUI
         private void danhSachBenhNhanDgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             danhSachBenhNhanDgv.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void CMNDtextBox2_TextChanged(object sender, EventArgs e)
+        {
+            string temp;
+            temp = CMNDtextBox2.Text;
+            showSearchResult(temp);
         }
     }
 }

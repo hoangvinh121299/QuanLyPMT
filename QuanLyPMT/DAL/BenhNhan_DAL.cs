@@ -55,9 +55,9 @@ namespace DAL
             }
         }
         //Hàm cập nhật thông tin bệnh nhân 
-        public void updateBenhNhan(int MABENHNHAN, string CMND, DateTime NGAYSINH, string HOTEN, string GIOITINH, string DIACHI, string SDT, string GHICHU)
+        public void updateBenhNhan(int MABENHNHAN, string CMND, DateTime NGAYSINH, string HOTEN, string GIOITINH, string DIACHI, string SDT)
         {
-            string updateInto = "update benhnhan set CMND = @CMND, NGAYSINH =@NGAYSINH, HOTEN = @HOTEN, GT = @GIOITINH, DIACHI = @DIACHI, SDT = @SDT, GHICHU=@GHICHU WHERE MABN = @MABENHNHAN";
+            string updateInto = "update benhnhan set CMND = @CMND, NGAYSINH =@NGAYSINH, HOTEN = @HOTEN, GT = @GIOITINH, DIACHI = @DIACHI, SDT = @SDT WHERE MABN = @MABENHNHAN";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
             {
                 try
@@ -72,7 +72,7 @@ namespace DAL
                     cmdInsert.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = GIOITINH;
                     cmdInsert.Parameters.Add("@DIACHI", SqlDbType.NVarChar).Value = DIACHI;
                     cmdInsert.Parameters.Add("@SDT", SqlDbType.VarChar).Value = SDT;
-                    cmdInsert.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = GHICHU;
+                    
                     cmdInsert.ExecuteNonQuery();
                     connection.Close();
                 }
@@ -119,6 +119,20 @@ namespace DAL
             }
             return searchResult;
         }
-
+        public DataSet getHistoryExamByID(int MABENHNHAN)
+        {
+            DataSet getResult = new DataSet();
+            string getQuerry = "select NGAYLAP, NGAYTAIKHAM, NHANVIEN.HOTEN from BENHAN, BENHNHAN,NHANVIEN where BENHNHAN.MABN = @MABENHNHAN AND BENHAN.MANV=1";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand cmdGet = new SqlCommand(getQuerry, connection);
+                cmdGet.Parameters.Add("@MABENHNHAN", SqlDbType.Int).Value = MABENHNHAN;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmdGet);
+                adapter.Fill(getResult);
+                connection.Close();
+            }
+            return getResult;
+        }
     }
 }

@@ -18,13 +18,17 @@ namespace BUS
         {
             benhNhan_DAL.addBenhNhan(CMND, NGAYSINH, HOTEN, GIOITINH, DIACHI, SDT, GHICHU);
         }
-        public void updateBenhNhan(int MABENHNHAN, string CMND, DateTime NGAYSINH, string HOTEN, string GIOITINH, string DIACHI, string SDT, string GHICHU)
+        public void updateBenhNhan(int MABENHNHAN, string CMND, DateTime NGAYSINH, string HOTEN, string GIOITINH, string DIACHI, string SDT)
         {
-            benhNhan_DAL.updateBenhNhan(MABENHNHAN, CMND, NGAYSINH, HOTEN, GIOITINH, DIACHI, SDT, GHICHU);
+            benhNhan_DAL.updateBenhNhan(MABENHNHAN, CMND, NGAYSINH, HOTEN, GIOITINH, DIACHI, SDT);
         }
         public void deleteBenhNhan(int MABENHNHAN)
         {
             benhNhan_DAL.deleteBenhNhan(MABENHNHAN);
+        }
+        public DataSet getHistoryExam(int MABENHNHAN)
+        {
+            return benhNhan_DAL.getHistoryExamByID(MABENHNHAN);
         }
         public DataSet searchBenhNhan(string CMND)
         {
