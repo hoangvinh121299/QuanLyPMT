@@ -328,5 +328,6 @@ namespace GUI
             temp = CMNDtextBox2.Text;
             showSearchResult(temp);
         }
+        //Something new here to test QuanLyBenhNhan branch
     }
 }
