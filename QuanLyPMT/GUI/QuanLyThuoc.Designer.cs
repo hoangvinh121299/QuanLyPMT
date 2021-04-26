@@ -50,13 +50,6 @@ namespace GUI
             this.noteTextbox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.danhSachThuocDgv = new System.Windows.Forms.DataGridView();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.nameTextbox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.cancelBtn = new System.Windows.Forms.Button();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.numeric = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.useWay = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +57,13 @@ namespace GUI
             this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.nameTextbox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.cancelBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachThuocDgv)).BeginInit();
@@ -107,8 +107,9 @@ namespace GUI
             // 
             this.useWayCbb.FormattingEnabled = true;
             this.useWayCbb.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
+            "uống ",
+            "tiêm",
+            "nhét hậu môn"});
             this.useWayCbb.Location = new System.Drawing.Point(168, 137);
             this.useWayCbb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.useWayCbb.Name = "useWayCbb";
@@ -241,8 +242,10 @@ namespace GUI
             // 
             this.unitCbb.FormattingEnabled = true;
             this.unitCbb.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
+            "viên",
+            "ống ",
+            "lọ",
+            "gói"});
             this.unitCbb.Location = new System.Drawing.Point(168, 85);
             this.unitCbb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.unitCbb.Name = "unitCbb";
@@ -347,6 +350,62 @@ namespace GUI
             this.danhSachThuocDgv.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachThuocDgv_RowEnter);
             this.danhSachThuocDgv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.danhSachThuocDgv_RowPostPaint);
             // 
+            // numeric
+            // 
+            this.numeric.DataPropertyName = "STT";
+            this.numeric.HeaderText = "STT";
+            this.numeric.MinimumWidth = 6;
+            this.numeric.Name = "numeric";
+            this.numeric.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "TENLT";
+            this.name.HeaderText = "Tên thuốc";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // useWay
+            // 
+            this.useWay.DataPropertyName = "DUONGDUNG";
+            this.useWay.HeaderText = "Đường dùng";
+            this.useWay.MinimumWidth = 6;
+            this.useWay.Name = "useWay";
+            this.useWay.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.DataPropertyName = "TONKHO";
+            this.amount.HeaderText = "Số lượng tồn ";
+            this.amount.MinimumWidth = 6;
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
+            // unit
+            // 
+            this.unit.DataPropertyName = "DONVT";
+            this.unit.HeaderText = "Đơn vị tính ";
+            this.unit.MinimumWidth = 6;
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            // 
+            // priceIn
+            // 
+            this.priceIn.DataPropertyName = "GIANHAP";
+            this.priceIn.HeaderText = "Giá nhập";
+            this.priceIn.MinimumWidth = 6;
+            this.priceIn.Name = "priceIn";
+            this.priceIn.ReadOnly = true;
+            // 
+            // priceOut
+            // 
+            this.priceOut.DataPropertyName = "GIABAN";
+            this.priceOut.HeaderText = "Giá bán";
+            this.priceOut.MinimumWidth = 6;
+            this.priceOut.Name = "priceOut";
+            this.priceOut.ReadOnly = true;
+            // 
             // searchBtn
             // 
             this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -435,62 +494,6 @@ namespace GUI
             this.saveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
-            // numeric
-            // 
-            this.numeric.DataPropertyName = "STT";
-            this.numeric.HeaderText = "STT";
-            this.numeric.MinimumWidth = 6;
-            this.numeric.Name = "numeric";
-            this.numeric.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "TENLT";
-            this.name.HeaderText = "Tên thuốc";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // useWay
-            // 
-            this.useWay.DataPropertyName = "DUONGDUNG";
-            this.useWay.HeaderText = "Đường dùng";
-            this.useWay.MinimumWidth = 6;
-            this.useWay.Name = "useWay";
-            this.useWay.ReadOnly = true;
-            // 
-            // amount
-            // 
-            this.amount.DataPropertyName = "TONKHO";
-            this.amount.HeaderText = "Số lượng tồn ";
-            this.amount.MinimumWidth = 6;
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            // 
-            // unit
-            // 
-            this.unit.DataPropertyName = "DONVT";
-            this.unit.HeaderText = "Đơn vị tính ";
-            this.unit.MinimumWidth = 6;
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            // 
-            // priceIn
-            // 
-            this.priceIn.DataPropertyName = "GIANHAP";
-            this.priceIn.HeaderText = "Giá nhập";
-            this.priceIn.MinimumWidth = 6;
-            this.priceIn.Name = "priceIn";
-            this.priceIn.ReadOnly = true;
-            // 
-            // priceOut
-            // 
-            this.priceOut.DataPropertyName = "GIABAN";
-            this.priceOut.HeaderText = "Giá bán";
-            this.priceOut.MinimumWidth = 6;
-            this.priceOut.Name = "priceOut";
-            this.priceOut.ReadOnly = true;
             // 
             // QuanLyThuoc
             // 
