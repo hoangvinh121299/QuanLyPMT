@@ -147,10 +147,10 @@ namespace GUI
                 fromTable.DONVT     = danhSachThuocDgv.Rows[index].Cells["unit"].Value.ToString();
                 fromTable.DUONGDUNG = danhSachThuocDgv.Rows[index].Cells["useway"].Value.ToString();
                 fromTable.TONKHO    = Convert.ToInt32(danhSachThuocDgv.Rows[index].Cells["amount"].Value.ToString());
-                //fromTable.GHICHU    = danhSachThuocDgv.Rows[index].Cells["note"].Value.ToString();
+                fromTable.GHICHU    = danhSachThuocDgv.Rows[index].Cells["GHICHU"].Value.ToString();
                 fromTable.GIANHAP   = float.Parse(danhSachThuocDgv.Rows[index].Cells["priceIn"].Value.ToString());
                 fromTable.GIABAN    = float.Parse(danhSachThuocDgv.Rows[index].Cells["priceOut"].Value.ToString());
-                //fromTable.NHACUNGCAP= danhSachThuocDgv.Rows[index].Cells["supplier"].Value.ToString();
+                fromTable.NHACUNGCAP= danhSachThuocDgv.Rows[index].Cells["NHACUNGCAP"].Value.ToString();
             }
             setValueToForm();
         }
