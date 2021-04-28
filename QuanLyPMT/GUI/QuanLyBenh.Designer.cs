@@ -40,8 +40,6 @@ namespace GUI
             this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.danhSachThuocDgv = new System.Windows.Forms.DataGridView();
-            this.numeric = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchBtn = new System.Windows.Forms.Button();
             this.nameTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,6 +47,8 @@ namespace GUI
             this.button1 = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.numeric = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachThuocDgv)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +103,7 @@ namespace GUI
             // 
             this.nameTxtBox.Location = new System.Drawing.Point(139, 52);
             this.nameTxtBox.Name = "nameTxtBox";
-            this.nameTxtBox.Size = new System.Drawing.Size(203, 21);
+            this.nameTxtBox.Size = new System.Drawing.Size(203, 25);
             this.nameTxtBox.TabIndex = 35;
             // 
             // metroSetLabel8
@@ -185,21 +185,10 @@ namespace GUI
             this.danhSachThuocDgv.Location = new System.Drawing.Point(0, 24);
             this.danhSachThuocDgv.Name = "danhSachThuocDgv";
             this.danhSachThuocDgv.ReadOnly = true;
+            this.danhSachThuocDgv.RowHeadersWidth = 51;
             this.danhSachThuocDgv.RowTemplate.Height = 25;
             this.danhSachThuocDgv.Size = new System.Drawing.Size(566, 458);
             this.danhSachThuocDgv.TabIndex = 0;
-            // 
-            // numeric
-            // 
-            this.numeric.HeaderText = "STT";
-            this.numeric.Name = "numeric";
-            this.numeric.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Tên bệnh";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
             // 
             // searchBtn
             // 
@@ -220,7 +209,7 @@ namespace GUI
             this.nameTextbox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nameTextbox.Location = new System.Drawing.Point(771, 35);
             this.nameTextbox.Name = "nameTextbox";
-            this.nameTextbox.Size = new System.Drawing.Size(181, 26);
+            this.nameTextbox.Size = new System.Drawing.Size(181, 30);
             this.nameTextbox.TabIndex = 51;
             // 
             // label2
@@ -229,7 +218,7 @@ namespace GUI
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(657, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 18);
+            this.label2.Size = new System.Drawing.Size(97, 23);
             this.label2.TabIndex = 50;
             this.label2.Text = "Tên bệnh ";
             // 
@@ -239,7 +228,7 @@ namespace GUI
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(627, -1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 19);
+            this.label1.Size = new System.Drawing.Size(155, 24);
             this.label1.TabIndex = 49;
             this.label1.Text = "Tìm kiếm bệnh ";
             // 
@@ -285,9 +274,25 @@ namespace GUI
             this.saveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.saveBtn.UseVisualStyleBackColor = false;
             // 
+            // numeric
+            // 
+            this.numeric.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.numeric.HeaderText = "STT";
+            this.numeric.MinimumWidth = 10;
+            this.numeric.Name = "numeric";
+            this.numeric.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.HeaderText = "Tên bệnh";
+            this.name.MinimumWidth = 10;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
             // QuanLyBenh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.cancelBtn);
@@ -331,8 +336,6 @@ namespace GUI
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView danhSachThuocDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeric;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.TextBox nameTextbox;
         private System.Windows.Forms.Label label2;
@@ -340,5 +343,7 @@ namespace GUI
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeric;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
     }
 }
