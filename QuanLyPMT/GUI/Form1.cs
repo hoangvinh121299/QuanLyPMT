@@ -37,5 +37,12 @@ namespace GUI
             displayPanel.Controls.Clear();
             displayPanel.Controls.Add(quanLyBenh);
         }
+
+        private void examBtn_Click(object sender, EventArgs e)
+        {
+            KhamBenh khamBenh = new KhamBenh();
+            displayPanel.Controls.Clear();
+            displayPanel.Controls.Add(khamBenh);
+        }
     }
 }

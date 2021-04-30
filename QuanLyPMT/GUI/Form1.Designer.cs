@@ -48,7 +48,7 @@ namespace GUI
             // exitBtn
             // 
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exitBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.exitBtn.ForeColor = System.Drawing.Color.White;
             this.exitBtn.Image = global::GUI.Properties.Resources.exit;
             this.exitBtn.Location = new System.Drawing.Point(1088, 0);
@@ -63,7 +63,7 @@ namespace GUI
             // aboutBtn
             // 
             this.aboutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aboutBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.aboutBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.aboutBtn.ForeColor = System.Drawing.Color.White;
             this.aboutBtn.Image = global::GUI.Properties.Resources.info;
             this.aboutBtn.Location = new System.Drawing.Point(943, 0);
@@ -78,7 +78,7 @@ namespace GUI
             // patientBtn
             // 
             this.patientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.patientBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.patientBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.patientBtn.ForeColor = System.Drawing.Color.White;
             this.patientBtn.Image = global::GUI.Properties.Resources.people1;
             this.patientBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -95,7 +95,7 @@ namespace GUI
             // accountBtn
             // 
             this.accountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.accountBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.accountBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.accountBtn.ForeColor = System.Drawing.Color.White;
             this.accountBtn.Image = global::GUI.Properties.Resources.team;
             this.accountBtn.Location = new System.Drawing.Point(789, 0);
@@ -110,7 +110,7 @@ namespace GUI
             // sickBtn
             // 
             this.sickBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sickBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sickBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.sickBtn.ForeColor = System.Drawing.Color.White;
             this.sickBtn.Image = global::GUI.Properties.Resources.malaria;
             this.sickBtn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -127,7 +127,7 @@ namespace GUI
             // reportBtn
             // 
             this.reportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reportBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.reportBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.reportBtn.ForeColor = System.Drawing.Color.White;
             this.reportBtn.Image = global::GUI.Properties.Resources.business_report;
             this.reportBtn.Location = new System.Drawing.Point(634, 0);
@@ -159,7 +159,7 @@ namespace GUI
             // examBtn
             // 
             this.examBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.examBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.examBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.examBtn.ForeColor = System.Drawing.Color.White;
             this.examBtn.Image = global::GUI.Properties.Resources.examination;
             this.examBtn.Location = new System.Drawing.Point(492, 0);
@@ -170,6 +170,7 @@ namespace GUI
             this.examBtn.Text = "Khám bệnh";
             this.examBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.examBtn.UseVisualStyleBackColor = false;
+            this.examBtn.Click += new System.EventHandler(this.examBtn_Click);
             // 
             // workPlacePnl
             // 
