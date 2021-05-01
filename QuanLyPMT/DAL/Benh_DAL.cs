@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace DAL
 {
-    class Benh_DAL
+    public class Benh_DAL
     {
         public DataSet GetDataSetBenh()
         {
@@ -30,7 +30,7 @@ namespace DAL
             }
             return datasetBenh;
         }
-        public void AddBenh(DTO.Benh benh)
+        public void AddBenh(Benh benh)
         {
             string insertInto = "INSERT INTO LOAIBENH (TENBENH, TENLB, TRIEUCHUNG, GHICHU) VALUES(@TENBENH,@TENLB,@TRIEUCHUNG,@GHICHU)";
             using (connectionString.GetConnect())
@@ -38,13 +38,13 @@ namespace DAL
                 try
                 {
                     connectionString.GetConnect().Open();
-                    using (SqlCommand cmdInsert = new SqlCommand(insertInto, connectionString.GetConnect()))
+                    using (SqlCommand cmd = new SqlCommand(insertInto, connectionString.GetConnect()))
                     {
-                        cmdInsert.Parameters.Add("@TENBENH", SqlDbType.NVarChar).Value = benh.TenBenh;
-                        cmdInsert.Parameters.Add("@TENLB", SqlDbType.NVarChar).Value = benh.TenLoaiBenh;
-                        cmdInsert.Parameters.Add("@TRIEUCHUNG", SqlDbType.NVarChar).Value = benh.TrieuChung;
-                        cmdInsert.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = benh.GhiChu;
-                        cmdInsert.ExecuteNonQuery();
+                        cmd.Parameters.Add("@TENBENH", SqlDbType.NVarChar).Value = benh.TenBenh;
+                        cmd.Parameters.Add("@TENLB", SqlDbType.NVarChar).Value = benh.TenLoaiBenh;
+                        cmd.Parameters.Add("@TRIEUCHUNG", SqlDbType.NVarChar).Value = benh.TrieuChung;
+                        cmd.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = benh.GhiChu;
+                        cmd.ExecuteNonQuery();
                     }
                     connectionString.GetConnect().Close();
                 }
@@ -55,23 +55,23 @@ namespace DAL
             }
         }
         
-        public void UpdateBenh(DTO.Benh benh)
+        public void UpdateBenh(Benh benh)
         {
-            string insertInto = "UPDATE LOAIBENH SET TENBENH =@TENBENH, TENLB =@TENLOAIBENH, TRIEUCHUNG =@TRIEUCHUNG, GHICHU =@GHICHU " +
+            string sqlQuerry = "UPDATE LOAIBENH SET TENBENH =@TENBENH, TENLB =@TENLOAIBENH, TRIEUCHUNG =@TRIEUCHUNG, GHICHU =@GHICHU " +
                                 "WHERE MALB=@MALB";
             using (connectionString.GetConnect())
             {
                 try
                 {
                     connectionString.GetConnect().Open();
-                    using (SqlCommand cmdInsert = new SqlCommand(insertInto, connectionString.GetConnect()))
+                    using (SqlCommand cmd = new SqlCommand(sqlQuerry, connectionString.GetConnect()))
                     {
-                        cmdInsert.Parameters.Add("@TENBENH", SqlDbType.NVarChar).Value = benh.TenBenh;
-                        cmdInsert.Parameters.Add("@TENLB", SqlDbType.NVarChar).Value = benh.TenLoaiBenh;
-                        cmdInsert.Parameters.Add("@TRIEUCHUNG", SqlDbType.NVarChar).Value = benh.TrieuChung;
-                        cmdInsert.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = benh.GhiChu;
-                        cmdInsert.Parameters.Add("@MALB", SqlDbType.NVarChar).Value = benh.MaLoaiBenh;
-                        cmdInsert.ExecuteNonQuery();
+                        cmd.Parameters.Add("@TENBENH", SqlDbType.NVarChar).Value = benh.TenBenh;
+                        cmd.Parameters.Add("@TENLB", SqlDbType.NVarChar).Value = benh.TenLoaiBenh;
+                        cmd.Parameters.Add("@TRIEUCHUNG", SqlDbType.NVarChar).Value = benh.TrieuChung;
+                        cmd.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = benh.GhiChu;
+                        cmd.Parameters.Add("@MALB", SqlDbType.NVarChar).Value = benh.MaLoaiBenh;
+                        cmd.ExecuteNonQuery();
                     }
                     connectionString.GetConnect().Close();
                 }
@@ -81,18 +81,18 @@ namespace DAL
                 }
             }
         }
-        public void DeleteBenh(DTO.Benh benh)
+        public void DeleteBenh(Benh benh)
         {
-            string insertInto = "DELETE FROM LOAIBENH WHERE MALB=@MALB";
+            string sqlQuerry = "DELETE FROM LOAIBENH WHERE MALB=@MALB";
             using (connectionString.GetConnect())
             {
                 try
                 {
                     connectionString.GetConnect().Open();
-                    using (SqlCommand cmdInsert = new SqlCommand(insertInto, connectionString.GetConnect()))
+                    using (SqlCommand cmd = new SqlCommand(sqlQuerry, connectionString.GetConnect()))
                     {
-                        cmdInsert.Parameters.Add("@MALB", SqlDbType.NVarChar).Value = benh.MaLoaiBenh;
-                        cmdInsert.ExecuteNonQuery();
+                        cmd.Parameters.Add("@MALB", SqlDbType.NVarChar).Value = benh.MaLoaiBenh;
+                        cmd.ExecuteNonQuery();
                     }
                     connectionString.GetConnect().Close();
                 }
@@ -101,6 +101,30 @@ namespace DAL
                     MessageBox.Show("ERROR:" + e.Message);
                 }
             }
+        }
+        public DataSet SearchBenh(String tenBenh)
+        {
+            DataSet searchResults = new DataSet();
+            string sqlQuerry = "SELECT * FROM LOAIBENH WHERE TENBENH=@TENBENH";
+            using(connectionString.GetConnect())
+            {
+                try
+                {
+                    connectionString.GetConnect().Open();
+                    using (SqlCommand cmd = new SqlCommand(sqlQuerry, connectionString.GetConnect()))
+                    {
+                        cmd.Parameters.Add("@TENBENH", SqlDbType.NVarChar).Value = tenBenh;
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                        dataAdapter.Fill(searchResults);
+                    }
+                    connectionString.GetConnect().Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("ERROR:" + e.Message);
+                }
+            }
+            return searchResults;
         }
     }
    
