@@ -119,10 +119,10 @@ namespace GUI
 
         private void btn_Cancle_Click(object sender, EventArgs e)
         {
+            cb_LoaiBenh.SelectedIndex = -1;
             txtb_TenBenh1.Clear();
             txtb_TrieuChung.Clear();
             txtb_GhiChu.Clear();
-            cb_LoaiBenh.Items.Clear();
 
             addBtn.Visible = true;
             editBtn.Visible = true;
@@ -150,22 +150,29 @@ namespace GUI
             benh_BUS.deleteBenh(benh1);
             loadData(benh_BUS.GetData());
         }
-
+        private void setValueToControls()
+        {
+            txtb_TenBenh1.Text = dtg_DanhSachBenh.CurrentRow.Cells[2].Value.ToString();
+            cb_LoaiBenh.SelectedIndex = cb_LoaiBenh.FindStringExact(dtg_DanhSachBenh.CurrentRow.Cells[3].Value.ToString());
+            txtb_GhiChu.Text = dtg_DanhSachBenh.CurrentRow.Cells[4].Value.ToString();
+            txtb_TrieuChung.Text = dtg_DanhSachBenh.CurrentRow.Cells[5].Value.ToString();
+        }
         private void editBtn_Click(object sender, EventArgs e)
         {
             enableControls();
             state = UPDATE;
-
-            txtb_TenBenh1.Text = dtg_DanhSachBenh.CurrentRow.Cells[2].Value.ToString();
-            cb_LoaiBenh.SelectedValue= dtg_DanhSachBenh.CurrentRow.Cells[2].Value.ToString();
-            txtb_GhiChu.Text = dtg_DanhSachBenh.CurrentRow.Cells[4].Value.ToString();
-            txtb_TrieuChung.Text = dtg_DanhSachBenh.CurrentRow.Cells[5].Value.ToString();
+            setValueToControls();
 
             addBtn.Visible = false;
             editBtn.Visible = false;
 
             btn_Save.Visible = true;
             btn_Cancle.Visible = true;
+        }
+
+        private void dtg_DanhSachBenh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            setValueToControls();
         }
     }
 }

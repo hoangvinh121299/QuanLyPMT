@@ -201,6 +201,7 @@ namespace GUI
             this.dtg_DanhSachBenh.RowTemplate.Height = 25;
             this.dtg_DanhSachBenh.Size = new System.Drawing.Size(566, 458);
             this.dtg_DanhSachBenh.TabIndex = 0;
+            this.dtg_DanhSachBenh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_DanhSachBenh_CellClick);
             this.dtg_DanhSachBenh.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dtg_DanhSachBenh_RowPostPaint);
             // 
             // numeric
