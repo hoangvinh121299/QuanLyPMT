@@ -356,6 +356,10 @@ namespace GUI
             this.cb_LoaiBenh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cb_LoaiBenh.IsDerivedStyle = true;
             this.cb_LoaiBenh.ItemHeight = 20;
+            this.cb_LoaiBenh.Items.AddRange(new object[] {
+            "Xương khớp",
+            "Da liễu",
+            "Hệ bài tiết"});
             this.cb_LoaiBenh.Location = new System.Drawing.Point(139, 93);
             this.cb_LoaiBenh.Name = "cb_LoaiBenh";
             this.cb_LoaiBenh.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));

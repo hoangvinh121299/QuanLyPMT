@@ -20,7 +20,7 @@ namespace DTO
         private string ghiChu;
 
         public Benh() { }
-        public Benh(int maLoaiBenh, string tenBenh, string tenLoaiBenh, string trieuTrung, string ghiChu)
+        public Benh(string tenBenh, string tenLoaiBenh, string trieuTrung, string ghiChu, int maLoaiBenh = 0)
         {
             this.maLoaiBenh = maLoaiBenh;
             this.tenBenh = tenBenh;

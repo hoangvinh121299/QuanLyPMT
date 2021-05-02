@@ -14,14 +14,14 @@ namespace DAL
         {
             DataSet datasetBenh = new DataSet();
             string selectAll = "SELECT * FROM LOAIBENH";
-            using (connectionString.GetConnect())
+            using (SqlConnection sqlConnection=connectionString.GetConnect())
             {
                 try
                 {
-                    connectionString.GetConnect().Open();
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(selectAll, connectionString.GetConnect());
+                    sqlConnection.Open();
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(selectAll, sqlConnection);
                     dataAdapter.Fill(datasetBenh);
-                    connectionString.GetConnect().Close();
+                    sqlConnection.Close();
                 }
                 catch(Exception e)
                 {
@@ -33,12 +33,12 @@ namespace DAL
         public void AddBenh(Benh benh)
         {
             string insertInto = "INSERT INTO LOAIBENH (TENBENH, TENLB, TRIEUCHUNG, GHICHU) VALUES(@TENBENH,@TENLB,@TRIEUCHUNG,@GHICHU)";
-            using (connectionString.GetConnect())
+            using (SqlConnection sqlConnection= connectionString.GetConnect())
             {
                 try
                 {
-                    connectionString.GetConnect().Open();
-                    using (SqlCommand cmd = new SqlCommand(insertInto, connectionString.GetConnect()))
+                    sqlConnection.Open();
+                    using (SqlCommand cmd = new SqlCommand(insertInto, sqlConnection))
                     {
                         cmd.Parameters.Add("@TENBENH", SqlDbType.NVarChar).Value = benh.TenBenh;
                         cmd.Parameters.Add("@TENLB", SqlDbType.NVarChar).Value = benh.TenLoaiBenh;
@@ -46,7 +46,7 @@ namespace DAL
                         cmd.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = benh.GhiChu;
                         cmd.ExecuteNonQuery();
                     }
-                    connectionString.GetConnect().Close();
+                    sqlConnection.Close();
                 }
                 catch (Exception e)
                 {
@@ -59,12 +59,12 @@ namespace DAL
         {
             string sqlQuerry = "UPDATE LOAIBENH SET TENBENH =@TENBENH, TENLB =@TENLOAIBENH, TRIEUCHUNG =@TRIEUCHUNG, GHICHU =@GHICHU " +
                                 "WHERE MALB=@MALB";
-            using (connectionString.GetConnect())
+            using (SqlConnection sqlConnection = connectionString.GetConnect())
             {
                 try
                 {
-                    connectionString.GetConnect().Open();
-                    using (SqlCommand cmd = new SqlCommand(sqlQuerry, connectionString.GetConnect()))
+                    sqlConnection.Open();
+                    using (SqlCommand cmd = new SqlCommand(sqlQuerry, sqlConnection))
                     {
                         cmd.Parameters.Add("@TENBENH", SqlDbType.NVarChar).Value = benh.TenBenh;
                         cmd.Parameters.Add("@TENLB", SqlDbType.NVarChar).Value = benh.TenLoaiBenh;
@@ -73,7 +73,7 @@ namespace DAL
                         cmd.Parameters.Add("@MALB", SqlDbType.NVarChar).Value = benh.MaLoaiBenh;
                         cmd.ExecuteNonQuery();
                     }
-                    connectionString.GetConnect().Close();
+                    sqlConnection.Close();
                 }
                 catch (Exception e)
                 {
@@ -84,17 +84,17 @@ namespace DAL
         public void DeleteBenh(Benh benh)
         {
             string sqlQuerry = "DELETE FROM LOAIBENH WHERE MALB=@MALB";
-            using (connectionString.GetConnect())
+            using (SqlConnection sqlConnection = connectionString.GetConnect())
             {
                 try
                 {
-                    connectionString.GetConnect().Open();
-                    using (SqlCommand cmd = new SqlCommand(sqlQuerry, connectionString.GetConnect()))
+                    sqlConnection.Open();
+                    using (SqlCommand cmd = new SqlCommand(sqlQuerry, sqlConnection))
                     {
                         cmd.Parameters.Add("@MALB", SqlDbType.NVarChar).Value = benh.MaLoaiBenh;
                         cmd.ExecuteNonQuery();
                     }
-                    connectionString.GetConnect().Close();
+                    sqlConnection.Close();
                 }
                 catch (Exception e)
                 {
@@ -106,18 +106,18 @@ namespace DAL
         {
             DataSet searchResults = new DataSet();
             string sqlQuerry = "SELECT * FROM LOAIBENH WHERE TENBENH=@TENBENH";
-            using(connectionString.GetConnect())
+            using(SqlConnection sqlConnection = connectionString.GetConnect())
             {
                 try
                 {
-                    connectionString.GetConnect().Open();
-                    using (SqlCommand cmd = new SqlCommand(sqlQuerry, connectionString.GetConnect()))
+                    sqlConnection.Open();
+                    using (SqlCommand cmd = new SqlCommand(sqlQuerry, sqlConnection))
                     {
                         cmd.Parameters.Add("@TENBENH", SqlDbType.NVarChar).Value = tenBenh;
                         SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
                         dataAdapter.Fill(searchResults);
                     }
-                    connectionString.GetConnect().Close();
+                    sqlConnection.Close();
                 }
                 catch (Exception e)
                 {

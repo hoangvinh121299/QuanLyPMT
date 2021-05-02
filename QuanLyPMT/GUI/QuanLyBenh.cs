@@ -89,16 +89,22 @@ namespace GUI
 
         private void btn_Cancle_Click(object sender, EventArgs e)
         {
-
+            txtb_TenBenh1.Clear();
+            txtb_TrieuChung.Clear();
+            txtb_GhiChu.Clear();
+            cb_LoaiBenh.Items.Clear();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
             if (checkData())
             {
-                
+                Benh benh = new Benh(txtb_TenBenh1.Text.Trim(),cb_LoaiBenh.Text.Trim(), txtb_TrieuChung.Text.Trim(),txtb_GhiChu.Text.Trim());
+                benh_BUS.addBenh(benh);
+                loadData(benh_BUS.GetData());
             }
 
         }
+
     }
 }
