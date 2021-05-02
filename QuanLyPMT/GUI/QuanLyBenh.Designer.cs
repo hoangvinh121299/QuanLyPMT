@@ -72,6 +72,7 @@ namespace GUI
             this.editBtn.Text = "Cập nhật";
             this.editBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.editBtn.UseVisualStyleBackColor = false;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // addBtn
             // 
@@ -307,6 +308,7 @@ namespace GUI
             this.btn_Delete.Text = "Xoá";
             this.btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Cancle
             // 
@@ -392,7 +394,6 @@ namespace GUI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.metroSetLabel4);
             this.Controls.Add(this.cb_LoaiBenh);
-            this.Controls.Add(this.btn_Cancle);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.txtb_TenBenh2);
@@ -409,6 +410,7 @@ namespace GUI
             this.Controls.Add(this.metroSetLabel2);
             this.Controls.Add(this.metroSetLabel1);
             this.Controls.Add(this.btn_Save);
+            this.Controls.Add(this.btn_Cancle);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "QuanLyBenh";

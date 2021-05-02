@@ -14,7 +14,10 @@ namespace GUI
 {
     public partial class QuanLyBenh : UserControl
     {
+        public const int INSERT = 1;
+        public const int UPDATE = 2;
         bool isClickBtnSearch;
+        int state;
         Benh_BUS benh_BUS = new Benh_BUS();
         public QuanLyBenh()
         {
@@ -35,6 +38,8 @@ namespace GUI
 
             btn_Save.Visible = false;
             btn_Cancle.Visible = false;
+
+            disabledControls();
         }
         private void loadData(DataSet dataSet)
         {
@@ -81,10 +86,35 @@ namespace GUI
             }
             return true;
         }
+        
+        private void disabledControls()
+        {
+            txtb_TenBenh1.Enabled = false;
+            txtb_GhiChu.Enabled = false;
+            txtb_TrieuChung.Enabled = false;
+            cb_LoaiBenh.Enabled = false;
+        }
 
-        private void btn_Save_Click(object sender, EventArgs e)
+        private void enableControls()
         {
 
+            txtb_TenBenh1.Enabled = true;
+            txtb_GhiChu.Enabled = true;
+            txtb_TrieuChung.Enabled = true;
+            cb_LoaiBenh.Enabled = true;
+        }
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            if (checkData())
+            {
+                switch (state){
+                    case INSERT:
+                        Benh benh = new Benh(txtb_TenBenh1.Text.Trim(), cb_LoaiBenh.Text.Trim(), txtb_TrieuChung.Text.Trim(), txtb_GhiChu.Text.Trim());
+                        benh_BUS.addBenh(benh);
+                        loadData(benh_BUS.GetData());
+                    break;
+                }
+            }
         }
 
         private void btn_Cancle_Click(object sender, EventArgs e)
@@ -93,18 +123,49 @@ namespace GUI
             txtb_TrieuChung.Clear();
             txtb_GhiChu.Clear();
             cb_LoaiBenh.Items.Clear();
+
+            addBtn.Visible = true;
+            editBtn.Visible = true;
+
+            btn_Save.Visible = false;
+            btn_Cancle.Visible = false;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (checkData())
-            {
-                Benh benh = new Benh(txtb_TenBenh1.Text.Trim(),cb_LoaiBenh.Text.Trim(), txtb_TrieuChung.Text.Trim(),txtb_GhiChu.Text.Trim());
-                benh_BUS.addBenh(benh);
-                loadData(benh_BUS.GetData());
-            }
+            enableControls();
+            state = INSERT;
 
+            addBtn.Visible = false;
+            editBtn.Visible = false;
+
+            btn_Save.Visible = true ;
+            btn_Cancle.Visible = true;
         }
 
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            int maLoaiBenh = (int)dtg_DanhSachBenh.Rows[dtg_DanhSachBenh.CurrentCell.RowIndex].Cells[1].Value;
+            Benh benh1 = new Benh(txtb_TenBenh1.Text.Trim(), cb_LoaiBenh.Text.Trim(), txtb_TrieuChung.Text.Trim(), txtb_GhiChu.Text.Trim(), maLoaiBenh);
+            benh_BUS.deleteBenh(benh1);
+            loadData(benh_BUS.GetData());
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            enableControls();
+            state = UPDATE;
+
+            txtb_TenBenh1.Text = dtg_DanhSachBenh.CurrentRow.Cells[2].Value.ToString();
+            cb_LoaiBenh.SelectedValue= dtg_DanhSachBenh.CurrentRow.Cells[2].Value.ToString();
+            txtb_GhiChu.Text = dtg_DanhSachBenh.CurrentRow.Cells[4].Value.ToString();
+            txtb_TrieuChung.Text = dtg_DanhSachBenh.CurrentRow.Cells[5].Value.ToString();
+
+            addBtn.Visible = false;
+            editBtn.Visible = false;
+
+            btn_Save.Visible = true;
+            btn_Cancle.Visible = true;
+        }
     }
 }
