@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class connectionString
+    static class connectionString
     {
-        public static string connectionstring = "Data Source=" + Dns.GetHostName() + ";Initial Catalog=QLPMT;Integrated Security=True";
-        public SqlConnection GetConnect()
+        //public static string connectionstring = "Data Source=" + Dns.GetHostName() + ";Initial Catalog=QLPMT;Integrated Security=True";
+        public static string connectionstring = "Data Source=DENI1407\\SQLEXPRESS;Initial Catalog=QLPMT;Integrated Security=True";
+        public static SqlConnection GetConnect()
         {
             return new SqlConnection(connectionstring);
         }
