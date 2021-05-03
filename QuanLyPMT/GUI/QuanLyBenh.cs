@@ -89,9 +89,12 @@ namespace GUI
         
         private void disabledControls()
         {
-            txtb_TenBenh1.Enabled = false;
+            txtb_TenBenh1.Enabled=false;
+            txtb_TenBenh1.BackColor = Color.FromArgb(220, 220, 220);
             txtb_GhiChu.Enabled = false;
+            txtb_GhiChu.BackColor = Color.FromArgb(220, 220, 220);
             txtb_TrieuChung.Enabled = false;
+            txtb_TrieuChung.BackColor = Color.FromArgb(220, 220, 220);
             cb_LoaiBenh.Enabled = false;
         }
 
@@ -99,18 +102,27 @@ namespace GUI
         {
 
             txtb_TenBenh1.Enabled = true;
+            txtb_TenBenh1.BackColor = System.Drawing.SystemColors.Window;
             txtb_GhiChu.Enabled = true;
+            txtb_GhiChu.BackColor = System.Drawing.SystemColors.Window;
             txtb_TrieuChung.Enabled = true;
+            txtb_TrieuChung.BackColor = System.Drawing.SystemColors.Window;
             cb_LoaiBenh.Enabled = true;
         }
         private void btn_Save_Click(object sender, EventArgs e)
         {
             if (checkData())
             {
+                int maLoaiBenh = (int)dtg_DanhSachBenh.Rows[dtg_DanhSachBenh.CurrentCell.RowIndex].Cells[1].Value;
                 switch (state){
                     case INSERT:
-                        Benh benh = new Benh(txtb_TenBenh1.Text.Trim(), cb_LoaiBenh.Text.Trim(), txtb_TrieuChung.Text.Trim(), txtb_GhiChu.Text.Trim());
+                        Benh benh = new Benh(txtb_TenBenh1.Text.Trim(), cb_LoaiBenh.Text.Trim(), txtb_TrieuChung.Text.Trim(), txtb_GhiChu.Text.Trim(), maLoaiBenh);
                         benh_BUS.addBenh(benh);
+                        loadData(benh_BUS.GetData());
+                    break;
+                    case UPDATE:
+                        Benh benh1 = new Benh(txtb_TenBenh1.Text.Trim(), cb_LoaiBenh.Text.Trim(), txtb_TrieuChung.Text.Trim(), txtb_GhiChu.Text.Trim(), maLoaiBenh);
+                        benh_BUS.updateBenh(benh1);
                         loadData(benh_BUS.GetData());
                     break;
                 }
@@ -119,10 +131,11 @@ namespace GUI
 
         private void btn_Cancle_Click(object sender, EventArgs e)
         {
-            cb_LoaiBenh.SelectedIndex = -1;
+            cb_LoaiBenh.SelectedItem = null;
             txtb_TenBenh1.Clear();
             txtb_TrieuChung.Clear();
             txtb_GhiChu.Clear();
+            disabledControls();
 
             addBtn.Visible = true;
             editBtn.Visible = true;
@@ -133,6 +146,7 @@ namespace GUI
 
         private void addBtn_Click(object sender, EventArgs e)
         {
+            clearValueFromControls();
             enableControls();
             state = INSERT;
 
@@ -157,6 +171,15 @@ namespace GUI
             txtb_GhiChu.Text = dtg_DanhSachBenh.CurrentRow.Cells[4].Value.ToString();
             txtb_TrieuChung.Text = dtg_DanhSachBenh.CurrentRow.Cells[5].Value.ToString();
         }
+
+        private void clearValueFromControls()
+        {
+            cb_LoaiBenh.SelectedItem = null;
+            txtb_TenBenh1.Text = "";
+            txtb_GhiChu.Text = "";
+            txtb_TrieuChung.Text = "";
+        }
+
         private void editBtn_Click(object sender, EventArgs e)
         {
             enableControls();
@@ -173,6 +196,16 @@ namespace GUI
         private void dtg_DanhSachBenh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             setValueToControls();
+        }
+
+        private void txtb_TenBenh2_TextChanged(object sender, EventArgs e)
+        {
+            if(txtb_TenBenh2.Text.Trim()!="")
+            {
+                loadData(benh_BUS.searchBenh(txtb_TenBenh2.Text.Trim()));
+            }
+            else
+                loadData(benh_BUS.GetData());
         }
     }
 }

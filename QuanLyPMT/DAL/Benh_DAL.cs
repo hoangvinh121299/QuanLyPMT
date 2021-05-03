@@ -67,7 +67,7 @@ namespace DAL
                     using (SqlCommand cmd = new SqlCommand(sqlQuerry, sqlConnection))
                     {
                         cmd.Parameters.Add("@TENBENH", SqlDbType.NVarChar).Value = benh.TenBenh;
-                        cmd.Parameters.Add("@TENLB", SqlDbType.NVarChar).Value = benh.TenLoaiBenh;
+                        cmd.Parameters.Add("@TENLOAIBENH", SqlDbType.NVarChar).Value = benh.TenLoaiBenh;
                         cmd.Parameters.Add("@TRIEUCHUNG", SqlDbType.NVarChar).Value = benh.TrieuChung;
                         cmd.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = benh.GhiChu;
                         cmd.Parameters.Add("@MALB", SqlDbType.NVarChar).Value = benh.MaLoaiBenh;
@@ -105,7 +105,7 @@ namespace DAL
         public DataSet SearchBenh(String tenBenh)
         {
             DataSet searchResults = new DataSet();
-            string sqlQuerry = "SELECT * FROM LOAIBENH WHERE TENBENH=@TENBENH";
+            string sqlQuerry = "SELECT * FROM LOAIBENH WHERE TENBENH LIKE @TENBENH";
             using(SqlConnection sqlConnection = connectionString.GetConnect())
             {
                 try
@@ -113,7 +113,7 @@ namespace DAL
                     sqlConnection.Open();
                     using (SqlCommand cmd = new SqlCommand(sqlQuerry, sqlConnection))
                     {
-                        cmd.Parameters.Add("@TENBENH", SqlDbType.NVarChar).Value = tenBenh;
+                        cmd.Parameters.Add("@TENBENH", SqlDbType.NVarChar).Value = '%'+tenBenh+'%';
                         SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
                         dataAdapter.Fill(searchResults);
                     }

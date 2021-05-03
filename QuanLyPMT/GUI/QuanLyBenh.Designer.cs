@@ -108,6 +108,9 @@ namespace GUI
             // 
             // txtb_TenBenh1
             // 
+            this.txtb_TenBenh1.BackColor = System.Drawing.SystemColors.Window;
+            this.txtb_TenBenh1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtb_TenBenh1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtb_TenBenh1.Location = new System.Drawing.Point(139, 52);
             this.txtb_TenBenh1.Name = "txtb_TenBenh1";
             this.txtb_TenBenh1.Size = new System.Drawing.Size(203, 25);
@@ -276,6 +279,7 @@ namespace GUI
             this.txtb_TenBenh2.Name = "txtb_TenBenh2";
             this.txtb_TenBenh2.Size = new System.Drawing.Size(181, 30);
             this.txtb_TenBenh2.TabIndex = 51;
+            this.txtb_TenBenh2.TextChanged += new System.EventHandler(this.txtb_TenBenh2_TextChanged);
             // 
             // label2
             // 
