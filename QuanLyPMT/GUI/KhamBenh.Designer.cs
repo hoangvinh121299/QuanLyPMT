@@ -55,13 +55,6 @@ namespace GUI
             this.metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.benAnDGV = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroSetLabel10 = new MetroSet_UI.Controls.MetroSetLabel();
-            this.searchTextbox = new System.Windows.Forms.TextBox();
-            this.deleteBenhNhanTrongDanhSachBtn = new System.Windows.Forms.Button();
-            this.benhNhanListDGV = new System.Windows.Forms.DataGridView();
-            this.DONTHUOC = new System.Windows.Forms.TabPage();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.MABA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYTAIKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +65,11 @@ namespace GUI
             this.CHANDOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HUONGXULY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroSetLabel10 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.searchTextbox = new System.Windows.Forms.TextBox();
+            this.deleteBenhNhanTrongDanhSachBtn = new System.Windows.Forms.Button();
+            this.benhNhanListDGV = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +77,10 @@ namespace GUI
             this.GT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DONTHUOC = new System.Windows.Forms.TabPage();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.examTabControl.SuspendLayout();
             this.BENHAN.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -119,6 +121,8 @@ namespace GUI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.deleteBtn);
             this.groupBox2.Controls.Add(this.cancelBtn);
             this.groupBox2.Controls.Add(this.noteTextBox);
@@ -218,7 +222,7 @@ namespace GUI
             // huongxulyTxtBox
             // 
             this.huongxulyTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.huongxulyTxtBox.Location = new System.Drawing.Point(590, 142);
+            this.huongxulyTxtBox.Location = new System.Drawing.Point(590, 163);
             this.huongxulyTxtBox.Name = "huongxulyTxtBox";
             this.huongxulyTxtBox.Size = new System.Drawing.Size(163, 25);
             this.huongxulyTxtBox.TabIndex = 59;
@@ -241,7 +245,7 @@ namespace GUI
             // chanDoanCBB
             // 
             this.chanDoanCBB.FormattingEnabled = true;
-            this.chanDoanCBB.Location = new System.Drawing.Point(172, 144);
+            this.chanDoanCBB.Location = new System.Drawing.Point(172, 165);
             this.chanDoanCBB.Name = "chanDoanCBB";
             this.chanDoanCBB.Size = new System.Drawing.Size(215, 25);
             this.chanDoanCBB.TabIndex = 58;
@@ -249,7 +253,7 @@ namespace GUI
             // loaiBenhCBB
             // 
             this.loaiBenhCBB.FormattingEnabled = true;
-            this.loaiBenhCBB.Location = new System.Drawing.Point(590, 94);
+            this.loaiBenhCBB.Location = new System.Drawing.Point(590, 115);
             this.loaiBenhCBB.Name = "loaiBenhCBB";
             this.loaiBenhCBB.Size = new System.Drawing.Size(163, 25);
             this.loaiBenhCBB.TabIndex = 57;
@@ -257,7 +261,7 @@ namespace GUI
             // trieuchungTxtBox
             // 
             this.trieuchungTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.trieuchungTxtBox.Location = new System.Drawing.Point(590, 50);
+            this.trieuchungTxtBox.Location = new System.Drawing.Point(590, 71);
             this.trieuchungTxtBox.Name = "trieuchungTxtBox";
             this.trieuchungTxtBox.Size = new System.Drawing.Size(163, 25);
             this.trieuchungTxtBox.TabIndex = 56;
@@ -265,7 +269,7 @@ namespace GUI
             // tienSuBenhTxtBox
             // 
             this.tienSuBenhTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tienSuBenhTxtBox.Location = new System.Drawing.Point(172, 95);
+            this.tienSuBenhTxtBox.Location = new System.Drawing.Point(172, 116);
             this.tienSuBenhTxtBox.Name = "tienSuBenhTxtBox";
             this.tienSuBenhTxtBox.Size = new System.Drawing.Size(215, 25);
             this.tienSuBenhTxtBox.TabIndex = 55;
@@ -288,7 +292,7 @@ namespace GUI
             // 
             this.metroSetLabel8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel8.IsDerivedStyle = true;
-            this.metroSetLabel8.Location = new System.Drawing.Point(424, 144);
+            this.metroSetLabel8.Location = new System.Drawing.Point(424, 165);
             this.metroSetLabel8.Name = "metroSetLabel8";
             this.metroSetLabel8.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel8.Style = MetroSet_UI.Enums.Style.Light;
@@ -302,7 +306,7 @@ namespace GUI
             // 
             this.metroSetLabel1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel1.IsDerivedStyle = true;
-            this.metroSetLabel1.Location = new System.Drawing.Point(6, 144);
+            this.metroSetLabel1.Location = new System.Drawing.Point(6, 165);
             this.metroSetLabel1.Name = "metroSetLabel1";
             this.metroSetLabel1.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel1.Style = MetroSet_UI.Enums.Style.Light;
@@ -315,7 +319,7 @@ namespace GUI
             // nameTxtBox
             // 
             this.nameTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nameTxtBox.Location = new System.Drawing.Point(172, 50);
+            this.nameTxtBox.Location = new System.Drawing.Point(172, 71);
             this.nameTxtBox.Name = "nameTxtBox";
             this.nameTxtBox.Size = new System.Drawing.Size(215, 25);
             this.nameTxtBox.TabIndex = 45;
@@ -324,7 +328,7 @@ namespace GUI
             // 
             this.metroSetLabel7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel7.IsDerivedStyle = true;
-            this.metroSetLabel7.Location = new System.Drawing.Point(424, 94);
+            this.metroSetLabel7.Location = new System.Drawing.Point(424, 115);
             this.metroSetLabel7.Name = "metroSetLabel7";
             this.metroSetLabel7.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel7.Style = MetroSet_UI.Enums.Style.Light;
@@ -338,7 +342,7 @@ namespace GUI
             // 
             this.metroSetLabel6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel6.IsDerivedStyle = true;
-            this.metroSetLabel6.Location = new System.Drawing.Point(424, 52);
+            this.metroSetLabel6.Location = new System.Drawing.Point(424, 73);
             this.metroSetLabel6.Name = "metroSetLabel6";
             this.metroSetLabel6.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel6.Style = MetroSet_UI.Enums.Style.Light;
@@ -352,7 +356,7 @@ namespace GUI
             // 
             this.metroSetLabel5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel5.IsDerivedStyle = true;
-            this.metroSetLabel5.Location = new System.Drawing.Point(6, 100);
+            this.metroSetLabel5.Location = new System.Drawing.Point(6, 121);
             this.metroSetLabel5.Name = "metroSetLabel5";
             this.metroSetLabel5.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel5.Style = MetroSet_UI.Enums.Style.Light;
@@ -366,7 +370,7 @@ namespace GUI
             // 
             this.metroSetLabel4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel4.IsDerivedStyle = true;
-            this.metroSetLabel4.Location = new System.Drawing.Point(424, 20);
+            this.metroSetLabel4.Location = new System.Drawing.Point(424, 26);
             this.metroSetLabel4.Name = "metroSetLabel4";
             this.metroSetLabel4.Size = new System.Drawing.Size(104, 23);
             this.metroSetLabel4.Style = MetroSet_UI.Enums.Style.Light;
@@ -380,7 +384,7 @@ namespace GUI
             // 
             this.metroSetLabel3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel3.IsDerivedStyle = true;
-            this.metroSetLabel3.Location = new System.Drawing.Point(6, 20);
+            this.metroSetLabel3.Location = new System.Drawing.Point(6, 26);
             this.metroSetLabel3.Name = "metroSetLabel3";
             this.metroSetLabel3.Size = new System.Drawing.Size(84, 23);
             this.metroSetLabel3.Style = MetroSet_UI.Enums.Style.Light;
@@ -394,7 +398,7 @@ namespace GUI
             // 
             this.metroSetLabel2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel2.IsDerivedStyle = true;
-            this.metroSetLabel2.Location = new System.Drawing.Point(6, 50);
+            this.metroSetLabel2.Location = new System.Drawing.Point(6, 71);
             this.metroSetLabel2.Name = "metroSetLabel2";
             this.metroSetLabel2.Size = new System.Drawing.Size(59, 23);
             this.metroSetLabel2.Style = MetroSet_UI.Enums.Style.Light;
@@ -438,6 +442,62 @@ namespace GUI
             this.benAnDGV.RowTemplate.Height = 25;
             this.benAnDGV.Size = new System.Drawing.Size(882, 177);
             this.benAnDGV.TabIndex = 0;
+            // 
+            // MABA
+            // 
+            this.MABA.HeaderText = "Mã bệnh án";
+            this.MABA.Name = "MABA";
+            this.MABA.Visible = false;
+            // 
+            // NGAYLAP
+            // 
+            this.NGAYLAP.HeaderText = "Ngày lập";
+            this.NGAYLAP.Name = "NGAYLAP";
+            // 
+            // NGAYTAIKHAM
+            // 
+            this.NGAYTAIKHAM.HeaderText = "Ngày tái khám ";
+            this.NGAYTAIKHAM.Name = "NGAYTAIKHAM";
+            // 
+            // MABN
+            // 
+            this.MABN.HeaderText = "Mã bệnh nhân";
+            this.MABN.Name = "MABN";
+            this.MABN.Visible = false;
+            // 
+            // TIENSUBENH
+            // 
+            this.TIENSUBENH.HeaderText = "Tiền sử bệnh";
+            this.TIENSUBENH.Name = "TIENSUBENH";
+            this.TIENSUBENH.Visible = false;
+            // 
+            // TRIEUCHUNG
+            // 
+            this.TRIEUCHUNG.HeaderText = " Triệu chứng ";
+            this.TRIEUCHUNG.Name = "TRIEUCHUNG";
+            this.TRIEUCHUNG.Visible = false;
+            // 
+            // LOAIBENH
+            // 
+            this.LOAIBENH.HeaderText = "Loại bệnh";
+            this.LOAIBENH.Name = "LOAIBENH";
+            // 
+            // CHANDOAN
+            // 
+            this.CHANDOAN.HeaderText = "Chẩn đoán ";
+            this.CHANDOAN.Name = "CHANDOAN";
+            // 
+            // HUONGXULY
+            // 
+            this.HUONGXULY.HeaderText = "Hướng xử lý ";
+            this.HUONGXULY.Name = "HUONGXULY";
+            this.HUONGXULY.Visible = false;
+            // 
+            // GHICHU
+            // 
+            this.GHICHU.HeaderText = "Ghi chú ";
+            this.GHICHU.Name = "GHICHU";
+            this.GHICHU.Visible = false;
             // 
             // groupBox1
             // 
@@ -509,84 +569,6 @@ namespace GUI
             this.benhNhanListDGV.Size = new System.Drawing.Size(324, 473);
             this.benhNhanListDGV.TabIndex = 0;
             // 
-            // DONTHUOC
-            // 
-            this.DONTHUOC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DONTHUOC.Location = new System.Drawing.Point(4, 24);
-            this.DONTHUOC.Name = "DONTHUOC";
-            this.DONTHUOC.Padding = new System.Windows.Forms.Padding(3);
-            this.DONTHUOC.Size = new System.Drawing.Size(1210, 562);
-            this.DONTHUOC.TabIndex = 1;
-            this.DONTHUOC.Text = "Đơn thuốc";
-            this.DONTHUOC.UseVisualStyleBackColor = true;
-            // 
-            // materialTabSelector1
-            // 
-            this.materialTabSelector1.BaseTabControl = this.examTabControl;
-            this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1218, 23);
-            this.materialTabSelector1.TabIndex = 67;
-            this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // MABA
-            // 
-            this.MABA.HeaderText = "Mã bệnh án";
-            this.MABA.Name = "MABA";
-            this.MABA.Visible = false;
-            // 
-            // NGAYLAP
-            // 
-            this.NGAYLAP.HeaderText = "Ngày lập";
-            this.NGAYLAP.Name = "NGAYLAP";
-            // 
-            // NGAYTAIKHAM
-            // 
-            this.NGAYTAIKHAM.HeaderText = "Ngày tái khám ";
-            this.NGAYTAIKHAM.Name = "NGAYTAIKHAM";
-            // 
-            // MABN
-            // 
-            this.MABN.HeaderText = "Mã bệnh nhân";
-            this.MABN.Name = "MABN";
-            this.MABN.Visible = false;
-            // 
-            // TIENSUBENH
-            // 
-            this.TIENSUBENH.HeaderText = "Tiền sử bệnh";
-            this.TIENSUBENH.Name = "TIENSUBENH";
-            this.TIENSUBENH.Visible = false;
-            // 
-            // TRIEUCHUNG
-            // 
-            this.TRIEUCHUNG.HeaderText = " Triệu chứng ";
-            this.TRIEUCHUNG.Name = "TRIEUCHUNG";
-            this.TRIEUCHUNG.Visible = false;
-            // 
-            // LOAIBENH
-            // 
-            this.LOAIBENH.HeaderText = "Loại bệnh";
-            this.LOAIBENH.Name = "LOAIBENH";
-            // 
-            // CHANDOAN
-            // 
-            this.CHANDOAN.HeaderText = "Chẩn đoán ";
-            this.CHANDOAN.Name = "CHANDOAN";
-            // 
-            // HUONGXULY
-            // 
-            this.HUONGXULY.HeaderText = "Hướng xử lý ";
-            this.HUONGXULY.Name = "HUONGXULY";
-            this.HUONGXULY.Visible = false;
-            // 
-            // GHICHU
-            // 
-            this.GHICHU.HeaderText = "Ghi chú ";
-            this.GHICHU.Name = "GHICHU";
-            this.GHICHU.Visible = false;
-            // 
             // STT
             // 
             this.STT.HeaderText = "STT";
@@ -624,6 +606,42 @@ namespace GUI
             this.SDT.HeaderText = "Số điện thoại ";
             this.SDT.Name = "SDT";
             this.SDT.Visible = false;
+            // 
+            // DONTHUOC
+            // 
+            this.DONTHUOC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.DONTHUOC.Location = new System.Drawing.Point(4, 24);
+            this.DONTHUOC.Name = "DONTHUOC";
+            this.DONTHUOC.Padding = new System.Windows.Forms.Padding(3);
+            this.DONTHUOC.Size = new System.Drawing.Size(1210, 562);
+            this.DONTHUOC.TabIndex = 1;
+            this.DONTHUOC.Text = "Đơn thuốc";
+            this.DONTHUOC.UseVisualStyleBackColor = true;
+            // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = this.examTabControl;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(1218, 23);
+            this.materialTabSelector1.TabIndex = 67;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(172, 24);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(215, 25);
+            this.dateTimePicker1.TabIndex = 63;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(590, 24);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(163, 25);
+            this.dateTimePicker2.TabIndex = 64;
             // 
             // KhamBenh
             // 
@@ -702,5 +720,7 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.Button e;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
