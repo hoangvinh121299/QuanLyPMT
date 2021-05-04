@@ -31,5 +31,10 @@ namespace GUI
         {
 
         }
+
+        private void examTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

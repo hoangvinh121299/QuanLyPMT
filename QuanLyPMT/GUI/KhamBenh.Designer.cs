@@ -32,17 +32,17 @@ namespace GUI
             this.examTabControl = new MaterialSkin.Controls.MaterialTabControl();
             this.BENHAN = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.updateBtn = new System.Windows.Forms.Button();
-            this.saveBtn = new System.Windows.Forms.Button();
-            this.adddBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.noteTextBox = new System.Windows.Forms.TextBox();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.huongxulyTxtBox = new System.Windows.Forms.TextBox();
+            this.adddBtn = new System.Windows.Forms.Button();
+            this.chanDoanCBB = new System.Windows.Forms.ComboBox();
+            this.loaiBenhCBB = new System.Windows.Forms.ComboBox();
+            this.trieuchungTxtBox = new System.Windows.Forms.TextBox();
+            this.tienSuBenhTxtBox = new System.Windows.Forms.TextBox();
             this.metroSetLabel9 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel8 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
@@ -54,19 +54,38 @@ namespace GUI
             this.metroSetLabel3 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.benAnDGV = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.metroSetLabel10 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.searchTextbox = new System.Windows.Forms.TextBox();
+            this.deleteBenhNhanTrongDanhSachBtn = new System.Windows.Forms.Button();
+            this.benhNhanListDGV = new System.Windows.Forms.DataGridView();
             this.DONTHUOC = new System.Windows.Forms.TabPage();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.MABA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYTAIKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MABN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIENSUBENH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRIEUCHUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAIBENH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHANDOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HUONGXULY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.examTabControl.SuspendLayout();
             this.BENHAN.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.benAnDGV)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.benhNhanListDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // examTabControl
@@ -80,8 +99,9 @@ namespace GUI
             this.examTabControl.MouseState = MaterialSkin.MouseState.HOVER;
             this.examTabControl.Name = "examTabControl";
             this.examTabControl.SelectedIndex = 0;
-            this.examTabControl.Size = new System.Drawing.Size(1218, 611);
+            this.examTabControl.Size = new System.Drawing.Size(1218, 590);
             this.examTabControl.TabIndex = 66;
+            this.examTabControl.SelectedIndexChanged += new System.EventHandler(this.examTabControl_SelectedIndexChanged);
             // 
             // BENHAN
             // 
@@ -92,24 +112,24 @@ namespace GUI
             this.BENHAN.Location = new System.Drawing.Point(4, 24);
             this.BENHAN.Name = "BENHAN";
             this.BENHAN.Padding = new System.Windows.Forms.Padding(3);
-            this.BENHAN.Size = new System.Drawing.Size(1210, 583);
+            this.BENHAN.Size = new System.Drawing.Size(1210, 562);
             this.BENHAN.TabIndex = 0;
             this.BENHAN.Text = "Bệnh án";
             this.BENHAN.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.updateBtn);
-            this.groupBox2.Controls.Add(this.saveBtn);
-            this.groupBox2.Controls.Add(this.adddBtn);
+            this.groupBox2.Controls.Add(this.deleteBtn);
             this.groupBox2.Controls.Add(this.cancelBtn);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.noteTextBox);
+            this.groupBox2.Controls.Add(this.saveBtn);
+            this.groupBox2.Controls.Add(this.updateBtn);
+            this.groupBox2.Controls.Add(this.huongxulyTxtBox);
+            this.groupBox2.Controls.Add(this.adddBtn);
+            this.groupBox2.Controls.Add(this.chanDoanCBB);
+            this.groupBox2.Controls.Add(this.loaiBenhCBB);
+            this.groupBox2.Controls.Add(this.trieuchungTxtBox);
+            this.groupBox2.Controls.Add(this.tienSuBenhTxtBox);
             this.groupBox2.Controls.Add(this.metroSetLabel9);
             this.groupBox2.Controls.Add(this.metroSetLabel8);
             this.groupBox2.Controls.Add(this.metroSetLabel1);
@@ -120,39 +140,50 @@ namespace GUI
             this.groupBox2.Controls.Add(this.metroSetLabel4);
             this.groupBox2.Controls.Add(this.metroSetLabel3);
             this.groupBox2.Controls.Add(this.metroSetLabel2);
+            this.groupBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(885, 382);
+            this.groupBox2.Size = new System.Drawing.Size(885, 380);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết bệnh án";
             // 
-            // button1
+            // deleteBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(772, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 39);
-            this.button1.TabIndex = 67;
-            this.button1.Text = "Xoá";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.deleteBtn.BackColor = System.Drawing.Color.White;
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deleteBtn.Image = global::GUI.Properties.Resources.delete;
+            this.deleteBtn.Location = new System.Drawing.Point(767, 146);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(112, 37);
+            this.deleteBtn.TabIndex = 62;
+            this.deleteBtn.Text = "Xoá";
+            this.deleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.deleteBtn.UseVisualStyleBackColor = false;
             // 
-            // updateBtn
+            // cancelBtn
             // 
-            this.updateBtn.BackColor = System.Drawing.Color.White;
-            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updateBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.updateBtn.ForeColor = System.Drawing.Color.Black;
-            this.updateBtn.Location = new System.Drawing.Point(772, 88);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(111, 39);
-            this.updateBtn.TabIndex = 62;
-            this.updateBtn.Text = "Cập nhật";
-            this.updateBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.updateBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(161)))), ((int)(((byte)(32)))));
+            this.cancelBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cancelBtn.ForeColor = System.Drawing.Color.White;
+            this.cancelBtn.Image = global::GUI.Properties.Resources.logout;
+            this.cancelBtn.Location = new System.Drawing.Point(767, 100);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(112, 40);
+            this.cancelBtn.TabIndex = 39;
+            this.cancelBtn.Text = "Huỷ bỏ ";
+            this.cancelBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            // 
+            // noteTextBox
+            // 
+            this.noteTextBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.noteTextBox.Location = new System.Drawing.Point(0, 215);
+            this.noteTextBox.Multiline = true;
+            this.noteTextBox.Name = "noteTextBox";
+            this.noteTextBox.Size = new System.Drawing.Size(885, 165);
+            this.noteTextBox.TabIndex = 60;
             // 
             // saveBtn
             // 
@@ -160,13 +191,37 @@ namespace GUI
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Location = new System.Drawing.Point(772, 31);
+            this.saveBtn.Image = global::GUI.Properties.Resources.save;
+            this.saveBtn.Location = new System.Drawing.Point(769, 54);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(111, 42);
-            this.saveBtn.TabIndex = 63;
+            this.saveBtn.Size = new System.Drawing.Size(110, 40);
+            this.saveBtn.TabIndex = 38;
             this.saveBtn.Text = "Xác nhận";
             this.saveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.saveBtn.UseVisualStyleBackColor = false;
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.BackColor = System.Drawing.Color.White;
+            this.updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.updateBtn.ForeColor = System.Drawing.Color.Black;
+            this.updateBtn.Image = global::GUI.Properties.Resources.edit;
+            this.updateBtn.Location = new System.Drawing.Point(767, 100);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(110, 40);
+            this.updateBtn.TabIndex = 37;
+            this.updateBtn.Text = "Cập nhật";
+            this.updateBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.updateBtn.UseVisualStyleBackColor = false;
+            // 
+            // huongxulyTxtBox
+            // 
+            this.huongxulyTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.huongxulyTxtBox.Location = new System.Drawing.Point(590, 142);
+            this.huongxulyTxtBox.Name = "huongxulyTxtBox";
+            this.huongxulyTxtBox.Size = new System.Drawing.Size(163, 25);
+            this.huongxulyTxtBox.TabIndex = 59;
             // 
             // adddBtn
             // 
@@ -174,75 +229,46 @@ namespace GUI
             this.adddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adddBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.adddBtn.ForeColor = System.Drawing.Color.White;
-            this.adddBtn.Location = new System.Drawing.Point(772, 31);
+            this.adddBtn.Image = global::GUI.Properties.Resources.add;
+            this.adddBtn.Location = new System.Drawing.Point(767, 54);
             this.adddBtn.Name = "adddBtn";
-            this.adddBtn.Size = new System.Drawing.Size(111, 39);
-            this.adddBtn.TabIndex = 61;
+            this.adddBtn.Size = new System.Drawing.Size(110, 40);
+            this.adddBtn.TabIndex = 36;
             this.adddBtn.Text = "Thêm";
             this.adddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.adddBtn.UseVisualStyleBackColor = false;
             // 
-            // cancelBtn
+            // chanDoanCBB
             // 
-            this.cancelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(161)))), ((int)(((byte)(32)))));
-            this.cancelBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cancelBtn.ForeColor = System.Drawing.Color.White;
-            this.cancelBtn.Location = new System.Drawing.Point(772, 88);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(111, 39);
-            this.cancelBtn.TabIndex = 64;
-            this.cancelBtn.Text = "Huỷ bỏ ";
-            this.cancelBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.chanDoanCBB.FormattingEnabled = true;
+            this.chanDoanCBB.Location = new System.Drawing.Point(172, 144);
+            this.chanDoanCBB.Name = "chanDoanCBB";
+            this.chanDoanCBB.Size = new System.Drawing.Size(215, 25);
+            this.chanDoanCBB.TabIndex = 58;
             // 
-            // textBox4
+            // loaiBenhCBB
             // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(2, 219);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(883, 161);
-            this.textBox4.TabIndex = 60;
+            this.loaiBenhCBB.FormattingEnabled = true;
+            this.loaiBenhCBB.Location = new System.Drawing.Point(590, 94);
+            this.loaiBenhCBB.Name = "loaiBenhCBB";
+            this.loaiBenhCBB.Size = new System.Drawing.Size(163, 25);
+            this.loaiBenhCBB.TabIndex = 57;
             // 
-            // textBox3
+            // trieuchungTxtBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(590, 164);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(163, 25);
-            this.textBox3.TabIndex = 59;
+            this.trieuchungTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.trieuchungTxtBox.Location = new System.Drawing.Point(590, 50);
+            this.trieuchungTxtBox.Name = "trieuchungTxtBox";
+            this.trieuchungTxtBox.Size = new System.Drawing.Size(163, 25);
+            this.trieuchungTxtBox.TabIndex = 56;
             // 
-            // comboBox2
+            // tienSuBenhTxtBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(172, 166);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(215, 23);
-            this.comboBox2.TabIndex = 58;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(590, 116);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(163, 23);
-            this.comboBox1.TabIndex = 57;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(590, 72);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(163, 25);
-            this.textBox2.TabIndex = 56;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(172, 117);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 25);
-            this.textBox1.TabIndex = 55;
+            this.tienSuBenhTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tienSuBenhTxtBox.Location = new System.Drawing.Point(172, 95);
+            this.tienSuBenhTxtBox.Name = "tienSuBenhTxtBox";
+            this.tienSuBenhTxtBox.Size = new System.Drawing.Size(215, 25);
+            this.tienSuBenhTxtBox.TabIndex = 55;
             // 
             // metroSetLabel9
             // 
@@ -262,7 +288,7 @@ namespace GUI
             // 
             this.metroSetLabel8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel8.IsDerivedStyle = true;
-            this.metroSetLabel8.Location = new System.Drawing.Point(424, 166);
+            this.metroSetLabel8.Location = new System.Drawing.Point(424, 144);
             this.metroSetLabel8.Name = "metroSetLabel8";
             this.metroSetLabel8.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel8.Style = MetroSet_UI.Enums.Style.Light;
@@ -276,7 +302,7 @@ namespace GUI
             // 
             this.metroSetLabel1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel1.IsDerivedStyle = true;
-            this.metroSetLabel1.Location = new System.Drawing.Point(6, 166);
+            this.metroSetLabel1.Location = new System.Drawing.Point(6, 144);
             this.metroSetLabel1.Name = "metroSetLabel1";
             this.metroSetLabel1.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel1.Style = MetroSet_UI.Enums.Style.Light;
@@ -289,7 +315,7 @@ namespace GUI
             // nameTxtBox
             // 
             this.nameTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nameTxtBox.Location = new System.Drawing.Point(172, 72);
+            this.nameTxtBox.Location = new System.Drawing.Point(172, 50);
             this.nameTxtBox.Name = "nameTxtBox";
             this.nameTxtBox.Size = new System.Drawing.Size(215, 25);
             this.nameTxtBox.TabIndex = 45;
@@ -298,7 +324,7 @@ namespace GUI
             // 
             this.metroSetLabel7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel7.IsDerivedStyle = true;
-            this.metroSetLabel7.Location = new System.Drawing.Point(424, 116);
+            this.metroSetLabel7.Location = new System.Drawing.Point(424, 94);
             this.metroSetLabel7.Name = "metroSetLabel7";
             this.metroSetLabel7.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel7.Style = MetroSet_UI.Enums.Style.Light;
@@ -312,7 +338,7 @@ namespace GUI
             // 
             this.metroSetLabel6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel6.IsDerivedStyle = true;
-            this.metroSetLabel6.Location = new System.Drawing.Point(424, 74);
+            this.metroSetLabel6.Location = new System.Drawing.Point(424, 52);
             this.metroSetLabel6.Name = "metroSetLabel6";
             this.metroSetLabel6.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel6.Style = MetroSet_UI.Enums.Style.Light;
@@ -326,7 +352,7 @@ namespace GUI
             // 
             this.metroSetLabel5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel5.IsDerivedStyle = true;
-            this.metroSetLabel5.Location = new System.Drawing.Point(6, 122);
+            this.metroSetLabel5.Location = new System.Drawing.Point(6, 100);
             this.metroSetLabel5.Name = "metroSetLabel5";
             this.metroSetLabel5.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel5.Style = MetroSet_UI.Enums.Style.Light;
@@ -368,7 +394,7 @@ namespace GUI
             // 
             this.metroSetLabel2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel2.IsDerivedStyle = true;
-            this.metroSetLabel2.Location = new System.Drawing.Point(6, 72);
+            this.metroSetLabel2.Location = new System.Drawing.Point(6, 50);
             this.metroSetLabel2.Name = "metroSetLabel2";
             this.metroSetLabel2.Size = new System.Drawing.Size(59, 23);
             this.metroSetLabel2.Style = MetroSet_UI.Enums.Style.Light;
@@ -380,55 +406,108 @@ namespace GUI
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView2);
+            this.groupBox3.Controls.Add(this.benAnDGV);
+            this.groupBox3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.Location = new System.Drawing.Point(2, 386);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(883, 166);
+            this.groupBox3.Size = new System.Drawing.Size(883, 197);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách bệnh án";
             // 
-            // dataGridView2
+            // benAnDGV
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 20);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(883, 146);
-            this.dataGridView2.TabIndex = 0;
+            this.benAnDGV.AllowUserToAddRows = false;
+            this.benAnDGV.AllowUserToDeleteRows = false;
+            this.benAnDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.benAnDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.benAnDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MABA,
+            this.NGAYLAP,
+            this.NGAYTAIKHAM,
+            this.MABN,
+            this.TIENSUBENH,
+            this.TRIEUCHUNG,
+            this.LOAIBENH,
+            this.CHANDOAN,
+            this.HUONGXULY,
+            this.GHICHU});
+            this.benAnDGV.Location = new System.Drawing.Point(0, 20);
+            this.benAnDGV.Name = "benAnDGV";
+            this.benAnDGV.RowHeadersVisible = false;
+            this.benAnDGV.RowTemplate.Height = 25;
+            this.benAnDGV.Size = new System.Drawing.Size(882, 177);
+            this.benAnDGV.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.metroSetLabel10);
+            this.groupBox1.Controls.Add(this.searchTextbox);
+            this.groupBox1.Controls.Add(this.deleteBenhNhanTrongDanhSachBtn);
+            this.groupBox1.Controls.Add(this.benhNhanListDGV);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(891, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(323, 603);
+            this.groupBox1.Size = new System.Drawing.Size(323, 583);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách bệnh nhân";
             // 
-            // button3
+            // metroSetLabel10
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(218, 512);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 47);
-            this.button3.TabIndex = 66;
-            this.button3.Text = "Xoá";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
+            this.metroSetLabel10.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.metroSetLabel10.IsDerivedStyle = true;
+            this.metroSetLabel10.Location = new System.Drawing.Point(0, 504);
+            this.metroSetLabel10.Name = "metroSetLabel10";
+            this.metroSetLabel10.Size = new System.Drawing.Size(125, 23);
+            this.metroSetLabel10.Style = MetroSet_UI.Enums.Style.Light;
+            this.metroSetLabel10.StyleManager = null;
+            this.metroSetLabel10.TabIndex = 63;
+            this.metroSetLabel10.Text = "Tìm kiếm CMND";
+            this.metroSetLabel10.ThemeAuthor = "Narwin";
+            this.metroSetLabel10.ThemeName = "MetroLite";
             // 
-            // dataGridView1
+            // searchTextbox
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(327, 486);
-            this.dataGridView1.TabIndex = 0;
+            this.searchTextbox.Location = new System.Drawing.Point(131, 504);
+            this.searchTextbox.Name = "searchTextbox";
+            this.searchTextbox.Size = new System.Drawing.Size(185, 25);
+            this.searchTextbox.TabIndex = 62;
+            // 
+            // deleteBenhNhanTrongDanhSachBtn
+            // 
+            this.deleteBenhNhanTrongDanhSachBtn.BackColor = System.Drawing.Color.White;
+            this.deleteBenhNhanTrongDanhSachBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBenhNhanTrongDanhSachBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.deleteBenhNhanTrongDanhSachBtn.Image = global::GUI.Properties.Resources.delete;
+            this.deleteBenhNhanTrongDanhSachBtn.Location = new System.Drawing.Point(239, 538);
+            this.deleteBenhNhanTrongDanhSachBtn.Name = "deleteBenhNhanTrongDanhSachBtn";
+            this.deleteBenhNhanTrongDanhSachBtn.Size = new System.Drawing.Size(77, 39);
+            this.deleteBenhNhanTrongDanhSachBtn.TabIndex = 61;
+            this.deleteBenhNhanTrongDanhSachBtn.Text = "Xoá";
+            this.deleteBenhNhanTrongDanhSachBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.deleteBenhNhanTrongDanhSachBtn.UseVisualStyleBackColor = false;
+            // 
+            // benhNhanListDGV
+            // 
+            this.benhNhanListDGV.AllowUserToAddRows = false;
+            this.benhNhanListDGV.AllowUserToDeleteRows = false;
+            this.benhNhanListDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.benhNhanListDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.benhNhanListDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT,
+            this.dataGridViewTextBoxColumn1,
+            this.CMND,
+            this.HOTEN,
+            this.GT,
+            this.DIACHI,
+            this.SDT});
+            this.benhNhanListDGV.Location = new System.Drawing.Point(-1, 20);
+            this.benhNhanListDGV.Name = "benhNhanListDGV";
+            this.benhNhanListDGV.RowHeadersVisible = false;
+            this.benhNhanListDGV.RowTemplate.Height = 25;
+            this.benhNhanListDGV.Size = new System.Drawing.Size(324, 473);
+            this.benhNhanListDGV.TabIndex = 0;
             // 
             // DONTHUOC
             // 
@@ -436,7 +515,7 @@ namespace GUI
             this.DONTHUOC.Location = new System.Drawing.Point(4, 24);
             this.DONTHUOC.Name = "DONTHUOC";
             this.DONTHUOC.Padding = new System.Windows.Forms.Padding(3);
-            this.DONTHUOC.Size = new System.Drawing.Size(1210, 583);
+            this.DONTHUOC.Size = new System.Drawing.Size(1210, 562);
             this.DONTHUOC.TabIndex = 1;
             this.DONTHUOC.Text = "Đơn thuốc";
             this.DONTHUOC.UseVisualStyleBackColor = true;
@@ -452,6 +531,100 @@ namespace GUI
             this.materialTabSelector1.TabIndex = 67;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
+            // MABA
+            // 
+            this.MABA.HeaderText = "Mã bệnh án";
+            this.MABA.Name = "MABA";
+            this.MABA.Visible = false;
+            // 
+            // NGAYLAP
+            // 
+            this.NGAYLAP.HeaderText = "Ngày lập";
+            this.NGAYLAP.Name = "NGAYLAP";
+            // 
+            // NGAYTAIKHAM
+            // 
+            this.NGAYTAIKHAM.HeaderText = "Ngày tái khám ";
+            this.NGAYTAIKHAM.Name = "NGAYTAIKHAM";
+            // 
+            // MABN
+            // 
+            this.MABN.HeaderText = "Mã bệnh nhân";
+            this.MABN.Name = "MABN";
+            this.MABN.Visible = false;
+            // 
+            // TIENSUBENH
+            // 
+            this.TIENSUBENH.HeaderText = "Tiền sử bệnh";
+            this.TIENSUBENH.Name = "TIENSUBENH";
+            this.TIENSUBENH.Visible = false;
+            // 
+            // TRIEUCHUNG
+            // 
+            this.TRIEUCHUNG.HeaderText = " Triệu chứng ";
+            this.TRIEUCHUNG.Name = "TRIEUCHUNG";
+            this.TRIEUCHUNG.Visible = false;
+            // 
+            // LOAIBENH
+            // 
+            this.LOAIBENH.HeaderText = "Loại bệnh";
+            this.LOAIBENH.Name = "LOAIBENH";
+            // 
+            // CHANDOAN
+            // 
+            this.CHANDOAN.HeaderText = "Chẩn đoán ";
+            this.CHANDOAN.Name = "CHANDOAN";
+            // 
+            // HUONGXULY
+            // 
+            this.HUONGXULY.HeaderText = "Hướng xử lý ";
+            this.HUONGXULY.Name = "HUONGXULY";
+            this.HUONGXULY.Visible = false;
+            // 
+            // GHICHU
+            // 
+            this.GHICHU.HeaderText = "Ghi chú ";
+            this.GHICHU.Name = "GHICHU";
+            this.GHICHU.Visible = false;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã bệnh nhân ";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // CMND
+            // 
+            this.CMND.HeaderText = "CMND";
+            this.CMND.Name = "CMND";
+            // 
+            // HOTEN
+            // 
+            this.HOTEN.HeaderText = "Họ tên";
+            this.HOTEN.Name = "HOTEN";
+            // 
+            // GT
+            // 
+            this.GT.HeaderText = "Giới tính";
+            this.GT.Name = "GT";
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.HeaderText = "Địa chỉ ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.Visible = false;
+            // 
+            // SDT
+            // 
+            this.SDT.HeaderText = "Số điện thoại ";
+            this.SDT.Name = "SDT";
+            this.SDT.Visible = false;
+            // 
             // KhamBenh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -461,16 +634,17 @@ namespace GUI
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "KhamBenh";
-            this.Size = new System.Drawing.Size(1218, 604);
+            this.Size = new System.Drawing.Size(1218, 619);
             this.Load += new System.EventHandler(this.KhamBenh_Load);
             this.examTabControl.ResumeLayout(false);
             this.BENHAN.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.benAnDGV)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.benhNhanListDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -479,17 +653,12 @@ namespace GUI
         private System.Windows.Forms.TabPage DONTHUOC;
         private System.Windows.Forms.TabPage BENHAN;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button updateBtn;
-        private System.Windows.Forms.Button saveBtn;
-        private System.Windows.Forms.Button adddBtn;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox noteTextBox;
+        private System.Windows.Forms.TextBox huongxulyTxtBox;
+        private System.Windows.Forms.ComboBox chanDoanCBB;
+        private System.Windows.Forms.ComboBox loaiBenhCBB;
+        private System.Windows.Forms.TextBox trieuchungTxtBox;
+        private System.Windows.Forms.TextBox tienSuBenhTxtBox;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel9;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel8;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel1;
@@ -501,11 +670,37 @@ namespace GUI
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel3;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView benAnDGV;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView benhNhanListDGV;
         private MaterialSkin.Controls.MaterialTabControl examTabControl;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
+        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button adddBtn;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button deleteBenhNhanTrongDanhSachBtn;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel10;
+        private System.Windows.Forms.TextBox searchTextbox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MABA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYLAP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTAIKHAM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MABN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TIENSUBENH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TRIEUCHUNG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOAIBENH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHANDOAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HUONGXULY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
+        private System.Windows.Forms.DataGridView danhSA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.Button e;
     }
 }

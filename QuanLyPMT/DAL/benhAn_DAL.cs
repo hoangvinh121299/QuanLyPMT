@@ -1,0 +1,165 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text;
+using System.Windows.Forms;
+using DTO;
+namespace DAL
+{
+    public class benhAn_DAL
+    {
+
+        public DataSet getDataBenhan()
+        {
+            DataSet dataBenhan = new DataSet();
+            string selectAll = "Select * from Benhan";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(selectAll, connection);
+                adapter.Fill(dataBenhan);
+                connection.Close();
+            }
+            return dataBenhan;
+        }
+
+        //Thêm thông tin bệnh án 
+        public void addBenhan(DateTime NGAYLAP,
+                              DateTime NGAYTAIKHAM,
+                              int MABN,
+                              int MANV,
+                              string TIENSUBENH,
+                              string TRIEUCHUNG,
+                              string LOAIBENH,
+                              string CHANDOAN,
+                              string HUONGXULY,
+                              string GHICHU)
+        {
+            string insertInto = "INSERT INTO BENHAN VALUES (@NGAYLAP, @NGAYTAIKHAM,@MABN,@MANV,@TIENSUBENH,@TRIEUCHUNG,@LOAIBENH,@CHANDOAN,@HUONGXULY,@GHICHU)";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmdSetDateFormat = new SqlCommand("set dateformat dmy", connection);
+                    SqlCommand cmdInsert = new SqlCommand(insertInto, connection);
+
+                    cmdInsert.Parameters.Add("@NGAYLAP", SqlDbType.DateTime).Value = NGAYLAP;
+                    cmdInsert.Parameters.Add("@NGAYTAIKHAM", SqlDbType.DateTime).Value = NGAYTAIKHAM;
+                    cmdInsert.Parameters.Add("@MABN", SqlDbType.Int).Value = MABN;
+                    cmdInsert.Parameters.Add("@MANV", SqlDbType.Int).Value = MANV;
+                    cmdInsert.Parameters.Add("@TRIEUCHUNG", SqlDbType.NVarChar).Value = TRIEUCHUNG;
+                    cmdInsert.Parameters.Add("@LOAIBENH", SqlDbType.NVarChar).Value = LOAIBENH;
+                    cmdInsert.Parameters.Add("@CHANDOAN", SqlDbType.NVarChar).Value = CHANDOAN;
+                    cmdInsert.Parameters.Add("@HUONGXULY", SqlDbType.NVarChar).Value = HUONGXULY;
+                    cmdInsert.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = GHICHU;
+
+                    cmdInsert.ExecuteNonQuery();
+                    connection.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+
+                }
+            }
+        }
+        //Hàm cập nhật thông tin bệnh án 
+        public void updateBenhan(int MABA,
+                              DateTime NGAYLAP,
+                              DateTime NGAYTAIKHAM,
+                              int MABN,
+                              int MANV,
+                              string TIENSUBENH,
+                              string TRIEUCHUNG,
+                              string LOAIBENH,
+                              string CHANDOAN,
+                              string HUONGXULY,
+                              string GHICHU)
+        {
+            string updateInto = "update benhan set NGAYLAP = @NGAYLAP, NGAYTAIKHAM = @NGAYTAIKHAM, MABN=@MABN, MANV = @MANV, TIENSUBENH=@TIENSUBENH,TRIEUCHUNG=@TRIEUCHUNG, LOAIBENH=@LOAIBENH, CHANDOAN = @CHANDOAN, HUONGXULY=@HUONGXULY, GHICHU=@GHICHU WHERE MABA = @MABA";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmdSetDateFormat = new SqlCommand("set dateformat dmy", connection);
+                    SqlCommand cmdInsert = new SqlCommand(updateInto, connection);
+
+                    cmdInsert.Parameters.Add("@NGAYLAP", SqlDbType.DateTime).Value = NGAYLAP;
+                    cmdInsert.Parameters.Add("@NGAYTAIKHAM", SqlDbType.DateTime).Value = NGAYTAIKHAM;
+                    cmdInsert.Parameters.Add("@MABN", SqlDbType.Int).Value = MABN;
+                    cmdInsert.Parameters.Add("@MANV", SqlDbType.Int).Value = MANV;
+                    cmdInsert.Parameters.Add("@TRIEUCHUNG", SqlDbType.NVarChar).Value = TRIEUCHUNG;
+                    cmdInsert.Parameters.Add("@LOAIBENH", SqlDbType.NVarChar).Value = LOAIBENH;
+                    cmdInsert.Parameters.Add("@CHANDOAN", SqlDbType.NVarChar).Value = CHANDOAN;
+                    cmdInsert.Parameters.Add("@HUONGXULY", SqlDbType.NVarChar).Value = HUONGXULY;
+                    cmdInsert.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = GHICHU;
+                    cmdInsert.Parameters.Add("@MABA", SqlDbType.Int).Value = MABA;
+
+                    cmdInsert.ExecuteNonQuery();
+                    connection.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
+            }
+        }
+        //Hàm xoá thông tin án 
+        public void deleteBenhNhan(int MABA)
+        {
+            string deleteTable = "delete BENHAN where MABA = @MABA";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+                {
+                    connection.Open();
+                    SqlCommand cmdDelete = new SqlCommand(deleteTable, connection);
+                    cmdDelete.Parameters.Add("@MABA", SqlDbType.Int).Value = MABA;
+                    cmdDelete.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi");
+            }
+        }
+
+        //Tìm kiếm thông tin bệnh nhân
+        //    public DataSet searchBenhNhan(string CMND)
+        //    {
+        //        DataSet searchResult = new DataSet();
+        //        string searchQuerry = "select * from BENHNHAN where CMND like @CMND";
+        //        using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+        //        {
+        //            connection.Open();
+        //            SqlCommand cmdSearch = new SqlCommand(searchQuerry, connection);
+        //            cmdSearch.Parameters.Add("@CMND", SqlDbType.VarChar).Value = CMND + "%";
+        //            SqlDataAdapter adapter = new SqlDataAdapter(cmdSearch);
+        //            adapter.Fill(searchResult);
+        //            connection.Close();
+        //        }
+        //        return searchResult;
+        //    }
+        //    public DataSet getHistoryExamByID(int MABENHNHAN)
+        //    {
+        //        DataSet getResult = new DataSet();
+        //        string getQuerry = "select NGAYLAP, NGAYTAIKHAM, NHANVIEN.HOTEN from BENHAN, BENHNHAN,NHANVIEN where BENHNHAN.MABN = @MABENHNHAN AND BENHAN.MANV=1";
+        //        using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+        //        {
+        //            connection.Open();
+        //            SqlCommand cmdGet = new SqlCommand(getQuerry, connection);
+        //            cmdGet.Parameters.Add("@MABENHNHAN", SqlDbType.Int).Value = MABENHNHAN;
+        //            SqlDataAdapter adapter = new SqlDataAdapter(cmdGet);
+        //            adapter.Fill(getResult);
+        //            connection.Close();
+        //        }
+        //        return getResult;
+        //    }
+        //}
+    }
+}
+
