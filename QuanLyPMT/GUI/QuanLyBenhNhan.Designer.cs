@@ -222,6 +222,7 @@ namespace GUI
             this.examBtn.Text = "Đăng ký khám";
             this.examBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.examBtn.UseVisualStyleBackColor = false;
+            this.examBtn.Click += new System.EventHandler(this.examBtn_Click);
             // 
             // groupBox1
             // 
@@ -432,6 +433,7 @@ namespace GUI
             this.historyExamDgv.Name = "historyExamDgv";
             this.historyExamDgv.RowHeadersVisible = false;
             this.historyExamDgv.RowTemplate.Height = 25;
+            this.historyExamDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.historyExamDgv.Size = new System.Drawing.Size(614, 288);
             this.historyExamDgv.TabIndex = 0;
             // 

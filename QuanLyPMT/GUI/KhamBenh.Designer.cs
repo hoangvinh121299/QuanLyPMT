@@ -32,6 +32,8 @@ namespace GUI
             this.examTabControl = new MaterialSkin.Controls.MaterialTabControl();
             this.BENHAN = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.noteTextBox = new System.Windows.Forms.TextBox();
@@ -55,6 +57,7 @@ namespace GUI
             this.metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.benAnDGV = new System.Windows.Forms.DataGridView();
+            this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MABA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYTAIKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,22 +68,21 @@ namespace GUI
             this.CHANDOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HUONGXULY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroSetLabel10 = new MetroSet_UI.Controls.MetroSetLabel();
             this.searchTextbox = new System.Windows.Forms.TextBox();
             this.deleteBenhNhanTrongDanhSachBtn = new System.Windows.Forms.Button();
             this.benhNhanListDGV = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MABN1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONTHUOC = new System.Windows.Forms.TabPage();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.examTabControl.SuspendLayout();
             this.BENHAN.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -152,6 +154,20 @@ namespace GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết bệnh án";
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(590, 24);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(163, 25);
+            this.dateTimePicker2.TabIndex = 64;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(172, 24);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(215, 25);
+            this.dateTimePicker1.TabIndex = 63;
+            // 
             // deleteBtn
             // 
             this.deleteBtn.BackColor = System.Drawing.Color.White;
@@ -222,7 +238,7 @@ namespace GUI
             // huongxulyTxtBox
             // 
             this.huongxulyTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.huongxulyTxtBox.Location = new System.Drawing.Point(590, 163);
+            this.huongxulyTxtBox.Location = new System.Drawing.Point(590, 158);
             this.huongxulyTxtBox.Name = "huongxulyTxtBox";
             this.huongxulyTxtBox.Size = new System.Drawing.Size(163, 25);
             this.huongxulyTxtBox.TabIndex = 59;
@@ -292,7 +308,7 @@ namespace GUI
             // 
             this.metroSetLabel8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel8.IsDerivedStyle = true;
-            this.metroSetLabel8.Location = new System.Drawing.Point(424, 165);
+            this.metroSetLabel8.Location = new System.Drawing.Point(424, 167);
             this.metroSetLabel8.Name = "metroSetLabel8";
             this.metroSetLabel8.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel8.Style = MetroSet_UI.Enums.Style.Light;
@@ -426,6 +442,7 @@ namespace GUI
             this.benAnDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.benAnDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.benAnDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT1,
             this.MABA,
             this.NGAYLAP,
             this.NGAYTAIKHAM,
@@ -435,69 +452,95 @@ namespace GUI
             this.LOAIBENH,
             this.CHANDOAN,
             this.HUONGXULY,
-            this.GHICHU});
+            this.GHICHU,
+            this.MANV});
             this.benAnDGV.Location = new System.Drawing.Point(0, 20);
             this.benAnDGV.Name = "benAnDGV";
             this.benAnDGV.RowHeadersVisible = false;
             this.benAnDGV.RowTemplate.Height = 25;
+            this.benAnDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.benAnDGV.Size = new System.Drawing.Size(882, 177);
             this.benAnDGV.TabIndex = 0;
+            this.benAnDGV.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.benAnDGV_RowPostPaint);
+            // 
+            // STT1
+            // 
+            this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.STT1.HeaderText = "STT";
+            this.STT1.Name = "STT1";
             // 
             // MABA
             // 
+            this.MABA.DataPropertyName = "MABA";
             this.MABA.HeaderText = "Mã bệnh án";
             this.MABA.Name = "MABA";
             this.MABA.Visible = false;
             // 
             // NGAYLAP
             // 
+            this.NGAYLAP.DataPropertyName = "NGAYLAP";
             this.NGAYLAP.HeaderText = "Ngày lập";
             this.NGAYLAP.Name = "NGAYLAP";
             // 
             // NGAYTAIKHAM
             // 
+            this.NGAYTAIKHAM.DataPropertyName = "NGAYTAIKHAM";
             this.NGAYTAIKHAM.HeaderText = "Ngày tái khám ";
             this.NGAYTAIKHAM.Name = "NGAYTAIKHAM";
             // 
             // MABN
             // 
+            this.MABN.DataPropertyName = "MABN";
             this.MABN.HeaderText = "Mã bệnh nhân";
             this.MABN.Name = "MABN";
             this.MABN.Visible = false;
             // 
             // TIENSUBENH
             // 
+            this.TIENSUBENH.DataPropertyName = "TIENSUBENH";
             this.TIENSUBENH.HeaderText = "Tiền sử bệnh";
             this.TIENSUBENH.Name = "TIENSUBENH";
             this.TIENSUBENH.Visible = false;
             // 
             // TRIEUCHUNG
             // 
+            this.TRIEUCHUNG.DataPropertyName = "TRIEUCHUNG";
             this.TRIEUCHUNG.HeaderText = " Triệu chứng ";
             this.TRIEUCHUNG.Name = "TRIEUCHUNG";
             this.TRIEUCHUNG.Visible = false;
             // 
             // LOAIBENH
             // 
+            this.LOAIBENH.DataPropertyName = "LOAIBENH";
             this.LOAIBENH.HeaderText = "Loại bệnh";
             this.LOAIBENH.Name = "LOAIBENH";
             // 
             // CHANDOAN
             // 
+            this.CHANDOAN.DataPropertyName = "CHANDOAN";
             this.CHANDOAN.HeaderText = "Chẩn đoán ";
             this.CHANDOAN.Name = "CHANDOAN";
             // 
             // HUONGXULY
             // 
+            this.HUONGXULY.DataPropertyName = "HUONGXULY";
             this.HUONGXULY.HeaderText = "Hướng xử lý ";
             this.HUONGXULY.Name = "HUONGXULY";
             this.HUONGXULY.Visible = false;
             // 
             // GHICHU
             // 
+            this.GHICHU.DataPropertyName = "GHICHU";
             this.GHICHU.HeaderText = "Ghi chú ";
             this.GHICHU.Name = "GHICHU";
             this.GHICHU.Visible = false;
+            // 
+            // MANV
+            // 
+            this.MANV.DataPropertyName = "MANV";
+            this.MANV.HeaderText = "MÃ NHÂN VIEN";
+            this.MANV.Name = "MANV";
+            this.MANV.Visible = false;
             // 
             // groupBox1
             // 
@@ -556,8 +599,8 @@ namespace GUI
             this.benhNhanListDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.benhNhanListDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
-            this.dataGridViewTextBoxColumn1,
             this.CMND,
+            this.MABN1,
             this.HOTEN,
             this.GT,
             this.DIACHI,
@@ -566,43 +609,57 @@ namespace GUI
             this.benhNhanListDGV.Name = "benhNhanListDGV";
             this.benhNhanListDGV.RowHeadersVisible = false;
             this.benhNhanListDGV.RowTemplate.Height = 25;
+            this.benhNhanListDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.benhNhanListDGV.Size = new System.Drawing.Size(324, 473);
             this.benhNhanListDGV.TabIndex = 0;
+            this.benhNhanListDGV.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.benhNhanListDGV_RowEnter);
+            this.benhNhanListDGV.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.benhNhanListDGV_RowPostPaint);
             // 
             // STT
             // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã bệnh nhân ";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.STT.Width = 5;
             // 
             // CMND
             // 
+            this.CMND.DataPropertyName = "CMND";
             this.CMND.HeaderText = "CMND";
             this.CMND.Name = "CMND";
             // 
+            // MABN1
+            // 
+            this.MABN1.DataPropertyName = "MABN";
+            this.MABN1.HeaderText = "Mã bệnh nhân";
+            this.MABN1.Name = "MABN1";
+            this.MABN1.Visible = false;
+            // 
             // HOTEN
             // 
+            this.HOTEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.HOTEN.DataPropertyName = "HOTEN";
             this.HOTEN.HeaderText = "Họ tên";
             this.HOTEN.Name = "HOTEN";
             // 
             // GT
             // 
+            this.GT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.GT.DataPropertyName = "GT";
             this.GT.HeaderText = "Giới tính";
             this.GT.Name = "GT";
+            this.GT.Width = 5;
             // 
             // DIACHI
             // 
+            this.DIACHI.DataPropertyName = "DIACHI";
             this.DIACHI.HeaderText = "Địa chỉ ";
             this.DIACHI.Name = "DIACHI";
             this.DIACHI.Visible = false;
             // 
             // SDT
             // 
+            this.SDT.DataPropertyName = "SDT";
             this.SDT.HeaderText = "Số điện thoại ";
             this.SDT.Name = "SDT";
             this.SDT.Visible = false;
@@ -628,20 +685,6 @@ namespace GUI
             this.materialTabSelector1.Size = new System.Drawing.Size(1218, 23);
             this.materialTabSelector1.TabIndex = 67;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(172, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(215, 25);
-            this.dateTimePicker1.TabIndex = 63;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(590, 24);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(163, 25);
-            this.dateTimePicker2.TabIndex = 64;
             // 
             // KhamBenh
             // 
@@ -701,6 +744,20 @@ namespace GUI
         private System.Windows.Forms.Button deleteBenhNhanTrongDanhSachBtn;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel10;
         private System.Windows.Forms.TextBox searchTextbox;
+        private System.Windows.Forms.DataGridView danhSA;
+        private System.Windows.Forms.Button e;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MABN1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MABA;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYLAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTAIKHAM;
@@ -711,16 +768,5 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn CHANDOAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn HUONGXULY;
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
-        private System.Windows.Forms.DataGridView danhSA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
-        private System.Windows.Forms.Button e;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

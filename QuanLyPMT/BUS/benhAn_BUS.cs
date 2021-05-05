@@ -14,6 +14,11 @@ namespace BUS
         {
             return benhAn_DAL.getDataBenhan();
         }
+
+        public DataSet getDataByID(int MABN)
+        {
+            return benhAn_DAL.getDataBenhanByID(MABN);
+        }
         public void addBenhan
                               (DateTime NGAYLAP,
                               DateTime NGAYTAIKHAM,

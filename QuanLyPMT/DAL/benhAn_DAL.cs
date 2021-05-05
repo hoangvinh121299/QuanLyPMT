@@ -23,7 +23,22 @@ namespace DAL
             }
             return dataBenhan;
         }
-
+        //Lấy thông tin bệnh án theo MABN
+        public DataSet getDataBenhanByID(int MABN)
+        {
+            DataSet dataBenhanID = new DataSet();
+            string selectAll = "Select * from Benhan where MABN = @MABN";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand getByID = new SqlCommand(selectAll, connection);
+                getByID.Parameters.Add("@MABN", SqlDbType.Int).Value = MABN; 
+                SqlDataAdapter adapter = new SqlDataAdapter(getByID);
+                adapter.Fill(dataBenhanID);
+                connection.Close();
+            }
+            return dataBenhanID;
+        }
         //Thêm thông tin bệnh án 
         public void addBenhan(DateTime NGAYLAP,
                               DateTime NGAYTAIKHAM,
