@@ -33,10 +33,9 @@ namespace BUS
         {
             benhAn_DAL.addBenhan(NGAYLAP,NGAYTAIKHAM,MABN,MANV,TIENSUBENH,TRIEUCHUNG,LOAIBENH,CHANDOAN,HUONGXULY,GHICHU);
         }
-        public void updateBenhNhan(int MABA,
+        public void updateBenhAn(int MABA,
                               DateTime NGAYLAP,
                               DateTime NGAYTAIKHAM,
-                              int MABN,
                               int MANV,
                               string TIENSUBENH,
                               string TRIEUCHUNG,
@@ -45,9 +44,9 @@ namespace BUS
                               string HUONGXULY,
                               string GHICHU)
         {
-            benhAn_DAL.updateBenhan(MABA,NGAYLAP,NGAYTAIKHAM,MABN,MANV,TIENSUBENH,TRIEUCHUNG,LOAIBENH,CHANDOAN,HUONGXULY,GHICHU);
+            benhAn_DAL.updateBenhan(MABA,NGAYLAP,NGAYTAIKHAM,MANV,TIENSUBENH,TRIEUCHUNG,LOAIBENH,CHANDOAN,HUONGXULY,GHICHU);
         }
-        public void deleteBenhNhan(int MABA)
+        public void deleteBenhAn(int MABA)
         {
             benhAn_DAL.deleteBenhNhan(MABA);
         }

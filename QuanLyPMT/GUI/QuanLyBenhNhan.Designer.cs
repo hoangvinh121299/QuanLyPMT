@@ -29,7 +29,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel3 = new MetroSet_UI.Controls.MetroSetLabel();
@@ -44,14 +44,6 @@ namespace GUI
             this.examBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.danhSachBenhNhanDgv = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MABN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GIOITINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMNDtextBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,15 +52,23 @@ namespace GUI
             this.femaleBtn = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.historyExamDgv = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYTAIKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NVLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maleBtn = new System.Windows.Forms.RadioButton();
             this.adddBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
             this.saveBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYTAIKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NVLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MABN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYSINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GIOITINH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachBenhNhanDgv)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -268,74 +268,6 @@ namespace GUI
             this.danhSachBenhNhanDgv.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachBenhNhanDgv_RowEnter);
             this.danhSachBenhNhanDgv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.danhSachBenhNhanDgv_RowPostPaint);
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "sdt";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            this.SDT.Visible = false;
-            // 
-            // DIACHI
-            // 
-            this.DIACHI.DataPropertyName = "DIACHI";
-            this.DIACHI.HeaderText = "diachi";
-            this.DIACHI.MinimumWidth = 6;
-            this.DIACHI.Name = "DIACHI";
-            this.DIACHI.ReadOnly = true;
-            this.DIACHI.Visible = false;
-            // 
-            // MABN
-            // 
-            this.MABN.DataPropertyName = "MABN";
-            this.MABN.HeaderText = "mabenhnhan";
-            this.MABN.MinimumWidth = 6;
-            this.MABN.Name = "MABN";
-            this.MABN.ReadOnly = true;
-            this.MABN.Visible = false;
-            // 
-            // HOTEN
-            // 
-            this.HOTEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.HOTEN.DataPropertyName = "HOTEN";
-            this.HOTEN.HeaderText = "Họ và tên";
-            this.HOTEN.MinimumWidth = 6;
-            this.HOTEN.Name = "HOTEN";
-            this.HOTEN.ReadOnly = true;
-            this.HOTEN.Width = 6;
-            // 
-            // CMND
-            // 
-            this.CMND.DataPropertyName = "CMND";
-            this.CMND.HeaderText = "Số CMND";
-            this.CMND.MinimumWidth = 6;
-            this.CMND.Name = "CMND";
-            this.CMND.ReadOnly = true;
-            // 
-            // NGAYSINH
-            // 
-            this.NGAYSINH.DataPropertyName = "NGAYSINH";
-            this.NGAYSINH.HeaderText = "Ngày sinh";
-            this.NGAYSINH.MinimumWidth = 6;
-            this.NGAYSINH.Name = "NGAYSINH";
-            this.NGAYSINH.ReadOnly = true;
-            // 
-            // GIOITINH
-            // 
-            this.GIOITINH.DataPropertyName = "GT";
-            this.GIOITINH.HeaderText = "Giới tính";
-            this.GIOITINH.MinimumWidth = 6;
-            this.GIOITINH.Name = "GIOITINH";
-            this.GIOITINH.ReadOnly = true;
-            // 
             // CMNDtextBox2
             // 
             this.CMNDtextBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -417,8 +349,8 @@ namespace GUI
             // 
             this.historyExamDgv.AllowUserToAddRows = false;
             this.historyExamDgv.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            this.historyExamDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Transparent;
+            this.historyExamDgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.historyExamDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.historyExamDgv.BackgroundColor = System.Drawing.Color.Gray;
             this.historyExamDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -436,29 +368,6 @@ namespace GUI
             this.historyExamDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.historyExamDgv.Size = new System.Drawing.Size(614, 288);
             this.historyExamDgv.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // NGAYKHAM
-            // 
-            this.NGAYKHAM.DataPropertyName = "NGAYLAP";
-            this.NGAYKHAM.HeaderText = "Ngày khám";
-            this.NGAYKHAM.Name = "NGAYKHAM";
-            // 
-            // NGAYTAIKHAM
-            // 
-            this.NGAYTAIKHAM.DataPropertyName = "NGAYTAIKHAM";
-            this.NGAYTAIKHAM.HeaderText = "Ngày tái khám ";
-            this.NGAYTAIKHAM.Name = "NGAYTAIKHAM";
-            // 
-            // NVLAP
-            // 
-            this.NVLAP.DataPropertyName = "HOTEN";
-            this.NVLAP.HeaderText = "Nhân viên lập";
-            this.NVLAP.Name = "NVLAP";
             // 
             // maleBtn
             // 
@@ -535,6 +444,101 @@ namespace GUI
             this.cancelBtn.UseVisualStyleBackColor = false;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 61;
+            // 
+            // NGAYKHAM
+            // 
+            this.NGAYKHAM.DataPropertyName = "NGAYLAP";
+            this.NGAYKHAM.HeaderText = "Ngày khám";
+            this.NGAYKHAM.Name = "NGAYKHAM";
+            // 
+            // NGAYTAIKHAM
+            // 
+            this.NGAYTAIKHAM.DataPropertyName = "NGAYTAIKHAM";
+            this.NGAYTAIKHAM.HeaderText = "Ngày tái khám ";
+            this.NGAYTAIKHAM.Name = "NGAYTAIKHAM";
+            // 
+            // NVLAP
+            // 
+            this.NVLAP.DataPropertyName = "HOTEN";
+            this.NVLAP.HeaderText = "Nhân viên lập";
+            this.NVLAP.Name = "NVLAP";
+            // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 61;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "sdt";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            this.SDT.Visible = false;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "diachi";
+            this.DIACHI.MinimumWidth = 6;
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
+            this.DIACHI.Visible = false;
+            // 
+            // MABN
+            // 
+            this.MABN.DataPropertyName = "MABN";
+            this.MABN.HeaderText = "mabenhnhan";
+            this.MABN.MinimumWidth = 6;
+            this.MABN.Name = "MABN";
+            this.MABN.ReadOnly = true;
+            this.MABN.Visible = false;
+            // 
+            // HOTEN
+            // 
+            this.HOTEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.HOTEN.DataPropertyName = "HOTEN";
+            this.HOTEN.HeaderText = "Họ và tên";
+            this.HOTEN.MinimumWidth = 6;
+            this.HOTEN.Name = "HOTEN";
+            this.HOTEN.ReadOnly = true;
+            this.HOTEN.Width = 6;
+            // 
+            // CMND
+            // 
+            this.CMND.DataPropertyName = "CMND";
+            this.CMND.HeaderText = "Số CMND";
+            this.CMND.MinimumWidth = 6;
+            this.CMND.Name = "CMND";
+            this.CMND.ReadOnly = true;
+            // 
+            // NGAYSINH
+            // 
+            this.NGAYSINH.DataPropertyName = "NGAYSINH";
+            this.NGAYSINH.HeaderText = "Ngày sinh";
+            this.NGAYSINH.MinimumWidth = 6;
+            this.NGAYSINH.Name = "NGAYSINH";
+            this.NGAYSINH.ReadOnly = true;
+            // 
+            // GIOITINH
+            // 
+            this.GIOITINH.DataPropertyName = "GT";
+            this.GIOITINH.HeaderText = "Giới tính";
+            this.GIOITINH.MinimumWidth = 6;
+            this.GIOITINH.Name = "GIOITINH";
+            this.GIOITINH.ReadOnly = true;
+            // 
             // QuanLyBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -607,6 +611,16 @@ namespace GUI
         private System.Windows.Forms.TextBox addressTextbox;
         private System.Windows.Forms.RadioButton femaleBtn;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton maleBtn;
+        private System.Windows.Forms.DataGridView historyExamDgv;
+        private System.Windows.Forms.Button adddBtn;
+        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKHAM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTAIKHAM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NVLAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
@@ -615,15 +629,5 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYSINH;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIOITINH;
-        private System.Windows.Forms.RadioButton maleBtn;
-        private System.Windows.Forms.DataGridView historyExamDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKHAM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTAIKHAM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NVLAP;
-        private System.Windows.Forms.Button adddBtn;
-        private System.Windows.Forms.Button updateBtn;
-        private System.Windows.Forms.Button saveBtn;
-        private System.Windows.Forms.Button cancelBtn;
     }
 }

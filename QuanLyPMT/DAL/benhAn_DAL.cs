@@ -64,6 +64,7 @@ namespace DAL
                     cmdInsert.Parameters.Add("@NGAYTAIKHAM", SqlDbType.DateTime).Value = NGAYTAIKHAM;
                     cmdInsert.Parameters.Add("@MABN", SqlDbType.Int).Value = MABN;
                     cmdInsert.Parameters.Add("@MANV", SqlDbType.Int).Value = MANV;
+                    cmdInsert.Parameters.Add("@TIENSUBENH", SqlDbType.NVarChar).Value = TIENSUBENH;
                     cmdInsert.Parameters.Add("@TRIEUCHUNG", SqlDbType.NVarChar).Value = TRIEUCHUNG;
                     cmdInsert.Parameters.Add("@LOAIBENH", SqlDbType.NVarChar).Value = LOAIBENH;
                     cmdInsert.Parameters.Add("@CHANDOAN", SqlDbType.NVarChar).Value = CHANDOAN;
@@ -84,7 +85,7 @@ namespace DAL
         public void updateBenhan(int MABA,
                               DateTime NGAYLAP,
                               DateTime NGAYTAIKHAM,
-                              int MABN,
+                             
                               int MANV,
                               string TIENSUBENH,
                               string TRIEUCHUNG,
@@ -93,7 +94,7 @@ namespace DAL
                               string HUONGXULY,
                               string GHICHU)
         {
-            string updateInto = "update benhan set NGAYLAP = @NGAYLAP, NGAYTAIKHAM = @NGAYTAIKHAM, MABN=@MABN, MANV = @MANV, TIENSUBENH=@TIENSUBENH,TRIEUCHUNG=@TRIEUCHUNG, LOAIBENH=@LOAIBENH, CHANDOAN = @CHANDOAN, HUONGXULY=@HUONGXULY, GHICHU=@GHICHU WHERE MABA = @MABA";
+            string updateInto = "update benhan set NGAYLAP = @NGAYLAP, NGAYTAIKHAM = @NGAYTAIKHAM,MANV = @MANV, TIENSUBENH=@TIENSUBENH,TRIEUCHUNG=@TRIEUCHUNG, LOAIBENH=@LOAIBENH, CHANDOAN = @CHANDOAN, HUONGXULY=@HUONGXULY, GHICHU=@GHICHU WHERE MABA = @MABA";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
             {
                 try
@@ -104,8 +105,8 @@ namespace DAL
 
                     cmdInsert.Parameters.Add("@NGAYLAP", SqlDbType.DateTime).Value = NGAYLAP;
                     cmdInsert.Parameters.Add("@NGAYTAIKHAM", SqlDbType.DateTime).Value = NGAYTAIKHAM;
-                    cmdInsert.Parameters.Add("@MABN", SqlDbType.Int).Value = MABN;
                     cmdInsert.Parameters.Add("@MANV", SqlDbType.Int).Value = MANV;
+                    cmdInsert.Parameters.Add("@TIENSUBENH", SqlDbType.NVarChar).Value = TIENSUBENH;
                     cmdInsert.Parameters.Add("@TRIEUCHUNG", SqlDbType.NVarChar).Value = TRIEUCHUNG;
                     cmdInsert.Parameters.Add("@LOAIBENH", SqlDbType.NVarChar).Value = LOAIBENH;
                     cmdInsert.Parameters.Add("@CHANDOAN", SqlDbType.NVarChar).Value = CHANDOAN;

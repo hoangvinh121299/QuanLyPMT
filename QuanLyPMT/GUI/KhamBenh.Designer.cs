@@ -32,8 +32,8 @@ namespace GUI
             this.examTabControl = new MaterialSkin.Controls.MaterialTabControl();
             this.BENHAN = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.ngayTaiKhamDTPicker = new System.Windows.Forms.DateTimePicker();
+            this.ngayKhamDTPicker = new System.Windows.Forms.DateTimePicker();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.noteTextBox = new System.Windows.Forms.TextBox();
@@ -58,6 +58,7 @@ namespace GUI
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.benAnDGV = new System.Windows.Forms.DataGridView();
             this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MABA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYTAIKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -123,8 +124,8 @@ namespace GUI
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.ngayTaiKhamDTPicker);
+            this.groupBox2.Controls.Add(this.ngayKhamDTPicker);
             this.groupBox2.Controls.Add(this.deleteBtn);
             this.groupBox2.Controls.Add(this.cancelBtn);
             this.groupBox2.Controls.Add(this.noteTextBox);
@@ -154,19 +155,21 @@ namespace GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết bệnh án";
             // 
-            // dateTimePicker2
+            // ngayTaiKhamDTPicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(590, 24);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(163, 25);
-            this.dateTimePicker2.TabIndex = 64;
+            this.ngayTaiKhamDTPicker.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ngayTaiKhamDTPicker.Location = new System.Drawing.Point(555, 22);
+            this.ngayTaiKhamDTPicker.Name = "ngayTaiKhamDTPicker";
+            this.ngayTaiKhamDTPicker.Size = new System.Drawing.Size(163, 21);
+            this.ngayTaiKhamDTPicker.TabIndex = 64;
             // 
-            // dateTimePicker1
+            // ngayKhamDTPicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(172, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(215, 25);
-            this.dateTimePicker1.TabIndex = 63;
+            this.ngayKhamDTPicker.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ngayKhamDTPicker.Location = new System.Drawing.Point(172, 24);
+            this.ngayKhamDTPicker.Name = "ngayKhamDTPicker";
+            this.ngayKhamDTPicker.Size = new System.Drawing.Size(163, 21);
+            this.ngayKhamDTPicker.TabIndex = 63;
             // 
             // deleteBtn
             // 
@@ -174,13 +177,14 @@ namespace GUI
             this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.deleteBtn.Image = global::GUI.Properties.Resources.delete;
-            this.deleteBtn.Location = new System.Drawing.Point(767, 146);
+            this.deleteBtn.Location = new System.Drawing.Point(767, 142);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(112, 37);
             this.deleteBtn.TabIndex = 62;
             this.deleteBtn.Text = "Xoá";
             this.deleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click_1);
             // 
             // cancelBtn
             // 
@@ -188,21 +192,22 @@ namespace GUI
             this.cancelBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cancelBtn.ForeColor = System.Drawing.Color.White;
             this.cancelBtn.Image = global::GUI.Properties.Resources.logout;
-            this.cancelBtn.Location = new System.Drawing.Point(767, 100);
+            this.cancelBtn.Location = new System.Drawing.Point(767, 96);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(112, 40);
             this.cancelBtn.TabIndex = 39;
             this.cancelBtn.Text = "Huỷ bỏ ";
             this.cancelBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // noteTextBox
             // 
             this.noteTextBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.noteTextBox.Location = new System.Drawing.Point(0, 215);
+            this.noteTextBox.Location = new System.Drawing.Point(0, 219);
             this.noteTextBox.Multiline = true;
             this.noteTextBox.Name = "noteTextBox";
-            this.noteTextBox.Size = new System.Drawing.Size(885, 165);
+            this.noteTextBox.Size = new System.Drawing.Size(885, 161);
             this.noteTextBox.TabIndex = 60;
             // 
             // saveBtn
@@ -212,13 +217,14 @@ namespace GUI
             this.saveBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Image = global::GUI.Properties.Resources.save;
-            this.saveBtn.Location = new System.Drawing.Point(769, 54);
+            this.saveBtn.Location = new System.Drawing.Point(767, 50);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(110, 40);
             this.saveBtn.TabIndex = 38;
             this.saveBtn.Text = "Xác nhận";
             this.saveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // updateBtn
             // 
@@ -227,18 +233,19 @@ namespace GUI
             this.updateBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.updateBtn.ForeColor = System.Drawing.Color.Black;
             this.updateBtn.Image = global::GUI.Properties.Resources.edit;
-            this.updateBtn.Location = new System.Drawing.Point(767, 100);
+            this.updateBtn.Location = new System.Drawing.Point(767, 96);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(110, 40);
             this.updateBtn.TabIndex = 37;
             this.updateBtn.Text = "Cập nhật";
             this.updateBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // huongxulyTxtBox
             // 
             this.huongxulyTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.huongxulyTxtBox.Location = new System.Drawing.Point(590, 158);
+            this.huongxulyTxtBox.Location = new System.Drawing.Point(555, 163);
             this.huongxulyTxtBox.Name = "huongxulyTxtBox";
             this.huongxulyTxtBox.Size = new System.Drawing.Size(163, 25);
             this.huongxulyTxtBox.TabIndex = 59;
@@ -250,26 +257,27 @@ namespace GUI
             this.adddBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.adddBtn.ForeColor = System.Drawing.Color.White;
             this.adddBtn.Image = global::GUI.Properties.Resources.add;
-            this.adddBtn.Location = new System.Drawing.Point(767, 54);
+            this.adddBtn.Location = new System.Drawing.Point(767, 50);
             this.adddBtn.Name = "adddBtn";
             this.adddBtn.Size = new System.Drawing.Size(110, 40);
             this.adddBtn.TabIndex = 36;
             this.adddBtn.Text = "Thêm";
             this.adddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.adddBtn.UseVisualStyleBackColor = false;
+            this.adddBtn.Click += new System.EventHandler(this.adddBtn_Click);
             // 
             // chanDoanCBB
             // 
             this.chanDoanCBB.FormattingEnabled = true;
             this.chanDoanCBB.Location = new System.Drawing.Point(172, 165);
             this.chanDoanCBB.Name = "chanDoanCBB";
-            this.chanDoanCBB.Size = new System.Drawing.Size(215, 25);
+            this.chanDoanCBB.Size = new System.Drawing.Size(163, 25);
             this.chanDoanCBB.TabIndex = 58;
             // 
             // loaiBenhCBB
             // 
             this.loaiBenhCBB.FormattingEnabled = true;
-            this.loaiBenhCBB.Location = new System.Drawing.Point(590, 115);
+            this.loaiBenhCBB.Location = new System.Drawing.Point(555, 119);
             this.loaiBenhCBB.Name = "loaiBenhCBB";
             this.loaiBenhCBB.Size = new System.Drawing.Size(163, 25);
             this.loaiBenhCBB.TabIndex = 57;
@@ -277,7 +285,7 @@ namespace GUI
             // trieuchungTxtBox
             // 
             this.trieuchungTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.trieuchungTxtBox.Location = new System.Drawing.Point(590, 71);
+            this.trieuchungTxtBox.Location = new System.Drawing.Point(555, 65);
             this.trieuchungTxtBox.Name = "trieuchungTxtBox";
             this.trieuchungTxtBox.Size = new System.Drawing.Size(163, 25);
             this.trieuchungTxtBox.TabIndex = 56;
@@ -287,7 +295,7 @@ namespace GUI
             this.tienSuBenhTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tienSuBenhTxtBox.Location = new System.Drawing.Point(172, 116);
             this.tienSuBenhTxtBox.Name = "tienSuBenhTxtBox";
-            this.tienSuBenhTxtBox.Size = new System.Drawing.Size(215, 25);
+            this.tienSuBenhTxtBox.Size = new System.Drawing.Size(163, 25);
             this.tienSuBenhTxtBox.TabIndex = 55;
             // 
             // metroSetLabel9
@@ -308,7 +316,7 @@ namespace GUI
             // 
             this.metroSetLabel8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel8.IsDerivedStyle = true;
-            this.metroSetLabel8.Location = new System.Drawing.Point(424, 167);
+            this.metroSetLabel8.Location = new System.Drawing.Point(389, 167);
             this.metroSetLabel8.Name = "metroSetLabel8";
             this.metroSetLabel8.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel8.Style = MetroSet_UI.Enums.Style.Light;
@@ -335,16 +343,16 @@ namespace GUI
             // nameTxtBox
             // 
             this.nameTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nameTxtBox.Location = new System.Drawing.Point(172, 71);
+            this.nameTxtBox.Location = new System.Drawing.Point(172, 65);
             this.nameTxtBox.Name = "nameTxtBox";
-            this.nameTxtBox.Size = new System.Drawing.Size(215, 25);
+            this.nameTxtBox.Size = new System.Drawing.Size(163, 25);
             this.nameTxtBox.TabIndex = 45;
             // 
             // metroSetLabel7
             // 
             this.metroSetLabel7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel7.IsDerivedStyle = true;
-            this.metroSetLabel7.Location = new System.Drawing.Point(424, 115);
+            this.metroSetLabel7.Location = new System.Drawing.Point(389, 121);
             this.metroSetLabel7.Name = "metroSetLabel7";
             this.metroSetLabel7.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel7.Style = MetroSet_UI.Enums.Style.Light;
@@ -358,7 +366,7 @@ namespace GUI
             // 
             this.metroSetLabel6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel6.IsDerivedStyle = true;
-            this.metroSetLabel6.Location = new System.Drawing.Point(424, 73);
+            this.metroSetLabel6.Location = new System.Drawing.Point(389, 71);
             this.metroSetLabel6.Name = "metroSetLabel6";
             this.metroSetLabel6.Size = new System.Drawing.Size(96, 23);
             this.metroSetLabel6.Style = MetroSet_UI.Enums.Style.Light;
@@ -386,7 +394,7 @@ namespace GUI
             // 
             this.metroSetLabel4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.metroSetLabel4.IsDerivedStyle = true;
-            this.metroSetLabel4.Location = new System.Drawing.Point(424, 26);
+            this.metroSetLabel4.Location = new System.Drawing.Point(389, 24);
             this.metroSetLabel4.Name = "metroSetLabel4";
             this.metroSetLabel4.Size = new System.Drawing.Size(104, 23);
             this.metroSetLabel4.Style = MetroSet_UI.Enums.Style.Light;
@@ -443,6 +451,7 @@ namespace GUI
             this.benAnDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.benAnDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT1,
+            this.HOTEN1,
             this.MABA,
             this.NGAYLAP,
             this.NGAYTAIKHAM,
@@ -461,13 +470,22 @@ namespace GUI
             this.benAnDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.benAnDGV.Size = new System.Drawing.Size(882, 177);
             this.benAnDGV.TabIndex = 0;
+            this.benAnDGV.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.benAnDGV_RowEnter);
             this.benAnDGV.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.benAnDGV_RowPostPaint);
             // 
             // STT1
             // 
-            this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.STT1.HeaderText = "STT";
             this.STT1.Name = "STT1";
+            this.STT1.Width = 61;
+            // 
+            // HOTEN1
+            // 
+            this.HOTEN1.DataPropertyName = "HOTEN";
+            this.HOTEN1.HeaderText = "Họ tên";
+            this.HOTEN1.Name = "HOTEN1";
+            this.HOTEN1.Visible = false;
             // 
             // MABA
             // 
@@ -526,7 +544,6 @@ namespace GUI
             this.HUONGXULY.DataPropertyName = "HUONGXULY";
             this.HUONGXULY.HeaderText = "Hướng xử lý ";
             this.HUONGXULY.Name = "HUONGXULY";
-            this.HUONGXULY.Visible = false;
             // 
             // GHICHU
             // 
@@ -617,10 +634,10 @@ namespace GUI
             // 
             // STT
             // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
-            this.STT.Width = 5;
+            this.STT.Width = 61;
             // 
             // CMND
             // 
@@ -747,17 +764,17 @@ namespace GUI
         private System.Windows.Forms.DataGridView danhSA;
         private System.Windows.Forms.Button e;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker ngayKhamDTPicker;
+        private System.Windows.Forms.DateTimePicker ngayTaiKhamDTPicker;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MABN1;
         private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn GT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MABN1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MABA;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYLAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTAIKHAM;
@@ -768,5 +785,6 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn CHANDOAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn HUONGXULY;
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
     }
 }
