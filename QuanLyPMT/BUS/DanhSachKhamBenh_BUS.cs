@@ -17,5 +17,14 @@ namespace BUS
         {
             danhsachkhambenh_DAL.AddBenhNhanToDanhSach(MABN);
         }
+
+        public void deleteBenhNhanFromDanhSach(int MABN)
+        {
+            danhsachkhambenh_DAL.DeleteBenhNhanFromDanhSach(MABN);
+        }
+        public DataSet searchBenhNhanFromDanhSach (string CMND)
+        {
+           return danhsachkhambenh_DAL.searchBenhNhanFromDanhSach(CMND);
+        }
     }
 }

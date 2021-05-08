@@ -593,6 +593,7 @@ namespace GUI
             this.searchTextbox.Name = "searchTextbox";
             this.searchTextbox.Size = new System.Drawing.Size(185, 25);
             this.searchTextbox.TabIndex = 62;
+            this.searchTextbox.TextChanged += new System.EventHandler(this.searchTextbox_TextChanged);
             // 
             // deleteBenhNhanTrongDanhSachBtn
             // 
@@ -607,6 +608,7 @@ namespace GUI
             this.deleteBenhNhanTrongDanhSachBtn.Text = "Xoá";
             this.deleteBenhNhanTrongDanhSachBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.deleteBenhNhanTrongDanhSachBtn.UseVisualStyleBackColor = false;
+            this.deleteBenhNhanTrongDanhSachBtn.Click += new System.EventHandler(this.deleteBenhNhanTrongDanhSachBtn_Click);
             // 
             // benhNhanListDGV
             // 

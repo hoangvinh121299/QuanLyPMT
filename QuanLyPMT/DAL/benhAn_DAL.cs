@@ -144,22 +144,7 @@ namespace DAL
             }
         }
 
-        //Tìm kiếm thông tin bệnh nhân
-        //    public DataSet searchBenhNhan(string CMND)
-        //    {
-        //        DataSet searchResult = new DataSet();
-        //        string searchQuerry = "select * from BENHNHAN where CMND like @CMND";
-        //        using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
-        //        {
-        //            connection.Open();
-        //            SqlCommand cmdSearch = new SqlCommand(searchQuerry, connection);
-        //            cmdSearch.Parameters.Add("@CMND", SqlDbType.VarChar).Value = CMND + "%";
-        //            SqlDataAdapter adapter = new SqlDataAdapter(cmdSearch);
-        //            adapter.Fill(searchResult);
-        //            connection.Close();
-        //        }
-        //        return searchResult;
-        //    }
+      
         //    public DataSet getHistoryExamByID(int MABENHNHAN)
         //    {
         //        DataSet getResult = new DataSet();

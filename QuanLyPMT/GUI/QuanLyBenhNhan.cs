@@ -226,12 +226,7 @@ namespace GUI
             
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
-        {
-            string temp;
-            temp = CMNDtextBox2.Text;
-            showSearchResult(temp);
-        }
+     
         private bool checkData()
         {
             if (string.IsNullOrEmpty(nameTxtBox.Text))

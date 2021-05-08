@@ -30,16 +30,11 @@ namespace GUI
         {
 
         }
-
+        
         private void KhamBenh_Load(object sender, EventArgs e)
         {
             showDanhSachBenhNhan();
             loadForm();
-        }
-
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void examTabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,7 +49,10 @@ namespace GUI
         {
             benhNhanListDGV.DataSource = danhsachkhambenh_BUS.getDanhSachBenhNhanInDay().Tables[0];
         }
-
+        void showSearchResult(string CMND)
+        {
+            benhNhanListDGV.DataSource = danhsachkhambenh_BUS.searchBenhNhanFromDanhSach(CMND).Tables[0];
+        }
         private void benhNhanListDGV_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
@@ -285,6 +283,27 @@ namespace GUI
                 loadForm();
             }
         }
+
+        private void deleteBenhNhanTrongDanhSachBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show
+               ("Bạn có chắc chắn muốn xóa bệnh nhân này ra khỏi danh sách ?",
+                "Thông báo",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+            {
+                danhsachkhambenh_BUS.deleteBenhNhanFromDanhSach(fromTable.MABN);
+                MessageBox.Show("Xoá thông tin thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                showDanhSachBenhNhan();
+            }
+        }
+
+        private void searchTextbox_TextChanged(object sender, EventArgs e)
+        {
+            string temp;
+            temp = searchTextbox.Text;
+            showSearchResult(temp);
+        }
+
         private bool checkData()
         {
           
@@ -318,12 +337,15 @@ namespace GUI
                 huongxulyTxtBox.Focus();
                 return false;
             }
+            if (ngayTaiKhamDTPicker.Value <=ngayKhamDTPicker.Value )
+            {
+                MessageBox.Show("Ngày tái khám phải lớn hơn ngày khám ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ngayTaiKhamDTPicker.Focus();
+                return false;
+            }
             return true;
         }
     }
-    //Kiểm tra điều kiện ngày tái khám > ngày khám
-    //tự động lấy ngày khám là ngày hôm nay
-    //Chức năng xoá bệnh nhân trong danh sách
-    //Chức năng tìm kiếm thông tin trong danh sách bệnh nhân
+
 }
 
