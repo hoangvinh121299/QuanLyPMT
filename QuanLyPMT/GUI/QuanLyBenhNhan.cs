@@ -25,12 +25,14 @@ namespace GUI
         BenhNhan fromTable = new BenhNhan();
         BenhNhan fromForm = new BenhNhan();
         BenhNhan_BUS benhNhan_BUS = new BenhNhan_BUS();
+        DanhSachKhamBenh_BUS danhsachkhambenh_BUS = new DanhSachKhamBenh_BUS();
         bool isUsingAdd = false;
         bool isUsingUpdate = false;
         void showData()
         {
             danhSachBenhNhanDgv.DataSource = benhNhan_BUS.getData().Tables[0];
         }
+
         void showSearchResult(string CMND)
         {
             danhSachBenhNhanDgv.DataSource = benhNhan_BUS.searchBenhNhan(CMND).Tables[0];
@@ -224,12 +226,7 @@ namespace GUI
             
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
-        {
-            string temp;
-            temp = CMNDtextBox2.Text;
-            showSearchResult(temp);
-        }
+     
         private bool checkData()
         {
             if (string.IsNullOrEmpty(nameTxtBox.Text))
@@ -328,6 +325,10 @@ namespace GUI
             temp = CMNDtextBox2.Text;
             showSearchResult(temp);
         }
-        //Something new here to test QuanLyBenhNhan branch
+
+        private void examBtn_Click(object sender, EventArgs e)
+        {
+            danhsachkhambenh_BUS.AddBenhNhanToDanhSach(fromTable.MABENHNHAN);
+        }
     }
 }

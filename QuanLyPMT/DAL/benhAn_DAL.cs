@@ -23,7 +23,22 @@ namespace DAL
             }
             return dataBenhan;
         }
-
+        //Lấy thông tin bệnh án theo MABN
+        public DataSet getDataBenhanByID(int MABN)
+        {
+            DataSet dataBenhanID = new DataSet();
+            string selectAll = "Select * from Benhan where MABN = @MABN";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand getByID = new SqlCommand(selectAll, connection);
+                getByID.Parameters.Add("@MABN", SqlDbType.Int).Value = MABN; 
+                SqlDataAdapter adapter = new SqlDataAdapter(getByID);
+                adapter.Fill(dataBenhanID);
+                connection.Close();
+            }
+            return dataBenhanID;
+        }
         //Thêm thông tin bệnh án 
         public void addBenhan(DateTime NGAYLAP,
                               DateTime NGAYTAIKHAM,
@@ -49,6 +64,7 @@ namespace DAL
                     cmdInsert.Parameters.Add("@NGAYTAIKHAM", SqlDbType.DateTime).Value = NGAYTAIKHAM;
                     cmdInsert.Parameters.Add("@MABN", SqlDbType.Int).Value = MABN;
                     cmdInsert.Parameters.Add("@MANV", SqlDbType.Int).Value = MANV;
+                    cmdInsert.Parameters.Add("@TIENSUBENH", SqlDbType.NVarChar).Value = TIENSUBENH;
                     cmdInsert.Parameters.Add("@TRIEUCHUNG", SqlDbType.NVarChar).Value = TRIEUCHUNG;
                     cmdInsert.Parameters.Add("@LOAIBENH", SqlDbType.NVarChar).Value = LOAIBENH;
                     cmdInsert.Parameters.Add("@CHANDOAN", SqlDbType.NVarChar).Value = CHANDOAN;
@@ -69,7 +85,7 @@ namespace DAL
         public void updateBenhan(int MABA,
                               DateTime NGAYLAP,
                               DateTime NGAYTAIKHAM,
-                              int MABN,
+                             
                               int MANV,
                               string TIENSUBENH,
                               string TRIEUCHUNG,
@@ -78,7 +94,7 @@ namespace DAL
                               string HUONGXULY,
                               string GHICHU)
         {
-            string updateInto = "update benhan set NGAYLAP = @NGAYLAP, NGAYTAIKHAM = @NGAYTAIKHAM, MABN=@MABN, MANV = @MANV, TIENSUBENH=@TIENSUBENH,TRIEUCHUNG=@TRIEUCHUNG, LOAIBENH=@LOAIBENH, CHANDOAN = @CHANDOAN, HUONGXULY=@HUONGXULY, GHICHU=@GHICHU WHERE MABA = @MABA";
+            string updateInto = "update benhan set NGAYLAP = @NGAYLAP, NGAYTAIKHAM = @NGAYTAIKHAM,MANV = @MANV, TIENSUBENH=@TIENSUBENH,TRIEUCHUNG=@TRIEUCHUNG, LOAIBENH=@LOAIBENH, CHANDOAN = @CHANDOAN, HUONGXULY=@HUONGXULY, GHICHU=@GHICHU WHERE MABA = @MABA";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
             {
                 try
@@ -89,8 +105,8 @@ namespace DAL
 
                     cmdInsert.Parameters.Add("@NGAYLAP", SqlDbType.DateTime).Value = NGAYLAP;
                     cmdInsert.Parameters.Add("@NGAYTAIKHAM", SqlDbType.DateTime).Value = NGAYTAIKHAM;
-                    cmdInsert.Parameters.Add("@MABN", SqlDbType.Int).Value = MABN;
                     cmdInsert.Parameters.Add("@MANV", SqlDbType.Int).Value = MANV;
+                    cmdInsert.Parameters.Add("@TIENSUBENH", SqlDbType.NVarChar).Value = TIENSUBENH;
                     cmdInsert.Parameters.Add("@TRIEUCHUNG", SqlDbType.NVarChar).Value = TRIEUCHUNG;
                     cmdInsert.Parameters.Add("@LOAIBENH", SqlDbType.NVarChar).Value = LOAIBENH;
                     cmdInsert.Parameters.Add("@CHANDOAN", SqlDbType.NVarChar).Value = CHANDOAN;
@@ -128,22 +144,7 @@ namespace DAL
             }
         }
 
-        //Tìm kiếm thông tin bệnh nhân
-        //    public DataSet searchBenhNhan(string CMND)
-        //    {
-        //        DataSet searchResult = new DataSet();
-        //        string searchQuerry = "select * from BENHNHAN where CMND like @CMND";
-        //        using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
-        //        {
-        //            connection.Open();
-        //            SqlCommand cmdSearch = new SqlCommand(searchQuerry, connection);
-        //            cmdSearch.Parameters.Add("@CMND", SqlDbType.VarChar).Value = CMND + "%";
-        //            SqlDataAdapter adapter = new SqlDataAdapter(cmdSearch);
-        //            adapter.Fill(searchResult);
-        //            connection.Close();
-        //        }
-        //        return searchResult;
-        //    }
+      
         //    public DataSet getHistoryExamByID(int MABENHNHAN)
         //    {
         //        DataSet getResult = new DataSet();
