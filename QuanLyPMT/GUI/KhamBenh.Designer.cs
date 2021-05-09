@@ -161,7 +161,7 @@ namespace GUI
             this.ngayTaiKhamDTPicker.Location = new System.Drawing.Point(555, 22);
             this.ngayTaiKhamDTPicker.Name = "ngayTaiKhamDTPicker";
             this.ngayTaiKhamDTPicker.Size = new System.Drawing.Size(163, 21);
-            this.ngayTaiKhamDTPicker.TabIndex = 64;
+            this.ngayTaiKhamDTPicker.TabIndex = 4;
             // 
             // ngayKhamDTPicker
             // 
@@ -169,7 +169,7 @@ namespace GUI
             this.ngayKhamDTPicker.Location = new System.Drawing.Point(172, 24);
             this.ngayKhamDTPicker.Name = "ngayKhamDTPicker";
             this.ngayKhamDTPicker.Size = new System.Drawing.Size(163, 21);
-            this.ngayKhamDTPicker.TabIndex = 63;
+            this.ngayKhamDTPicker.TabIndex = 0;
             // 
             // deleteBtn
             // 
@@ -180,7 +180,7 @@ namespace GUI
             this.deleteBtn.Location = new System.Drawing.Point(767, 142);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(112, 37);
-            this.deleteBtn.TabIndex = 62;
+            this.deleteBtn.TabIndex = 13;
             this.deleteBtn.Text = "Xoá";
             this.deleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.deleteBtn.UseVisualStyleBackColor = false;
@@ -195,7 +195,7 @@ namespace GUI
             this.cancelBtn.Location = new System.Drawing.Point(767, 96);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(112, 40);
-            this.cancelBtn.TabIndex = 39;
+            this.cancelBtn.TabIndex = 15;
             this.cancelBtn.Text = "Huỷ bỏ ";
             this.cancelBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.cancelBtn.UseVisualStyleBackColor = false;
@@ -208,7 +208,7 @@ namespace GUI
             this.noteTextBox.Multiline = true;
             this.noteTextBox.Name = "noteTextBox";
             this.noteTextBox.Size = new System.Drawing.Size(885, 161);
-            this.noteTextBox.TabIndex = 60;
+            this.noteTextBox.TabIndex = 8;
             // 
             // saveBtn
             // 
@@ -220,7 +220,7 @@ namespace GUI
             this.saveBtn.Location = new System.Drawing.Point(767, 50);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(110, 40);
-            this.saveBtn.TabIndex = 38;
+            this.saveBtn.TabIndex = 14;
             this.saveBtn.Text = "Xác nhận";
             this.saveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.saveBtn.UseVisualStyleBackColor = false;
@@ -236,7 +236,7 @@ namespace GUI
             this.updateBtn.Location = new System.Drawing.Point(767, 96);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(110, 40);
-            this.updateBtn.TabIndex = 37;
+            this.updateBtn.TabIndex = 12;
             this.updateBtn.Text = "Cập nhật";
             this.updateBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.updateBtn.UseVisualStyleBackColor = false;
@@ -248,7 +248,7 @@ namespace GUI
             this.huongxulyTxtBox.Location = new System.Drawing.Point(555, 163);
             this.huongxulyTxtBox.Name = "huongxulyTxtBox";
             this.huongxulyTxtBox.Size = new System.Drawing.Size(163, 25);
-            this.huongxulyTxtBox.TabIndex = 59;
+            this.huongxulyTxtBox.TabIndex = 7;
             // 
             // adddBtn
             // 
@@ -260,7 +260,7 @@ namespace GUI
             this.adddBtn.Location = new System.Drawing.Point(767, 50);
             this.adddBtn.Name = "adddBtn";
             this.adddBtn.Size = new System.Drawing.Size(110, 40);
-            this.adddBtn.TabIndex = 36;
+            this.adddBtn.TabIndex = 11;
             this.adddBtn.Text = "Thêm";
             this.adddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.adddBtn.UseVisualStyleBackColor = false;
@@ -268,16 +268,19 @@ namespace GUI
             // 
             // chanDoanCBB
             // 
+            this.chanDoanCBB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.chanDoanCBB.FormattingEnabled = true;
             this.chanDoanCBB.Location = new System.Drawing.Point(172, 165);
             this.chanDoanCBB.Name = "chanDoanCBB";
             this.chanDoanCBB.Size = new System.Drawing.Size(163, 25);
-            this.chanDoanCBB.TabIndex = 58;
+            this.chanDoanCBB.TabIndex = 3;
             // 
             // loaiBenhCBB
             // 
+            this.loaiBenhCBB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.loaiBenhCBB.FormattingEnabled = true;
-            this.loaiBenhCBB.Location = new System.Drawing.Point(555, 119);
+            this.loaiBenhCBB.ItemHeight = 17;
+            this.loaiBenhCBB.Location = new System.Drawing.Point(555, 111);
             this.loaiBenhCBB.Name = "loaiBenhCBB";
             this.loaiBenhCBB.Size = new System.Drawing.Size(163, 25);
             this.loaiBenhCBB.TabIndex = 57;
@@ -288,7 +291,7 @@ namespace GUI
             this.trieuchungTxtBox.Location = new System.Drawing.Point(555, 65);
             this.trieuchungTxtBox.Name = "trieuchungTxtBox";
             this.trieuchungTxtBox.Size = new System.Drawing.Size(163, 25);
-            this.trieuchungTxtBox.TabIndex = 56;
+            this.trieuchungTxtBox.TabIndex = 5;
             // 
             // tienSuBenhTxtBox
             // 
@@ -296,7 +299,7 @@ namespace GUI
             this.tienSuBenhTxtBox.Location = new System.Drawing.Point(172, 116);
             this.tienSuBenhTxtBox.Name = "tienSuBenhTxtBox";
             this.tienSuBenhTxtBox.Size = new System.Drawing.Size(163, 25);
-            this.tienSuBenhTxtBox.TabIndex = 55;
+            this.tienSuBenhTxtBox.TabIndex = 2;
             // 
             // metroSetLabel9
             // 
@@ -346,7 +349,7 @@ namespace GUI
             this.nameTxtBox.Location = new System.Drawing.Point(172, 65);
             this.nameTxtBox.Name = "nameTxtBox";
             this.nameTxtBox.Size = new System.Drawing.Size(163, 25);
-            this.nameTxtBox.TabIndex = 45;
+            this.nameTxtBox.TabIndex = 1;
             // 
             // metroSetLabel7
             // 
@@ -592,7 +595,7 @@ namespace GUI
             this.searchTextbox.Location = new System.Drawing.Point(131, 504);
             this.searchTextbox.Name = "searchTextbox";
             this.searchTextbox.Size = new System.Drawing.Size(185, 25);
-            this.searchTextbox.TabIndex = 62;
+            this.searchTextbox.TabIndex = 9;
             this.searchTextbox.TextChanged += new System.EventHandler(this.searchTextbox_TextChanged);
             // 
             // deleteBenhNhanTrongDanhSachBtn
@@ -604,7 +607,7 @@ namespace GUI
             this.deleteBenhNhanTrongDanhSachBtn.Location = new System.Drawing.Point(239, 538);
             this.deleteBenhNhanTrongDanhSachBtn.Name = "deleteBenhNhanTrongDanhSachBtn";
             this.deleteBenhNhanTrongDanhSachBtn.Size = new System.Drawing.Size(77, 39);
-            this.deleteBenhNhanTrongDanhSachBtn.TabIndex = 61;
+            this.deleteBenhNhanTrongDanhSachBtn.TabIndex = 10;
             this.deleteBenhNhanTrongDanhSachBtn.Text = "Xoá";
             this.deleteBenhNhanTrongDanhSachBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.deleteBenhNhanTrongDanhSachBtn.UseVisualStyleBackColor = false;

@@ -164,6 +164,7 @@ namespace GUI
             nameTxtBox.Enabled = true;
             CMNDtextBOX1.Enabled = true;
             femaleBtn.Enabled = true;
+            maleBtn.Enabled = true;
             phoneTxtBox.Enabled = true;
             CMNDtextBox2.Enabled = false;
             addressTextbox.Enabled = true;
@@ -185,8 +186,8 @@ namespace GUI
                                                  fromForm.HOTEN,
                                                  fromForm.GIOITINH,
                                                  fromForm.DIACHI,
-                                                 fromForm.SDT,
-                                                 fromForm.GHICHU);
+                                                 fromForm.SDT
+                                                 );
                         showData();
                         loadForm();
                         return;
@@ -330,5 +331,7 @@ namespace GUI
         {
             danhsachkhambenh_BUS.AddBenhNhanToDanhSach(fromTable.MABENHNHAN);
         }
+
+
     }
 }

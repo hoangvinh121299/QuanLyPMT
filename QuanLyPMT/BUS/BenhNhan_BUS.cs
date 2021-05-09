@@ -14,9 +14,9 @@ namespace BUS
         {
             return benhNhan_DAL.getDataBenhNhan();
         }
-        public void addBenhNhan(string CMND, DateTime NGAYSINH, string HOTEN, string GIOITINH, string DIACHI, string SDT, string GHICHU)
+        public void addBenhNhan(string CMND, DateTime NGAYSINH, string HOTEN, string GIOITINH, string DIACHI, string SDT)
         {
-            benhNhan_DAL.addBenhNhan(CMND, NGAYSINH, HOTEN, GIOITINH, DIACHI, SDT, GHICHU);
+            benhNhan_DAL.addBenhNhan(CMND, NGAYSINH, HOTEN, GIOITINH, DIACHI, SDT);
         }
         public void updateBenhNhan(int MABENHNHAN, string CMND, DateTime NGAYSINH, string HOTEN, string GIOITINH, string DIACHI, string SDT)
         {

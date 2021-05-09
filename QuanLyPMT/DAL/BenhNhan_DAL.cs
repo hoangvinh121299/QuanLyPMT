@@ -25,9 +25,9 @@ namespace DAL
         }
 
         //Thêm thông tin bệnh nhân
-        public void addBenhNhan( string CMND, DateTime NGAYSINH, string HOTEN, string GIOITINH, string DIACHI, string SDT, string GHICHU )
+        public void addBenhNhan( string CMND, DateTime NGAYSINH, string HOTEN, string GIOITINH, string DIACHI, string SDT)
         {
-            string insertInto = "INSERT INTO BENHNHAN VALUES (@CMND,@NGAYSINH,@HOTEN,@GIOITINH,@DIACHI,@SDT,@GHICHU)";
+            string insertInto = "INSERT INTO BENHNHAN VALUES (@CMND,@NGAYSINH,@HOTEN,@GIOITINH,@DIACHI,@SDT)";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
             {
                 try
@@ -42,8 +42,6 @@ namespace DAL
                     cmdInsert.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = GIOITINH;
                     cmdInsert.Parameters.Add("@DIACHI", SqlDbType.NVarChar).Value = DIACHI;
                     cmdInsert.Parameters.Add("@SDT", SqlDbType.VarChar).Value = SDT;
-                    cmdInsert.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = GHICHU;
-
                     cmdInsert.ExecuteNonQuery();
                     connection.Close();
                 }
