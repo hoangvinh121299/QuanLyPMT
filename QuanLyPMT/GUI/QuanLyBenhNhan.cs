@@ -88,7 +88,10 @@ namespace GUI
                 maleBtn.Checked = true;
 
             }
-            birthDateTimePicker.Text = fromTable.NGAYSINH.ToString();
+            if (fromTable.NGAYSINH.ToShortDateString() != "1/1/0001")
+                birthDateTimePicker.Text = fromTable.NGAYSINH.ToShortDateString();
+            else
+                birthDateTimePicker.Text = null;
             addressTextbox.Text = fromTable.DIACHI;
             phoneTxtBox.Text = fromTable.SDT;
            

@@ -13,16 +13,20 @@ namespace GUI
 {
     public partial class KhamBenh : UserControl
     {
+
         public KhamBenh()
         {
             InitializeComponent();
            
         }
+        DonThuoc_BUS donThuoc_BUS = new DonThuoc_BUS();
+        DonThuoc donThuoc = new DonThuoc();
         benhAn_BUS BENHAN_BUS = new benhAn_BUS();
         BenhNhan_BUS BENHNHAN_BUS = new BenhNhan_BUS();
         DanhSachKhamBenh_BUS danhsachkhambenh_BUS = new DanhSachKhamBenh_BUS();
         //Dùng để lấy dữ liệu từ bảng
         BenhAN fromTable = new BenhAN();
+        DonThuoc test = new DonThuoc();
         BenhAN fromForm = new BenhAN();
         //Lấy dữ liệu nhập từ form
         bool isUsingAdd, isUsingUpdate = false;
@@ -35,6 +39,10 @@ namespace GUI
         {
             showDanhSachBenhNhan();
             loadForm();
+            thuoc_cbb.DataSource = donThuoc_BUS.getDataForNametbox().Tables[0];
+            thuoc_cbb.ValueMember = "malt";
+            thuoc_cbb.DisplayMember = "tenlt";
+            
         }
 
         private void examTabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -112,12 +120,13 @@ namespace GUI
                 {
 
                 }
-                fromTable.TIENSUBENH = benAnDGV.Rows[index].Cells["TIENSUBENH"].Value.ToString();
-                fromTable.TRIEUCHUNG = benAnDGV.Rows[index].Cells["TRIEUCHUNG"].Value.ToString();
-                fromTable.LOAIBENH = benAnDGV.Rows[index].Cells["LOAIBENH"].Value.ToString();
-                fromTable.CHANDOAN = benAnDGV.Rows[index].Cells["CHANDOAN"].Value.ToString();
-                fromTable.HUONGXULY = benAnDGV.Rows[index].Cells["HUONGXULY"].Value.ToString();
-                fromTable.GHICHU = benAnDGV.Rows[index].Cells["GHICHU"].Value.ToString();
+
+                //fromTable.TIENSUBENH = benAnDGV.Rows[index].Cells["TIENSUBENH"].Value.ToString();
+                //fromTable.TRIEUCHUNG = benAnDGV.Rows[index].Cells["TRIEUCHUNG"].Value.ToString();
+                //fromTable.LOAIBENH = benAnDGV.Rows[index].Cells["LOAIBENH"].Value.ToString();
+                //fromTable.CHANDOAN = benAnDGV.Rows[index].Cells["CHANDOAN"].Value.ToString();
+                //fromTable.HUONGXULY = benAnDGV.Rows[index].Cells["HUONGXULY"].Value.ToString();
+               // fromTable.GHICHU = benAnDGV.Rows[index].Cells["GHICHU"].Value.ToString();
             }
             setValueToForm(fromTable);
         }
@@ -304,7 +313,14 @@ namespace GUI
             showSearchResult(temp);
         }
 
-      
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            donThuoc_BUS.addDonthuoc(fromTable.MABA,fromTable.NGAYLAP);
+            donThuoc_BUS.getDataDonThuocforBA(fromTable.MABA);
+            int? a;
+
+        }
+
         private bool checkData()
         {
           
