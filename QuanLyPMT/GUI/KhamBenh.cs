@@ -16,7 +16,6 @@ namespace GUI
         public KhamBenh()
         {
             InitializeComponent();
-           
         }
         benhAn_BUS BENHAN_BUS = new benhAn_BUS();
         BenhNhan_BUS BENHNHAN_BUS = new BenhNhan_BUS();
@@ -304,7 +303,11 @@ namespace GUI
             showSearchResult(temp);
         }
 
-      
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private bool checkData()
         {
           
