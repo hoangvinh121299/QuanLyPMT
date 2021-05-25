@@ -120,6 +120,7 @@ namespace GUI
                 fromTable.GHICHU = benAnDGV.Rows[index].Cells["GHICHU"].Value.ToString();
             }
             setValueToForm(fromTable);
+            
         }
         //Đổ dữ liệu vào form
         public void setValueToForm(BenhAN benhAN)

@@ -44,5 +44,12 @@ namespace GUI
             displayPanel.Controls.Clear();
             displayPanel.Controls.Add(khamBenh);
         }
+
+        private void accountBtn_Click(object sender, EventArgs e)
+        {
+            NhanVien nhanvien = new NhanVien();
+            displayPanel.Controls.Clear();
+            displayPanel.Controls.Add(nhanvien);
+        }
     }
 }

@@ -103,9 +103,10 @@ namespace GUI
             this.accountBtn.Name = "accountBtn";
             this.accountBtn.Size = new System.Drawing.Size(149, 72);
             this.accountBtn.TabIndex = 5;
-            this.accountBtn.Text = "Quản lý tài khoản";
+            this.accountBtn.Text = "Nhân viên";
             this.accountBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.accountBtn.UseVisualStyleBackColor = false;
+            this.accountBtn.Click += new System.EventHandler(this.accountBtn_Click);
             // 
             // sickBtn
             // 
