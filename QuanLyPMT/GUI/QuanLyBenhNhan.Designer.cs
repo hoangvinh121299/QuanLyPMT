@@ -60,10 +60,11 @@ namespace GUI
             this.femaleBtn = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.historyExamDgv = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NGAYTAIKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NVLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maleBtn = new System.Windows.Forms.RadioButton();
             this.adddBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
@@ -230,7 +231,7 @@ namespace GUI
             this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(626, 116);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(572, 483);
+            this.groupBox1.Size = new System.Drawing.Size(572, 499);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách bệnh nhân";
@@ -263,7 +264,7 @@ namespace GUI
             this.danhSachBenhNhanDgv.RowHeadersWidth = 51;
             this.danhSachBenhNhanDgv.RowTemplate.Height = 25;
             this.danhSachBenhNhanDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.danhSachBenhNhanDgv.Size = new System.Drawing.Size(566, 459);
+            this.danhSachBenhNhanDgv.Size = new System.Drawing.Size(566, 475);
             this.danhSachBenhNhanDgv.TabIndex = 0;
             this.danhSachBenhNhanDgv.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachBenhNhanDgv_RowEnter);
             this.danhSachBenhNhanDgv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.danhSachBenhNhanDgv_RowPostPaint);
@@ -410,7 +411,7 @@ namespace GUI
             this.groupBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(0, 287);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(620, 312);
+            this.groupBox2.Size = new System.Drawing.Size(620, 328);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lịch sử khám bệnh";
@@ -425,10 +426,11 @@ namespace GUI
             this.historyExamDgv.BackgroundColor = System.Drawing.Color.Gray;
             this.historyExamDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.historyExamDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.STT1,
             this.NGAYKHAM,
             this.NGAYTAIKHAM,
-            this.NVLAP});
+            this.NVLAP,
+            this.CHUCVU});
             this.historyExamDgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.historyExamDgv.GridColor = System.Drawing.Color.Black;
             this.historyExamDgv.Location = new System.Drawing.Point(3, 21);
@@ -437,16 +439,17 @@ namespace GUI
             this.historyExamDgv.RowHeadersVisible = false;
             this.historyExamDgv.RowTemplate.Height = 25;
             this.historyExamDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.historyExamDgv.Size = new System.Drawing.Size(614, 288);
+            this.historyExamDgv.Size = new System.Drawing.Size(614, 304);
             this.historyExamDgv.TabIndex = 0;
+            this.historyExamDgv.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.historyExamDgv_RowPostPaint);
             // 
-            // dataGridViewTextBoxColumn1
+            // STT1
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 61;
+            this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.STT1.HeaderText = "STT";
+            this.STT1.Name = "STT1";
+            this.STT1.ReadOnly = true;
+            this.STT1.Width = 61;
             // 
             // NGAYKHAM
             // 
@@ -468,6 +471,15 @@ namespace GUI
             this.NVLAP.HeaderText = "Nhân viên lập";
             this.NVLAP.Name = "NVLAP";
             this.NVLAP.ReadOnly = true;
+            // 
+            // CHUCVU
+            // 
+            this.CHUCVU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.CHUCVU.DataPropertyName = "CHUCVU";
+            this.CHUCVU.HeaderText = "Chức vụ";
+            this.CHUCVU.Name = "CHUCVU";
+            this.CHUCVU.ReadOnly = true;
+            this.CHUCVU.Width = 90;
             // 
             // maleBtn
             // 
@@ -578,7 +590,7 @@ namespace GUI
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "QuanLyBenhNhan";
-            this.Size = new System.Drawing.Size(1205, 604);
+            this.Size = new System.Drawing.Size(1205, 618);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.danhSachBenhNhanDgv)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -622,10 +634,6 @@ namespace GUI
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKHAM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTAIKHAM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NVLAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
@@ -634,5 +642,10 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYSINH;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIOITINH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYKHAM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTAIKHAM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NVLAP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CHUCVU;
     }
 }
