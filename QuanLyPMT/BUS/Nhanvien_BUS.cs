@@ -25,10 +25,10 @@ namespace BUS
         {
             nhanvien_DAL.deleteNhanvien(MANV);
         }
-        //public DataSet getHistoryExam(int MABENHNHAN)
-        //{
-        //    return benhNhan_DAL.getHistoryExamByID(MABENHNHAN);
-        //}
+        public DataSet getHistoryWork(int MANV)
+        {
+            return nhanvien_DAL.getHistoryWorkByID(MANV);
+        }
         public DataSet searchNV(string CMND)
         {
             return nhanvien_DAL.searchNhanvien(CMND);

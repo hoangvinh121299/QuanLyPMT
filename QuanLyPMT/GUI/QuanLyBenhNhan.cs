@@ -332,6 +332,9 @@ namespace GUI
             danhsachkhambenh_BUS.AddBenhNhanToDanhSach(fromTable.MABENHNHAN);
         }
 
-
+        private void historyExamDgv_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            historyExamDgv.Rows[e.RowIndex].Cells["STT1"].Value = (e.RowIndex + 1).ToString();
+        }
     }
 }

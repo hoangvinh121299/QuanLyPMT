@@ -31,7 +31,10 @@ namespace GUI
         {
             danhSachNhanVien_DGV.DataSource = nhanvien_BUS.getDataNhanVien().Tables[0];
         }
-
+        public void showHistoryWork(int MANV)
+        {
+            danhsachBenhAn_DGV.DataSource = nhanvien_BUS.getHistoryWork(MANV).Tables[0];
+        }
         private void danhSachNhanVien_DGV_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -49,6 +52,7 @@ namespace GUI
                 fromTable.CHUCVU = danhSachNhanVien_DGV.Rows[index].Cells["CHUCVU"].Value.ToString();
 
             }
+            showHistoryWork(fromTable.MANV);
             setValueToForm();
             //showHistoryExam(fromForm.MABENHNHAN);
         }
@@ -307,6 +311,24 @@ namespace GUI
         private void danhSachNhanVien_DGV_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             danhSachNhanVien_DGV.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void danhsachBenhAn_DGV_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            danhsachBenhAn_DGV.Rows[e.RowIndex].Cells["STT1"].Value = (e.RowIndex + 1).ToString();
+        }
+        public void showSearchResult()
+        {
+            danhSachNhanVien_DGV.DataSource = nhanvien_BUS.searchNV(CMNDtextBox2.Text).Tables[0];
+        }
+        private void CMNDtextBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (CMNDtextBox2.Text == "")
+                showAllData();
+            else
+            {
+                showSearchResult();
+            }
         }
     }
 }

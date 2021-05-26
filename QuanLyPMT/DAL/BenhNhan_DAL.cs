@@ -120,7 +120,7 @@ namespace DAL
         public DataSet getHistoryExamByID(int MABENHNHAN)
         {
             DataSet getResult = new DataSet();
-            string getQuerry = "select NGAYLAP, NGAYTAIKHAM, NHANVIEN.HOTEN from BENHAN, BENHNHAN,NHANVIEN where BENHNHAN.MABN = @MABENHNHAN AND BENHAN.MANV=1";
+            string getQuerry = "select NGAYLAP, NGAYTAIKHAM, NHANVIEN.HOTEN, NHANVIEN.CHUCVU from BENHAN, BENHNHAN,NHANVIEN where BENHNHAN.MABN = @MABENHNHAN AND BENHAN.MANV=1";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
             {
                 connection.Open();

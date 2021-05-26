@@ -120,20 +120,20 @@ namespace DAL
             }
             return searchResult;
         }
-        //public DataSet getHistoryExamByID(int MABENHNHAN)
-        //{
-        //    DataSet getResult = new DataSet();
-        //    string getQuerry = "select NGAYLAP, NGAYTAIKHAM, NHANVIEN.HOTEN from BENHAN, BENHNHAN,NHANVIEN where BENHNHAN.MABN = @MABENHNHAN AND BENHAN.MANV=1";
-        //    using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
-        //    {
-        //        connection.Open();
-        //        SqlCommand cmdGet = new SqlCommand(getQuerry, connection);
-        //        cmdGet.Parameters.Add("@MABENHNHAN", SqlDbType.Int).Value = MABENHNHAN;
-        //        SqlDataAdapter adapter = new SqlDataAdapter(cmdGet);
-        //        adapter.Fill(getResult);
-        //        connection.Close();
-        //    }
-        //    return getResult;
-        //}
+        public DataSet getHistoryWorkByID(int MANV)
+        {
+            DataSet getResult = new DataSet();
+            string getQuerry = "select NGAYLAP, NGAYTAIKHAM, BENHNHAN.HOTEN, BENHAN.CHANDOAN, BENHAN.HUONGXULY from BENHAN, BENHNHAN,NHANVIEN where BENHNHAN.MABN = BENHAN.MABN AND NHANVIEN.MANV=@MANV";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand cmdGet = new SqlCommand(getQuerry, connection);
+                cmdGet.Parameters.Add("@MANV", SqlDbType.Int).Value = MANV;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmdGet);
+                adapter.Fill(getResult);
+                connection.Close();
+            }
+            return getResult;
+        }
     }
 }
