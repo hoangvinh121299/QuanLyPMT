@@ -51,5 +51,16 @@ namespace GUI
             displayPanel.Controls.Clear();
             displayPanel.Controls.Add(nhanvien);
         }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát ra khỏi chương trình không ?",
+                               "Thông báo",
+                               MessageBoxButtons.OKCancel,
+                               MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
     }
 }

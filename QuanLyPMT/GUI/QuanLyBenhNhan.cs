@@ -300,7 +300,7 @@ namespace GUI
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn hủy bỏ thao tác đang thực hiện", 
+            if (MessageBox.Show("Bạn có muốn hủy bỏ thao tác đang thực hiện ?", 
                                 "Thông báo", 
                                 MessageBoxButtons.OKCancel, 
                                 MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)

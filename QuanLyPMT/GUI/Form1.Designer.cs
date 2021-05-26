@@ -58,7 +58,8 @@ namespace GUI
             this.exitBtn.TabIndex = 7;
             this.exitBtn.Text = "Thoát";
             this.exitBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.exitBtn.UseVisualStyleBackColor = false;
+            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // aboutBtn
             // 
@@ -73,7 +74,7 @@ namespace GUI
             this.aboutBtn.TabIndex = 6;
             this.aboutBtn.Text = "About";
             this.aboutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.aboutBtn.UseVisualStyleBackColor = false;
+            this.aboutBtn.UseVisualStyleBackColor = true;
             // 
             // patientBtn
             // 
@@ -89,7 +90,7 @@ namespace GUI
             this.patientBtn.TabIndex = 0;
             this.patientBtn.Text = "Quản lý bệnh nhân";
             this.patientBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.patientBtn.UseVisualStyleBackColor = false;
+            this.patientBtn.UseVisualStyleBackColor = true;
             this.patientBtn.Click += new System.EventHandler(this.patientBtn_Click);
             // 
             // accountBtn
@@ -105,7 +106,7 @@ namespace GUI
             this.accountBtn.TabIndex = 5;
             this.accountBtn.Text = "Nhân viên";
             this.accountBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.accountBtn.UseVisualStyleBackColor = false;
+            this.accountBtn.UseVisualStyleBackColor = true;
             this.accountBtn.Click += new System.EventHandler(this.accountBtn_Click);
             // 
             // sickBtn
@@ -122,7 +123,7 @@ namespace GUI
             this.sickBtn.TabIndex = 1;
             this.sickBtn.Text = "Quản lý loại bệnh";
             this.sickBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.sickBtn.UseVisualStyleBackColor = false;
+            this.sickBtn.UseVisualStyleBackColor = true;
             this.sickBtn.Click += new System.EventHandler(this.sickBtn_Click);
             // 
             // reportBtn
@@ -138,7 +139,7 @@ namespace GUI
             this.reportBtn.TabIndex = 4;
             this.reportBtn.Text = "Báo cáo thống kê";
             this.reportBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.reportBtn.UseVisualStyleBackColor = false;
+            this.reportBtn.UseVisualStyleBackColor = true;
             // 
             // drugBtn
             // 
@@ -154,7 +155,7 @@ namespace GUI
             this.drugBtn.TabIndex = 2;
             this.drugBtn.Text = "Quản lý tồn kho thuốc";
             this.drugBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.drugBtn.UseVisualStyleBackColor = false;
+            this.drugBtn.UseVisualStyleBackColor = true;
             this.drugBtn.Click += new System.EventHandler(this.drugBtn_Click);
             // 
             // examBtn
@@ -170,7 +171,7 @@ namespace GUI
             this.examBtn.TabIndex = 3;
             this.examBtn.Text = "Khám bệnh";
             this.examBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.examBtn.UseVisualStyleBackColor = false;
+            this.examBtn.UseVisualStyleBackColor = true;
             this.examBtn.Click += new System.EventHandler(this.examBtn_Click);
             // 
             // workPlacePnl
