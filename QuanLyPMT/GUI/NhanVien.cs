@@ -330,5 +330,20 @@ namespace GUI
                 showSearchResult();
             }
         }
+
+        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroSetLabel11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NhanVien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
