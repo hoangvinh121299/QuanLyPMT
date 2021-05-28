@@ -22,7 +22,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.16333in</Top>
-        <Left>2.555in</Left>
+        <Left>3.31333in</Left>
         <Height>0.49167in</Height>
         <Width>2.60833in</Width>
         <Style>
@@ -46,12 +46,14 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>0.88in</Top>
-        <Left>0.405in</Left>
+        <Left>1.16333in</Left>
         <Height>0.2in</Height>
         <Width>1.11667in</Width>
         <ZIndex>1</ZIndex>
@@ -76,12 +78,14 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>1.275in</Top>
-        <Left>0.405in</Left>
+        <Left>1.16333in</Left>
         <Height>0.2in</Height>
         <Width>1.11667in</Width>
         <ZIndex>2</ZIndex>
@@ -99,8 +103,10 @@
     <Height>4.11667in</Height>
     <Style />
   </Body>
-  <Width>7.775in</Width>
+  <Width>8.74167in</Width>
   <Page>
+    <PageHeight>11.69in</PageHeight>
+    <PageWidth>8.27in</PageWidth>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>

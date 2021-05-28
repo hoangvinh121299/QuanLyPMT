@@ -733,6 +733,7 @@ namespace GUI
             this.HOADON.TabIndex = 2;
             this.HOADON.Text = "Hóa đơn";
             this.HOADON.UseVisualStyleBackColor = true;
+            this.HOADON.Click += new System.EventHandler(this.HOADON_Click);
             // 
             // reportViewer1
             // 

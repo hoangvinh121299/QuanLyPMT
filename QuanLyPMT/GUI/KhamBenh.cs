@@ -305,6 +305,14 @@ namespace GUI
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
+            this.reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.ReportPath = @"C:\Users\LENOVO\Downloads\QuanLyPMT\QuanLyPMT\GUI\Report.rdlc";
+            reportViewer1.LocalReport.Refresh();
+            reportViewer1.RefreshReport();
+        }
+
+        private void HOADON_Click(object sender, EventArgs e)
+        {
 
         }
 
