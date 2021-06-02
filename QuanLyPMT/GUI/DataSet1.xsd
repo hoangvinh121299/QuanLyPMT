@@ -12,13 +12,12 @@
               <DbSource ConnectionRef="deni1407\sqlexpress.QLPMT.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT BENHAN.NGAYLAP, BENHNHAN.HOTEN, BENHNHAN.GT, BENHNHAN.NGAYSINH, LOAIBENH.TENBENH, LOAITHUOC.TENLT, LOAITHUOC.GIABAN, CTDONTHUOC.SOLUONG, DONTHUOC.GIATRI
+                    <CommandText>SELECT BENHAN.NGAYLAP, BENHNHAN.HOTEN, BENHNHAN.GT, BENHNHAN.NGAYSINH,BENHAN.LOAIBENH, LOAITHUOC.TENLT, LOAITHUOC.GIABAN, CTDONTHUOC.SOLUONG, DONTHUOC.GIATRI
 FROM     DONTHUOC INNER JOIN
                   CTDONTHUOC ON DONTHUOC.MADT = CTDONTHUOC.MADT INNER JOIN
                   LOAITHUOC ON CTDONTHUOC.MALT = LOAITHUOC.MALT CROSS JOIN
                   BENHAN INNER JOIN
-                  BENHNHAN ON BENHAN.MABN = BENHNHAN.MABN CROSS JOIN
-                  LOAIBENH</CommandText>
+                  BENHNHAN ON BENHAN.MABN = BENHNHAN.MABN </CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -29,7 +28,7 @@ FROM     DONTHUOC INNER JOIN
               <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
               <Mapping SourceColumn="GT" DataSetColumn="GT" />
               <Mapping SourceColumn="NGAYSINH" DataSetColumn="NGAYSINH" />
-              <Mapping SourceColumn="TENBENH" DataSetColumn="TENBENH" />
+              <Mapping SourceColumn="LOAIBENH" DataSetColumn="LOAIBENH" />
               <Mapping SourceColumn="TENLT" DataSetColumn="TENLT" />
               <Mapping SourceColumn="GIABAN" DataSetColumn="GIABAN" />
               <Mapping SourceColumn="SOLUONG" DataSetColumn="SOLUONG" />
@@ -64,10 +63,10 @@ FROM     DONTHUOC INNER JOIN
                 </xs:simpleType>
               </xs:element>
               <xs:element name="NGAYSINH" msprop:Generator_ColumnVarNameInTable="columnNGAYSINH" msprop:Generator_ColumnPropNameInRow="NGAYSINH" msprop:Generator_ColumnPropNameInTable="NGAYSINHColumn" msprop:Generator_UserColumnName="NGAYSINH" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="TENBENH" msprop:Generator_ColumnVarNameInTable="columnTENBENH" msprop:Generator_ColumnPropNameInRow="TENBENH" msprop:Generator_ColumnPropNameInTable="TENBENHColumn" msprop:Generator_UserColumnName="TENBENH" minOccurs="0">
+              <xs:element name="LOAIBENH" msprop:Generator_ColumnVarNameInTable="columnLOAIBENH" msprop:Generator_ColumnPropNameInRow="LOAIBENH" msprop:Generator_ColumnPropNameInTable="LOAIBENHColumn" msprop:Generator_UserColumnName="LOAIBENH" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

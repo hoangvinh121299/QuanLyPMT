@@ -287,7 +287,7 @@ namespace GUI {
             
             private global::System.Data.DataColumn columnNGAYSINH;
             
-            private global::System.Data.DataColumn columnTENBENH;
+            private global::System.Data.DataColumn columnLOAIBENH;
             
             private global::System.Data.DataColumn columnTENLT;
             
@@ -364,9 +364,9 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TENBENHColumn {
+            public global::System.Data.DataColumn LOAIBENHColumn {
                 get {
-                    return this.columnTENBENH;
+                    return this.columnLOAIBENH;
                 }
             }
             
@@ -439,14 +439,14 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row AddDataTable1Row(System.DateTime NGAYLAP, string HOTEN, string GT, System.DateTime NGAYSINH, string TENBENH, string TENLT, decimal GIABAN, int SOLUONG, decimal GIATRI) {
+            public DataTable1Row AddDataTable1Row(System.DateTime NGAYLAP, string HOTEN, string GT, System.DateTime NGAYSINH, string LOAIBENH, string TENLT, decimal GIABAN, int SOLUONG, decimal GIATRI) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NGAYLAP,
                         HOTEN,
                         GT,
                         NGAYSINH,
-                        TENBENH,
+                        LOAIBENH,
                         TENLT,
                         GIABAN,
                         SOLUONG,
@@ -477,7 +477,7 @@ namespace GUI {
                 this.columnHOTEN = base.Columns["HOTEN"];
                 this.columnGT = base.Columns["GT"];
                 this.columnNGAYSINH = base.Columns["NGAYSINH"];
-                this.columnTENBENH = base.Columns["TENBENH"];
+                this.columnLOAIBENH = base.Columns["LOAIBENH"];
                 this.columnTENLT = base.Columns["TENLT"];
                 this.columnGIABAN = base.Columns["GIABAN"];
                 this.columnSOLUONG = base.Columns["SOLUONG"];
@@ -495,8 +495,8 @@ namespace GUI {
                 base.Columns.Add(this.columnGT);
                 this.columnNGAYSINH = new global::System.Data.DataColumn("NGAYSINH", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAYSINH);
-                this.columnTENBENH = new global::System.Data.DataColumn("TENBENH", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTENBENH);
+                this.columnLOAIBENH = new global::System.Data.DataColumn("LOAIBENH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLOAIBENH);
                 this.columnTENLT = new global::System.Data.DataColumn("TENLT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTENLT);
                 this.columnGIABAN = new global::System.Data.DataColumn("GIABAN", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -507,7 +507,7 @@ namespace GUI {
                 base.Columns.Add(this.columnGIATRI);
                 this.columnHOTEN.MaxLength = 50;
                 this.columnGT.MaxLength = 50;
-                this.columnTENBENH.MaxLength = 10;
+                this.columnLOAIBENH.MaxLength = 100;
                 this.columnTENLT.MaxLength = 100;
             }
             
@@ -715,17 +715,17 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string TENBENH {
+            public string LOAIBENH {
                 get {
                     try {
-                        return ((string)(this[this.tableDataTable1.TENBENHColumn]));
+                        return ((string)(this[this.tableDataTable1.LOAIBENHColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TENBENH\' in table \'DataTable1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LOAIBENH\' in table \'DataTable1\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.TENBENHColumn] = value;
+                    this[this.tableDataTable1.LOAIBENHColumn] = value;
                 }
             }
             
@@ -843,14 +843,14 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTENBENHNull() {
-                return this.IsNull(this.tableDataTable1.TENBENHColumn);
+            public bool IsLOAIBENHNull() {
+                return this.IsNull(this.tableDataTable1.LOAIBENHColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTENBENHNull() {
-                this[this.tableDataTable1.TENBENHColumn] = global::System.Convert.DBNull;
+            public void SetLOAIBENHNull() {
+                this[this.tableDataTable1.LOAIBENHColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1065,7 +1065,7 @@ namespace GUI.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("HOTEN", "HOTEN");
             tableMapping.ColumnMappings.Add("GT", "GT");
             tableMapping.ColumnMappings.Add("NGAYSINH", "NGAYSINH");
-            tableMapping.ColumnMappings.Add("TENBENH", "TENBENH");
+            tableMapping.ColumnMappings.Add("LOAIBENH", "LOAIBENH");
             tableMapping.ColumnMappings.Add("TENLT", "TENLT");
             tableMapping.ColumnMappings.Add("GIABAN", "GIABAN");
             tableMapping.ColumnMappings.Add("SOLUONG", "SOLUONG");
@@ -1086,13 +1086,12 @@ namespace GUI.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT BENHAN.NGAYLAP, BENHNHAN.HOTEN, BENHNHAN.GT, BENHNHAN.NGAYSINH, LOAIBENH.TENBENH, LOAITHUOC.TENLT, LOAITHUOC.GIABAN, CTDONTHUOC.SOLUONG, DONTHUOC.GIATRI
+            this._commandCollection[0].CommandText = @"SELECT BENHAN.NGAYLAP, BENHNHAN.HOTEN, BENHNHAN.GT, BENHNHAN.NGAYSINH,BENHAN.LOAIBENH, LOAITHUOC.TENLT, LOAITHUOC.GIABAN, CTDONTHUOC.SOLUONG, DONTHUOC.GIATRI
 FROM     DONTHUOC INNER JOIN
                   CTDONTHUOC ON DONTHUOC.MADT = CTDONTHUOC.MADT INNER JOIN
                   LOAITHUOC ON CTDONTHUOC.MALT = LOAITHUOC.MALT CROSS JOIN
                   BENHAN INNER JOIN
-                  BENHNHAN ON BENHAN.MABN = BENHNHAN.MABN CROSS JOIN
-                  LOAIBENH";
+                  BENHNHAN ON BENHAN.MABN = BENHNHAN.MABN ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
