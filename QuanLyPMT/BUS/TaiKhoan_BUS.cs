@@ -9,7 +9,7 @@ namespace BUS
     {
         TaiKhoan_DAL taikhoan_DAL = new TaiKhoan_DAL();
 
-        DataSet showAllTaiKhoan()
+       public DataSet showAllTaiKhoan()
         {
             return taikhoan_DAL.getDataTaikhoan();
         }
@@ -37,6 +37,10 @@ namespace BUS
         DataSet getLoginHistory(int MATAIKHOAN)
         {
             return taikhoan_DAL.getHistoryLogin(MATAIKHOAN);
+        }
+        public DataSet SearchTaiKhoanByName(string Hoten)
+        {
+            return taikhoan_DAL.searchTaiKhoanByTen(Hoten);
         }
     }
 }

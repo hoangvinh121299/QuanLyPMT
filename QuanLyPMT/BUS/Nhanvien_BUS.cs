@@ -33,5 +33,15 @@ namespace BUS
         {
             return nhanvien_DAL.searchNhanvien(CMND);
         }
+
+        public DataSet getData()
+        {
+            return nhanvien_DAL.getNameNhanVien();
+        }
+
+        public DataSet getNameByLikeLy(string HOTEN)
+        {
+            return nhanvien_DAL.getLikeLyNameNhanvien(HOTEN);
+        }
     }
 }

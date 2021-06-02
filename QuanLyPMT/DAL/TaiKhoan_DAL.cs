@@ -13,7 +13,7 @@ namespace DAL
         public DataSet getDataTaikhoan()
         {
             DataSet dataTaiKhoan = new DataSet();
-            string selectAll = "Select * from Taikhoan";
+            string selectAll = "select nhanvien.hoten,mataikhoan, tendangnhap, matkhau, capbac from taikhoan, nhanvien where taikhoan.manv = nhanvien.manv";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
             {
                 connection.Open();
@@ -23,7 +23,37 @@ namespace DAL
             }
             return dataTaiKhoan;
         }
+        //Lấy thông tin gần đúng của theo tên truyền vào
 
+        public DataSet searchTaiKhoanByTen(string HOTEN)
+        {
+            DataSet result = new DataSet();
+            string selectAll = "select nhanvien.hoten,mataikhoan, tendangnhap, matkhau, capbac from taikhoan, nhanvien where taikhoan.manv = nhanvien.manv and nhanvien.hoten like @HOTEN";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand search = new SqlCommand(selectAll, connection);
+                search.Parameters.Add("@HOTEN", SqlDbType.NVarChar).Value = HOTEN + "%";
+                SqlDataAdapter adapter = new SqlDataAdapter(search);
+                adapter.Fill(result);
+                connection.Close();
+            }
+            return result;
+        }
+        //Lấy thông tin của một nhân viên bất kỳ 
+        public DataSet getPersonAccount(int MANV)
+        {
+            DataSet personData = new DataSet();
+            string select = "select nhanvien.hoten, tendangnhap, matkhau, capbac from taikhoan, nhanvien where taikhoan.manv = @MANV";
+            using(SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(select, connection);
+                adapter.Fill(personData);
+                connection.Close();
+            }
+            return personData;
+        }
         //Thêm thông tin tài khoản 
         public void addTaikhoan(string TENDANGNHAP, string MATKHAU,int MANV, int CAPBAC)
         {
