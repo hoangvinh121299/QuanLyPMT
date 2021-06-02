@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroSet_UI.Forms;
+using DTO;
+using BUS;
 namespace GUI
 {
     public partial class MainForm : MetroSetForm
@@ -15,8 +17,10 @@ namespace GUI
         public MainForm()
         {
             InitializeComponent();
+            
         }
-
+        HoatDongTaiKhoan hoatdongtaikhoan = new HoatDongTaiKhoan();
+        HoatDongTaiKhoan_BUS hoatdongtaikhoan_BUS = new HoatDongTaiKhoan_BUS();
         private void patientBtn_Click(object sender, EventArgs e)
         {
             QuanLyBenhNhan quanLyBenhNhan = new QuanLyBenhNhan();
@@ -59,8 +63,21 @@ namespace GUI
                                MessageBoxButtons.OKCancel,
                                MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
             {
+                hoatdongtaikhoan.DANGXUAT = DateTime.Now;
+                CalculateTimeForLogin();
+                hoatdongtaikhoan_BUS.insertHoatDong(1, hoatdongtaikhoan.DANGNHAP, hoatdongtaikhoan.DANGXUAT, hoatdongtaikhoan.THOILUONG);
                 this.Close();
             }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            hoatdongtaikhoan.DANGNHAP = DateTime.Now;
+        }
+
+        public void CalculateTimeForLogin()
+        {
+            hoatdongtaikhoan.THOILUONG = hoatdongtaikhoan.DANGXUAT - hoatdongtaikhoan.DANGNHAP;
         }
     }
 }

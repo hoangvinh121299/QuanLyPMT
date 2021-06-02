@@ -253,6 +253,7 @@ namespace GUI
             this.SmallLineColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(210)))));
             this.Text = "Quản lý phòng mạch tư";
             this.TextColor = System.Drawing.Color.Black;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.workPlacePnl.ResumeLayout(false);
             this.funcPnel.ResumeLayout(false);
             this.ResumeLayout(false);

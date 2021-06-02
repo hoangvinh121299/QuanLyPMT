@@ -379,6 +379,7 @@ namespace GUI
         private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             showNameNhanVienInCBB();
+            showLoginHistory();
         }
 
         private void accountListDGV_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -590,6 +591,17 @@ namespace GUI
         private void accountListDGV_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             accountListDGV.Rows[e.RowIndex].Cells["STT3"].Value = (e.RowIndex + 1).ToString();
+        }
+
+        public void showLoginHistory()
+        {
+            loginHistoryDGV.DataSource = new HoatDongTaiKhoan_BUS().getHistoryLogin(output.MATAIKHOAN).Tables[0];
+        }
+
+        private void loginHistoryDGV_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            loginHistoryDGV.Rows[e.RowIndex].Cells["STT2"].Value = (e.RowIndex + 1).ToString();
+
         }
     }
 }

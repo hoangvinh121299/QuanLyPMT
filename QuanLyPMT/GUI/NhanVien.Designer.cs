@@ -29,7 +29,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -107,6 +107,7 @@ namespace GUI
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.loginHistoryDGV = new System.Windows.Forms.DataGridView();
             this.STT2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MATAIKHOAN1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DANGNHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DANGXUAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.THOILUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -214,14 +215,14 @@ namespace GUI
             this.DIACHI,
             this.SDT,
             this.CHUCVU});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.danhSachNhanVien_DGV.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.danhSachNhanVien_DGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.danhSachNhanVien_DGV.GridColor = System.Drawing.Color.Black;
             this.danhSachNhanVien_DGV.Location = new System.Drawing.Point(0, 82);
             this.danhSachNhanVien_DGV.Name = "danhSachNhanVien_DGV";
@@ -1045,6 +1046,7 @@ namespace GUI
             this.loginHistoryDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.loginHistoryDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT2,
+            this.MATAIKHOAN1,
             this.DANGNHAP,
             this.DANGXUAT,
             this.THOILUONG});
@@ -1053,8 +1055,10 @@ namespace GUI
             this.loginHistoryDGV.ReadOnly = true;
             this.loginHistoryDGV.RowHeadersVisible = false;
             this.loginHistoryDGV.RowTemplate.Height = 25;
+            this.loginHistoryDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.loginHistoryDGV.Size = new System.Drawing.Size(650, 260);
             this.loginHistoryDGV.TabIndex = 16;
+            this.loginHistoryDGV.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.loginHistoryDGV_RowPostPaint);
             // 
             // STT2
             // 
@@ -1064,9 +1068,18 @@ namespace GUI
             this.STT2.ReadOnly = true;
             this.STT2.Width = 61;
             // 
+            // MATAIKHOAN1
+            // 
+            this.MATAIKHOAN1.DataPropertyName = "MATAIKHOAN";
+            this.MATAIKHOAN1.HeaderText = "Mã tài khoản";
+            this.MATAIKHOAN1.Name = "MATAIKHOAN1";
+            this.MATAIKHOAN1.ReadOnly = true;
+            this.MATAIKHOAN1.Visible = false;
+            // 
             // DANGNHAP
             // 
             this.DANGNHAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DANGNHAP.DataPropertyName = "DANGNHAP";
             this.DANGNHAP.HeaderText = "Đăng nhập";
             this.DANGNHAP.Name = "DANGNHAP";
             this.DANGNHAP.ReadOnly = true;
@@ -1074,6 +1087,7 @@ namespace GUI
             // DANGXUAT
             // 
             this.DANGXUAT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DANGXUAT.DataPropertyName = "DANGXUAT";
             this.DANGXUAT.HeaderText = "Đăng xuất ";
             this.DANGXUAT.Name = "DANGXUAT";
             this.DANGXUAT.ReadOnly = true;
@@ -1081,6 +1095,7 @@ namespace GUI
             // THOILUONG
             // 
             this.THOILUONG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.THOILUONG.DataPropertyName = "THOILUONG";
             this.THOILUONG.HeaderText = "Thời lượng";
             this.THOILUONG.Name = "THOILUONG";
             this.THOILUONG.ReadOnly = true;
@@ -1278,10 +1293,8 @@ namespace GUI
         private System.Windows.Forms.TextBox acc_search_name_textbox;
         private System.Windows.Forms.Button acc_delete_Btn;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DANGNHAP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DANGXUAT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn THOILUONG;
+        private System.Windows.Forms.ComboBox acc_name_cbb;
+        private System.Windows.Forms.Button showPwrd_Btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT3;
         private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN3;
         private System.Windows.Forms.DataGridViewTextBoxColumn MATAIKHOAN;
@@ -1289,7 +1302,10 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn TENDANGNHAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn MATKHAU;
         private System.Windows.Forms.DataGridViewTextBoxColumn CAPBAC;
-        private System.Windows.Forms.ComboBox acc_name_cbb;
-        private System.Windows.Forms.Button showPwrd_Btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MATAIKHOAN1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DANGNHAP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DANGXUAT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn THOILUONG;
     }
 }
