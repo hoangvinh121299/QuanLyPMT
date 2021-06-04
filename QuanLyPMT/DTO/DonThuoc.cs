@@ -13,6 +13,7 @@ namespace DTO
         private int giaTri;
         private int soLuong;
         private int lieuDung;
+        private string tenLT;
 
         public int MaDT { get => maDT; set => maDT = value; }
         public int MaLT { get => maLT; set => maLT = value; }
@@ -21,5 +22,6 @@ namespace DTO
         public int GiaTri { get => giaTri; set => giaTri = value; }
         public int SoLuong { get => soLuong; set => soLuong = value; }
         public int LieuDung { get => lieuDung; set => lieuDung = value; }
+        public string TenLT { get => tenLT; set => tenLT = value; }
     }
 }

@@ -88,9 +88,13 @@ namespace GUI
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.danhSachThuocDgv = new System.Windows.Forms.DataGridView();
             this.numeric = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MALT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MADT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namethuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantitythuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LIEUDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exitBtn = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -777,6 +781,7 @@ namespace GUI
             this.luubtn.Text = "Lưu";
             this.luubtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.luubtn.UseVisualStyleBackColor = false;
+            this.luubtn.Click += new System.EventHandler(this.luubtn_Click);
             // 
             // groupBox4
             // 
@@ -799,24 +804,66 @@ namespace GUI
             this.danhSachThuocDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.danhSachThuocDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numeric,
+            this.GiaTri,
+            this.MALT,
+            this.MADT,
+            this.NgayTao,
             this.namethuoc,
             this.unitthuoc,
-            this.quantitythuoc});
+            this.LIEUDUNG});
             this.danhSachThuocDgv.Location = new System.Drawing.Point(0, 32);
             this.danhSachThuocDgv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.danhSachThuocDgv.Name = "danhSachThuocDgv";
             this.danhSachThuocDgv.ReadOnly = true;
             this.danhSachThuocDgv.RowHeadersWidth = 51;
             this.danhSachThuocDgv.RowTemplate.Height = 25;
-            this.danhSachThuocDgv.Size = new System.Drawing.Size(827, 611);
+            this.danhSachThuocDgv.Size = new System.Drawing.Size(827, 526);
             this.danhSachThuocDgv.TabIndex = 0;
+            this.danhSachThuocDgv.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachThuocDgv_RowEnter);
             // 
             // numeric
             // 
+            this.numeric.DataPropertyName = "STT";
             this.numeric.HeaderText = "STT";
             this.numeric.MinimumWidth = 6;
             this.numeric.Name = "numeric";
             this.numeric.ReadOnly = true;
+            // 
+            // GiaTri
+            // 
+            this.GiaTri.DataPropertyName = "GIATRI";
+            this.GiaTri.HeaderText = "GiaTri";
+            this.GiaTri.MinimumWidth = 6;
+            this.GiaTri.Name = "GiaTri";
+            this.GiaTri.ReadOnly = true;
+            this.GiaTri.Visible = false;
+            // 
+            // MALT
+            // 
+            this.MALT.DataPropertyName = "MALT";
+            this.MALT.HeaderText = "MALT";
+            this.MALT.MinimumWidth = 6;
+            this.MALT.Name = "MALT";
+            this.MALT.ReadOnly = true;
+            this.MALT.Visible = false;
+            // 
+            // MADT
+            // 
+            this.MADT.DataPropertyName = "MADT";
+            this.MADT.HeaderText = "MADT";
+            this.MADT.MinimumWidth = 6;
+            this.MADT.Name = "MADT";
+            this.MADT.ReadOnly = true;
+            this.MADT.Visible = false;
+            // 
+            // NgayTao
+            // 
+            this.NgayTao.DataPropertyName = "NGAYLAP";
+            this.NgayTao.HeaderText = "Ngày Lập";
+            this.NgayTao.MinimumWidth = 6;
+            this.NgayTao.Name = "NgayTao";
+            this.NgayTao.ReadOnly = true;
+            this.NgayTao.Visible = false;
             // 
             // namethuoc
             // 
@@ -834,13 +881,13 @@ namespace GUI
             this.unitthuoc.Name = "unitthuoc";
             this.unitthuoc.ReadOnly = true;
             // 
-            // quantitythuoc
+            // LIEUDUNG
             // 
-            this.quantitythuoc.DataPropertyName = "LIEUDUNG";
-            this.quantitythuoc.HeaderText = "Liều dùng";
-            this.quantitythuoc.MinimumWidth = 6;
-            this.quantitythuoc.Name = "quantitythuoc";
-            this.quantitythuoc.ReadOnly = true;
+            this.LIEUDUNG.DataPropertyName = "LIEUDUNG";
+            this.LIEUDUNG.HeaderText = "Liều dùng";
+            this.LIEUDUNG.MinimumWidth = 6;
+            this.LIEUDUNG.Name = "LIEUDUNG";
+            this.LIEUDUNG.ReadOnly = true;
             // 
             // exitBtn
             // 
@@ -871,6 +918,7 @@ namespace GUI
             this.editBtn.Text = "Sữa";
             this.editBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // label3
             // 
@@ -949,6 +997,7 @@ namespace GUI
             this.button1.Text = "Xoá";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -1070,11 +1119,16 @@ namespace GUI
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView danhSachThuocDgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeric;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namethuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitthuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantitythuoc;
         private System.Windows.Forms.Button luubtn;
         private System.Windows.Forms.ComboBox thuoc_cbb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantitythuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeric;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaTri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MALT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MADT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayTao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namethuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitthuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LIEUDUNG;
     }
 }
