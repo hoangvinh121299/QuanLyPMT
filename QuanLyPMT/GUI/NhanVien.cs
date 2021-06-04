@@ -11,25 +11,45 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DTO;
+
+
 namespace GUI
 {
     public partial class NhanVien : UserControl
     {
         Nhanvien fromTable = new Nhanvien();
         Nhanvien fromForm = new Nhanvien();
+        TaiKhoan output = new TaiKhoan();
+        TaiKhoan input = new TaiKhoan();
+        TaiKhoan taikhoan = new TaiKhoan();
         Nhanvien_BUS nhanvien_BUS = new Nhanvien_BUS();
+        string name = "";
         bool isUsingAdd;
         bool isUsingUpdate;
+        bool isVisible = false;
+        TaiKhoan_BUS taikhoan_BUS = new TaiKhoan_BUS();
         public NhanVien()
         {
-            InitializeComponent();
-            showAllData();
-            loadForm();
+            
         }
-
+        public NhanVien(TaiKhoan references)
+        {
+            InitializeComponent();
+            taikhoan = references;
+            showAllData();
+            showAllAccount();
+            loadForm();
+            loadFomr_Account();
+        }
         public void showAllData()
         {
+            if(taikhoan.CAPBAC ==4)
             danhSachNhanVien_DGV.DataSource = nhanvien_BUS.getDataNhanVien().Tables[0];
+            else
+            {
+                danhSachNhanVien_DGV.DataSource = nhanvien_BUS.getDateNhanVienByMANV(taikhoan.MANV).Tables[0];
+                adddBtn.Visible = false;
+            }
         }
         public void showHistoryWork(int MANV)
         {
@@ -53,11 +73,10 @@ namespace GUI
 
             }
             showHistoryWork(fromTable.MANV);
-            setValueToForm();
-            //showHistoryExam(fromForm.MABENHNHAN);
+            setValueToForm_Staff();
         }
 
-        public void setValueToForm()
+        public void setValueToForm_Staff()
         {
             CMNDtextBOX1.Text = fromTable.CMND;
 
@@ -79,7 +98,58 @@ namespace GUI
 
             positionCbb.Text = fromTable.CHUCVU;
         }
-        public void setValuFromForm()
+        //Đồng bộ thông tin từ đối tượng bảng sang form (tài khoản)
+        public void setValueToForm_Account()
+        {
+            acc_name_cbb.Text = name;
+            acc_username_Textbox.Text = output.TENDANGNHAP;
+            acc_pwrd_Textbox.Text = output.MATKHAU;
+            switch(output.CAPBAC)
+            {
+                case 0:
+                    acc_permission_Combobox.Text = "Bác sĩ";
+                    break;
+                case 1:
+                    acc_permission_Combobox.Text = "Dược sĩ";
+                    break;
+                case 2:
+                    acc_permission_Combobox.Text = "Thu ngân";
+                    break;
+                case 3:
+                    acc_permission_Combobox.Text = "Kế toán";
+                    break;
+                case 4:
+                    acc_permission_Combobox.Text = "Quản trị viên";
+                    break;
+            }
+        }
+        public void setValuefromForm_Account()
+        {
+            //acc_name_cbb.Text = name;
+            //acc_username_Textbox.Text = output.TENDANGNHAP;
+            input.TENDANGNHAP = acc_username_Textbox.Text;
+            input.MATAIKHOAN = output.MATAIKHOAN;
+            input.MATKHAU = acc_pwrd_Textbox.Text;
+            switch (acc_permission_Combobox.Text)
+            {
+                case "Bác sĩ":
+                    input.CAPBAC = 0;
+                    break;
+                case "Dược sĩ":
+                    input.CAPBAC = 1;
+                    break;
+                case "Thu ngân":
+                    input.CAPBAC = 2;
+                    break;
+                case "Kế toán":
+                    input.CAPBAC = 3;
+                    break;
+                case "Quản trị viên":
+                    input.CAPBAC = 4;
+                    break;
+            }
+        }
+        public void setValuFromForm_Staff()
         {
             fromForm.CMND = CMNDtextBOX1.Text;
 
@@ -177,7 +247,7 @@ namespace GUI
         {
 
             adddBtn.Visible = true;
-           
+            
             updateBtn.Visible = true; ;
             saveBtn.Visible = false;
             cancelBtn.Visible = false;
@@ -256,7 +326,7 @@ namespace GUI
             {
                 try
                 {
-                    setValuFromForm();
+                    setValuFromForm_Staff();
                     if (checkData())
                     {
                         nhanvien_BUS.addNhanvien(
@@ -282,7 +352,7 @@ namespace GUI
             {
                 try
                 {
-                    setValuFromForm();
+                    setValuFromForm_Staff();
                     if (checkData())
                     {
                         nhanvien_BUS.updateNhanvien(fromForm.MANV,
@@ -329,6 +399,245 @@ namespace GUI
             {
                 showSearchResult();
             }
+        }
+        public void showAllAccount()
+        {
+            if(taikhoan.CAPBAC ==4)
+            accountListDGV.DataSource = taikhoan_BUS.showAllTaiKhoan().Tables[0];
+            else
+            {
+                accountListDGV.DataSource = taikhoan_BUS.getTaiKhoanByMATK(taikhoan.MATAIKHOAN).Tables[0];
+            }
+        }
+
+        private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            showNameNhanVienInCBB();
+            showLoginHistory();
+        }
+
+        private void accountListDGV_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    output.MATAIKHOAN = int.Parse(accountListDGV.Rows[index].Cells["MATAIKHOAN"].Value.ToString());
+                    output.MANV = int.Parse(danhSachNhanVien_DGV.Rows[index].Cells["MANV"].Value.ToString());
+                    output.TENDANGNHAP = accountListDGV.Rows[index].Cells["TENDANGNHAP"].Value.ToString();
+                    output.MATKHAU = accountListDGV.Rows[index].Cells["MATKHAU"].Value.ToString();
+                    output.CAPBAC = int.Parse(accountListDGV.Rows[index].Cells["CAPBAC"].Value.ToString());
+                    name = accountListDGV.Rows[index].Cells["HOTEN3"].Value.ToString();
+                }
+            
+            setValueToForm_Account();
+        }
+
+        private void acc_add_Btn_Click(object sender, EventArgs e)
+        {
+            isUsingAdd = true;
+            isUsingUpdate = false;
+            acc_name_cbb.Enabled = true;
+            acc_name_cbb.Text = "";
+            acc_username_Textbox.Enabled = true;
+            acc_username_Textbox.ReadOnly = false;
+            clearForm_Acc();
+            unLoadFomr_Account();
+        }
+        void loadFomr_Account()
+        {
+            acc_add_Btn.Visible = true;
+            acc_update_btn.Visible = true; ;
+            acc_save_Btn.Visible = false;
+            acc_cancel_Btn.Visible = false;
+            acc_name_cbb.Enabled = false;
+            acc_pwrd_Textbox.Enabled = false;
+            acc_permission_Combobox.Enabled = false;
+            acc_username_Textbox.Enabled = false;
+            
+        }
+        void unLoadFomr_Account()
+        {
+            acc_add_Btn.Visible = false;
+            acc_update_btn.Visible = false;
+            acc_save_Btn.Visible = true ;
+            acc_cancel_Btn.Visible = true ;
+            acc_pwrd_Textbox.Enabled = true;
+            acc_permission_Combobox.Enabled = true;
+        }
+
+        private void acc_cancel_Btn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn hủy bỏ thao tác đang thực hiện ?",
+                               "Thông báo",
+                               MessageBoxButtons.OKCancel,
+                               MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+            {
+                loadFomr_Account();
+            }
+        }
+        private bool checkData_Account()
+        {
+            if (string.IsNullOrEmpty(acc_username_Textbox.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập tên đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                acc_username_Textbox.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(acc_pwrd_Textbox.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                acc_pwrd_Textbox.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(acc_permission_Combobox.Text))
+            {
+                MessageBox.Show("Bạn chưa chọn quyền quản trị tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                acc_permission_Combobox.Focus();
+                return false;
+            }
+           
+            return true;
+        }
+
+        private void acc_update_btn_Click(object sender, EventArgs e)
+        {
+            isUsingAdd = false;
+            isUsingUpdate = true;
+            
+            unLoadFomr_Account();
+        }
+
+        private void acc_save_Btn_Click(object sender, EventArgs e)
+        {
+            if(isUsingAdd)
+            {
+                try
+                {
+                    setValuefromForm_Account();
+                    if (checkData_Account())
+                    {
+                        taikhoan_BUS.addTaiKhoan(input.TENDANGNHAP, input.MATKHAU, input.MANV,input.CAPBAC);
+                        showAllAccount();
+                        loadFomr_Account();
+                        return;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Xảy ra lỗi trong quá trình cập nhật dữ liệu");
+                }
+            }
+            else if(isUsingUpdate)
+            {
+                    try
+                    {
+                        setValuefromForm_Account();
+                        if (checkData_Account())
+                        {
+                            taikhoan_BUS.updateTaiKhoan(input.MATAIKHOAN, input.MATKHAU, input.CAPBAC);
+                            showAllAccount();
+                            loadFomr_Account();
+                            return;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Xảy ra lỗi trong quá trình cập nhật dữ liệu");
+                    }
+            }
+            
+        }
+        public void showNameNhanVienInCBB()
+        {
+            acc_name_cbb.DataSource = nhanvien_BUS.getData().Tables[0];
+            acc_name_cbb.ValueMember = "MANV";
+            acc_name_cbb.DisplayMember = "HOTEN";
+            //acc_name_cbb.SelectedIndex = -1;
+        }
+
+        private void acc_name_cbb_TextChanged(object sender, EventArgs e)
+        {
+            if (acc_name_cbb.Text == "")
+            {
+                showNameNhanVienInCBB();
+            }
+            else
+            {
+                acc_name_cbb.DataSource = nhanvien_BUS.getNameByLikeLy(acc_name_cbb.Text).Tables[0];
+                acc_name_cbb.ValueMember = "MANV";
+                acc_name_cbb.DisplayMember = "HOTEN";
+                //acc_name_cbb.SelectedIndex = -1;
+            }
+        }
+        public void clearForm_Acc()
+        {
+            acc_name_cbb.Text = "";
+            acc_username_Textbox.Text = "";
+            acc_pwrd_Textbox.Text = "";
+            acc_permission_Combobox.Text = "";
+    }
+
+        private void acc_name_cbb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(acc_name_cbb.SelectedValue!= null)
+            {
+                if (int.Parse(acc_name_cbb.SelectedValue.ToString()) >= 0)
+                {
+                    try
+                    {
+                        input.MANV = int.Parse(acc_name_cbb.SelectedValue.ToString());
+                    }
+                    catch (Exception e1)
+                    {
+
+                    }
+                }
+            }
+        }
+
+        private void showPwrd_Btn_Click(object sender, EventArgs e)
+        {
+            if(isVisible)
+            {
+                showPwrd_Btn.Image = Properties.Resources.invisible;
+                acc_pwrd_Textbox.UseSystemPasswordChar = true;
+                isVisible = false;
+            }
+            else
+            {
+                showPwrd_Btn.Image = Properties.Resources.visible;
+                acc_pwrd_Textbox.UseSystemPasswordChar = false;
+                isVisible = true;
+            }
+        }
+
+        private void acc_search_name_textbox_TextChanged(object sender, EventArgs e)
+        {
+            if (acc_name_cbb.Text == "")
+            {
+                showAllAccount();
+            }
+            else
+            {
+                accountListDGV.DataSource=  taikhoan_BUS.SearchTaiKhoanByName(acc_search_name_textbox.Text).Tables[0];
+            }
+        }
+
+        private void accountListDGV_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            accountListDGV.Rows[e.RowIndex].Cells["STT3"].Value = (e.RowIndex + 1).ToString();
+        }
+
+        public void showLoginHistory()
+        {
+            loginHistoryDGV.DataSource = new HoatDongTaiKhoan_BUS().getHistoryLogin(output.MATAIKHOAN).Tables[0];
+        }
+
+        private void loginHistoryDGV_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            loginHistoryDGV.Rows[e.RowIndex].Cells["STT2"].Value = (e.RowIndex + 1).ToString();
+
         }
     }
 }

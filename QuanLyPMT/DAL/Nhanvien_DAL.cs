@@ -23,7 +23,34 @@ namespace DAL
             }
             return dataNhanVien;
         }
-
+        public DataSet getNameNhanVien()
+        {
+            DataSet data = new DataSet();
+            string selectAll = "Select MANV, HOTEN from Nhanvien";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(selectAll, connection);
+                adapter.Fill(data);
+                connection.Close();
+            }
+            return data;
+        }
+        public DataSet getLikeLyNameNhanvien(string HOTEN)
+        {
+            DataSet searchResult = new DataSet();
+            string searchQuerry = "select MANV, HOTEN from NHANVIEN where HOTEN like @HOTEN";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand cmdSearch = new SqlCommand(searchQuerry, connection);
+                cmdSearch.Parameters.Add("@HOTEN", SqlDbType.NVarChar).Value = HOTEN + "%";
+                SqlDataAdapter adapter = new SqlDataAdapter(cmdSearch);
+                adapter.Fill(searchResult);
+                connection.Close();
+            }
+            return searchResult;
+        }
         //Thêm thông tin nhân viên
         public void addNhanvien(string CMND, DateTime NGAYSINH, string HOTEN, string GIOITINH, string DIACHI, string SDT,string CHUCVU)
         {
@@ -123,7 +150,7 @@ namespace DAL
         public DataSet getHistoryWorkByID(int MANV)
         {
             DataSet getResult = new DataSet();
-            string getQuerry = "select NGAYLAP, NGAYTAIKHAM, BENHNHAN.HOTEN, BENHAN.CHANDOAN, BENHAN.HUONGXULY from BENHAN, BENHNHAN,NHANVIEN where BENHNHAN.MABN = BENHAN.MABN AND NHANVIEN.MANV=@MANV";
+            string getQuerry = "select NGAYLAP, NGAYTAIKHAM, BENHNHAN.HOTEN, BENHAN.CHANDOAN, BENHAN.HUONGXULY from BENHAN, BENHNHAN,NHANVIEN where BENHAN.MABN= BENHNHAN.MABN AND BENHAN.MANV = NHANVIEN.MANV and NHANVIEN.MANV =@MANV";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
             {
                 connection.Open();
@@ -134,6 +161,21 @@ namespace DAL
                 connection.Close();
             }
             return getResult;
+        }
+        public DataSet getNhanVienByMANV(int MANV)
+        {
+            DataSet dataNhanVien = new DataSet();
+            string selectAll = "Select * from Nhanvien where MANV = @MANV";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand cmdGet = new SqlCommand(selectAll, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmdGet);
+                cmdGet.Parameters.Add("@MANV", SqlDbType.Int).Value = MANV;
+                adapter.Fill(dataNhanVien);
+                connection.Close();
+            }
+            return dataNhanVien;
         }
     }
 }

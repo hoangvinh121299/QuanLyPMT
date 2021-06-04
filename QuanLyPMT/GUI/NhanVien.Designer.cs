@@ -84,7 +84,40 @@ namespace GUI
             this.metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.metroSetLabel14 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.acc_search_name_textbox = new System.Windows.Forms.TextBox();
+            this.acc_delete_Btn = new System.Windows.Forms.Button();
+            this.accountListDGV = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.metroSetLabel9 = new MetroSet_UI.Controls.MetroSetLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.showPwrd_Btn = new System.Windows.Forms.Button();
+            this.acc_name_cbb = new System.Windows.Forms.ComboBox();
+            this.acc_cancel_Btn = new System.Windows.Forms.Button();
+            this.acc_save_Btn = new System.Windows.Forms.Button();
+            this.acc_update_btn = new System.Windows.Forms.Button();
+            this.acc_add_Btn = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.loginHistoryDGV = new System.Windows.Forms.DataGridView();
+            this.STT2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MATAIKHOAN1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DANGNHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DANGXUAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THOILUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acc_permission_Combobox = new System.Windows.Forms.ComboBox();
+            this.acc_pwrd_Textbox = new System.Windows.Forms.TextBox();
+            this.metroSetLabel13 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.metroSetLabel12 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.acc_username_Textbox = new System.Windows.Forms.TextBox();
+            this.metroSetLabel11 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.metroSetLabel10 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.STT3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MATAIKHOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANV1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENDANGNHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MATKHAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CAPBAC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -93,6 +126,11 @@ namespace GUI
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhsachBenhAn_DGV)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accountListDGV)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loginHistoryDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabSelector1
@@ -115,8 +153,9 @@ namespace GUI
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1218, 610);
+            this.materialTabControl1.Size = new System.Drawing.Size(1218, 585);
             this.materialTabControl1.TabIndex = 1;
+            this.materialTabControl1.SelectedIndexChanged += new System.EventHandler(this.materialTabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -125,7 +164,7 @@ namespace GUI
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1210, 582);
+            this.tabPage1.Size = new System.Drawing.Size(1210, 557);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nhân viên";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -187,6 +226,7 @@ namespace GUI
             this.danhSachNhanVien_DGV.GridColor = System.Drawing.Color.Black;
             this.danhSachNhanVien_DGV.Location = new System.Drawing.Point(0, 82);
             this.danhSachNhanVien_DGV.Name = "danhSachNhanVien_DGV";
+            this.danhSachNhanVien_DGV.ReadOnly = true;
             this.danhSachNhanVien_DGV.RowHeadersVisible = false;
             this.danhSachNhanVien_DGV.RowTemplate.Height = 25;
             this.danhSachNhanVien_DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -200,6 +240,7 @@ namespace GUI
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
             this.STT.Width = 61;
             // 
             // MANV
@@ -207,6 +248,7 @@ namespace GUI
             this.MANV.DataPropertyName = "MANV";
             this.MANV.HeaderText = "Mã nhân viên";
             this.MANV.Name = "MANV";
+            this.MANV.ReadOnly = true;
             this.MANV.Visible = false;
             // 
             // CMND
@@ -215,6 +257,7 @@ namespace GUI
             this.CMND.DataPropertyName = "CMND";
             this.CMND.HeaderText = "CMND";
             this.CMND.Name = "CMND";
+            this.CMND.ReadOnly = true;
             this.CMND.Width = 5;
             // 
             // HOTEN
@@ -223,12 +266,14 @@ namespace GUI
             this.HOTEN.DataPropertyName = "HOTEN";
             this.HOTEN.HeaderText = "Họ tên";
             this.HOTEN.Name = "HOTEN";
+            this.HOTEN.ReadOnly = true;
             // 
             // NGAYSINH
             // 
             this.NGAYSINH.DataPropertyName = "NGAYSINH";
             this.NGAYSINH.HeaderText = "Ngày sinh";
             this.NGAYSINH.Name = "NGAYSINH";
+            this.NGAYSINH.ReadOnly = true;
             this.NGAYSINH.Visible = false;
             // 
             // GIOITINH
@@ -237,6 +282,7 @@ namespace GUI
             this.GIOITINH.DataPropertyName = "GT";
             this.GIOITINH.HeaderText = "Giới tính ";
             this.GIOITINH.Name = "GIOITINH";
+            this.GIOITINH.ReadOnly = true;
             this.GIOITINH.Width = 91;
             // 
             // DIACHI
@@ -244,6 +290,7 @@ namespace GUI
             this.DIACHI.DataPropertyName = "DIACHI";
             this.DIACHI.HeaderText = "Địa chỉ ";
             this.DIACHI.Name = "DIACHI";
+            this.DIACHI.ReadOnly = true;
             this.DIACHI.Visible = false;
             // 
             // SDT
@@ -251,6 +298,7 @@ namespace GUI
             this.SDT.DataPropertyName = "SDT";
             this.SDT.HeaderText = "Số điện thoại ";
             this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
             this.SDT.Visible = false;
             // 
             // CHUCVU
@@ -259,6 +307,7 @@ namespace GUI
             this.CHUCVU.DataPropertyName = "CHUCVU";
             this.CHUCVU.HeaderText = "Chức vụ ";
             this.CHUCVU.Name = "CHUCVU";
+            this.CHUCVU.ReadOnly = true;
             this.CHUCVU.Width = 94;
             // 
             // CMNDtextBox2
@@ -464,6 +513,11 @@ namespace GUI
             // positionCbb
             // 
             this.positionCbb.FormattingEnabled = true;
+            this.positionCbb.Items.AddRange(new object[] {
+            "Bác sĩ ",
+            "Dược sĩ",
+            "Thu ngân",
+            "Kế toán "});
             this.positionCbb.Location = new System.Drawing.Point(146, 197);
             this.positionCbb.Name = "positionCbb";
             this.positionCbb.Size = new System.Drawing.Size(168, 25);
@@ -706,32 +760,437 @@ namespace GUI
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1210, 582);
+            this.tabPage2.Size = new System.Drawing.Size(1210, 557);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tài khoản ";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.metroSetLabel14);
+            this.groupBox4.Controls.Add(this.acc_search_name_textbox);
+            this.groupBox4.Controls.Add(this.acc_delete_Btn);
+            this.groupBox4.Controls.Add(this.accountListDGV);
+            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.metroSetLabel9);
             this.groupBox4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(778, 6);
+            this.groupBox4.Location = new System.Drawing.Point(666, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(429, 556);
+            this.groupBox4.Size = new System.Drawing.Size(541, 577);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách tài khoản";
             // 
+            // metroSetLabel14
+            // 
+            this.metroSetLabel14.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.metroSetLabel14.IsDerivedStyle = true;
+            this.metroSetLabel14.Location = new System.Drawing.Point(19, 49);
+            this.metroSetLabel14.Name = "metroSetLabel14";
+            this.metroSetLabel14.Size = new System.Drawing.Size(119, 23);
+            this.metroSetLabel14.Style = MetroSet_UI.Enums.Style.Light;
+            this.metroSetLabel14.StyleManager = null;
+            this.metroSetLabel14.TabIndex = 32;
+            this.metroSetLabel14.Text = "Chủ tài khoản";
+            this.metroSetLabel14.ThemeAuthor = "Narwin";
+            this.metroSetLabel14.ThemeName = "MetroLite";
+            // 
+            // acc_search_name_textbox
+            // 
+            this.acc_search_name_textbox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.acc_search_name_textbox.Location = new System.Drawing.Point(162, 46);
+            this.acc_search_name_textbox.Name = "acc_search_name_textbox";
+            this.acc_search_name_textbox.Size = new System.Drawing.Size(228, 26);
+            this.acc_search_name_textbox.TabIndex = 17;
+            this.acc_search_name_textbox.TextChanged += new System.EventHandler(this.acc_search_name_textbox_TextChanged);
+            // 
+            // acc_delete_Btn
+            // 
+            this.acc_delete_Btn.BackColor = System.Drawing.Color.White;
+            this.acc_delete_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.acc_delete_Btn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.acc_delete_Btn.Image = global::GUI.Properties.Resources.delete;
+            this.acc_delete_Btn.Location = new System.Drawing.Point(429, 40);
+            this.acc_delete_Btn.Name = "acc_delete_Btn";
+            this.acc_delete_Btn.Size = new System.Drawing.Size(106, 37);
+            this.acc_delete_Btn.TabIndex = 16;
+            this.acc_delete_Btn.Text = "Xoá";
+            this.acc_delete_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.acc_delete_Btn.UseVisualStyleBackColor = false;
+            // 
+            // accountListDGV
+            // 
+            this.accountListDGV.AllowUserToAddRows = false;
+            this.accountListDGV.AllowUserToDeleteRows = false;
+            this.accountListDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.accountListDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT3,
+            this.HOTEN3,
+            this.MATAIKHOAN,
+            this.MANV1,
+            this.TENDANGNHAP,
+            this.MATKHAU,
+            this.CAPBAC});
+            this.accountListDGV.Location = new System.Drawing.Point(7, 105);
+            this.accountListDGV.Name = "accountListDGV";
+            this.accountListDGV.ReadOnly = true;
+            this.accountListDGV.RowHeadersVisible = false;
+            this.accountListDGV.RowTemplate.Height = 25;
+            this.accountListDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.accountListDGV.Size = new System.Drawing.Size(534, 466);
+            this.accountListDGV.TabIndex = 15;
+            this.accountListDGV.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.accountListDGV_RowEnter);
+            this.accountListDGV.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.accountListDGV_RowPostPaint);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(-551, 48);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(239, 25);
+            this.textBox1.TabIndex = 13;
+            // 
+            // metroSetLabel9
+            // 
+            this.metroSetLabel9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.metroSetLabel9.IsDerivedStyle = true;
+            this.metroSetLabel9.Location = new System.Drawing.Point(-691, 48);
+            this.metroSetLabel9.Name = "metroSetLabel9";
+            this.metroSetLabel9.Size = new System.Drawing.Size(59, 23);
+            this.metroSetLabel9.Style = MetroSet_UI.Enums.Style.Light;
+            this.metroSetLabel9.StyleManager = null;
+            this.metroSetLabel9.TabIndex = 14;
+            this.metroSetLabel9.Text = "Họ tên";
+            this.metroSetLabel9.ThemeAuthor = "Narwin";
+            this.metroSetLabel9.ThemeName = "MetroLite";
+            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.showPwrd_Btn);
+            this.groupBox3.Controls.Add(this.acc_name_cbb);
+            this.groupBox3.Controls.Add(this.acc_cancel_Btn);
+            this.groupBox3.Controls.Add(this.acc_save_Btn);
+            this.groupBox3.Controls.Add(this.acc_update_btn);
+            this.groupBox3.Controls.Add(this.acc_add_Btn);
+            this.groupBox3.Controls.Add(this.groupBox6);
+            this.groupBox3.Controls.Add(this.acc_permission_Combobox);
+            this.groupBox3.Controls.Add(this.acc_pwrd_Textbox);
+            this.groupBox3.Controls.Add(this.metroSetLabel13);
+            this.groupBox3.Controls.Add(this.metroSetLabel12);
+            this.groupBox3.Controls.Add(this.acc_username_Textbox);
+            this.groupBox3.Controls.Add(this.metroSetLabel11);
+            this.groupBox3.Controls.Add(this.metroSetLabel10);
             this.groupBox3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.ForeColor = System.Drawing.Color.Black;
             this.groupBox3.Location = new System.Drawing.Point(4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(768, 556);
+            this.groupBox3.Size = new System.Drawing.Size(656, 585);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin tài khoản";
+            // 
+            // showPwrd_Btn
+            // 
+            this.showPwrd_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showPwrd_Btn.Image = global::GUI.Properties.Resources.invisible;
+            this.showPwrd_Btn.Location = new System.Drawing.Point(419, 162);
+            this.showPwrd_Btn.Name = "showPwrd_Btn";
+            this.showPwrd_Btn.Size = new System.Drawing.Size(26, 25);
+            this.showPwrd_Btn.TabIndex = 33;
+            this.showPwrd_Btn.UseVisualStyleBackColor = true;
+            this.showPwrd_Btn.Click += new System.EventHandler(this.showPwrd_Btn_Click);
+            // 
+            // acc_name_cbb
+            // 
+            this.acc_name_cbb.FormattingEnabled = true;
+            this.acc_name_cbb.Location = new System.Drawing.Point(206, 37);
+            this.acc_name_cbb.Name = "acc_name_cbb";
+            this.acc_name_cbb.Size = new System.Drawing.Size(239, 25);
+            this.acc_name_cbb.TabIndex = 32;
+            this.acc_name_cbb.SelectedIndexChanged += new System.EventHandler(this.acc_name_cbb_SelectedIndexChanged);
+            this.acc_name_cbb.TextChanged += new System.EventHandler(this.acc_name_cbb_TextChanged);
+            // 
+            // acc_cancel_Btn
+            // 
+            this.acc_cancel_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(161)))), ((int)(((byte)(32)))));
+            this.acc_cancel_Btn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.acc_cancel_Btn.ForeColor = System.Drawing.Color.White;
+            this.acc_cancel_Btn.Image = global::GUI.Properties.Resources.logout;
+            this.acc_cancel_Btn.Location = new System.Drawing.Point(532, 138);
+            this.acc_cancel_Btn.Name = "acc_cancel_Btn";
+            this.acc_cancel_Btn.Size = new System.Drawing.Size(118, 40);
+            this.acc_cancel_Btn.TabIndex = 31;
+            this.acc_cancel_Btn.Text = "Huỷ bỏ ";
+            this.acc_cancel_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.acc_cancel_Btn.UseVisualStyleBackColor = false;
+            this.acc_cancel_Btn.Click += new System.EventHandler(this.acc_cancel_Btn_Click);
+            // 
+            // acc_save_Btn
+            // 
+            this.acc_save_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(115)))), ((int)(((byte)(255)))));
+            this.acc_save_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.acc_save_Btn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.acc_save_Btn.ForeColor = System.Drawing.Color.White;
+            this.acc_save_Btn.Image = global::GUI.Properties.Resources.save;
+            this.acc_save_Btn.Location = new System.Drawing.Point(532, 51);
+            this.acc_save_Btn.Name = "acc_save_Btn";
+            this.acc_save_Btn.Size = new System.Drawing.Size(118, 40);
+            this.acc_save_Btn.TabIndex = 30;
+            this.acc_save_Btn.Text = "Xác nhận";
+            this.acc_save_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.acc_save_Btn.UseVisualStyleBackColor = false;
+            this.acc_save_Btn.Click += new System.EventHandler(this.acc_save_Btn_Click);
+            // 
+            // acc_update_btn
+            // 
+            this.acc_update_btn.BackColor = System.Drawing.Color.White;
+            this.acc_update_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.acc_update_btn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.acc_update_btn.ForeColor = System.Drawing.Color.Black;
+            this.acc_update_btn.Image = global::GUI.Properties.Resources.edit;
+            this.acc_update_btn.Location = new System.Drawing.Point(532, 138);
+            this.acc_update_btn.Name = "acc_update_btn";
+            this.acc_update_btn.Size = new System.Drawing.Size(118, 40);
+            this.acc_update_btn.TabIndex = 29;
+            this.acc_update_btn.Text = "Cập nhật";
+            this.acc_update_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.acc_update_btn.UseVisualStyleBackColor = false;
+            this.acc_update_btn.Click += new System.EventHandler(this.acc_update_btn_Click);
+            // 
+            // acc_add_Btn
+            // 
+            this.acc_add_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(211)))), ((int)(((byte)(149)))));
+            this.acc_add_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.acc_add_Btn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.acc_add_Btn.ForeColor = System.Drawing.Color.White;
+            this.acc_add_Btn.Image = global::GUI.Properties.Resources.add;
+            this.acc_add_Btn.Location = new System.Drawing.Point(532, 50);
+            this.acc_add_Btn.Name = "acc_add_Btn";
+            this.acc_add_Btn.Size = new System.Drawing.Size(118, 42);
+            this.acc_add_Btn.TabIndex = 28;
+            this.acc_add_Btn.Text = "Thêm";
+            this.acc_add_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.acc_add_Btn.UseVisualStyleBackColor = false;
+            this.acc_add_Btn.Click += new System.EventHandler(this.acc_add_Btn_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.loginHistoryDGV);
+            this.groupBox6.Location = new System.Drawing.Point(6, 289);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(650, 296);
+            this.groupBox6.TabIndex = 23;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Lịch sử đăng nhập";
+            // 
+            // loginHistoryDGV
+            // 
+            this.loginHistoryDGV.AllowUserToAddRows = false;
+            this.loginHistoryDGV.AllowUserToDeleteRows = false;
+            this.loginHistoryDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.loginHistoryDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.STT2,
+            this.MATAIKHOAN1,
+            this.DANGNHAP,
+            this.DANGXUAT,
+            this.THOILUONG});
+            this.loginHistoryDGV.Location = new System.Drawing.Point(0, 24);
+            this.loginHistoryDGV.Name = "loginHistoryDGV";
+            this.loginHistoryDGV.ReadOnly = true;
+            this.loginHistoryDGV.RowHeadersVisible = false;
+            this.loginHistoryDGV.RowTemplate.Height = 25;
+            this.loginHistoryDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.loginHistoryDGV.Size = new System.Drawing.Size(650, 260);
+            this.loginHistoryDGV.TabIndex = 16;
+            this.loginHistoryDGV.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.loginHistoryDGV_RowPostPaint);
+            // 
+            // STT2
+            // 
+            this.STT2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT2.HeaderText = "STT";
+            this.STT2.Name = "STT2";
+            this.STT2.ReadOnly = true;
+            this.STT2.Width = 61;
+            // 
+            // MATAIKHOAN1
+            // 
+            this.MATAIKHOAN1.DataPropertyName = "MATAIKHOAN";
+            this.MATAIKHOAN1.HeaderText = "Mã tài khoản";
+            this.MATAIKHOAN1.Name = "MATAIKHOAN1";
+            this.MATAIKHOAN1.ReadOnly = true;
+            this.MATAIKHOAN1.Visible = false;
+            // 
+            // DANGNHAP
+            // 
+            this.DANGNHAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DANGNHAP.DataPropertyName = "DANGNHAP";
+            this.DANGNHAP.HeaderText = "Đăng nhập";
+            this.DANGNHAP.Name = "DANGNHAP";
+            this.DANGNHAP.ReadOnly = true;
+            // 
+            // DANGXUAT
+            // 
+            this.DANGXUAT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DANGXUAT.DataPropertyName = "DANGXUAT";
+            this.DANGXUAT.HeaderText = "Đăng xuất ";
+            this.DANGXUAT.Name = "DANGXUAT";
+            this.DANGXUAT.ReadOnly = true;
+            // 
+            // THOILUONG
+            // 
+            this.THOILUONG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.THOILUONG.DataPropertyName = "THOILUONG";
+            this.THOILUONG.HeaderText = "Thời lượng";
+            this.THOILUONG.Name = "THOILUONG";
+            this.THOILUONG.ReadOnly = true;
+            // 
+            // acc_permission_Combobox
+            // 
+            this.acc_permission_Combobox.FormattingEnabled = true;
+            this.acc_permission_Combobox.Items.AddRange(new object[] {
+            "Bác sĩ",
+            "Dược sĩ ",
+            "Thu ngân",
+            "Kế toán",
+            "Quản trị viên"});
+            this.acc_permission_Combobox.Location = new System.Drawing.Point(206, 230);
+            this.acc_permission_Combobox.Name = "acc_permission_Combobox";
+            this.acc_permission_Combobox.Size = new System.Drawing.Size(121, 25);
+            this.acc_permission_Combobox.TabIndex = 22;
+            // 
+            // acc_pwrd_Textbox
+            // 
+            this.acc_pwrd_Textbox.BackColor = System.Drawing.Color.White;
+            this.acc_pwrd_Textbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.acc_pwrd_Textbox.Location = new System.Drawing.Point(206, 162);
+            this.acc_pwrd_Textbox.Name = "acc_pwrd_Textbox";
+            this.acc_pwrd_Textbox.Size = new System.Drawing.Size(206, 25);
+            this.acc_pwrd_Textbox.TabIndex = 21;
+            this.acc_pwrd_Textbox.UseSystemPasswordChar = true;
+            // 
+            // metroSetLabel13
+            // 
+            this.metroSetLabel13.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.metroSetLabel13.IsDerivedStyle = true;
+            this.metroSetLabel13.Location = new System.Drawing.Point(6, 232);
+            this.metroSetLabel13.Name = "metroSetLabel13";
+            this.metroSetLabel13.Size = new System.Drawing.Size(119, 23);
+            this.metroSetLabel13.Style = MetroSet_UI.Enums.Style.Light;
+            this.metroSetLabel13.StyleManager = null;
+            this.metroSetLabel13.TabIndex = 20;
+            this.metroSetLabel13.Text = "Quyền truy cập";
+            this.metroSetLabel13.ThemeAuthor = "Narwin";
+            this.metroSetLabel13.ThemeName = "MetroLite";
+            // 
+            // metroSetLabel12
+            // 
+            this.metroSetLabel12.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.metroSetLabel12.IsDerivedStyle = true;
+            this.metroSetLabel12.Location = new System.Drawing.Point(6, 164);
+            this.metroSetLabel12.Name = "metroSetLabel12";
+            this.metroSetLabel12.Size = new System.Drawing.Size(119, 23);
+            this.metroSetLabel12.Style = MetroSet_UI.Enums.Style.Light;
+            this.metroSetLabel12.StyleManager = null;
+            this.metroSetLabel12.TabIndex = 19;
+            this.metroSetLabel12.Text = "Mật khẩu";
+            this.metroSetLabel12.ThemeAuthor = "Narwin";
+            this.metroSetLabel12.ThemeName = "MetroLite";
+            // 
+            // acc_username_Textbox
+            // 
+            this.acc_username_Textbox.BackColor = System.Drawing.Color.White;
+            this.acc_username_Textbox.Enabled = false;
+            this.acc_username_Textbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.acc_username_Textbox.Location = new System.Drawing.Point(206, 95);
+            this.acc_username_Textbox.Name = "acc_username_Textbox";
+            this.acc_username_Textbox.Size = new System.Drawing.Size(239, 25);
+            this.acc_username_Textbox.TabIndex = 18;
+            // 
+            // metroSetLabel11
+            // 
+            this.metroSetLabel11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.metroSetLabel11.IsDerivedStyle = true;
+            this.metroSetLabel11.Location = new System.Drawing.Point(6, 97);
+            this.metroSetLabel11.Name = "metroSetLabel11";
+            this.metroSetLabel11.Size = new System.Drawing.Size(119, 23);
+            this.metroSetLabel11.Style = MetroSet_UI.Enums.Style.Light;
+            this.metroSetLabel11.StyleManager = null;
+            this.metroSetLabel11.TabIndex = 17;
+            this.metroSetLabel11.Text = "Tên đăng nhập";
+            this.metroSetLabel11.ThemeAuthor = "Narwin";
+            this.metroSetLabel11.ThemeName = "MetroLite";
+            // 
+            // metroSetLabel10
+            // 
+            this.metroSetLabel10.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.metroSetLabel10.IsDerivedStyle = true;
+            this.metroSetLabel10.Location = new System.Drawing.Point(6, 37);
+            this.metroSetLabel10.Name = "metroSetLabel10";
+            this.metroSetLabel10.Size = new System.Drawing.Size(107, 23);
+            this.metroSetLabel10.Style = MetroSet_UI.Enums.Style.Light;
+            this.metroSetLabel10.StyleManager = null;
+            this.metroSetLabel10.TabIndex = 16;
+            this.metroSetLabel10.Text = "Chủ tài khoản ";
+            this.metroSetLabel10.ThemeAuthor = "Narwin";
+            this.metroSetLabel10.ThemeName = "MetroLite";
+            // 
+            // STT3
+            // 
+            this.STT3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT3.HeaderText = "STT";
+            this.STT3.Name = "STT3";
+            this.STT3.ReadOnly = true;
+            this.STT3.Width = 61;
+            // 
+            // HOTEN3
+            // 
+            this.HOTEN3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.HOTEN3.DataPropertyName = "HOTEN";
+            this.HOTEN3.HeaderText = "Chủ tài khoản";
+            this.HOTEN3.Name = "HOTEN3";
+            this.HOTEN3.ReadOnly = true;
+            // 
+            // MATAIKHOAN
+            // 
+            this.MATAIKHOAN.DataPropertyName = "MATAIKHOAN";
+            this.MATAIKHOAN.HeaderText = "Mã tài khoản ";
+            this.MATAIKHOAN.Name = "MATAIKHOAN";
+            this.MATAIKHOAN.ReadOnly = true;
+            this.MATAIKHOAN.Visible = false;
+            // 
+            // MANV1
+            // 
+            this.MANV1.DataPropertyName = "MANV";
+            this.MANV1.HeaderText = "Mã nhân viên";
+            this.MANV1.Name = "MANV1";
+            this.MANV1.ReadOnly = true;
+            this.MANV1.Visible = false;
+            // 
+            // TENDANGNHAP
+            // 
+            this.TENDANGNHAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TENDANGNHAP.DataPropertyName = "TENDANGNHAP";
+            this.TENDANGNHAP.HeaderText = "Tên đăng nhập";
+            this.TENDANGNHAP.Name = "TENDANGNHAP";
+            this.TENDANGNHAP.ReadOnly = true;
+            // 
+            // MATKHAU
+            // 
+            this.MATKHAU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MATKHAU.DataPropertyName = "MATKHAU";
+            this.MATKHAU.HeaderText = "Mật khẩu";
+            this.MATKHAU.Name = "MATKHAU";
+            this.MATKHAU.ReadOnly = true;
+            // 
+            // CAPBAC
+            // 
+            this.CAPBAC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CAPBAC.DataPropertyName = "CAPBAC";
+            this.CAPBAC.HeaderText = "Quyền quản trị";
+            this.CAPBAC.Name = "CAPBAC";
+            this.CAPBAC.ReadOnly = true;
             // 
             // NhanVien
             // 
@@ -752,6 +1211,13 @@ namespace GUI
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.danhsachBenhAn_DGV)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.accountListDGV)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.loginHistoryDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -813,5 +1279,38 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn TRIEUCHUNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn LOAIBENH;
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
+        private System.Windows.Forms.TextBox textBox1;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel9;
+        private System.Windows.Forms.TextBox acc_username_Textbox;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel11;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel10;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel13;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel12;
+        private System.Windows.Forms.DataGridView accountListDGV;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.DataGridView loginHistoryDGV;
+        private System.Windows.Forms.ComboBox acc_permission_Combobox;
+        private System.Windows.Forms.TextBox acc_pwrd_Textbox;
+        private System.Windows.Forms.Button acc_cancel_Btn;
+        private System.Windows.Forms.Button acc_save_Btn;
+        private System.Windows.Forms.Button acc_update_btn;
+        private System.Windows.Forms.Button acc_add_Btn;
+        private System.Windows.Forms.TextBox acc_search_name_textbox;
+        private System.Windows.Forms.Button acc_delete_Btn;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel14;
+        private System.Windows.Forms.ComboBox acc_name_cbb;
+        private System.Windows.Forms.Button showPwrd_Btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MATAIKHOAN1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DANGNHAP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DANGXUAT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn THOILUONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MATAIKHOAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANV1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENDANGNHAP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MATKHAU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CAPBAC;
     }
 }
