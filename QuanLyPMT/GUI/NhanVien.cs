@@ -21,6 +21,7 @@ namespace GUI
         Nhanvien fromForm = new Nhanvien();
         TaiKhoan output = new TaiKhoan();
         TaiKhoan input = new TaiKhoan();
+        TaiKhoan taikhoan = new TaiKhoan();
         Nhanvien_BUS nhanvien_BUS = new Nhanvien_BUS();
         string name = "";
         bool isUsingAdd;
@@ -29,16 +30,26 @@ namespace GUI
         TaiKhoan_BUS taikhoan_BUS = new TaiKhoan_BUS();
         public NhanVien()
         {
+            
+        }
+        public NhanVien(TaiKhoan references)
+        {
             InitializeComponent();
+            taikhoan = references;
             showAllData();
             showAllAccount();
             loadForm();
             loadFomr_Account();
         }
-
         public void showAllData()
         {
+            if(taikhoan.CAPBAC ==4)
             danhSachNhanVien_DGV.DataSource = nhanvien_BUS.getDataNhanVien().Tables[0];
+            else
+            {
+                danhSachNhanVien_DGV.DataSource = nhanvien_BUS.getDateNhanVienByMANV(taikhoan.MANV).Tables[0];
+                adddBtn.Visible = false;
+            }
         }
         public void showHistoryWork(int MANV)
         {
@@ -96,9 +107,18 @@ namespace GUI
             switch(output.CAPBAC)
             {
                 case 0:
-                    acc_permission_Combobox.Text = "Người dùng";
+                    acc_permission_Combobox.Text = "Bác sĩ";
                     break;
                 case 1:
+                    acc_permission_Combobox.Text = "Dược sĩ";
+                    break;
+                case 2:
+                    acc_permission_Combobox.Text = "Thu ngân";
+                    break;
+                case 3:
+                    acc_permission_Combobox.Text = "Kế toán";
+                    break;
+                case 4:
                     acc_permission_Combobox.Text = "Quản trị viên";
                     break;
             }
@@ -112,11 +132,20 @@ namespace GUI
             input.MATKHAU = acc_pwrd_Textbox.Text;
             switch (acc_permission_Combobox.Text)
             {
-                case "Người dùng":
+                case "Bác sĩ":
                     input.CAPBAC = 0;
                     break;
-                case "Quản trị viên":
+                case "Dược sĩ":
                     input.CAPBAC = 1;
+                    break;
+                case "Thu ngân":
+                    input.CAPBAC = 2;
+                    break;
+                case "Kế toán":
+                    input.CAPBAC = 3;
+                    break;
+                case "Quản trị viên":
+                    input.CAPBAC = 4;
                     break;
             }
         }
@@ -373,7 +402,12 @@ namespace GUI
         }
         public void showAllAccount()
         {
+            if(taikhoan.CAPBAC ==4)
             accountListDGV.DataSource = taikhoan_BUS.showAllTaiKhoan().Tables[0];
+            else
+            {
+                accountListDGV.DataSource = taikhoan_BUS.getTaiKhoanByMATK(taikhoan.MATAIKHOAN).Tables[0];
+            }
         }
 
         private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -384,16 +418,18 @@ namespace GUI
 
         private void accountListDGV_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
-            {
-                output.MATAIKHOAN = int.Parse(accountListDGV.Rows[index].Cells["MATAIKHOAN"].Value.ToString());
-                output.MANV = int.Parse(danhSachNhanVien_DGV.Rows[index].Cells["MANV"].Value.ToString());
-                output.TENDANGNHAP = accountListDGV.Rows[index].Cells["TENDANGNHAP"].Value.ToString();
-                output.MATKHAU = accountListDGV.Rows[index].Cells["MATKHAU"].Value.ToString();
-                output.CAPBAC = int.Parse(accountListDGV.Rows[index].Cells["CAPBAC"].Value.ToString());
-                name = accountListDGV.Rows[index].Cells["HOTEN3"].Value.ToString();
-            }
+            
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    output.MATAIKHOAN = int.Parse(accountListDGV.Rows[index].Cells["MATAIKHOAN"].Value.ToString());
+                    output.MANV = int.Parse(danhSachNhanVien_DGV.Rows[index].Cells["MANV"].Value.ToString());
+                    output.TENDANGNHAP = accountListDGV.Rows[index].Cells["TENDANGNHAP"].Value.ToString();
+                    output.MATKHAU = accountListDGV.Rows[index].Cells["MATKHAU"].Value.ToString();
+                    output.CAPBAC = int.Parse(accountListDGV.Rows[index].Cells["CAPBAC"].Value.ToString());
+                    name = accountListDGV.Rows[index].Cells["HOTEN3"].Value.ToString();
+                }
+            
             setValueToForm_Account();
         }
 

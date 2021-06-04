@@ -43,5 +43,9 @@ namespace BUS
         {
             return nhanvien_DAL.getLikeLyNameNhanvien(HOTEN);
         }
+        public DataSet getDateNhanVienByMANV(int MANV)
+        {
+            return nhanvien_DAL.getNhanVienByMANV(MANV);
+        }
     }
 }

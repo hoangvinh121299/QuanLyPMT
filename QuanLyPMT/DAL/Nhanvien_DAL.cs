@@ -162,6 +162,20 @@ namespace DAL
             }
             return getResult;
         }
-        
+        public DataSet getNhanVienByMANV(int MANV)
+        {
+            DataSet dataNhanVien = new DataSet();
+            string selectAll = "Select * from Nhanvien where MANV = @MANV";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand cmdGet = new SqlCommand(selectAll, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmdGet);
+                cmdGet.Parameters.Add("@MANV", SqlDbType.Int).Value = MANV;
+                adapter.Fill(dataNhanVien);
+                connection.Close();
+            }
+            return dataNhanVien;
+        }
     }
 }

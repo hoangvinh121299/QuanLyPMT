@@ -29,7 +29,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -88,13 +88,6 @@ namespace GUI
             this.acc_search_name_textbox = new System.Windows.Forms.TextBox();
             this.acc_delete_Btn = new System.Windows.Forms.Button();
             this.accountListDGV = new System.Windows.Forms.DataGridView();
-            this.STT3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOTEN3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MATAIKHOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TENDANGNHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MATKHAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CAPBAC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.metroSetLabel9 = new MetroSet_UI.Controls.MetroSetLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -118,6 +111,13 @@ namespace GUI
             this.acc_username_Textbox = new System.Windows.Forms.TextBox();
             this.metroSetLabel11 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel10 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.STT3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MATAIKHOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANV1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENDANGNHAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MATKHAU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CAPBAC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -215,14 +215,14 @@ namespace GUI
             this.DIACHI,
             this.SDT,
             this.CHUCVU});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.danhSachNhanVien_DGV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.danhSachNhanVien_DGV.DefaultCellStyle = dataGridViewCellStyle1;
             this.danhSachNhanVien_DGV.GridColor = System.Drawing.Color.Black;
             this.danhSachNhanVien_DGV.Location = new System.Drawing.Point(0, 82);
             this.danhSachNhanVien_DGV.Name = "danhSachNhanVien_DGV";
@@ -515,7 +515,9 @@ namespace GUI
             this.positionCbb.FormattingEnabled = true;
             this.positionCbb.Items.AddRange(new object[] {
             "Bác sĩ ",
-            "Nhân viên"});
+            "Dược sĩ",
+            "Thu ngân",
+            "Kế toán "});
             this.positionCbb.Location = new System.Drawing.Point(146, 197);
             this.positionCbb.Name = "positionCbb";
             this.positionCbb.Size = new System.Drawing.Size(168, 25);
@@ -826,7 +828,7 @@ namespace GUI
             this.STT3,
             this.HOTEN3,
             this.MATAIKHOAN,
-            this.dataGridViewTextBoxColumn1,
+            this.MANV1,
             this.TENDANGNHAP,
             this.MATKHAU,
             this.CAPBAC});
@@ -840,62 +842,6 @@ namespace GUI
             this.accountListDGV.TabIndex = 15;
             this.accountListDGV.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.accountListDGV_RowEnter);
             this.accountListDGV.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.accountListDGV_RowPostPaint);
-            // 
-            // STT3
-            // 
-            this.STT3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.STT3.HeaderText = "STT";
-            this.STT3.Name = "STT3";
-            this.STT3.ReadOnly = true;
-            this.STT3.Width = 61;
-            // 
-            // HOTEN3
-            // 
-            this.HOTEN3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.HOTEN3.DataPropertyName = "HOTEN";
-            this.HOTEN3.HeaderText = "Chủ tài khoản";
-            this.HOTEN3.Name = "HOTEN3";
-            this.HOTEN3.ReadOnly = true;
-            // 
-            // MATAIKHOAN
-            // 
-            this.MATAIKHOAN.DataPropertyName = "MATAIKHOAN";
-            this.MATAIKHOAN.HeaderText = "Mã tài khoản ";
-            this.MATAIKHOAN.Name = "MATAIKHOAN";
-            this.MATAIKHOAN.ReadOnly = true;
-            this.MATAIKHOAN.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MANV";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã nhân viên";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // TENDANGNHAP
-            // 
-            this.TENDANGNHAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TENDANGNHAP.DataPropertyName = "TENDANGNHAP";
-            this.TENDANGNHAP.HeaderText = "Tên đăng nhập";
-            this.TENDANGNHAP.Name = "TENDANGNHAP";
-            this.TENDANGNHAP.ReadOnly = true;
-            // 
-            // MATKHAU
-            // 
-            this.MATKHAU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MATKHAU.DataPropertyName = "MATKHAU";
-            this.MATKHAU.HeaderText = "Mật khẩu";
-            this.MATKHAU.Name = "MATKHAU";
-            this.MATKHAU.ReadOnly = true;
-            // 
-            // CAPBAC
-            // 
-            this.CAPBAC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CAPBAC.DataPropertyName = "CAPBAC";
-            this.CAPBAC.HeaderText = "Quyền quản trị";
-            this.CAPBAC.Name = "CAPBAC";
-            this.CAPBAC.ReadOnly = true;
             // 
             // textBox1
             // 
@@ -1104,7 +1050,10 @@ namespace GUI
             // 
             this.acc_permission_Combobox.FormattingEnabled = true;
             this.acc_permission_Combobox.Items.AddRange(new object[] {
-            "Người dùng",
+            "Bác sĩ",
+            "Dược sĩ ",
+            "Thu ngân",
+            "Kế toán",
             "Quản trị viên"});
             this.acc_permission_Combobox.Location = new System.Drawing.Point(206, 230);
             this.acc_permission_Combobox.Name = "acc_permission_Combobox";
@@ -1186,6 +1135,62 @@ namespace GUI
             this.metroSetLabel10.Text = "Chủ tài khoản ";
             this.metroSetLabel10.ThemeAuthor = "Narwin";
             this.metroSetLabel10.ThemeName = "MetroLite";
+            // 
+            // STT3
+            // 
+            this.STT3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.STT3.HeaderText = "STT";
+            this.STT3.Name = "STT3";
+            this.STT3.ReadOnly = true;
+            this.STT3.Width = 61;
+            // 
+            // HOTEN3
+            // 
+            this.HOTEN3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.HOTEN3.DataPropertyName = "HOTEN";
+            this.HOTEN3.HeaderText = "Chủ tài khoản";
+            this.HOTEN3.Name = "HOTEN3";
+            this.HOTEN3.ReadOnly = true;
+            // 
+            // MATAIKHOAN
+            // 
+            this.MATAIKHOAN.DataPropertyName = "MATAIKHOAN";
+            this.MATAIKHOAN.HeaderText = "Mã tài khoản ";
+            this.MATAIKHOAN.Name = "MATAIKHOAN";
+            this.MATAIKHOAN.ReadOnly = true;
+            this.MATAIKHOAN.Visible = false;
+            // 
+            // MANV1
+            // 
+            this.MANV1.DataPropertyName = "MANV";
+            this.MANV1.HeaderText = "Mã nhân viên";
+            this.MANV1.Name = "MANV1";
+            this.MANV1.ReadOnly = true;
+            this.MANV1.Visible = false;
+            // 
+            // TENDANGNHAP
+            // 
+            this.TENDANGNHAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TENDANGNHAP.DataPropertyName = "TENDANGNHAP";
+            this.TENDANGNHAP.HeaderText = "Tên đăng nhập";
+            this.TENDANGNHAP.Name = "TENDANGNHAP";
+            this.TENDANGNHAP.ReadOnly = true;
+            // 
+            // MATKHAU
+            // 
+            this.MATKHAU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MATKHAU.DataPropertyName = "MATKHAU";
+            this.MATKHAU.HeaderText = "Mật khẩu";
+            this.MATKHAU.Name = "MATKHAU";
+            this.MATKHAU.ReadOnly = true;
+            // 
+            // CAPBAC
+            // 
+            this.CAPBAC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CAPBAC.DataPropertyName = "CAPBAC";
+            this.CAPBAC.HeaderText = "Quyền quản trị";
+            this.CAPBAC.Name = "CAPBAC";
+            this.CAPBAC.ReadOnly = true;
             // 
             // NhanVien
             // 
@@ -1295,17 +1300,17 @@ namespace GUI
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel14;
         private System.Windows.Forms.ComboBox acc_name_cbb;
         private System.Windows.Forms.Button showPwrd_Btn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MATAIKHOAN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TENDANGNHAP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MATKHAU;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CAPBAC;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MATAIKHOAN1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DANGNHAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn DANGXUAT;
         private System.Windows.Forms.DataGridViewTextBoxColumn THOILUONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HOTEN3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MATAIKHOAN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MANV1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENDANGNHAP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MATKHAU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CAPBAC;
     }
 }

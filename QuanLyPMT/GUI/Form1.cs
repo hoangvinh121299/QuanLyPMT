@@ -16,44 +16,87 @@ namespace GUI
     {
         public MainForm()
         {
-            InitializeComponent();
+           
             
         }
+        public MainForm(TaiKhoan references)
+        {
+            InitializeComponent();
+            taikhoan = references;
+        }
+        TaiKhoan taikhoan = new TaiKhoan();
         HoatDongTaiKhoan hoatdongtaikhoan = new HoatDongTaiKhoan();
         HoatDongTaiKhoan_BUS hoatdongtaikhoan_BUS = new HoatDongTaiKhoan_BUS();
         private void patientBtn_Click(object sender, EventArgs e)
         {
-            QuanLyBenhNhan quanLyBenhNhan = new QuanLyBenhNhan();
-            displayPanel.Controls.Clear();
-            displayPanel.Controls.Add(quanLyBenhNhan);
+            if (taikhoan.CAPBAC == 0 || taikhoan.CAPBAC == 1 || taikhoan.CAPBAC == 2 || taikhoan.CAPBAC == 4)         
+            {
+                QuanLyBenhNhan quanLyBenhNhan = new QuanLyBenhNhan();
+                displayPanel.Controls.Clear();
+                displayPanel.Controls.Add(quanLyBenhNhan);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void drugBtn_Click(object sender, EventArgs e)
         {
-            QuanLyThuoc quanLyThuoc = new QuanLyThuoc();
-            displayPanel.Controls.Clear();
-            displayPanel.Controls.Add(quanLyThuoc);
+            if (taikhoan.CAPBAC == 0 || taikhoan.CAPBAC == 1 || taikhoan.CAPBAC == 2 || taikhoan.CAPBAC == 3 ||taikhoan.CAPBAC==4)
+            {
+                QuanLyThuoc quanLyThuoc = new QuanLyThuoc();
+                displayPanel.Controls.Clear();
+                displayPanel.Controls.Add(quanLyThuoc);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void sickBtn_Click(object sender, EventArgs e)
         {
-            QuanLyBenh quanLyBenh = new QuanLyBenh();
-            displayPanel.Controls.Clear();
-            displayPanel.Controls.Add(quanLyBenh);
+            if (taikhoan.CAPBAC == 0 || taikhoan.CAPBAC == 1 )
+            {
+                QuanLyBenh quanLyBenh = new QuanLyBenh();
+                displayPanel.Controls.Clear();
+                displayPanel.Controls.Add(quanLyBenh);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
 
         private void examBtn_Click(object sender, EventArgs e)
         {
-            KhamBenh khamBenh = new KhamBenh();
-            displayPanel.Controls.Clear();
-            displayPanel.Controls.Add(khamBenh);
+            if (taikhoan.CAPBAC == 0 || taikhoan.CAPBAC == 1)
+            {
+                KhamBenh khamBenh = new KhamBenh();
+                displayPanel.Controls.Clear();
+                displayPanel.Controls.Add(khamBenh);
+            }
+            else
+            {
+                    MessageBox.Show("Bạn không có quyền truy cập vào chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void accountBtn_Click(object sender, EventArgs e)
         {
-            NhanVien nhanvien = new NhanVien();
-            displayPanel.Controls.Clear();
-            displayPanel.Controls.Add(nhanvien);
+            if (taikhoan.CAPBAC == 0 || taikhoan.CAPBAC == 1 || taikhoan.CAPBAC == 2 || taikhoan.CAPBAC == 3 || taikhoan.CAPBAC == 4)
+            {
+                NhanVien nhanvien = new NhanVien(taikhoan);
+                displayPanel.Controls.Clear();
+                displayPanel.Controls.Add(nhanvien);
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào chức năng này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -65,7 +108,7 @@ namespace GUI
             {
                 hoatdongtaikhoan.DANGXUAT = DateTime.Now;
                 CalculateTimeForLogin();
-                hoatdongtaikhoan_BUS.insertHoatDong(1, hoatdongtaikhoan.DANGNHAP, hoatdongtaikhoan.DANGXUAT, hoatdongtaikhoan.THOILUONG);
+                hoatdongtaikhoan_BUS.insertHoatDong(taikhoan.MATAIKHOAN, hoatdongtaikhoan.DANGNHAP, hoatdongtaikhoan.DANGXUAT, hoatdongtaikhoan.THOILUONG);
                 this.Close();
             }
         }

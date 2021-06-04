@@ -4,12 +4,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using System.Windows.Forms;
-
+using DTO;
 namespace DAL
 {
     public class TaiKhoan_DAL
     {
-
+        List<TaiKhoan> listTaiKhoan = new List<TaiKhoan>();
         public DataSet getDataTaikhoan()
         {
             DataSet dataTaiKhoan = new DataSet();
@@ -24,7 +24,50 @@ namespace DAL
             return dataTaiKhoan;
         }
         //Lấy thông tin gần đúng của theo tên truyền vào
+        public void getDataAccount()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                string get = "SELECT * FROM TAIKHOAN";
+                SqlCommand sqlcommand = new SqlCommand(get, connection);
 
+                SqlDataReader dataReader = sqlcommand.ExecuteReader();
+                while(dataReader.Read())
+                {
+                    TaiKhoan taikhoan = new TaiKhoan();
+                    taikhoan.MATAIKHOAN = (int)dataReader["MATAIKHOAN"];
+                    taikhoan.TENDANGNHAP = (string)dataReader["TENDANGNHAP"];
+                    taikhoan.MATKHAU = (string)dataReader["MATKHAU"];
+                    taikhoan.MANV = (int)dataReader["MANV"];
+                    taikhoan.CAPBAC = (int)dataReader["CAPBAC"];
+
+                    listTaiKhoan.Add(taikhoan);
+                }
+                connection.Close();
+            }
+        }
+        public bool validateTaiKhoan(string TENDANGNHAP, string MATKHAU)
+        {
+            //TaiKhoan input = new TaiKhoan();
+            getDataAccount();
+            foreach(var temp in listTaiKhoan)
+            {
+                if (temp.TENDANGNHAP == TENDANGNHAP && temp.MATKHAU == MATKHAU)
+                    return true;
+            }
+            return false;
+        }
+        public TaiKhoan getDataAccountLogin(string TENDANGNHAP, string MATKHAU)
+        {
+            TaiKhoan output = new TaiKhoan();
+            foreach(var temp in listTaiKhoan)
+            {
+                if (temp.TENDANGNHAP == TENDANGNHAP && temp.MATKHAU == MATKHAU)
+                    output = temp;
+            }
+            return output;
+        }
         public DataSet searchTaiKhoanByTen(string HOTEN)
         {
             DataSet result = new DataSet();
@@ -158,6 +201,21 @@ namespace DAL
                 connection.Close();
             }
             return getResult;
+        }
+        public DataSet getTaiKhoanByMATK(int MATAIKHOAN)
+        {
+            DataSet get = new DataSet();
+            string searchQuerry = "select nhanvien.hoten,mataikhoan, tendangnhap, matkhau, capbac from taikhoan, nhanvien where taikhoan.manv = nhanvien.manv and taikhoan.mataikhoan = @MATAIKHOAN";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand cmdSearch = new SqlCommand(searchQuerry, connection);
+                cmdSearch.Parameters.Add("@MATAIKHOAN", SqlDbType.Int).Value = MATAIKHOAN ;
+                SqlDataAdapter adapter = new SqlDataAdapter(cmdSearch); 
+                adapter.Fill(get);
+                connection.Close();
+            }
+            return get;
         }
     }
 }
