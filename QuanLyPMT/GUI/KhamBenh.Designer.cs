@@ -105,6 +105,8 @@ namespace GUI
             this.lbname = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.HOADON = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.examTabControl.SuspendLayout();
             this.BENHAN.SuspendLayout();
@@ -116,12 +118,14 @@ namespace GUI
             this.DONTHUOC.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachThuocDgv)).BeginInit();
+            this.HOADON.SuspendLayout();
             this.SuspendLayout();
             // 
             // examTabControl
             // 
             this.examTabControl.Controls.Add(this.BENHAN);
             this.examTabControl.Controls.Add(this.DONTHUOC);
+            this.examTabControl.Controls.Add(this.HOADON);
             this.examTabControl.Depth = 0;
             this.examTabControl.HotTrack = true;
             this.examTabControl.ImeMode = System.Windows.Forms.ImeMode.Katakana;
@@ -1009,6 +1013,28 @@ namespace GUI
             this.label1.TabIndex = 36;
             this.label1.Text = "Kê toa ";
             // 
+            // HOADON
+            // 
+            this.HOADON.Controls.Add(this.reportViewer1);
+            this.HOADON.Location = new System.Drawing.Point(4, 26);
+            this.HOADON.Name = "HOADON";
+            this.HOADON.Padding = new System.Windows.Forms.Padding(3);
+            this.HOADON.Size = new System.Drawing.Size(1210, 560);
+            this.HOADON.TabIndex = 2;
+            this.HOADON.Text = "Hóa đơn";
+            this.HOADON.UseVisualStyleBackColor = true;
+            this.HOADON.Click += new System.EventHandler(this.HOADON_Click);
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer1.Name = "ReportViewer";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1204, 554);
+            this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            // 
             // materialTabSelector1
             // 
             this.materialTabSelector1.BaseTabControl = this.examTabControl;
@@ -1044,6 +1070,7 @@ namespace GUI
             this.DONTHUOC.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.danhSachThuocDgv)).EndInit();
+            this.HOADON.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1130,5 +1157,7 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn namethuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitthuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn LIEUDUNG;
+        private System.Windows.Forms.TabPage HOADON;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

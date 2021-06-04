@@ -15,6 +15,11 @@ namespace BUS
             return benhAn_DAL.getDataBenhan();
         }
 
+        public DataSet getDataReport(string date)
+        {
+            return benhAn_DAL.getDataReport(date);
+        }
+
         public DataSet getDataByID(int MABN)
         {
             return benhAn_DAL.getDataBenhanByID(MABN);

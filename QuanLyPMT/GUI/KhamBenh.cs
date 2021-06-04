@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DTO;
+using Microsoft.Reporting.WinForms;
+
 namespace GUI
 {
     public partial class KhamBenh : UserControl
@@ -17,7 +19,6 @@ namespace GUI
         public KhamBenh()
         {
             InitializeComponent();
-           
         }
         DonThuoc_BUS donThuoc_BUS = new DonThuoc_BUS();
         DonThuoc donThuoc = new DonThuoc();
@@ -302,6 +303,22 @@ namespace GUI
             string temp;
             temp = searchTextbox.Text;
             showSearchResult(temp);
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+            this.reportViewer1.LocalReport.DataSources.Clear();
+            string date = "2021-05-09";
+            ReportDataSource rptData = new ReportDataSource("DataSet1", BENHAN_BUS.getDataReport(date).Tables[0]);
+            reportViewer1.LocalReport.DataSources.Add(rptData);
+            reportViewer1.LocalReport.ReportPath = @"C:\Users\LENOVO\Downloads\QuanLyPMT\QuanLyPMT\GUI\Report.rdlc";
+            reportViewer1.LocalReport.Refresh();
+            reportViewer1.RefreshReport();
+        }
+
+        private void HOADON_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void examTabControl_SelectedIndexChanged(object sender, EventArgs e)
