@@ -379,7 +379,10 @@ namespace GUI
             donThuoc_BUS.getgiatriDT(MADT);
             for (int i = 0; i < donThuoc_BUS.getgiatriDT(MADT).Tables[0].Rows.Count; i++)
             {
-                giatri += int.Parse(donThuoc_BUS.getgiatriDT(MADT).Tables[0].Rows[i][0].ToString());
+                // bug chuyển từ money to string rồi lại từ string to int : không thành công 
+                int gt = int.Parse(donThuoc_BUS.getgiatriDT(MADT).Tables[0].Rows[i][0].ToString());
+                int sl = int.Parse(donThuoc_BUS.getgiatriDT(MADT).Tables[0].Rows[i][1].ToString());
+                giatri += gt*sl;
             }
             donThuoc_BUS.updatedonthuoc(MADT, giatri);
         }

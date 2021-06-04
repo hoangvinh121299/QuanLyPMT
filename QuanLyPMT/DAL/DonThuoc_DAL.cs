@@ -167,7 +167,7 @@ namespace DAL
         public DataSet getgiatriDT(int MADT)
         {
             DataSet giatriDT = new DataSet();
-            string sql = "select lt.giaban from  LOAITHUOC lt join CTDONTHUOC ct on lt.MALT = ct.MALT where ct.MADT=@MADT";
+            string sql = "select lt.giaban,ct.SOLUONG from  LOAITHUOC lt join CTDONTHUOC ct on lt.MALT = ct.MALT where ct.MADT=@MADT";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
             {
                 connection.Open();
