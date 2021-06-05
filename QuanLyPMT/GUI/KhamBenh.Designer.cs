@@ -83,6 +83,28 @@ namespace GUI
             this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DONTHUOC = new System.Windows.Forms.TabPage();
+            this.thuoc_cbb = new System.Windows.Forms.ComboBox();
+            this.luubtn = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.danhSachThuocDgv = new System.Windows.Forms.DataGridView();
+            this.numeric = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MALT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MADT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namethuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LIEUDUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exitBtn = new System.Windows.Forms.Button();
+            this.editBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.unittextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.quantitytextBox = new System.Windows.Forms.TextBox();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.lbname = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.HOADON = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
@@ -93,6 +115,9 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.benAnDGV)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.benhNhanListDGV)).BeginInit();
+            this.DONTHUOC.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachThuocDgv)).BeginInit();
             this.HOADON.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -714,6 +739,19 @@ namespace GUI
             // 
             // DONTHUOC
             // 
+            this.DONTHUOC.Controls.Add(this.thuoc_cbb);
+            this.DONTHUOC.Controls.Add(this.luubtn);
+            this.DONTHUOC.Controls.Add(this.groupBox4);
+            this.DONTHUOC.Controls.Add(this.exitBtn);
+            this.DONTHUOC.Controls.Add(this.editBtn);
+            this.DONTHUOC.Controls.Add(this.label3);
+            this.DONTHUOC.Controls.Add(this.unittextBox);
+            this.DONTHUOC.Controls.Add(this.label2);
+            this.DONTHUOC.Controls.Add(this.quantitytextBox);
+            this.DONTHUOC.Controls.Add(this.addBtn);
+            this.DONTHUOC.Controls.Add(this.lbname);
+            this.DONTHUOC.Controls.Add(this.button1);
+            this.DONTHUOC.Controls.Add(this.label1);
             this.DONTHUOC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DONTHUOC.Location = new System.Drawing.Point(4, 26);
             this.DONTHUOC.Name = "DONTHUOC";
@@ -722,6 +760,258 @@ namespace GUI
             this.DONTHUOC.TabIndex = 1;
             this.DONTHUOC.Text = "Đơn thuốc";
             this.DONTHUOC.UseVisualStyleBackColor = true;
+            // 
+            // thuoc_cbb
+            // 
+            this.thuoc_cbb.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.thuoc_cbb.FormattingEnabled = true;
+            this.thuoc_cbb.ItemHeight = 22;
+            this.thuoc_cbb.Location = new System.Drawing.Point(152, 67);
+            this.thuoc_cbb.Name = "thuoc_cbb";
+            this.thuoc_cbb.Size = new System.Drawing.Size(203, 30);
+            this.thuoc_cbb.TabIndex = 59;
+            // 
+            // luubtn
+            // 
+            this.luubtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.luubtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.luubtn.ForeColor = System.Drawing.Color.Black;
+            this.luubtn.Image = global::GUI.Properties.Resources.save;
+            this.luubtn.Location = new System.Drawing.Point(19, 284);
+            this.luubtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.luubtn.Name = "luubtn";
+            this.luubtn.Size = new System.Drawing.Size(113, 48);
+            this.luubtn.TabIndex = 58;
+            this.luubtn.Text = "Lưu";
+            this.luubtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.luubtn.UseVisualStyleBackColor = false;
+            this.luubtn.Click += new System.EventHandler(this.luubtn_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.danhSachThuocDgv);
+            this.groupBox4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox4.Location = new System.Drawing.Point(380, 0);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox4.Size = new System.Drawing.Size(834, 564);
+            this.groupBox4.TabIndex = 55;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Toa thuốc";
+            // 
+            // danhSachThuocDgv
+            // 
+            this.danhSachThuocDgv.AllowUserToAddRows = false;
+            this.danhSachThuocDgv.AllowUserToDeleteRows = false;
+            this.danhSachThuocDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.danhSachThuocDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.danhSachThuocDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.numeric,
+            this.GiaTri,
+            this.MALT,
+            this.MADT,
+            this.NgayTao,
+            this.namethuoc,
+            this.unitthuoc,
+            this.LIEUDUNG});
+            this.danhSachThuocDgv.Location = new System.Drawing.Point(0, 32);
+            this.danhSachThuocDgv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.danhSachThuocDgv.Name = "danhSachThuocDgv";
+            this.danhSachThuocDgv.ReadOnly = true;
+            this.danhSachThuocDgv.RowHeadersWidth = 51;
+            this.danhSachThuocDgv.RowTemplate.Height = 25;
+            this.danhSachThuocDgv.Size = new System.Drawing.Size(827, 526);
+            this.danhSachThuocDgv.TabIndex = 0;
+            this.danhSachThuocDgv.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachThuocDgv_RowEnter);
+            // 
+            // numeric
+            // 
+            this.numeric.DataPropertyName = "STT";
+            this.numeric.HeaderText = "STT";
+            this.numeric.MinimumWidth = 6;
+            this.numeric.Name = "numeric";
+            this.numeric.ReadOnly = true;
+            // 
+            // GiaTri
+            // 
+            this.GiaTri.DataPropertyName = "GIATRI";
+            this.GiaTri.HeaderText = "GiaTri";
+            this.GiaTri.MinimumWidth = 6;
+            this.GiaTri.Name = "GiaTri";
+            this.GiaTri.ReadOnly = true;
+            this.GiaTri.Visible = false;
+            // 
+            // MALT
+            // 
+            this.MALT.DataPropertyName = "MALT";
+            this.MALT.HeaderText = "MALT";
+            this.MALT.MinimumWidth = 6;
+            this.MALT.Name = "MALT";
+            this.MALT.ReadOnly = true;
+            this.MALT.Visible = false;
+            // 
+            // MADT
+            // 
+            this.MADT.DataPropertyName = "MADT";
+            this.MADT.HeaderText = "MADT";
+            this.MADT.MinimumWidth = 6;
+            this.MADT.Name = "MADT";
+            this.MADT.ReadOnly = true;
+            this.MADT.Visible = false;
+            // 
+            // NgayTao
+            // 
+            this.NgayTao.DataPropertyName = "NGAYLAP";
+            this.NgayTao.HeaderText = "Ngày Lập";
+            this.NgayTao.MinimumWidth = 6;
+            this.NgayTao.Name = "NgayTao";
+            this.NgayTao.ReadOnly = true;
+            this.NgayTao.Visible = false;
+            // 
+            // namethuoc
+            // 
+            this.namethuoc.DataPropertyName = "TENLT";
+            this.namethuoc.HeaderText = "Tên thuốc";
+            this.namethuoc.MinimumWidth = 6;
+            this.namethuoc.Name = "namethuoc";
+            this.namethuoc.ReadOnly = true;
+            // 
+            // unitthuoc
+            // 
+            this.unitthuoc.DataPropertyName = "SOLUONG";
+            this.unitthuoc.HeaderText = "Số lượng";
+            this.unitthuoc.MinimumWidth = 6;
+            this.unitthuoc.Name = "unitthuoc";
+            this.unitthuoc.ReadOnly = true;
+            // 
+            // LIEUDUNG
+            // 
+            this.LIEUDUNG.DataPropertyName = "LIEUDUNG";
+            this.LIEUDUNG.HeaderText = "Liều dùng";
+            this.LIEUDUNG.MinimumWidth = 6;
+            this.LIEUDUNG.Name = "LIEUDUNG";
+            this.LIEUDUNG.ReadOnly = true;
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.exitBtn.ForeColor = System.Drawing.Color.Black;
+            this.exitBtn.Image = global::GUI.Properties.Resources.logout;
+            this.exitBtn.Location = new System.Drawing.Point(19, 449);
+            this.exitBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(113, 48);
+            this.exitBtn.TabIndex = 54;
+            this.exitBtn.Text = "Thoát";
+            this.exitBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.exitBtn.UseVisualStyleBackColor = true;
+            // 
+            // editBtn
+            // 
+            this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.editBtn.ForeColor = System.Drawing.Color.Black;
+            this.editBtn.Image = global::GUI.Properties.Resources.edit;
+            this.editBtn.Location = new System.Drawing.Point(242, 227);
+            this.editBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(113, 48);
+            this.editBtn.TabIndex = 53;
+            this.editBtn.Text = "Sữa";
+            this.editBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(22, 175);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 23);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Liều dùng";
+            // 
+            // unittextBox
+            // 
+            this.unittextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.unittextBox.Location = new System.Drawing.Point(152, 175);
+            this.unittextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.unittextBox.Name = "unittextBox";
+            this.unittextBox.Size = new System.Drawing.Size(206, 30);
+            this.unittextBox.TabIndex = 51;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(22, 120);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 23);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Số lượng";
+            // 
+            // quantitytextBox
+            // 
+            this.quantitytextBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.quantitytextBox.Location = new System.Drawing.Point(152, 120);
+            this.quantitytextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.quantitytextBox.Name = "quantitytextBox";
+            this.quantitytextBox.Size = new System.Drawing.Size(206, 30);
+            this.quantitytextBox.TabIndex = 49;
+            // 
+            // addBtn
+            // 
+            this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addBtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.addBtn.ForeColor = System.Drawing.Color.Black;
+            this.addBtn.Image = global::GUI.Properties.Resources.add;
+            this.addBtn.Location = new System.Drawing.Point(19, 227);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(113, 48);
+            this.addBtn.TabIndex = 47;
+            this.addBtn.Text = "Thêm";
+            this.addBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
+            // lbname
+            // 
+            this.lbname.AutoSize = true;
+            this.lbname.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbname.Location = new System.Drawing.Point(22, 69);
+            this.lbname.Name = "lbname";
+            this.lbname.Size = new System.Drawing.Size(96, 23);
+            this.lbname.TabIndex = 45;
+            this.lbname.Text = "Tên thuốc";
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Image = global::GUI.Properties.Resources.delete;
+            this.button1.Location = new System.Drawing.Point(242, 283);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 49);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "Xoá";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(19, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 23);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Kê toa ";
             // 
             // HOADON
             // 
@@ -776,6 +1066,10 @@ namespace GUI
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.benhNhanListDGV)).EndInit();
+            this.DONTHUOC.ResumeLayout(false);
+            this.DONTHUOC.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachThuocDgv)).EndInit();
             this.HOADON.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -840,6 +1134,29 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn HUONGXULY;
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Button editBtn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox unittextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox quantitytextBox;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Label lbname;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView danhSachThuocDgv;
+        private System.Windows.Forms.Button luubtn;
+        private System.Windows.Forms.ComboBox thuoc_cbb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantitythuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeric;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaTri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MALT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MADT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayTao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namethuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitthuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LIEUDUNG;
         private System.Windows.Forms.TabPage HOADON;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
