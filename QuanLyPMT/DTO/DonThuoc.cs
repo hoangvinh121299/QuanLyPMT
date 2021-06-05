@@ -10,7 +10,7 @@ namespace DTO
         private int maLT;
         private int maBA;
         private DateTime ngayTao;
-        private int giaTri;
+        private double giaTri;
         private int soLuong;
         private int lieuDung;
         private string tenLT;
@@ -19,7 +19,7 @@ namespace DTO
         public int MaLT { get => maLT; set => maLT = value; }
         public int MaBA { get => maBA; set => maBA = value; }
         public DateTime NgayTao { get => ngayTao; set => ngayTao = value; }
-        public int GiaTri { get => giaTri; set => giaTri = value; }
+        public double GiaTri { get => giaTri; set => giaTri = value; }
         public int SoLuong { get => soLuong; set => soLuong = value; }
         public int LieuDung { get => lieuDung; set => lieuDung = value; }
         public string TenLT { get => tenLT; set => tenLT = value; }

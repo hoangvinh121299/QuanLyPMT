@@ -125,7 +125,7 @@ namespace DAL
                 }
             }
         }
-        public void updatedonthuoc(int MADT,int GIATRI)
+        public void updatedonthuoc(int MADT,double GIATRI)
         {
             string updateInto = "update donthuoc set GIATRI=@GIATRI WHERE MADT=@MADT";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
@@ -135,7 +135,7 @@ namespace DAL
                     connection.Open();
                     SqlCommand cmdInsert = new SqlCommand(updateInto, connection);
                     cmdInsert.Parameters.Add("@MADT", SqlDbType.Int).Value = MADT;
-                    cmdInsert.Parameters.Add("@GIATRI", SqlDbType.Int).Value = GIATRI;
+                    cmdInsert.Parameters.Add("@GIATRI", SqlDbType.Money).Value = GIATRI;
                     cmdInsert.ExecuteNonQuery();
                     connection.Close();
                 }
@@ -178,6 +178,57 @@ namespace DAL
                 connection.Close();
             }
             return giatriDT;
+        }
+        public DataSet tinhtonkho(int MADT)
+        {
+            DataSet thuoctonkho = new DataSet();
+            string sql = "select lt.MALT, lt.TONKHO , ct.SOLUONG from LOAITHUOC lt join CTDONTHUOC ct on lt.MALT=ct.MALT where ct.MADT=@MADT";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand getByID = new SqlCommand(sql, connection);
+                getByID.Parameters.Add("@MADT", SqlDbType.Int).Value = MADT;
+                SqlDataAdapter adapter = new SqlDataAdapter(getByID);
+                adapter.Fill(thuoctonkho);
+                connection.Close();
+            }
+            return thuoctonkho;
+        }
+
+        public DataSet gettonkhobyID (int MALT)
+        {
+            DataSet thuoctonkho = new DataSet();
+            string sql = "select TONKHO from LOAITHUOC where ct.MALT=@MALT";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand getByID = new SqlCommand(sql, connection);
+                getByID.Parameters.Add("@MALT", SqlDbType.Int).Value = MALT;
+                SqlDataAdapter adapter = new SqlDataAdapter(getByID);
+                adapter.Fill(thuoctonkho);
+                connection.Close();
+            }
+            return thuoctonkho;
+        }
+        public void updatetonkho(int MALT,int TONKHO)
+        {
+            string updateInto = "update loaithuoc set TONKHO=@TONKHO WHERE MALT=@MALT";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmdInsert = new SqlCommand(updateInto, connection);
+                    cmdInsert.Parameters.Add("@MALT", SqlDbType.Int).Value = MALT;
+                    cmdInsert.Parameters.Add("@TONKHO", SqlDbType.Money).Value = TONKHO;
+                    cmdInsert.ExecuteNonQuery();
+                    connection.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
+            }
         }
     }
 }

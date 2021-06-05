@@ -373,16 +373,34 @@ namespace GUI
             donThuoc.LieuDung = int.Parse(unittextBox.Text);
         }
 
-        public void capnhatdonthuoc(int MADT)
+        public void capnhattonkho(int MADT)
         {
-            int giatri = 0;
+            double giatri = 0;
             donThuoc_BUS.getgiatriDT(MADT);
             for (int i = 0; i < donThuoc_BUS.getgiatriDT(MADT).Tables[0].Rows.Count; i++)
             {
-                // bug chuyển từ money to string rồi lại từ string to int : không thành công 
-                int gt = int.Parse(donThuoc_BUS.getgiatriDT(MADT).Tables[0].Rows[i][0].ToString());
-                int sl = int.Parse(donThuoc_BUS.getgiatriDT(MADT).Tables[0].Rows[i][1].ToString());
+                double gt = Convert.ToDouble(donThuoc_BUS.getgiatriDT(MADT).Tables[0].Rows[i][0].ToString());
+                double sl = Convert.ToDouble(donThuoc_BUS.getgiatriDT(MADT).Tables[0].Rows[i][1].ToString());
                 giatri += gt*sl;
+            }
+            donThuoc_BUS.updatedonthuoc(MADT, giatri);
+            for(int i=0;i<donThuoc_BUS.tinhtonkho(MADT).Tables[0].Rows.Count;i++)
+            {
+                int ma = int.Parse(donThuoc_BUS.tinhtonkho(MADT).Tables[0].Rows[i][0].ToString());
+                int tonkho= int.Parse(donThuoc_BUS.tinhtonkho(MADT).Tables[0].Rows[i][1].ToString());
+                int soluong = int.Parse(donThuoc_BUS.tinhtonkho(MADT).Tables[0].Rows[i][2].ToString());
+                donThuoc_BUS.updatetonkho(ma, tonkho - soluong);
+            }    
+        }
+        public void capnhatdonthuoc(int MADT)
+        {
+            double giatri = 0;
+            donThuoc_BUS.getgiatriDT(MADT);
+            for (int i = 0; i < donThuoc_BUS.getgiatriDT(MADT).Tables[0].Rows.Count; i++)
+            {
+                double gt = Convert.ToDouble(donThuoc_BUS.getgiatriDT(MADT).Tables[0].Rows[i][0].ToString());
+                double sl = Convert.ToDouble(donThuoc_BUS.getgiatriDT(MADT).Tables[0].Rows[i][1].ToString());
+                giatri += gt * sl;
             }
             donThuoc_BUS.updatedonthuoc(MADT, giatri);
         }
@@ -406,7 +424,7 @@ namespace GUI
                         donThuoc_BUS.addCTdonthuoc(donThuoc.MaDT, donThuoc.MaLT, donThuoc.SoLuong, donThuoc.LieuDung);
                         showdatadonthuoc();
                         loaddata();
-                      
+                        capnhattonkho(donThuoc.MaDT);
                         return;
                     }
                 }
@@ -423,8 +441,11 @@ namespace GUI
                     if (true)
                     {
                         donThuoc_BUS.updateCTdonthuoc(donThuoc.MaLT, donThuoc.SoLuong, donThuoc.LieuDung);
+                        int tonkho_temp =int.Parse( donThuoc_BUS.gettonkhobyID(donThuoc.MaLT).Tables[0].Rows[0][0].ToString());
+                        donThuoc_BUS.updatetonkho(donThuoc.MaLT, tonkho_temp - donThuoc.SoLuong);
                         showdatadonthuoc();
                         loaddata();
+                        capnhatdonthuoc(donThuoc.MaDT);
                         return;
                     }
                 }

@@ -44,9 +44,21 @@ namespace BUS
         {
            return donThuoc_DAL.getgiatriDT(MADT);
         }
-        public void updatedonthuoc(int MADT, int GIATRI)
+        public void updatedonthuoc(int MADT, double GIATRI)
         {
             donThuoc_DAL.updatedonthuoc(MADT, GIATRI);
+        }
+        public DataSet tinhtonkho(int MADT)
+        {
+            return donThuoc_DAL.tinhtonkho(MADT);
+        }
+        public void updatetonkho(int MALT, int TONKHO)
+        {
+            donThuoc_DAL.updatetonkho(MALT, TONKHO);
+        }
+        public DataSet gettonkhobyID(int MALT)
+        {
+            return donThuoc_DAL.gettonkhobyID(MALT);
         }
     }
 
