@@ -18,6 +18,8 @@ namespace DTO
         private string hUONGXULY;
         private string gHICHU;
         private string hOTEN;
+
+        private double tIENKHAM;
         public int MABA { get => mABA; set => mABA = value; }
         public DateTime NGAYLAP { get => nGAYLAP; set => nGAYLAP = value; }
         public DateTime NGAYTAIKHAM { get => nGAYTAIKHAM; set => nGAYTAIKHAM = value; }
@@ -30,5 +32,6 @@ namespace DTO
         public string HUONGXULY { get => hUONGXULY; set => hUONGXULY = value; }
         public string GHICHU { get => gHICHU; set => gHICHU = value; }
         public string HOTEN { get => hOTEN; set => hOTEN = value; }
+        public double TIENKHAM { get => tIENKHAM; set => tIENKHAM = value; }
     }
 }

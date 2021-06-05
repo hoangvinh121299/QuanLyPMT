@@ -75,7 +75,7 @@ namespace GUI
         {
             if (taikhoan.CAPBAC == 0 || taikhoan.CAPBAC == 1)
             {
-                KhamBenh khamBenh = new KhamBenh();
+                KhamBenh khamBenh = new KhamBenh(taikhoan);
                 displayPanel.Controls.Clear();
                 displayPanel.Controls.Add(khamBenh);
             }

@@ -72,9 +72,10 @@ namespace DAL
                               string LOAIBENH,
                               string CHANDOAN,
                               string HUONGXULY,
-                              string GHICHU)
+                              string GHICHU,
+                              double TIENKHAM)
         {
-            string insertInto = "INSERT INTO BENHAN VALUES (@NGAYLAP, @NGAYTAIKHAM,@MABN,@MANV,@TIENSUBENH,@TRIEUCHUNG,@LOAIBENH,@CHANDOAN,@HUONGXULY,@GHICHU)";
+            string insertInto = "INSERT INTO BENHAN VALUES (@NGAYLAP, @NGAYTAIKHAM,@MABN,@MANV,@TIENSUBENH,@TRIEUCHUNG,@LOAIBENH,@CHANDOAN,@HUONGXULY,@GHICHU, @TIENKHAM)";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
             {
                 try
@@ -93,6 +94,7 @@ namespace DAL
                     cmdInsert.Parameters.Add("@CHANDOAN", SqlDbType.NVarChar).Value = CHANDOAN;
                     cmdInsert.Parameters.Add("@HUONGXULY", SqlDbType.NVarChar).Value = HUONGXULY;
                     cmdInsert.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = GHICHU;
+                    cmdInsert.Parameters.Add("@TIENKHAM", SqlDbType.Money).Value = TIENKHAM;
 
                     cmdInsert.ExecuteNonQuery();
                     connection.Close();
@@ -115,9 +117,10 @@ namespace DAL
                               string LOAIBENH,
                               string CHANDOAN,
                               string HUONGXULY,
-                              string GHICHU)
+                              string GHICHU,
+                              double TIENKHAM)
         {
-            string updateInto = "update benhan set NGAYLAP = @NGAYLAP, NGAYTAIKHAM = @NGAYTAIKHAM,MANV = @MANV, TIENSUBENH=@TIENSUBENH,TRIEUCHUNG=@TRIEUCHUNG, LOAIBENH=@LOAIBENH, CHANDOAN = @CHANDOAN, HUONGXULY=@HUONGXULY, GHICHU=@GHICHU WHERE MABA = @MABA";
+            string updateInto = "update benhan set NGAYLAP = @NGAYLAP, NGAYTAIKHAM = @NGAYTAIKHAM,MANV = @MANV, TIENSUBENH=@TIENSUBENH,TRIEUCHUNG=@TRIEUCHUNG, LOAIBENH=@LOAIBENH, CHANDOAN = @CHANDOAN, HUONGXULY=@HUONGXULY, GHICHU=@GHICHU, TIENKHAM= @TIENKHAM WHERE MABA = @MABA";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
             {
                 try
@@ -136,6 +139,7 @@ namespace DAL
                     cmdInsert.Parameters.Add("@HUONGXULY", SqlDbType.NVarChar).Value = HUONGXULY;
                     cmdInsert.Parameters.Add("@GHICHU", SqlDbType.NVarChar).Value = GHICHU;
                     cmdInsert.Parameters.Add("@MABA", SqlDbType.Int).Value = MABA;
+                    cmdInsert.Parameters.Add("@TIENKHAM", SqlDbType.Money).Value = TIENKHAM;
 
                     cmdInsert.ExecuteNonQuery();
                     connection.Close();

@@ -18,7 +18,12 @@ namespace GUI
 
         public KhamBenh()
         {
+        }
+        TaiKhoan taikhoan = new TaiKhoan();
+        public KhamBenh(TaiKhoan references)
+        {
             InitializeComponent();
+            taikhoan = references;
         }
         DonThuoc_BUS donThuoc_BUS = new DonThuoc_BUS();
         DonThuoc donThuoc = new DonThuoc();
@@ -118,6 +123,17 @@ namespace GUI
                 {
 
                 }
+                fromTable.TIENKHAM = double.Parse(benAnDGV.Rows[index].Cells["TIENKHAM"].Value.ToString());
+                fromTable.TRIEUCHUNG = benAnDGV.Rows[index].Cells["TRIEUCHUNG"].Value.ToString();
+                fromTable.LOAIBENH = benAnDGV.Rows[index].Cells["LOAIBENH"].Value.ToString();
+                fromTable.TIENSUBENH = benAnDGV.Rows[index].Cells["TIENSUBENH"].Value.ToString();
+                fromTable.CHANDOAN = benAnDGV.Rows[index].Cells["CHANDOAN"].Value.ToString();
+                fromTable.HUONGXULY = benAnDGV.Rows[index].Cells["HUONGXULY"].Value.ToString();
+                fromTable.GHICHU = benAnDGV.Rows[index].Cells["GHICHU"].Value.ToString();
+
+
+
+
             }
             setValueToForm(fromTable);
             
@@ -134,6 +150,7 @@ namespace GUI
             trieuchungTxtBox.Text = benhAN.TRIEUCHUNG;
             loaiBenhCBB.Text = benhAN.LOAIBENH;
             huongxulyTxtBox.Text = benhAN.HUONGXULY;
+            examFee_textbox.Text = benhAN.TIENKHAM.ToString();
         }
         //Nạp dữ liệu từ form
         public void setValueFromForm()
@@ -147,6 +164,7 @@ namespace GUI
             fromForm.LOAIBENH = loaiBenhCBB.Text;
             fromForm.HUONGXULY = huongxulyTxtBox.Text;
             fromForm.GHICHU = noteTextBox.Text;
+            fromForm.TIENKHAM = double.Parse(examFee_textbox.Text.ToString());
         }
         private void adddBtn_Click(object sender, EventArgs e)
         {
@@ -177,7 +195,7 @@ namespace GUI
             adddBtn.Visible = true;
             updateBtn.Visible = true;
             deleteBtn.Visible = true;
-
+            examFee_textbox.Enabled = false;
             saveBtn.Visible = false;
             cancelBtn.Visible = false;
         }
@@ -191,7 +209,8 @@ namespace GUI
             loaiBenhCBB.Enabled = true;
             huongxulyTxtBox.Enabled = true;
             noteTextBox.Enabled = true;
-            
+            examFee_textbox.Enabled = true;
+
 
 
             adddBtn.Visible = false;
@@ -211,7 +230,7 @@ namespace GUI
             loaiBenhCBB.Text = null;
             huongxulyTxtBox.Text = null;
             noteTextBox.Text = null;
-
+            examFee_textbox.Text = null;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -227,13 +246,14 @@ namespace GUI
                                                  fromForm.NGAYLAP,
                                                  fromForm.NGAYTAIKHAM,
                                                  fromForm.MABN,
-                                                 fromForm.MANV=1,
+                                                 fromForm.MANV=taikhoan.MANV,
                                                  fromForm.TIENSUBENH,
                                                  fromForm.TRIEUCHUNG,
                                                  fromForm.LOAIBENH,
                                                  fromForm.CHANDOAN,
                                                  fromForm.HUONGXULY,
-                                                 fromForm.GHICHU);
+                                                 fromForm.GHICHU,
+                                                 fromForm.TIENKHAM);
                         showDataBenhAnByID();
                         loadForm();
                         return;
@@ -254,13 +274,14 @@ namespace GUI
                         BENHAN_BUS.updateBenhAn(fromForm.MABA,
                                                  fromForm.NGAYLAP,
                                                  fromForm.NGAYTAIKHAM,
-                                                 fromForm.MANV=1,
+                                                 fromForm.MANV=taikhoan.MANV,
                                                  fromForm.TIENSUBENH,
                                                  fromForm.TRIEUCHUNG,
                                                  fromForm.LOAIBENH,
                                                  fromForm.CHANDOAN,
                                                  fromForm.HUONGXULY,
-                                                 fromForm.GHICHU);
+                                                 fromForm.GHICHU,
+                                                 fromForm.TIENKHAM);
                         showDataBenhAnByID();
                         loadForm();
                         return;
