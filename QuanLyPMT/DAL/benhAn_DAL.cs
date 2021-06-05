@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 using DTO;
@@ -23,6 +24,28 @@ namespace DAL
             }
             return dataBenhan;
         }
+        
+        public DataSet getDataReport(string date)
+        {
+            DateTime dateTime = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            DataSet dataReport = new DataSet();
+            string selectData = "SELECT BENHAN.NGAYLAP, BENHNHAN.HOTEN, BENHNHAN.GT, BENHNHAN.NGAYSINH,BENHAN.LOAIBENH, LOAITHUOC.TENLT, LOAITHUOC.GIABAN, CTDONTHUOC.SOLUONG, DONTHUOC.GIATRI " +
+                                "FROM DONTHUOC INNER JOIN CTDONTHUOC ON DONTHUOC.MADT = CTDONTHUOC.MADT INNER " +
+                                "JOIN LOAITHUOC ON CTDONTHUOC.MALT = LOAITHUOC.MALT CROSS " +
+                                "JOIN BENHAN INNER " +
+                                "JOIN BENHNHAN ON BENHAN.MABN = BENHNHAN.MABN WHERE BENHAN.NGAYLAP = @NGAYLAP";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand getByID = new SqlCommand(selectData, connection);
+                getByID.Parameters.AddWithValue("@NGAYLAP", dateTime);
+                SqlDataAdapter adapter = new SqlDataAdapter(getByID);
+                adapter.Fill(dataReport);
+                connection.Close();
+            }
+            return dataReport;
+        }
+
         //Lấy thông tin bệnh án theo MABN
         public DataSet getDataBenhanByID(int MABN)
         {
