@@ -29,13 +29,14 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginForm));
             this.username_Txtbox = new System.Windows.Forms.TextBox();
             this.pwrd_Txttbox = new System.Windows.Forms.TextBox();
             this.login_btn = new System.Windows.Forms.Button();
             this.forgetPwrd_linklable = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.loginError = new System.Windows.Forms.Label();
+            this.metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
+            this.showPwrd_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,13 +114,55 @@ namespace GUI
             this.loginError.TabIndex = 5;
             this.loginError.Text = "Sai tên đăng nhập và mật khẩu. Vui lòng kiểm tra lại ";
             // 
+            // metroSetControlBox1
+            // 
+            this.metroSetControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroSetControlBox1.CloseHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.metroSetControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            this.metroSetControlBox1.CloseNormalForeColor = System.Drawing.Color.Gray;
+            this.metroSetControlBox1.DisabledForeColor = System.Drawing.Color.DimGray;
+            this.metroSetControlBox1.IsDerivedStyle = true;
+            this.metroSetControlBox1.Location = new System.Drawing.Point(855, -1);
+            this.metroSetControlBox1.MaximizeBox = true;
+            this.metroSetControlBox1.MaximizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.metroSetControlBox1.MaximizeHoverForeColor = System.Drawing.Color.Gray;
+            this.metroSetControlBox1.MaximizeNormalForeColor = System.Drawing.Color.Gray;
+            this.metroSetControlBox1.MinimizeBox = true;
+            this.metroSetControlBox1.MinimizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.metroSetControlBox1.MinimizeHoverForeColor = System.Drawing.Color.Gray;
+            this.metroSetControlBox1.MinimizeNormalForeColor = System.Drawing.Color.Gray;
+            this.metroSetControlBox1.Name = "metroSetControlBox1";
+            this.metroSetControlBox1.Size = new System.Drawing.Size(100, 25);
+            this.metroSetControlBox1.Style = MetroSet_UI.Enums.Style.Light;
+            this.metroSetControlBox1.StyleManager = null;
+            this.metroSetControlBox1.TabIndex = 6;
+            this.metroSetControlBox1.Text = "metroSetControlBox1";
+            this.metroSetControlBox1.ThemeAuthor = "Narwin";
+            this.metroSetControlBox1.ThemeName = "MetroLite";
+            // 
+            // showPwrd_Btn
+            // 
+            this.showPwrd_Btn.BackColor = System.Drawing.Color.White;
+            this.showPwrd_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showPwrd_Btn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.showPwrd_Btn.Image = global::GUI.Properties.Resources.invisible;
+            this.showPwrd_Btn.Location = new System.Drawing.Point(630, 390);
+            this.showPwrd_Btn.Name = "showPwrd_Btn";
+            this.showPwrd_Btn.Size = new System.Drawing.Size(26, 26);
+            this.showPwrd_Btn.TabIndex = 34;
+            this.showPwrd_Btn.UseVisualStyleBackColor = false;
+            this.showPwrd_Btn.Click += new System.EventHandler(this.showPwrd_Btn_Click);
+            // 
             // loginForm
             // 
+            this.AllowResize = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(954, 544);
+            this.Controls.Add(this.showPwrd_Btn);
+            this.Controls.Add(this.metroSetControlBox1);
             this.Controls.Add(this.loginError);
             this.Controls.Add(this.forgetPwrd_linklable);
             this.Controls.Add(this.login_btn);
@@ -145,5 +188,7 @@ namespace GUI
         private System.Windows.Forms.LinkLabel forgetPwrd_linklable;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label loginError;
+        private MetroSet_UI.Controls.MetroSetControlBox metroSetControlBox1;
+        private System.Windows.Forms.Button showPwrd_Btn;
     }
 }

@@ -122,5 +122,10 @@ namespace GUI
         {
             hoatdongtaikhoan.THOILUONG = hoatdongtaikhoan.DANGXUAT - hoatdongtaikhoan.DANGNHAP;
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

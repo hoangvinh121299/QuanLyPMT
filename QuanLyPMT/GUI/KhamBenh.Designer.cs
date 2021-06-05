@@ -32,6 +32,7 @@ namespace GUI
             this.examTabControl = new MaterialSkin.Controls.MaterialTabControl();
             this.BENHAN = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chanDoanCBB = new System.Windows.Forms.TextBox();
             this.metroSetLabel11 = new MetroSet_UI.Controls.MetroSetLabel();
             this.examFee_textbox = new System.Windows.Forms.TextBox();
             this.ngayTaiKhamDTPicker = new System.Windows.Forms.DateTimePicker();
@@ -43,7 +44,6 @@ namespace GUI
             this.updateBtn = new System.Windows.Forms.Button();
             this.huongxulyTxtBox = new System.Windows.Forms.TextBox();
             this.adddBtn = new System.Windows.Forms.Button();
-            this.chanDoanCBB = new System.Windows.Forms.ComboBox();
             this.loaiBenhCBB = new System.Windows.Forms.ComboBox();
             this.trieuchungTxtBox = new System.Windows.Forms.TextBox();
             this.tienSuBenhTxtBox = new System.Windows.Forms.TextBox();
@@ -59,6 +59,20 @@ namespace GUI
             this.metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.benAnDGV = new System.Windows.Forms.DataGridView();
+            this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIENKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MABA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYTAIKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MABN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIENSUBENH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TRIEUCHUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOAIBENH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHANDOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HUONGXULY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroSetLabel10 = new MetroSet_UI.Controls.MetroSetLabel();
             this.searchTextbox = new System.Windows.Forms.TextBox();
@@ -97,20 +111,6 @@ namespace GUI
             this.HOADON = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIENKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOTEN1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MABA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYLAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYTAIKHAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MABN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIENSUBENH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TRIEUCHUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOAIBENH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHANDOAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HUONGXULY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MANV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.examTabControl.SuspendLayout();
             this.BENHAN.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -156,6 +156,7 @@ namespace GUI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chanDoanCBB);
             this.groupBox2.Controls.Add(this.metroSetLabel11);
             this.groupBox2.Controls.Add(this.examFee_textbox);
             this.groupBox2.Controls.Add(this.ngayTaiKhamDTPicker);
@@ -167,7 +168,6 @@ namespace GUI
             this.groupBox2.Controls.Add(this.updateBtn);
             this.groupBox2.Controls.Add(this.huongxulyTxtBox);
             this.groupBox2.Controls.Add(this.adddBtn);
-            this.groupBox2.Controls.Add(this.chanDoanCBB);
             this.groupBox2.Controls.Add(this.loaiBenhCBB);
             this.groupBox2.Controls.Add(this.trieuchungTxtBox);
             this.groupBox2.Controls.Add(this.tienSuBenhTxtBox);
@@ -188,6 +188,14 @@ namespace GUI
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết bệnh án";
+            // 
+            // chanDoanCBB
+            // 
+            this.chanDoanCBB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chanDoanCBB.Location = new System.Drawing.Point(172, 167);
+            this.chanDoanCBB.Name = "chanDoanCBB";
+            this.chanDoanCBB.Size = new System.Drawing.Size(163, 25);
+            this.chanDoanCBB.TabIndex = 60;
             // 
             // metroSetLabel11
             // 
@@ -321,15 +329,6 @@ namespace GUI
             this.adddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.adddBtn.UseVisualStyleBackColor = false;
             this.adddBtn.Click += new System.EventHandler(this.adddBtn_Click);
-            // 
-            // chanDoanCBB
-            // 
-            this.chanDoanCBB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chanDoanCBB.FormattingEnabled = true;
-            this.chanDoanCBB.Location = new System.Drawing.Point(172, 165);
-            this.chanDoanCBB.Name = "chanDoanCBB";
-            this.chanDoanCBB.Size = new System.Drawing.Size(163, 25);
-            this.chanDoanCBB.TabIndex = 3;
             // 
             // loaiBenhCBB
             // 
@@ -533,6 +532,111 @@ namespace GUI
             this.benAnDGV.TabIndex = 0;
             this.benAnDGV.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.benAnDGV_RowEnter);
             this.benAnDGV.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.benAnDGV_RowPostPaint);
+            // 
+            // STT1
+            // 
+            this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.STT1.HeaderText = "STT";
+            this.STT1.MinimumWidth = 6;
+            this.STT1.Name = "STT1";
+            this.STT1.Width = 61;
+            // 
+            // TIENKHAM
+            // 
+            this.TIENKHAM.DataPropertyName = "TIENKHAM";
+            this.TIENKHAM.HeaderText = "Tiền khám ";
+            this.TIENKHAM.Name = "TIENKHAM";
+            // 
+            // HOTEN1
+            // 
+            this.HOTEN1.DataPropertyName = "HOTEN";
+            this.HOTEN1.HeaderText = "Họ tên";
+            this.HOTEN1.MinimumWidth = 6;
+            this.HOTEN1.Name = "HOTEN1";
+            this.HOTEN1.Visible = false;
+            // 
+            // MABA
+            // 
+            this.MABA.DataPropertyName = "MABA";
+            this.MABA.HeaderText = "Mã bệnh án";
+            this.MABA.MinimumWidth = 6;
+            this.MABA.Name = "MABA";
+            this.MABA.Visible = false;
+            // 
+            // NGAYLAP
+            // 
+            this.NGAYLAP.DataPropertyName = "NGAYLAP";
+            this.NGAYLAP.HeaderText = "Ngày lập";
+            this.NGAYLAP.MinimumWidth = 6;
+            this.NGAYLAP.Name = "NGAYLAP";
+            // 
+            // NGAYTAIKHAM
+            // 
+            this.NGAYTAIKHAM.DataPropertyName = "NGAYTAIKHAM";
+            this.NGAYTAIKHAM.HeaderText = "Ngày tái khám ";
+            this.NGAYTAIKHAM.MinimumWidth = 6;
+            this.NGAYTAIKHAM.Name = "NGAYTAIKHAM";
+            // 
+            // MABN
+            // 
+            this.MABN.DataPropertyName = "MABN";
+            this.MABN.HeaderText = "Mã bệnh nhân";
+            this.MABN.MinimumWidth = 6;
+            this.MABN.Name = "MABN";
+            this.MABN.Visible = false;
+            // 
+            // TIENSUBENH
+            // 
+            this.TIENSUBENH.DataPropertyName = "TIENSUBENH";
+            this.TIENSUBENH.HeaderText = "Tiền sử bệnh";
+            this.TIENSUBENH.MinimumWidth = 6;
+            this.TIENSUBENH.Name = "TIENSUBENH";
+            this.TIENSUBENH.Visible = false;
+            // 
+            // TRIEUCHUNG
+            // 
+            this.TRIEUCHUNG.DataPropertyName = "TRIEUCHUNG";
+            this.TRIEUCHUNG.HeaderText = " Triệu chứng ";
+            this.TRIEUCHUNG.MinimumWidth = 6;
+            this.TRIEUCHUNG.Name = "TRIEUCHUNG";
+            this.TRIEUCHUNG.Visible = false;
+            // 
+            // LOAIBENH
+            // 
+            this.LOAIBENH.DataPropertyName = "LOAIBENH";
+            this.LOAIBENH.HeaderText = "Loại bệnh";
+            this.LOAIBENH.MinimumWidth = 6;
+            this.LOAIBENH.Name = "LOAIBENH";
+            // 
+            // CHANDOAN
+            // 
+            this.CHANDOAN.DataPropertyName = "CHANDOAN";
+            this.CHANDOAN.HeaderText = "Chẩn đoán ";
+            this.CHANDOAN.MinimumWidth = 6;
+            this.CHANDOAN.Name = "CHANDOAN";
+            // 
+            // HUONGXULY
+            // 
+            this.HUONGXULY.DataPropertyName = "HUONGXULY";
+            this.HUONGXULY.HeaderText = "Hướng xử lý ";
+            this.HUONGXULY.MinimumWidth = 6;
+            this.HUONGXULY.Name = "HUONGXULY";
+            // 
+            // GHICHU
+            // 
+            this.GHICHU.DataPropertyName = "GHICHU";
+            this.GHICHU.HeaderText = "Ghi chú ";
+            this.GHICHU.MinimumWidth = 6;
+            this.GHICHU.Name = "GHICHU";
+            this.GHICHU.Visible = false;
+            // 
+            // MANV
+            // 
+            this.MANV.DataPropertyName = "MANV";
+            this.MANV.HeaderText = "MÃ NHÂN VIEN";
+            this.MANV.MinimumWidth = 6;
+            this.MANV.Name = "MANV";
+            this.MANV.Visible = false;
             // 
             // groupBox1
             // 
@@ -975,111 +1079,6 @@ namespace GUI
             this.materialTabSelector1.TabIndex = 67;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
-            // STT1
-            // 
-            this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.STT1.HeaderText = "STT";
-            this.STT1.MinimumWidth = 6;
-            this.STT1.Name = "STT1";
-            this.STT1.Width = 61;
-            // 
-            // TIENKHAM
-            // 
-            this.TIENKHAM.DataPropertyName = "TIENKHAM";
-            this.TIENKHAM.HeaderText = "Tiền khám ";
-            this.TIENKHAM.Name = "TIENKHAM";
-            // 
-            // HOTEN1
-            // 
-            this.HOTEN1.DataPropertyName = "HOTEN";
-            this.HOTEN1.HeaderText = "Họ tên";
-            this.HOTEN1.MinimumWidth = 6;
-            this.HOTEN1.Name = "HOTEN1";
-            this.HOTEN1.Visible = false;
-            // 
-            // MABA
-            // 
-            this.MABA.DataPropertyName = "MABA";
-            this.MABA.HeaderText = "Mã bệnh án";
-            this.MABA.MinimumWidth = 6;
-            this.MABA.Name = "MABA";
-            this.MABA.Visible = false;
-            // 
-            // NGAYLAP
-            // 
-            this.NGAYLAP.DataPropertyName = "NGAYLAP";
-            this.NGAYLAP.HeaderText = "Ngày lập";
-            this.NGAYLAP.MinimumWidth = 6;
-            this.NGAYLAP.Name = "NGAYLAP";
-            // 
-            // NGAYTAIKHAM
-            // 
-            this.NGAYTAIKHAM.DataPropertyName = "NGAYTAIKHAM";
-            this.NGAYTAIKHAM.HeaderText = "Ngày tái khám ";
-            this.NGAYTAIKHAM.MinimumWidth = 6;
-            this.NGAYTAIKHAM.Name = "NGAYTAIKHAM";
-            // 
-            // MABN
-            // 
-            this.MABN.DataPropertyName = "MABN";
-            this.MABN.HeaderText = "Mã bệnh nhân";
-            this.MABN.MinimumWidth = 6;
-            this.MABN.Name = "MABN";
-            this.MABN.Visible = false;
-            // 
-            // TIENSUBENH
-            // 
-            this.TIENSUBENH.DataPropertyName = "TIENSUBENH";
-            this.TIENSUBENH.HeaderText = "Tiền sử bệnh";
-            this.TIENSUBENH.MinimumWidth = 6;
-            this.TIENSUBENH.Name = "TIENSUBENH";
-            this.TIENSUBENH.Visible = false;
-            // 
-            // TRIEUCHUNG
-            // 
-            this.TRIEUCHUNG.DataPropertyName = "TRIEUCHUNG";
-            this.TRIEUCHUNG.HeaderText = " Triệu chứng ";
-            this.TRIEUCHUNG.MinimumWidth = 6;
-            this.TRIEUCHUNG.Name = "TRIEUCHUNG";
-            this.TRIEUCHUNG.Visible = false;
-            // 
-            // LOAIBENH
-            // 
-            this.LOAIBENH.DataPropertyName = "LOAIBENH";
-            this.LOAIBENH.HeaderText = "Loại bệnh";
-            this.LOAIBENH.MinimumWidth = 6;
-            this.LOAIBENH.Name = "LOAIBENH";
-            // 
-            // CHANDOAN
-            // 
-            this.CHANDOAN.DataPropertyName = "CHANDOAN";
-            this.CHANDOAN.HeaderText = "Chẩn đoán ";
-            this.CHANDOAN.MinimumWidth = 6;
-            this.CHANDOAN.Name = "CHANDOAN";
-            // 
-            // HUONGXULY
-            // 
-            this.HUONGXULY.DataPropertyName = "HUONGXULY";
-            this.HUONGXULY.HeaderText = "Hướng xử lý ";
-            this.HUONGXULY.MinimumWidth = 6;
-            this.HUONGXULY.Name = "HUONGXULY";
-            // 
-            // GHICHU
-            // 
-            this.GHICHU.DataPropertyName = "GHICHU";
-            this.GHICHU.HeaderText = "Ghi chú ";
-            this.GHICHU.MinimumWidth = 6;
-            this.GHICHU.Name = "GHICHU";
-            this.GHICHU.Visible = false;
-            // 
-            // MANV
-            // 
-            this.MANV.DataPropertyName = "MANV";
-            this.MANV.HeaderText = "MÃ NHÂN VIEN";
-            this.MANV.MinimumWidth = 6;
-            this.MANV.Name = "MANV";
-            this.MANV.Visible = false;
-            // 
             // KhamBenh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1115,7 +1114,6 @@ namespace GUI
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox noteTextBox;
         private System.Windows.Forms.TextBox huongxulyTxtBox;
-        private System.Windows.Forms.ComboBox chanDoanCBB;
         private System.Windows.Forms.ComboBox loaiBenhCBB;
         private System.Windows.Forms.TextBox trieuchungTxtBox;
         private System.Windows.Forms.TextBox tienSuBenhTxtBox;
@@ -1196,5 +1194,6 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn HUONGXULY;
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
         private System.Windows.Forms.DataGridViewTextBoxColumn MANV;
+        private System.Windows.Forms.TextBox chanDoanCBB;
     }
 }

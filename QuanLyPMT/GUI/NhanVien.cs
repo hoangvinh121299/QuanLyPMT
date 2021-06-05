@@ -246,7 +246,8 @@ namespace GUI
         private void loadForm()
         {
 
-            adddBtn.Visible = true;
+            if (taikhoan.CAPBAC == 4)
+                adddBtn.Visible = true;
             
             updateBtn.Visible = true; ;
             saveBtn.Visible = false;
@@ -443,10 +444,16 @@ namespace GUI
             acc_username_Textbox.ReadOnly = false;
             clearForm_Acc();
             unLoadFomr_Account();
+            if(taikhoan.CAPBAC == 4)
+            {
+                acc_add_Btn.Visible = true;
+            }
         }
         void loadFomr_Account()
         {
-            acc_add_Btn.Visible = true;
+            if (taikhoan.CAPBAC == 4)
+                acc_add_Btn.Visible = true;
+
             acc_update_btn.Visible = true; ;
             acc_save_Btn.Visible = false;
             acc_cancel_Btn.Visible = false;
@@ -463,7 +470,7 @@ namespace GUI
             acc_save_Btn.Visible = true ;
             acc_cancel_Btn.Visible = true ;
             acc_pwrd_Textbox.Enabled = true;
-            acc_permission_Combobox.Enabled = true;
+            
         }
 
         private void acc_cancel_Btn_Click(object sender, EventArgs e)
@@ -506,6 +513,10 @@ namespace GUI
             isUsingUpdate = true;
             
             unLoadFomr_Account();
+            if(taikhoan.CAPBAC ==4)
+            {
+                acc_permission_Combobox.Enabled = true;
+            }
         }
 
         private void acc_save_Btn_Click(object sender, EventArgs e)

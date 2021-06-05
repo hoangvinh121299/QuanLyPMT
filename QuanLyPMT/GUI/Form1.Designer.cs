@@ -40,7 +40,6 @@ namespace GUI
             this.workPlacePnl = new System.Windows.Forms.Panel();
             this.displayPanel = new System.Windows.Forms.Panel();
             this.funcPnel = new System.Windows.Forms.Panel();
-            this.metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             this.workPlacePnl.SuspendLayout();
             this.funcPnel.SuspendLayout();
             this.SuspendLayout();
@@ -208,32 +207,6 @@ namespace GUI
             this.funcPnel.Size = new System.Drawing.Size(1222, 72);
             this.funcPnel.TabIndex = 9;
             // 
-            // metroSetControlBox1
-            // 
-            this.metroSetControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroSetControlBox1.CloseHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.metroSetControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
-            this.metroSetControlBox1.CloseNormalForeColor = System.Drawing.Color.Gray;
-            this.metroSetControlBox1.DisabledForeColor = System.Drawing.Color.DimGray;
-            this.metroSetControlBox1.IsDerivedStyle = true;
-            this.metroSetControlBox1.Location = new System.Drawing.Point(1123, 4);
-            this.metroSetControlBox1.MaximizeBox = false;
-            this.metroSetControlBox1.MaximizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.metroSetControlBox1.MaximizeHoverForeColor = System.Drawing.Color.Gray;
-            this.metroSetControlBox1.MaximizeNormalForeColor = System.Drawing.Color.Gray;
-            this.metroSetControlBox1.MinimizeBox = true;
-            this.metroSetControlBox1.MinimizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.metroSetControlBox1.MinimizeHoverForeColor = System.Drawing.Color.Gray;
-            this.metroSetControlBox1.MinimizeNormalForeColor = System.Drawing.Color.Gray;
-            this.metroSetControlBox1.Name = "metroSetControlBox1";
-            this.metroSetControlBox1.Size = new System.Drawing.Size(100, 25);
-            this.metroSetControlBox1.Style = MetroSet_UI.Enums.Style.Light;
-            this.metroSetControlBox1.StyleManager = null;
-            this.metroSetControlBox1.TabIndex = 9;
-            this.metroSetControlBox1.Text = "metroSetControlBox1";
-            this.metroSetControlBox1.ThemeAuthor = "Narwin";
-            this.metroSetControlBox1.ThemeName = "MetroLite";
-            // 
             // MainForm
             // 
             this.AllowResize = false;
@@ -242,7 +215,6 @@ namespace GUI
             this.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.BorderColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1224, 775);
-            this.Controls.Add(this.metroSetControlBox1);
             this.Controls.Add(this.workPlacePnl);
             this.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.HeaderColor = System.Drawing.Color.MediumSpringGreen;
@@ -253,6 +225,7 @@ namespace GUI
             this.SmallLineColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(210)))));
             this.Text = "Quản lý phòng mạch tư";
             this.TextColor = System.Drawing.Color.Black;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.workPlacePnl.ResumeLayout(false);
             this.funcPnel.ResumeLayout(false);
@@ -272,7 +245,6 @@ namespace GUI
         private System.Windows.Forms.Button patientBtn;
         private System.Windows.Forms.Panel workPlacePnl;
         private System.Windows.Forms.Panel funcPnel;
-        private MetroSet_UI.Controls.MetroSetControlBox metroSetControlBox1;
         private System.Windows.Forms.Panel displayPanel;
     }
 }

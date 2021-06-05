@@ -29,14 +29,15 @@ namespace GUI
             if(taikhoan_BUS.validateAccount(TENDANGNHAP,MATKHAU))
             {
                 taikhoan = taikhoan_BUS.getLoginAccount(TENDANGNHAP, MATKHAU);
-                MessageBox.Show("Đăng nhập thành công");
                 MainForm mainForm = new MainForm(taikhoan);
                 mainForm.ShowDialog();
                 loginError.Visible = false;
+                pwrd_Txttbox.Text = null;
             }
             else
             {
                 loginError.Visible = true;
+                
             }
         }
        public void setValueFromForm()
@@ -65,6 +66,22 @@ namespace GUI
             if(checkData())
             {
                 validateAccount();
+            }
+        }
+
+        private void showPwrd_Btn_Click(object sender, EventArgs e)
+        {
+            if(pwrd_Txttbox.UseSystemPasswordChar)
+            {
+                pwrd_Txttbox.UseSystemPasswordChar = false;
+                showPwrd_Btn.Image = Properties.Resources.visible;
+
+            }
+            else
+            {
+                pwrd_Txttbox.UseSystemPasswordChar = true;
+                showPwrd_Btn.Image = Properties.Resources.invisible;
+
             }
         }
     }
