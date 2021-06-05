@@ -311,7 +311,7 @@ namespace GUI
             string date = "2021-05-09";
             ReportDataSource rptData = new ReportDataSource("DataSet1", BENHAN_BUS.getDataReport(date).Tables[0]);
             reportViewer1.LocalReport.DataSources.Add(rptData);
-            reportViewer1.LocalReport.ReportPath = @"C:\Users\LENOVO\Downloads\QuanLyPMT\QuanLyPMT\GUI\Report.rdlc";
+            reportViewer1.LocalReport.ReportPath = "../../../Report.rdlc";
             reportViewer1.LocalReport.Refresh();
             reportViewer1.RefreshReport();
         }
