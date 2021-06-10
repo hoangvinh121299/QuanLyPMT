@@ -231,6 +231,7 @@ namespace GUI
             huongxulyTxtBox.Text = null;
             noteTextBox.Text = null;
             examFee_textbox.Text = null;
+            ngayKhamDTPicker.Value = DateTime.Now;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -329,7 +330,7 @@ namespace GUI
         private void reportViewer1_Load(object sender, EventArgs e)
         {
             this.reportViewer1.LocalReport.DataSources.Clear();
-            string date = "2021-05-09";
+            DateTime date = fromTable.NGAYLAP;
             ReportDataSource rptData = new ReportDataSource("DataSet1", BENHAN_BUS.getDataReport(date).Tables[0]);
             reportViewer1.LocalReport.DataSources.Add(rptData);
             reportViewer1.LocalReport.ReportPath = "../../../Report.rdlc";

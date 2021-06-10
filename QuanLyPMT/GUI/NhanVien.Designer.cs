@@ -371,6 +371,7 @@ namespace GUI
             // 
             this.danhsachBenhAn_DGV.AllowUserToAddRows = false;
             this.danhsachBenhAn_DGV.AllowUserToDeleteRows = false;
+            this.danhsachBenhAn_DGV.AllowUserToResizeRows = false;
             this.danhsachBenhAn_DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.danhsachBenhAn_DGV.BackgroundColor = System.Drawing.Color.Gray;
             this.danhsachBenhAn_DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

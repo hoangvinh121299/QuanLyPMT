@@ -25,9 +25,9 @@ namespace DAL
             return dataBenhan;
         }
         
-        public DataSet getDataReport(string date)
+        public DataSet getDataReport(DateTime date)
         {
-            DateTime dateTime = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            //DateTime dateTime = DateTime.ParseExact(date, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             DataSet dataReport = new DataSet();
             string selectData = "SELECT BENHAN.NGAYLAP, BENHNHAN.HOTEN, BENHNHAN.GT, BENHNHAN.NGAYSINH,BENHAN.LOAIBENH, LOAITHUOC.TENLT, LOAITHUOC.GIABAN, CTDONTHUOC.SOLUONG, DONTHUOC.GIATRI " +
                                 "FROM DONTHUOC INNER JOIN CTDONTHUOC ON DONTHUOC.MADT = CTDONTHUOC.MADT INNER " +
@@ -38,7 +38,8 @@ namespace DAL
             {
                 connection.Open();
                 SqlCommand getByID = new SqlCommand(selectData, connection);
-                getByID.Parameters.AddWithValue("@NGAYLAP", dateTime);
+                //getByID.Parameters.AddWithValue("@NGAYLAP", dateTime);
+                getByID.Parameters.Add("@NGAYLAP", SqlDbType.DateTime).Value = date;
                 SqlDataAdapter adapter = new SqlDataAdapter(getByID);
                 adapter.Fill(dataReport);
                 connection.Close();

@@ -15,7 +15,7 @@ namespace BUS
             return benhAn_DAL.getDataBenhan();
         }
 
-        public DataSet getDataReport(string date)
+        public DataSet getDataReport(DateTime date)
         {
             return benhAn_DAL.getDataReport(date);
         }
