@@ -15,7 +15,6 @@ namespace GUI
 {
     public partial class KhamBenh : UserControl
     {
-
         public KhamBenh()
         {
         }
@@ -330,8 +329,7 @@ namespace GUI
         private void reportViewer1_Load(object sender, EventArgs e)
         {
             this.reportViewer1.LocalReport.DataSources.Clear();
-            DateTime date = fromTable.NGAYLAP;
-            ReportDataSource rptData = new ReportDataSource("DataSet1", BENHAN_BUS.getDataReport(date).Tables[0]);
+            ReportDataSource rptData = new ReportDataSource("DataSet1", BENHAN_BUS.getDataReport(fromTable.MABA).Tables[0]);
             reportViewer1.LocalReport.DataSources.Add(rptData);
             reportViewer1.LocalReport.ReportPath = "../../../Report.rdlc";
             reportViewer1.LocalReport.Refresh();
@@ -345,10 +343,13 @@ namespace GUI
 
         private void examTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (donThuoc_BUS.getMADT(fromTable.MABA).Tables[0].Rows.Count == 0)
-                donThuoc_BUS.addDonthuoc(fromTable.MABA, fromTable.NGAYLAP);
-            showdatadonthuoc();
-            loaddata();
+            if (examTabControl.SelectedTab == DONTHUOC)
+            {
+                if (donThuoc_BUS.getMADT(fromTable.MABA).Tables[0].Rows.Count == 0)
+                    donThuoc_BUS.addDonthuoc(fromTable.MABA, fromTable.NGAYLAP);
+                showdatadonthuoc();
+                loaddata();
+            }
         }
         void loaddata()
         {

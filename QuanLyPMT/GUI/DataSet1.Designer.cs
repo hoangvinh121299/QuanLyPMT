@@ -297,6 +297,8 @@ namespace GUI {
             
             private global::System.Data.DataColumn columnGIATRI;
             
+            private global::System.Data.DataColumn columnTIENKHAM;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public DataTable1DataTable() {
@@ -404,6 +406,14 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TIENKHAMColumn {
+                get {
+                    return this.columnTIENKHAM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -439,7 +449,7 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTable1Row AddDataTable1Row(System.DateTime NGAYLAP, string HOTEN, string GT, System.DateTime NGAYSINH, string LOAIBENH, string TENLT, decimal GIABAN, int SOLUONG, decimal GIATRI) {
+            public DataTable1Row AddDataTable1Row(System.DateTime NGAYLAP, string HOTEN, string GT, System.DateTime NGAYSINH, string LOAIBENH, string TENLT, decimal GIABAN, int SOLUONG, decimal GIATRI, decimal TIENKHAM) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NGAYLAP,
@@ -450,7 +460,8 @@ namespace GUI {
                         TENLT,
                         GIABAN,
                         SOLUONG,
-                        GIATRI};
+                        GIATRI,
+                        TIENKHAM};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -482,6 +493,7 @@ namespace GUI {
                 this.columnGIABAN = base.Columns["GIABAN"];
                 this.columnSOLUONG = base.Columns["SOLUONG"];
                 this.columnGIATRI = base.Columns["GIATRI"];
+                this.columnTIENKHAM = base.Columns["TIENKHAM"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -505,6 +517,8 @@ namespace GUI {
                 base.Columns.Add(this.columnSOLUONG);
                 this.columnGIATRI = new global::System.Data.DataColumn("GIATRI", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGIATRI);
+                this.columnTIENKHAM = new global::System.Data.DataColumn("TIENKHAM", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTIENKHAM);
                 this.columnHOTEN.MaxLength = 50;
                 this.columnGT.MaxLength = 50;
                 this.columnLOAIBENH.MaxLength = 100;
@@ -795,6 +809,22 @@ namespace GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal TIENKHAM {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableDataTable1.TIENKHAMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TIENKHAM\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.TIENKHAMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsNGAYLAPNull() {
                 return this.IsNull(this.tableDataTable1.NGAYLAPColumn);
             }
@@ -899,6 +929,18 @@ namespace GUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetGIATRINull() {
                 this[this.tableDataTable1.GIATRIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTIENKHAMNull() {
+                return this.IsNull(this.tableDataTable1.TIENKHAMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTIENKHAMNull() {
+                this[this.tableDataTable1.TIENKHAMColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1070,6 +1112,7 @@ namespace GUI.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("GIABAN", "GIABAN");
             tableMapping.ColumnMappings.Add("SOLUONG", "SOLUONG");
             tableMapping.ColumnMappings.Add("GIATRI", "GIATRI");
+            tableMapping.ColumnMappings.Add("TIENKHAM", "TIENKHAM");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1086,12 +1129,12 @@ namespace GUI.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT BENHAN.NGAYLAP, BENHNHAN.HOTEN, BENHNHAN.GT, BENHNHAN.NGAYSINH,BENHAN.LOAIBENH, LOAITHUOC.TENLT, LOAITHUOC.GIABAN, CTDONTHUOC.SOLUONG, DONTHUOC.GIATRI
+            this._commandCollection[0].CommandText = @"SELECT BENHAN.NGAYLAP, BENHNHAN.HOTEN, BENHNHAN.GT, BENHNHAN.NGAYSINH, BENHAN.LOAIBENH, LOAITHUOC.TENLT, LOAITHUOC.GIABAN, CTDONTHUOC.SOLUONG, DONTHUOC.GIATRI, BENHAN.TIENKHAM
 FROM     DONTHUOC INNER JOIN
                   CTDONTHUOC ON DONTHUOC.MADT = CTDONTHUOC.MADT INNER JOIN
-                  LOAITHUOC ON CTDONTHUOC.MALT = LOAITHUOC.MALT CROSS JOIN
+                  LOAITHUOC ON CTDONTHUOC.MALT = LOAITHUOC.MALT RIGHT OUTER JOIN
                   BENHAN INNER JOIN
-                  BENHNHAN ON BENHAN.MABN = BENHNHAN.MABN ";
+                  BENHNHAN ON BENHAN.MABN = BENHNHAN.MABN ON BENHAN.MABA = DONTHUOC.MABA";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

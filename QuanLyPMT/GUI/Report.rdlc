@@ -249,8 +249,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TENLT.Value</Value>
-                              <Style />
+                              <Value>=IIf(Trim(Fields!TENLT.Value) &lt;&gt;"",Trim(Fields!TENLT.Value),"không có")</Value>
+                              <Style>
+                                <Format>không</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -281,9 +283,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!GIABAN.Value</Value>
+                              <Value>=IIf(Trim(Fields!GIABAN.Value) &lt;&gt;"",Fields!GIABAN.Value,"0")</Value>
                               <Style>
-                                <Format>0.00 'VND'</Format>
+                                <Format>0 'VND';(0 'VND')</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -315,7 +317,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!SOLUONG.Value</Value>
+                              <Value>=IIf(Trim(Fields!SOLUONG.Value) &lt;&gt;"",Trim(Fields!SOLUONG.Value),"0")</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -348,7 +350,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!GIABAN.Value*Fields!SOLUONG.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>0 'VND';(0 'VND')</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -791,7 +795,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Giá tiền:</Value>
+                  <Value>Tiền thuốc:</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -822,8 +826,10 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!GIATRI.Value, "DataSet1")</Value>
-                  <Style />
+                  <Value>=IIf(Trim(First(Fields!GIATRI.Value,"DataSet1")) &lt;&gt;"",First(Fields!GIATRI.Value,"DataSet1"),"0")</Value>
+                  <Style>
+                    <Format>0 'VND';(0 'VND')</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
@@ -835,6 +841,70 @@
           <Height>0.21666in</Height>
           <Width>1in</Width>
           <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox8">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Tiền khám:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0.2in</Top>
+          <Left>3.52477in</Left>
+          <Height>0.2in</Height>
+          <Width>1.11667in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="GIATRI2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!TIENKHAM.Value, "DataSet1")</Value>
+                  <Style>
+                    <Format>0 'VND';(0 'VND')</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>GIATRI</rd:DefaultName>
+          <Top>0.18334in</Top>
+          <Left>5.00061in</Left>
+          <Height>0.21666in</Height>
+          <Width>1in</Width>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -911,6 +981,10 @@
         </Field>
         <Field Name="GIATRI">
           <DataField>GIATRI</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TIENKHAM">
+          <DataField>TIENKHAM</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>

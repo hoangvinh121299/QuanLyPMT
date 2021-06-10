@@ -25,23 +25,28 @@ namespace DAL
             return dataBenhan;
         }
         
-        public DataSet getDataReport(DateTime date)
+        public DataSet getDataReport(int MABA)
         {
-            //DateTime dateTime = DateTime.ParseExact(date, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             DataSet dataReport = new DataSet();
-            string selectData = "SELECT BENHAN.NGAYLAP, BENHNHAN.HOTEN, BENHNHAN.GT, BENHNHAN.NGAYSINH,BENHAN.LOAIBENH, LOAITHUOC.TENLT, LOAITHUOC.GIABAN, CTDONTHUOC.SOLUONG, DONTHUOC.GIATRI " +
-                                "FROM DONTHUOC INNER JOIN CTDONTHUOC ON DONTHUOC.MADT = CTDONTHUOC.MADT INNER " +
-                                "JOIN LOAITHUOC ON CTDONTHUOC.MALT = LOAITHUOC.MALT CROSS " +
-                                "JOIN BENHAN INNER " +
-                                "JOIN BENHNHAN ON BENHAN.MABN = BENHNHAN.MABN WHERE BENHAN.NGAYLAP = @NGAYLAP";
+                string selectData = "SELECT BENHAN.NGAYLAP, BENHNHAN.HOTEN, BENHNHAN.GT, BENHNHAN.NGAYSINH,BENHAN.LOAIBENH, LOAITHUOC.TENLT, LOAITHUOC.GIABAN, CTDONTHUOC.SOLUONG, DONTHUOC.GIATRI, BENHAN.TIENKHAM " +
+                                    "FROM DONTHUOC INNER JOIN CTDONTHUOC ON DONTHUOC.MADT = CTDONTHUOC.MADT INNER " +
+                                    "JOIN LOAITHUOC ON CTDONTHUOC.MALT = LOAITHUOC.MALT RIGHT " +
+                                    "JOIN BENHAN INNER " +
+                                    "JOIN BENHNHAN ON BENHAN.MABN = BENHNHAN.MABN  ON BENHAN.MABA=DONTHUOC.MABA WHERE BENHAN.MABA= @MABA";
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
             {
                 connection.Open();
                 SqlCommand getByID = new SqlCommand(selectData, connection);
-                //getByID.Parameters.AddWithValue("@NGAYLAP", dateTime);
-                getByID.Parameters.Add("@NGAYLAP", SqlDbType.DateTime).Value = date;
-                SqlDataAdapter adapter = new SqlDataAdapter(getByID);
-                adapter.Fill(dataReport);
+                getByID.Parameters.Add("@MABA", SqlDbType.Int).Value = MABA;
+                try
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(getByID);
+                    adapter.Fill(dataReport);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
                 connection.Close();
             }
             return dataReport;

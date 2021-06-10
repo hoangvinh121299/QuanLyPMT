@@ -12,12 +12,12 @@
               <DbSource ConnectionRef="deni1407\sqlexpress.QLPMT.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT BENHAN.NGAYLAP, BENHNHAN.HOTEN, BENHNHAN.GT, BENHNHAN.NGAYSINH,BENHAN.LOAIBENH, LOAITHUOC.TENLT, LOAITHUOC.GIABAN, CTDONTHUOC.SOLUONG, DONTHUOC.GIATRI
+                    <CommandText>SELECT BENHAN.NGAYLAP, BENHNHAN.HOTEN, BENHNHAN.GT, BENHNHAN.NGAYSINH, BENHAN.LOAIBENH, LOAITHUOC.TENLT, LOAITHUOC.GIABAN, CTDONTHUOC.SOLUONG, DONTHUOC.GIATRI, BENHAN.TIENKHAM
 FROM     DONTHUOC INNER JOIN
                   CTDONTHUOC ON DONTHUOC.MADT = CTDONTHUOC.MADT INNER JOIN
-                  LOAITHUOC ON CTDONTHUOC.MALT = LOAITHUOC.MALT CROSS JOIN
+                  LOAITHUOC ON CTDONTHUOC.MALT = LOAITHUOC.MALT RIGHT OUTER JOIN
                   BENHAN INNER JOIN
-                  BENHNHAN ON BENHAN.MABN = BENHNHAN.MABN </CommandText>
+                  BENHNHAN ON BENHAN.MABN = BENHNHAN.MABN ON BENHAN.MABA = DONTHUOC.MABA</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -33,6 +33,7 @@ FROM     DONTHUOC INNER JOIN
               <Mapping SourceColumn="GIABAN" DataSetColumn="GIABAN" />
               <Mapping SourceColumn="SOLUONG" DataSetColumn="SOLUONG" />
               <Mapping SourceColumn="GIATRI" DataSetColumn="GIATRI" />
+              <Mapping SourceColumn="TIENKHAM" DataSetColumn="TIENKHAM" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -80,6 +81,7 @@ FROM     DONTHUOC INNER JOIN
               <xs:element name="GIABAN" msprop:Generator_ColumnVarNameInTable="columnGIABAN" msprop:Generator_ColumnPropNameInRow="GIABAN" msprop:Generator_ColumnPropNameInTable="GIABANColumn" msprop:Generator_UserColumnName="GIABAN" type="xs:decimal" minOccurs="0" />
               <xs:element name="SOLUONG" msprop:Generator_ColumnVarNameInTable="columnSOLUONG" msprop:Generator_ColumnPropNameInRow="SOLUONG" msprop:Generator_ColumnPropNameInTable="SOLUONGColumn" msprop:Generator_UserColumnName="SOLUONG" type="xs:int" minOccurs="0" />
               <xs:element name="GIATRI" msprop:Generator_ColumnVarNameInTable="columnGIATRI" msprop:Generator_ColumnPropNameInRow="GIATRI" msprop:Generator_ColumnPropNameInTable="GIATRIColumn" msprop:Generator_UserColumnName="GIATRI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TIENKHAM" msprop:Generator_ColumnVarNameInTable="columnTIENKHAM" msprop:Generator_ColumnPropNameInRow="TIENKHAM" msprop:Generator_ColumnPropNameInTable="TIENKHAMColumn" msprop:Generator_UserColumnName="TIENKHAM" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

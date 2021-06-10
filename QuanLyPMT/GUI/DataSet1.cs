@@ -1,1 +1,7 @@
-﻿
+﻿namespace GUI
+{
+}
+
+namespace GUI
+{
+}
