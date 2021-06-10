@@ -12,7 +12,7 @@ namespace DAL
         public DataSet GetDataDanhSachKhamBenhInDay()
         {
             DataSet datasetBenh = new DataSet();
-            string selectAll = "select  benhnhan.mabn, benhnhan.hoten, benhnhan.GT,benhnhan.CMND from benhnhan, danhsachkhambenh where danhsachkhambenh.mabn = BENHNHAN.MABN and convert(varchar(10), danhsachkhambenh.ngaykham, 102) = convert(varchar(10), getdate(), 102)";
+            string selectAll = "select  benhnhan.mabn, benhnhan.hoten, benhnhan.GT,benhnhan.CMND from benhnhan, danhsachkhambenh where DANHSACHKHAMBENH.MABN = BENHNHAN.MABN and convert(varchar(10), danhsachkhambenh.ngaykham, 102) = convert(varchar(10), getdate(), 102)";
             using (SqlConnection sqlConnection = connectionString.GetConnect())
             {
                 try
