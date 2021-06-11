@@ -221,7 +221,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -256,7 +256,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -290,7 +290,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -322,7 +322,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -356,7 +356,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -784,7 +784,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1in</Height>
+      <Height>1.5028in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -805,8 +805,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.18334in</Top>
-          <Left>6.77755in</Left>
+          <Top>0.55835in</Top>
+          <Left>0.87755in</Left>
           <Height>0.2in</Height>
           <Width>1.11667in</Width>
           <Style>
@@ -836,8 +836,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>GIATRI</rd:DefaultName>
-          <Top>0.16668in</Top>
-          <Left>8.25339in</Left>
+          <Top>0.55835in</Top>
+          <Left>2.33561in</Left>
           <Height>0.21666in</Height>
           <Width>1in</Width>
           <ZIndex>1</ZIndex>
@@ -868,8 +868,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.2in</Top>
-          <Left>3.52477in</Left>
+          <Top>0.16668in</Top>
+          <Left>0.85977in</Left>
           <Height>0.2in</Height>
           <Width>1.11667in</Width>
           <ZIndex>2</ZIndex>
@@ -900,11 +900,75 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>GIATRI</rd:DefaultName>
-          <Top>0.18334in</Top>
-          <Left>5.00061in</Left>
+          <Top>0.16668in</Top>
+          <Left>2.33561in</Left>
           <Height>0.21666in</Height>
           <Width>1in</Width>
           <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox9">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Tiền tổng:</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0.9778in</Top>
+          <Left>0.85977in</Left>
+          <Height>0.21666in</Height>
+          <Width>1.11667in</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="GIATRI3">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!GIATRI.Value,"DataSet1")+ First(Fields!TIENKHAM.Value, "DataSet1")</Value>
+                  <Style>
+                    <Format>0 'VND';(0 'VND')</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>GIATRI</rd:DefaultName>
+          <Top>0.9778in</Top>
+          <Left>2.33561in</Left>
+          <Height>0.21666in</Height>
+          <Width>1in</Width>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
