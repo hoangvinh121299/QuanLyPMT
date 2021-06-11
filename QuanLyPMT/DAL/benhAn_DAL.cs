@@ -177,23 +177,22 @@ namespace DAL
             }
         }
 
-      
-        //    public DataSet getHistoryExamByID(int MABENHNHAN)
-        //    {
-        //        DataSet getResult = new DataSet();
-        //        string getQuerry = "select NGAYLAP, NGAYTAIKHAM, NHANVIEN.HOTEN from BENHAN, BENHNHAN,NHANVIEN where BENHNHAN.MABN = @MABENHNHAN AND BENHAN.MANV=1";
-        //        using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
-        //        {
-        //            connection.Open();
-        //            SqlCommand cmdGet = new SqlCommand(getQuerry, connection);
-        //            cmdGet.Parameters.Add("@MABENHNHAN", SqlDbType.Int).Value = MABENHNHAN;
-        //            SqlDataAdapter adapter = new SqlDataAdapter(cmdGet);
-        //            adapter.Fill(getResult);
-        //            connection.Close();
-        //        }
-        //        return getResult;
-        //    }
-        //}
+
+        public DataSet getExameAmountInDay()
+        {
+            DataSet getResult = new DataSet();
+            string getQuerry = "select ngaylap, sum (tienkham) as doanhthu from benhan group by ngaylap";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand cmdGet = new SqlCommand(getQuerry, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmdGet);
+                adapter.Fill(getResult);
+                connection.Close();
+            }
+            return getResult;
+        }
     }
 }
+
 

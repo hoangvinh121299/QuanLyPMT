@@ -60,6 +60,10 @@ namespace BUS
         {
             return donThuoc_DAL.gettonkhobyID(MALT);
         }
+        public DataSet getAmountInDay()
+        {
+            return donThuoc_DAL.getAmountInDay();
+        }
     }
 
 }

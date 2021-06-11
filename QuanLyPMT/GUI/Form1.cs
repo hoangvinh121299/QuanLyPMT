@@ -127,5 +127,12 @@ namespace GUI
         {
             Application.Exit();
         }
+
+        private void reportBtn_Click(object sender, EventArgs e)
+        {
+            ThongKe thongke = new ThongKe();
+            displayPanel.Controls.Clear();
+            displayPanel.Controls.Add(thongke);
+        }
     }
 }

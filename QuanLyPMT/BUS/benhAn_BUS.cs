@@ -61,10 +61,10 @@ namespace BUS
         //{
         //    return benhNhan_DAL.getHistoryExamByID(MABENHNHAN);
         //}
-        //public DataSet searchBenhNhan(string CMND)
-        //{
-        //    return benhNhan_DAL.searchBenhNhan(CMND);
-        //}
+        public DataSet getExamAmountInDay()
+        {
+            return benhAn_DAL.getExameAmountInDay();
+        }
 
     }
 }
