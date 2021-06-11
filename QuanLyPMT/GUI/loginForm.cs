@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MetroSet_UI.Forms;
 using BUS;
 using DTO;
+using Org.BouncyCastle.Crypto.Generators;
+
 namespace GUI
 {
     public partial class loginForm : MetroSetForm
@@ -17,7 +19,7 @@ namespace GUI
         public loginForm()
         {
             InitializeComponent();
-            loginError.Visible = false;
+
         }
         TaiKhoan taikhoan = new TaiKhoan();
         TaiKhoan_BUS taikhoan_BUS = new TaiKhoan_BUS();
@@ -31,13 +33,12 @@ namespace GUI
                 taikhoan = taikhoan_BUS.getLoginAccount(TENDANGNHAP, MATKHAU);
                 MainForm mainForm = new MainForm(taikhoan);
                 mainForm.ShowDialog();
-                loginError.Visible = false;
+                forgetPwrd_Label.Visible = false;
                 pwrd_Txttbox.Text = null;
             }
             else
             {
-                loginError.Visible = true;
-                
+                errorPwrd_Label.Visible = true;                
             }
         }
        public void setValueFromForm()
@@ -84,5 +85,14 @@ namespace GUI
 
             }
         }
+
+        private void forgetPwrd_linklable_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            errorPwrd_Label.Visible = false;
+            forgetPwrd_Label.Visible = true;
+            
+        }
+
+     
     }
 }

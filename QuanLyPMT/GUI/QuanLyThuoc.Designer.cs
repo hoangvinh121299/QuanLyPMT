@@ -349,6 +349,7 @@ namespace GUI
             this.danhSachThuocDgv.Location = new System.Drawing.Point(0, 19);
             this.danhSachThuocDgv.Name = "danhSachThuocDgv";
             this.danhSachThuocDgv.ReadOnly = true;
+            this.danhSachThuocDgv.RowHeadersVisible = false;
             this.danhSachThuocDgv.RowHeadersWidth = 51;
             this.danhSachThuocDgv.RowTemplate.Height = 25;
             this.danhSachThuocDgv.Size = new System.Drawing.Size(572, 464);

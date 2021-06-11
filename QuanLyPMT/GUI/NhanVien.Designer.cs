@@ -45,7 +45,6 @@ namespace GUI
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CHUCVU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMNDtextBox2 = new System.Windows.Forms.TextBox();
-            this.deleteBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.danhsachBenhAn_DGV = new System.Windows.Forms.DataGridView();
@@ -85,7 +84,6 @@ namespace GUI
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.metroSetLabel14 = new MetroSet_UI.Controls.MetroSetLabel();
             this.acc_search_name_textbox = new System.Windows.Forms.TextBox();
-            this.acc_delete_Btn = new System.Windows.Forms.Button();
             this.accountListDGV = new System.Windows.Forms.DataGridView();
             this.STT3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HOTEN3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -173,7 +171,6 @@ namespace GUI
             this.groupBox2.Controls.Add(this.metroSetLabel8);
             this.groupBox2.Controls.Add(this.danhSachNhanVien_DGV);
             this.groupBox2.Controls.Add(this.CMNDtextBox2);
-            this.groupBox2.Controls.Add(this.deleteBtn);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(677, 3);
@@ -309,21 +306,6 @@ namespace GUI
             this.CMNDtextBox2.Size = new System.Drawing.Size(228, 26);
             this.CMNDtextBox2.TabIndex = 13;
             this.CMNDtextBox2.TextChanged += new System.EventHandler(this.CMNDtextBox2_TextChanged);
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.BackColor = System.Drawing.Color.White;
-            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteBtn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.deleteBtn.Image = global::GUI.Properties.Resources.delete;
-            this.deleteBtn.Location = new System.Drawing.Point(418, 26);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(106, 37);
-            this.deleteBtn.TabIndex = 12;
-            this.deleteBtn.Text = "Xoá";
-            this.deleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // groupBox1
             // 
@@ -761,7 +743,6 @@ namespace GUI
             // 
             this.groupBox4.Controls.Add(this.metroSetLabel14);
             this.groupBox4.Controls.Add(this.acc_search_name_textbox);
-            this.groupBox4.Controls.Add(this.acc_delete_Btn);
             this.groupBox4.Controls.Add(this.accountListDGV);
             this.groupBox4.Controls.Add(this.textBox1);
             this.groupBox4.Controls.Add(this.metroSetLabel9);
@@ -796,20 +777,6 @@ namespace GUI
             this.acc_search_name_textbox.Size = new System.Drawing.Size(228, 26);
             this.acc_search_name_textbox.TabIndex = 17;
             this.acc_search_name_textbox.TextChanged += new System.EventHandler(this.acc_search_name_textbox_TextChanged);
-            // 
-            // acc_delete_Btn
-            // 
-            this.acc_delete_Btn.BackColor = System.Drawing.Color.White;
-            this.acc_delete_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.acc_delete_Btn.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.acc_delete_Btn.Image = global::GUI.Properties.Resources.delete;
-            this.acc_delete_Btn.Location = new System.Drawing.Point(429, 40);
-            this.acc_delete_Btn.Name = "acc_delete_Btn";
-            this.acc_delete_Btn.Size = new System.Drawing.Size(106, 37);
-            this.acc_delete_Btn.TabIndex = 16;
-            this.acc_delete_Btn.Text = "Xoá";
-            this.acc_delete_Btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.acc_delete_Btn.UseVisualStyleBackColor = false;
             // 
             // accountListDGV
             // 
@@ -1243,7 +1210,6 @@ namespace GUI
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel4;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel3;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel2;
-        private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.DataGridView danhSachNhanVien_DGV;
         private System.Windows.Forms.TextBox CMNDtextBox2;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel8;
@@ -1289,7 +1255,6 @@ namespace GUI
         private System.Windows.Forms.Button acc_update_btn;
         private System.Windows.Forms.Button acc_add_Btn;
         private System.Windows.Forms.TextBox acc_search_name_textbox;
-        private System.Windows.Forms.Button acc_delete_Btn;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel14;
         private System.Windows.Forms.ComboBox acc_name_cbb;
         private System.Windows.Forms.Button showPwrd_Btn;

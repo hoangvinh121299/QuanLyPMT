@@ -343,7 +343,7 @@ namespace GUI
             else if (examTabControl.SelectedTab == HOADON)
             {
                 this.reportViewer1.LocalReport.DataSources.Clear();
-                ReportDataSource rptData = new ReportDataSource("DataSet1", BENHAN_BUS.getDataReport(3).Tables[0]);
+                ReportDataSource rptData = new ReportDataSource("DataSet1", BENHAN_BUS.getDataReport(fromTable.MABA).Tables[0]);
                 reportViewer1.LocalReport.DataSources.Add(rptData);
                 reportViewer1.LocalReport.ReportPath = "../../../Report.rdlc";
                 reportViewer1.LocalReport.Refresh();
