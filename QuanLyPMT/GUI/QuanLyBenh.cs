@@ -45,6 +45,10 @@ namespace GUI
         {
             dtg_DanhSachBenh.DataSource = null;
             dtg_DanhSachBenh.DataSource = dataSet.Tables[0];
+            dtg_DanhSachBenh.Columns["TENBENH"].HeaderText = "Tên bệnh";
+            dtg_DanhSachBenh.Columns["TENLB"].HeaderText = "Loại bệnh";
+            dtg_DanhSachBenh.Columns["TRIEUCHUNG"].HeaderText = "Triệu chứng";
+            dtg_DanhSachBenh.Columns["GHICHU"].HeaderText = "Ghi chú";
             dtg_DanhSachBenh.Columns[1].Visible = false;
         }
 
@@ -113,20 +117,21 @@ namespace GUI
         {
             if (checkData())
             {
-                int maLoaiBenh = (int)dtg_DanhSachBenh.Rows[dtg_DanhSachBenh.CurrentCell.RowIndex].Cells[1].Value;
                 switch (state){
                     case INSERT:
-                        Benh benh = new Benh(txtb_TenBenh1.Text.Trim(), cb_LoaiBenh.Text.Trim(), txtb_TrieuChung.Text.Trim(), txtb_GhiChu.Text.Trim(), maLoaiBenh);
+                        Benh benh = new Benh(txtb_TenBenh1.Text.Trim(), cb_LoaiBenh.Text.Trim(), txtb_TrieuChung.Text.Trim(), txtb_GhiChu.Text.Trim());
                         benh_BUS.addBenh(benh);
                         loadData(benh_BUS.GetData());
                     break;
                     case UPDATE:
+                        int maLoaiBenh = (int)dtg_DanhSachBenh.Rows[dtg_DanhSachBenh.CurrentCell.RowIndex].Cells[1].Value;
                         Benh benh1 = new Benh(txtb_TenBenh1.Text.Trim(), cb_LoaiBenh.Text.Trim(), txtb_TrieuChung.Text.Trim(), txtb_GhiChu.Text.Trim(), maLoaiBenh);
                         benh_BUS.updateBenh(benh1);
                         loadData(benh_BUS.GetData());
                     break;
                 }
             }
+            disabledControls();
         }
 
         private void btn_Cancle_Click(object sender, EventArgs e)
