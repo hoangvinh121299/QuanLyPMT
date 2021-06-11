@@ -34,9 +34,10 @@ namespace GUI
             this.login_btn = new System.Windows.Forms.Button();
             this.forgetPwrd_linklable = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.loginError = new System.Windows.Forms.Label();
+            this.forgetPwrd_Label = new System.Windows.Forms.Label();
             this.metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             this.showPwrd_Btn = new System.Windows.Forms.Button();
+            this.errorPwrd_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,6 +91,7 @@ namespace GUI
             this.forgetPwrd_linklable.TabStop = true;
             this.forgetPwrd_linklable.Text = "Quên mật khẩu ?";
             this.forgetPwrd_linklable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.forgetPwrd_linklable.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgetPwrd_linklable_LinkClicked);
             // 
             // pictureBox1
             // 
@@ -102,17 +104,18 @@ namespace GUI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // loginError
+            // forgetPwrd_Label
             // 
-            this.loginError.AutoSize = true;
-            this.loginError.BackColor = System.Drawing.Color.White;
-            this.loginError.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.loginError.ForeColor = System.Drawing.Color.Red;
-            this.loginError.Location = new System.Drawing.Point(343, 475);
-            this.loginError.Name = "loginError";
-            this.loginError.Size = new System.Drawing.Size(316, 16);
-            this.loginError.TabIndex = 5;
-            this.loginError.Text = "Sai tên đăng nhập và mật khẩu. Vui lòng kiểm tra lại ";
+            this.forgetPwrd_Label.AutoSize = true;
+            this.forgetPwrd_Label.BackColor = System.Drawing.Color.White;
+            this.forgetPwrd_Label.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.forgetPwrd_Label.ForeColor = System.Drawing.Color.Red;
+            this.forgetPwrd_Label.Location = new System.Drawing.Point(293, 475);
+            this.forgetPwrd_Label.Name = "forgetPwrd_Label";
+            this.forgetPwrd_Label.Size = new System.Drawing.Size(429, 16);
+            this.forgetPwrd_Label.TabIndex = 5;
+            this.forgetPwrd_Label.Text = "Vui lòng liên hệ quản trị viên hệ thống để thiết lập lại thông tin tài khoản !";
+            this.forgetPwrd_Label.Visible = false;
             // 
             // metroSetControlBox1
             // 
@@ -153,6 +156,19 @@ namespace GUI
             this.showPwrd_Btn.UseVisualStyleBackColor = false;
             this.showPwrd_Btn.Click += new System.EventHandler(this.showPwrd_Btn_Click);
             // 
+            // errorPwrd_Label
+            // 
+            this.errorPwrd_Label.AutoSize = true;
+            this.errorPwrd_Label.BackColor = System.Drawing.Color.White;
+            this.errorPwrd_Label.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.errorPwrd_Label.ForeColor = System.Drawing.Color.Red;
+            this.errorPwrd_Label.Location = new System.Drawing.Point(372, 475);
+            this.errorPwrd_Label.Name = "errorPwrd_Label";
+            this.errorPwrd_Label.Size = new System.Drawing.Size(284, 16);
+            this.errorPwrd_Label.TabIndex = 35;
+            this.errorPwrd_Label.Text = "Sai mật khẩu hoặc tài khoản, vui lòng nhập lại !";
+            this.errorPwrd_Label.Visible = false;
+            // 
             // loginForm
             // 
             this.AllowResize = false;
@@ -161,9 +177,10 @@ namespace GUI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(100)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(954, 544);
+            this.Controls.Add(this.errorPwrd_Label);
             this.Controls.Add(this.showPwrd_Btn);
             this.Controls.Add(this.metroSetControlBox1);
-            this.Controls.Add(this.loginError);
+            this.Controls.Add(this.forgetPwrd_Label);
             this.Controls.Add(this.forgetPwrd_linklable);
             this.Controls.Add(this.login_btn);
             this.Controls.Add(this.pwrd_Txttbox);
@@ -187,8 +204,9 @@ namespace GUI
         private System.Windows.Forms.Button login_btn;
         private System.Windows.Forms.LinkLabel forgetPwrd_linklable;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label loginError;
+        private System.Windows.Forms.Label forgetPwrd_Label;
         private MetroSet_UI.Controls.MetroSetControlBox metroSetControlBox1;
         private System.Windows.Forms.Button showPwrd_Btn;
+        private System.Windows.Forms.Label errorPwrd_Label;
     }
 }

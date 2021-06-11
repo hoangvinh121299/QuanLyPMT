@@ -53,7 +53,7 @@ namespace DAL
             getDataAccount();
             foreach(var temp in listTaiKhoan)
             {
-                if (temp.TENDANGNHAP == TENDANGNHAP && temp.MATKHAU == MATKHAU)
+                if (temp.TENDANGNHAP == TENDANGNHAP && checkPass(MATKHAU, temp.MATKHAU))
                     return true;
             }
             return false;
@@ -63,7 +63,7 @@ namespace DAL
             TaiKhoan output = new TaiKhoan();
             foreach(var temp in listTaiKhoan)
             {
-                if (temp.TENDANGNHAP == TENDANGNHAP && temp.MATKHAU == MATKHAU)
+                if (temp.TENDANGNHAP == TENDANGNHAP && checkPass(MATKHAU, temp.MATKHAU))
                     output = temp;
             }
             return output;
@@ -110,7 +110,7 @@ namespace DAL
                     SqlCommand cmdInsert = new SqlCommand(insertInto, connection);
 
                     cmdInsert.Parameters.Add("@TENDANGNHAP", SqlDbType.VarChar).Value = TENDANGNHAP;
-                    cmdInsert.Parameters.Add("@MATKHAU", SqlDbType.VarChar).Value = MATKHAU;
+                    cmdInsert.Parameters.Add("@MATKHAU", SqlDbType.NVarChar).Value = MATKHAU;
                     cmdInsert.Parameters.Add("@MANV", SqlDbType.Int).Value = MANV;
                     cmdInsert.Parameters.Add("@CAPBAC", SqlDbType.Int).Value = CAPBAC;
                     
@@ -137,7 +137,7 @@ namespace DAL
                     SqlCommand cmdSetDateFormat = new SqlCommand("set dateformat dmy", connection);
                     SqlCommand cmdInsert = new SqlCommand(updateInto, connection);
                     cmdInsert.Parameters.Add("@MATAIKHOAN", SqlDbType.Int).Value = MATAIKHOAN;
-                    cmdInsert.Parameters.Add("@MATKHAU", SqlDbType.VarChar).Value = MATKHAU;
+                    cmdInsert.Parameters.Add("@MATKHAU", SqlDbType.NVarChar).Value = MATKHAU;
                     cmdInsert.Parameters.Add("@CAPBAC", SqlDbType.Int).Value = CAPBAC;
 
 
@@ -216,6 +216,17 @@ namespace DAL
                 connection.Close();
             }
             return get;
+        }
+        private bool checkPass(string enterPassword, string savedPassword)
+        {
+            try
+            {
+                return BCrypt.Net.BCrypt.EnhancedVerify(enterPassword, savedPassword);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
     }
 }

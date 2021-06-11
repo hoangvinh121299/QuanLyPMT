@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DTO;
-
+using Org.BouncyCastle.Crypto.Generators;
 
 namespace GUI
 {
@@ -129,7 +129,7 @@ namespace GUI
             //acc_username_Textbox.Text = output.TENDANGNHAP;
             input.TENDANGNHAP = acc_username_Textbox.Text;
             input.MATAIKHOAN = output.MATAIKHOAN;
-            input.MATKHAU = acc_pwrd_Textbox.Text;
+            input.MATKHAU = BCrypt.Net.BCrypt.EnhancedHashPassword(acc_pwrd_Textbox.Text);
             switch (acc_permission_Combobox.Text)
             {
                 case "Bác sĩ":
@@ -432,6 +432,7 @@ namespace GUI
                 }
             
             setValueToForm_Account();
+            showLoginHistory();
         }
 
         private void acc_add_Btn_Click(object sender, EventArgs e)
@@ -470,7 +471,7 @@ namespace GUI
             acc_save_Btn.Visible = true ;
             acc_cancel_Btn.Visible = true ;
             acc_pwrd_Textbox.Enabled = true;
-            
+            acc_permission_Combobox.Enabled = true;
         }
 
         private void acc_cancel_Btn_Click(object sender, EventArgs e)

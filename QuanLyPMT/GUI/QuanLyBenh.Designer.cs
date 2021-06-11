@@ -113,7 +113,7 @@ namespace GUI
             this.txtb_TenBenh1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtb_TenBenh1.Location = new System.Drawing.Point(139, 52);
             this.txtb_TenBenh1.Name = "txtb_TenBenh1";
-            this.txtb_TenBenh1.Size = new System.Drawing.Size(203, 25);
+            this.txtb_TenBenh1.Size = new System.Drawing.Size(203, 21);
             this.txtb_TenBenh1.TabIndex = 35;
             // 
             // metroSetLabel8
@@ -187,7 +187,7 @@ namespace GUI
             // 
             this.dtg_DanhSachBenh.AllowUserToAddRows = false;
             this.dtg_DanhSachBenh.AllowUserToDeleteRows = false;
-            this.dtg_DanhSachBenh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dtg_DanhSachBenh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_DanhSachBenh.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dtg_DanhSachBenh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_DanhSachBenh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -200,6 +200,7 @@ namespace GUI
             this.dtg_DanhSachBenh.Location = new System.Drawing.Point(0, 24);
             this.dtg_DanhSachBenh.Name = "dtg_DanhSachBenh";
             this.dtg_DanhSachBenh.ReadOnly = true;
+            this.dtg_DanhSachBenh.RowHeadersVisible = false;
             this.dtg_DanhSachBenh.RowHeadersWidth = 51;
             this.dtg_DanhSachBenh.RowTemplate.Height = 25;
             this.dtg_DanhSachBenh.Size = new System.Drawing.Size(566, 458);
@@ -215,7 +216,7 @@ namespace GUI
             this.numeric.MinimumWidth = 10;
             this.numeric.Name = "numeric";
             this.numeric.ReadOnly = true;
-            this.numeric.Width = 76;
+            this.numeric.Width = 61;
             // 
             // TENBENH
             // 
@@ -226,7 +227,7 @@ namespace GUI
             this.TENBENH.MinimumWidth = 10;
             this.TENBENH.Name = "TENBENH";
             this.TENBENH.ReadOnly = true;
-            this.TENBENH.Width = 119;
+            this.TENBENH.Width = 94;
             // 
             // TENLB
             // 
@@ -236,7 +237,7 @@ namespace GUI
             this.TENLB.MinimumWidth = 6;
             this.TENLB.Name = "TENLB";
             this.TENLB.ReadOnly = true;
-            this.TENLB.Width = 124;
+            this.TENLB.Width = 98;
             // 
             // TRIEUCHUNG
             // 
@@ -246,7 +247,7 @@ namespace GUI
             this.TRIEUCHUNG.MinimumWidth = 6;
             this.TRIEUCHUNG.Name = "TRIEUCHUNG";
             this.TRIEUCHUNG.ReadOnly = true;
-            this.TRIEUCHUNG.Width = 144;
+            this.TRIEUCHUNG.Width = 114;
             // 
             // GHICHU
             // 
@@ -256,7 +257,7 @@ namespace GUI
             this.GHICHU.MinimumWidth = 6;
             this.GHICHU.Name = "GHICHU";
             this.GHICHU.ReadOnly = true;
-            this.GHICHU.Width = 107;
+            this.GHICHU.Width = 86;
             // 
             // btn_Search
             // 
@@ -277,7 +278,7 @@ namespace GUI
             this.txtb_TenBenh2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtb_TenBenh2.Location = new System.Drawing.Point(771, 35);
             this.txtb_TenBenh2.Name = "txtb_TenBenh2";
-            this.txtb_TenBenh2.Size = new System.Drawing.Size(181, 30);
+            this.txtb_TenBenh2.Size = new System.Drawing.Size(181, 26);
             this.txtb_TenBenh2.TabIndex = 51;
             this.txtb_TenBenh2.TextChanged += new System.EventHandler(this.txtb_TenBenh2_TextChanged);
             // 
@@ -287,7 +288,7 @@ namespace GUI
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(657, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 23);
+            this.label2.Size = new System.Drawing.Size(76, 18);
             this.label2.TabIndex = 50;
             this.label2.Text = "Tên bệnh ";
             // 
@@ -297,7 +298,7 @@ namespace GUI
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(627, -1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 24);
+            this.label1.Size = new System.Drawing.Size(124, 19);
             this.label1.TabIndex = 49;
             this.label1.Text = "Tìm kiếm bệnh ";
             // 
@@ -394,7 +395,7 @@ namespace GUI
             // 
             // QuanLyBenh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.Controls.Add(this.metroSetLabel4);
