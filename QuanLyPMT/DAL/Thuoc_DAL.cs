@@ -50,7 +50,7 @@ namespace DAL
                 }
                 catch(Exception e)
                 {
-                    MessageBox.Show(e.ToString());
+                    
                 }
             }
         }
@@ -80,7 +80,7 @@ namespace DAL
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.ToString());
+                    
                 }
             }
         }
@@ -102,7 +102,7 @@ namespace DAL
             }
             catch (Exception)
             {
-                MessageBox.Show("Lỗi");
+                
             }
         }
 

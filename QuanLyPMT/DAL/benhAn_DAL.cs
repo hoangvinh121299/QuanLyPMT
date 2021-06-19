@@ -192,6 +192,21 @@ namespace DAL
             }
             return getResult;
         }
+
+        public DataSet getAmountOfPatience()
+        {
+            DataSet amount = new DataSet();
+            string getQuerry = "Select ngaylap, count(mabn) as sobenhnhan from benhan group by ngaylap";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                connection.Open();
+                SqlCommand cmdGet = new SqlCommand(getQuerry, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmdGet);
+                adapter.Fill(amount);
+                connection.Close();
+            }
+            return amount;
+        }
     }
 }
 

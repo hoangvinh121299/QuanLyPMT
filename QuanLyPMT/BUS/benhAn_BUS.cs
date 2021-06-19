@@ -57,10 +57,10 @@ namespace BUS
         {
             benhAn_DAL.deleteBenhNhan(MABA);
         }
-        //public DataSet getHistoryExam(int MABENHNHAN)
-        //{
-        //    return benhNhan_DAL.getHistoryExamByID(MABENHNHAN);
-        //}
+        public DataSet getAmountPatience()
+        {
+            return benhAn_DAL.getAmountOfPatience() ;
+        }
         public DataSet getExamAmountInDay()
         {
             return benhAn_DAL.getExameAmountInDay();
