@@ -230,5 +230,26 @@ namespace DAL
                 }
             }
         }
+        public DataSet getAmountInDay()
+        {
+            DataSet result = new DataSet();
+            string getAmount = "select ngaylap, sum (giatri) as doanhthu from donthuoc group by ngaylap";
+            using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand cmdget = new SqlCommand(getAmount, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmdget);
+                    adapter.Fill(result);
+                    connection.Close();
+                }
+                catch
+                {
+
+                }
+            }
+            return result;
+        }
     }
 }

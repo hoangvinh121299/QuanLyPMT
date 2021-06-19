@@ -129,7 +129,14 @@ namespace GUI
             //acc_username_Textbox.Text = output.TENDANGNHAP;
             input.TENDANGNHAP = acc_username_Textbox.Text;
             input.MATAIKHOAN = output.MATAIKHOAN;
-            input.MATKHAU = BCrypt.Net.BCrypt.EnhancedHashPassword(acc_pwrd_Textbox.Text);
+            if (input.MATKHAU != output.MATKHAU)
+            {
+                input.MATKHAU = BCrypt.Net.BCrypt.EnhancedHashPassword(acc_pwrd_Textbox.Text);
+            }
+            else
+            {
+                input.MATKHAU = acc_pwrd_Textbox.Text;
+            }
             switch (acc_permission_Combobox.Text)
             {
                 case "Bác sĩ":
@@ -471,7 +478,6 @@ namespace GUI
             acc_save_Btn.Visible = true ;
             acc_cancel_Btn.Visible = true ;
             acc_pwrd_Textbox.Enabled = true;
-            acc_permission_Combobox.Enabled = true;
         }
 
         private void acc_cancel_Btn_Click(object sender, EventArgs e)
@@ -650,6 +656,11 @@ namespace GUI
         {
             loginHistoryDGV.Rows[e.RowIndex].Cells["STT2"].Value = (e.RowIndex + 1).ToString();
 
+        }
+
+        private void acc_pwrd_Textbox_TextChanged(object sender, EventArgs e)
+        {
+            input.MATKHAU = acc_pwrd_Textbox.Text;
         }
     }
 }

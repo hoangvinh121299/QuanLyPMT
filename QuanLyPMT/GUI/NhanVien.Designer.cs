@@ -1085,6 +1085,7 @@ namespace GUI
             this.acc_pwrd_Textbox.Size = new System.Drawing.Size(206, 25);
             this.acc_pwrd_Textbox.TabIndex = 21;
             this.acc_pwrd_Textbox.UseSystemPasswordChar = true;
+            this.acc_pwrd_Textbox.TextChanged += new System.EventHandler(this.acc_pwrd_Textbox_TextChanged);
             // 
             // metroSetLabel13
             // 

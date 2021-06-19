@@ -139,6 +139,7 @@ namespace GUI
             this.reportBtn.Text = "Báo cáo thống kê";
             this.reportBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.reportBtn.UseVisualStyleBackColor = true;
+            this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
             // 
             // drugBtn
             // 
