@@ -19,6 +19,7 @@ namespace GUI
         bool isClickBtnSearch;
         int state;
         Benh_BUS benh_BUS = new Benh_BUS();
+
         public QuanLyBenh()
         {
             InitializeComponent();
@@ -49,7 +50,10 @@ namespace GUI
             dtg_DanhSachBenh.Columns["TENLB"].HeaderText = "Loại bệnh";
             dtg_DanhSachBenh.Columns["TRIEUCHUNG"].HeaderText = "Triệu chứng";
             dtg_DanhSachBenh.Columns["GHICHU"].HeaderText = "Ghi chú";
-            dtg_DanhSachBenh.Columns[1].Visible = false;
+            dtg_DanhSachBenh.Columns["MALB"].Visible = false;
+
+            dtg_DanhSachBenh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+
         }
 
         private void dtg_DanhSachBenh_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -130,8 +134,14 @@ namespace GUI
                         loadData(benh_BUS.GetData());
                     break;
                 }
+
+                disabledControls();
+                btn_Save.Visible = false;
+                btn_Cancle.Visible = false;
+
+                addBtn.Visible = true;
+                editBtn.Visible = true;
             }
-            disabledControls();
         }
 
         private void btn_Cancle_Click(object sender, EventArgs e)
