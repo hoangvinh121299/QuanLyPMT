@@ -45,6 +45,7 @@ namespace GUI
             this.TENLB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TRIEUCHUNG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GHICHU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MALB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Search = new System.Windows.Forms.Button();
             this.txtb_TenBenh2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -195,7 +196,8 @@ namespace GUI
             this.TENBENH,
             this.TENLB,
             this.TRIEUCHUNG,
-            this.GHICHU});
+            this.GHICHU,
+            this.MALB});
             this.dtg_DanhSachBenh.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtg_DanhSachBenh.Location = new System.Drawing.Point(0, 24);
             this.dtg_DanhSachBenh.Name = "dtg_DanhSachBenh";
@@ -210,7 +212,7 @@ namespace GUI
             // 
             // numeric
             // 
-            this.numeric.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.numeric.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.numeric.FillWeight = 53.47594F;
             this.numeric.HeaderText = "STT";
             this.numeric.MinimumWidth = 10;
@@ -220,44 +222,50 @@ namespace GUI
             // 
             // TENBENH
             // 
-            this.TENBENH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.TENBENH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TENBENH.DataPropertyName = "TENBENH";
             this.TENBENH.FillWeight = 146.5241F;
             this.TENBENH.HeaderText = "Tên bệnh";
             this.TENBENH.MinimumWidth = 10;
             this.TENBENH.Name = "TENBENH";
             this.TENBENH.ReadOnly = true;
-            this.TENBENH.Width = 94;
             // 
             // TENLB
             // 
-            this.TENLB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.TENLB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TENLB.DataPropertyName = "TENLB";
             this.TENLB.HeaderText = "Loại Bệnh";
             this.TENLB.MinimumWidth = 6;
             this.TENLB.Name = "TENLB";
             this.TENLB.ReadOnly = true;
-            this.TENLB.Width = 98;
             // 
             // TRIEUCHUNG
             // 
-            this.TRIEUCHUNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.TRIEUCHUNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.TRIEUCHUNG.DataPropertyName = "TRIEUCHUNG";
             this.TRIEUCHUNG.HeaderText = "Triệu Chứng";
             this.TRIEUCHUNG.MinimumWidth = 6;
             this.TRIEUCHUNG.Name = "TRIEUCHUNG";
             this.TRIEUCHUNG.ReadOnly = true;
-            this.TRIEUCHUNG.Width = 114;
+            this.TRIEUCHUNG.Width = 6;
             // 
             // GHICHU
             // 
-            this.GHICHU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.GHICHU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.GHICHU.DataPropertyName = "GHICHU";
             this.GHICHU.HeaderText = "Ghi Chú";
             this.GHICHU.MinimumWidth = 6;
             this.GHICHU.Name = "GHICHU";
             this.GHICHU.ReadOnly = true;
-            this.GHICHU.Width = 86;
+            this.GHICHU.Width = 6;
+            // 
+            // MALB
+            // 
+            this.MALB.DataPropertyName = "MALB";
+            this.MALB.HeaderText = "MALB";
+            this.MALB.Name = "MALB";
+            this.MALB.ReadOnly = true;
+            this.MALB.Visible = false;
             // 
             // btn_Search
             // 
@@ -456,5 +464,6 @@ namespace GUI
         private System.Windows.Forms.DataGridViewTextBoxColumn TENLB;
         private System.Windows.Forms.DataGridViewTextBoxColumn TRIEUCHUNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn GHICHU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MALB;
     }
 }
