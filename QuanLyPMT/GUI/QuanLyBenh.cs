@@ -128,7 +128,7 @@ namespace GUI
                         loadData(benh_BUS.GetData());
                     break;
                     case UPDATE:
-                        int maLoaiBenh = (int)dtg_DanhSachBenh.Rows[dtg_DanhSachBenh.CurrentCell.RowIndex].Cells[1].Value;
+                        int maLoaiBenh = (int)dtg_DanhSachBenh.Rows[dtg_DanhSachBenh.CurrentCell.RowIndex].Cells["MALB"].Value;
                         Benh benh1 = new Benh(txtb_TenBenh1.Text.Trim(), cb_LoaiBenh.Text.Trim(), txtb_TrieuChung.Text.Trim(), txtb_GhiChu.Text.Trim(), maLoaiBenh);
                         benh_BUS.updateBenh(benh1);
                         loadData(benh_BUS.GetData());
@@ -174,17 +174,17 @@ namespace GUI
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            int maLoaiBenh = (int)dtg_DanhSachBenh.Rows[dtg_DanhSachBenh.CurrentCell.RowIndex].Cells[1].Value;
+            int maLoaiBenh = (int)dtg_DanhSachBenh.Rows[dtg_DanhSachBenh.CurrentCell.RowIndex].Cells["MALB"].Value;
             Benh benh1 = new Benh(txtb_TenBenh1.Text.Trim(), cb_LoaiBenh.Text.Trim(), txtb_TrieuChung.Text.Trim(), txtb_GhiChu.Text.Trim(), maLoaiBenh);
             benh_BUS.deleteBenh(benh1);
             loadData(benh_BUS.GetData());
         }
         private void setValueToControls()
         {
-            txtb_TenBenh1.Text = dtg_DanhSachBenh.CurrentRow.Cells[2].Value.ToString();
-            cb_LoaiBenh.SelectedIndex = cb_LoaiBenh.FindStringExact(dtg_DanhSachBenh.CurrentRow.Cells[3].Value.ToString());
-            txtb_GhiChu.Text = dtg_DanhSachBenh.CurrentRow.Cells[4].Value.ToString();
-            txtb_TrieuChung.Text = dtg_DanhSachBenh.CurrentRow.Cells[5].Value.ToString();
+            txtb_TenBenh1.Text = dtg_DanhSachBenh.CurrentRow.Cells["TENBENH"].Value.ToString();
+            cb_LoaiBenh.SelectedIndex = cb_LoaiBenh.FindStringExact(dtg_DanhSachBenh.CurrentRow.Cells["TENLB"].Value.ToString());
+            txtb_GhiChu.Text = dtg_DanhSachBenh.CurrentRow.Cells["GHICHU"].Value.ToString();
+            txtb_TrieuChung.Text = dtg_DanhSachBenh.CurrentRow.Cells["TRIEUCHUNG"].Value.ToString();
         }
 
         private void clearValueFromControls()
