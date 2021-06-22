@@ -74,6 +74,7 @@ namespace GUI
             this.aboutBtn.Text = "About";
             this.aboutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.aboutBtn.UseVisualStyleBackColor = true;
+            this.aboutBtn.Click += new System.EventHandler(this.aboutBtn_Click);
             // 
             // patientBtn
             // 

@@ -158,10 +158,10 @@ namespace GUI
             // 
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1210, 557);
+            this.tabPage1.Size = new System.Drawing.Size(1210, 555);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nhân viên";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -216,6 +216,7 @@ namespace GUI
             this.danhSachNhanVien_DGV.Name = "danhSachNhanVien_DGV";
             this.danhSachNhanVien_DGV.ReadOnly = true;
             this.danhSachNhanVien_DGV.RowHeadersVisible = false;
+            this.danhSachNhanVien_DGV.RowHeadersWidth = 51;
             this.danhSachNhanVien_DGV.RowTemplate.Height = 25;
             this.danhSachNhanVien_DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.danhSachNhanVien_DGV.Size = new System.Drawing.Size(540, 494);
@@ -227,14 +228,16 @@ namespace GUI
             // 
             this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
-            this.STT.Width = 61;
+            this.STT.Width = 76;
             // 
             // MANV
             // 
             this.MANV.DataPropertyName = "MANV";
             this.MANV.HeaderText = "Mã nhân viên";
+            this.MANV.MinimumWidth = 6;
             this.MANV.Name = "MANV";
             this.MANV.ReadOnly = true;
             this.MANV.Visible = false;
@@ -244,15 +247,17 @@ namespace GUI
             this.CMND.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.CMND.DataPropertyName = "CMND";
             this.CMND.HeaderText = "CMND";
+            this.CMND.MinimumWidth = 6;
             this.CMND.Name = "CMND";
             this.CMND.ReadOnly = true;
-            this.CMND.Width = 5;
+            this.CMND.Width = 6;
             // 
             // HOTEN
             // 
             this.HOTEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.HOTEN.DataPropertyName = "HOTEN";
             this.HOTEN.HeaderText = "Họ tên";
+            this.HOTEN.MinimumWidth = 6;
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.ReadOnly = true;
             // 
@@ -260,6 +265,7 @@ namespace GUI
             // 
             this.NGAYSINH.DataPropertyName = "NGAYSINH";
             this.NGAYSINH.HeaderText = "Ngày sinh";
+            this.NGAYSINH.MinimumWidth = 6;
             this.NGAYSINH.Name = "NGAYSINH";
             this.NGAYSINH.ReadOnly = true;
             this.NGAYSINH.Visible = false;
@@ -269,14 +275,16 @@ namespace GUI
             this.GIOITINH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.GIOITINH.DataPropertyName = "GT";
             this.GIOITINH.HeaderText = "Giới tính ";
+            this.GIOITINH.MinimumWidth = 6;
             this.GIOITINH.Name = "GIOITINH";
             this.GIOITINH.ReadOnly = true;
-            this.GIOITINH.Width = 91;
+            this.GIOITINH.Width = 117;
             // 
             // DIACHI
             // 
             this.DIACHI.DataPropertyName = "DIACHI";
             this.DIACHI.HeaderText = "Địa chỉ ";
+            this.DIACHI.MinimumWidth = 6;
             this.DIACHI.Name = "DIACHI";
             this.DIACHI.ReadOnly = true;
             this.DIACHI.Visible = false;
@@ -285,6 +293,7 @@ namespace GUI
             // 
             this.SDT.DataPropertyName = "SDT";
             this.SDT.HeaderText = "Số điện thoại ";
+            this.SDT.MinimumWidth = 6;
             this.SDT.Name = "SDT";
             this.SDT.ReadOnly = true;
             this.SDT.Visible = false;
@@ -294,16 +303,17 @@ namespace GUI
             this.CHUCVU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.CHUCVU.DataPropertyName = "CHUCVU";
             this.CHUCVU.HeaderText = "Chức vụ ";
+            this.CHUCVU.MinimumWidth = 6;
             this.CHUCVU.Name = "CHUCVU";
             this.CHUCVU.ReadOnly = true;
-            this.CHUCVU.Width = 94;
+            this.CHUCVU.Width = 117;
             // 
             // CMNDtextBox2
             // 
             this.CMNDtextBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CMNDtextBox2.Location = new System.Drawing.Point(155, 30);
             this.CMNDtextBox2.Name = "CMNDtextBox2";
-            this.CMNDtextBox2.Size = new System.Drawing.Size(228, 26);
+            this.CMNDtextBox2.Size = new System.Drawing.Size(228, 30);
             this.CMNDtextBox2.TabIndex = 13;
             this.CMNDtextBox2.TextChanged += new System.EventHandler(this.CMNDtextBox2_TextChanged);
             // 
@@ -376,6 +386,7 @@ namespace GUI
             this.danhsachBenhAn_DGV.Name = "danhsachBenhAn_DGV";
             this.danhsachBenhAn_DGV.ReadOnly = true;
             this.danhsachBenhAn_DGV.RowHeadersVisible = false;
+            this.danhsachBenhAn_DGV.RowHeadersWidth = 51;
             this.danhsachBenhAn_DGV.RowTemplate.Height = 25;
             this.danhsachBenhAn_DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.danhsachBenhAn_DGV.Size = new System.Drawing.Size(668, 211);
@@ -387,15 +398,17 @@ namespace GUI
             this.STT1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.STT1.Frozen = true;
             this.STT1.HeaderText = "STT";
+            this.STT1.MinimumWidth = 6;
             this.STT1.Name = "STT1";
             this.STT1.ReadOnly = true;
-            this.STT1.Width = 61;
+            this.STT1.Width = 76;
             // 
             // HOTEN1
             // 
             this.HOTEN1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.HOTEN1.DataPropertyName = "HOTEN";
             this.HOTEN1.HeaderText = "Bệnh nhân";
+            this.HOTEN1.MinimumWidth = 6;
             this.HOTEN1.Name = "HOTEN1";
             this.HOTEN1.ReadOnly = true;
             // 
@@ -404,40 +417,45 @@ namespace GUI
             this.NGAYLAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.NGAYLAP.DataPropertyName = "NGAYLAP";
             this.NGAYLAP.HeaderText = "Ngày lập";
+            this.NGAYLAP.MinimumWidth = 6;
             this.NGAYLAP.Name = "NGAYLAP";
             this.NGAYLAP.ReadOnly = true;
-            this.NGAYLAP.Width = 5;
+            this.NGAYLAP.Width = 6;
             // 
             // NGAYTAIKHAM
             // 
             this.NGAYTAIKHAM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.NGAYTAIKHAM.DataPropertyName = "NGAYTAIKHAM";
             this.NGAYTAIKHAM.HeaderText = "Ngày tái khám ";
+            this.NGAYTAIKHAM.MinimumWidth = 6;
             this.NGAYTAIKHAM.Name = "NGAYTAIKHAM";
             this.NGAYTAIKHAM.ReadOnly = true;
-            this.NGAYTAIKHAM.Width = 5;
+            this.NGAYTAIKHAM.Width = 6;
             // 
             // CHANDOAN
             // 
             this.CHANDOAN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.CHANDOAN.DataPropertyName = "CHANDOAN";
             this.CHANDOAN.HeaderText = "Chẩn đoán ";
+            this.CHANDOAN.MinimumWidth = 6;
             this.CHANDOAN.Name = "CHANDOAN";
             this.CHANDOAN.ReadOnly = true;
-            this.CHANDOAN.Width = 5;
+            this.CHANDOAN.Width = 6;
             // 
             // HUONGXULY
             // 
             this.HUONGXULY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             this.HUONGXULY.DataPropertyName = "HUONGXULY";
             this.HUONGXULY.HeaderText = "Hướng xử lý ";
+            this.HUONGXULY.MinimumWidth = 6;
             this.HUONGXULY.Name = "HUONGXULY";
             this.HUONGXULY.ReadOnly = true;
-            this.HUONGXULY.Width = 5;
+            this.HUONGXULY.Width = 6;
             // 
             // MABA
             // 
             this.MABA.HeaderText = "Mã bệnh án";
+            this.MABA.MinimumWidth = 6;
             this.MABA.Name = "MABA";
             this.MABA.ReadOnly = true;
             this.MABA.Visible = false;
@@ -445,6 +463,7 @@ namespace GUI
             // MABN
             // 
             this.MABN.HeaderText = "Mã bệnh nhân";
+            this.MABN.MinimumWidth = 6;
             this.MABN.Name = "MABN";
             this.MABN.ReadOnly = true;
             this.MABN.Visible = false;
@@ -452,6 +471,7 @@ namespace GUI
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Mã nhân viên";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Visible = false;
@@ -459,6 +479,7 @@ namespace GUI
             // TIENSUBENH
             // 
             this.TIENSUBENH.HeaderText = "Tiền sử bệnh";
+            this.TIENSUBENH.MinimumWidth = 6;
             this.TIENSUBENH.Name = "TIENSUBENH";
             this.TIENSUBENH.ReadOnly = true;
             this.TIENSUBENH.Visible = false;
@@ -466,6 +487,7 @@ namespace GUI
             // TRIEUCHUNG
             // 
             this.TRIEUCHUNG.HeaderText = "Triệu chứng ";
+            this.TRIEUCHUNG.MinimumWidth = 6;
             this.TRIEUCHUNG.Name = "TRIEUCHUNG";
             this.TRIEUCHUNG.ReadOnly = true;
             this.TRIEUCHUNG.Visible = false;
@@ -473,6 +495,7 @@ namespace GUI
             // LOAIBENH
             // 
             this.LOAIBENH.HeaderText = "Loại bệnh";
+            this.LOAIBENH.MinimumWidth = 6;
             this.LOAIBENH.Name = "LOAIBENH";
             this.LOAIBENH.ReadOnly = true;
             this.LOAIBENH.Visible = false;
@@ -480,6 +503,7 @@ namespace GUI
             // GHICHU
             // 
             this.GHICHU.HeaderText = "Ghi chú ";
+            this.GHICHU.MinimumWidth = 6;
             this.GHICHU.Name = "GHICHU";
             this.GHICHU.ReadOnly = true;
             this.GHICHU.Visible = false;
@@ -494,7 +518,7 @@ namespace GUI
             "Kế toán "});
             this.positionCbb.Location = new System.Drawing.Point(146, 197);
             this.positionCbb.Name = "positionCbb";
-            this.positionCbb.Size = new System.Drawing.Size(168, 25);
+            this.positionCbb.Size = new System.Drawing.Size(168, 31);
             this.positionCbb.TabIndex = 30;
             // 
             // metroSetLabel1
@@ -517,7 +541,7 @@ namespace GUI
             this.maleBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.maleBtn.Location = new System.Drawing.Point(146, 115);
             this.maleBtn.Name = "maleBtn";
-            this.maleBtn.Size = new System.Drawing.Size(59, 22);
+            this.maleBtn.Size = new System.Drawing.Size(71, 27);
             this.maleBtn.TabIndex = 15;
             this.maleBtn.TabStop = true;
             this.maleBtn.Text = "Nam";
@@ -529,7 +553,7 @@ namespace GUI
             this.femaleBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.femaleBtn.Location = new System.Drawing.Point(233, 115);
             this.femaleBtn.Name = "femaleBtn";
-            this.femaleBtn.Size = new System.Drawing.Size(48, 22);
+            this.femaleBtn.Size = new System.Drawing.Size(57, 27);
             this.femaleBtn.TabIndex = 16;
             this.femaleBtn.TabStop = true;
             this.femaleBtn.Text = "Nữ";
@@ -614,7 +638,7 @@ namespace GUI
             this.birthDateTimePicker.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.birthDateTimePicker.Location = new System.Drawing.Point(146, 150);
             this.birthDateTimePicker.Name = "birthDateTimePicker";
-            this.birthDateTimePicker.Size = new System.Drawing.Size(239, 25);
+            this.birthDateTimePicker.Size = new System.Drawing.Size(239, 29);
             this.birthDateTimePicker.TabIndex = 18;
             // 
             // phoneTxtBox
@@ -622,7 +646,7 @@ namespace GUI
             this.phoneTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.phoneTxtBox.Location = new System.Drawing.Point(146, 241);
             this.phoneTxtBox.Name = "phoneTxtBox";
-            this.phoneTxtBox.Size = new System.Drawing.Size(239, 25);
+            this.phoneTxtBox.Size = new System.Drawing.Size(239, 29);
             this.phoneTxtBox.TabIndex = 21;
             // 
             // CMNDtextBOX1
@@ -630,7 +654,7 @@ namespace GUI
             this.CMNDtextBOX1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CMNDtextBOX1.Location = new System.Drawing.Point(146, 79);
             this.CMNDtextBOX1.Name = "CMNDtextBOX1";
-            this.CMNDtextBOX1.Size = new System.Drawing.Size(239, 25);
+            this.CMNDtextBOX1.Size = new System.Drawing.Size(239, 29);
             this.CMNDtextBOX1.TabIndex = 13;
             // 
             // nameTxtBox
@@ -639,7 +663,7 @@ namespace GUI
             this.nameTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nameTxtBox.Location = new System.Drawing.Point(146, 33);
             this.nameTxtBox.Name = "nameTxtBox";
-            this.nameTxtBox.Size = new System.Drawing.Size(239, 25);
+            this.nameTxtBox.Size = new System.Drawing.Size(239, 29);
             this.nameTxtBox.TabIndex = 11;
             this.nameTxtBox.Leave += new System.EventHandler(this.nameTxtBox_Leave);
             // 
@@ -731,10 +755,10 @@ namespace GUI
             // 
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1210, 557);
+            this.tabPage2.Size = new System.Drawing.Size(1210, 555);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tài khoản ";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -774,7 +798,7 @@ namespace GUI
             this.acc_search_name_textbox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.acc_search_name_textbox.Location = new System.Drawing.Point(162, 46);
             this.acc_search_name_textbox.Name = "acc_search_name_textbox";
-            this.acc_search_name_textbox.Size = new System.Drawing.Size(228, 26);
+            this.acc_search_name_textbox.Size = new System.Drawing.Size(228, 30);
             this.acc_search_name_textbox.TabIndex = 17;
             this.acc_search_name_textbox.TextChanged += new System.EventHandler(this.acc_search_name_textbox_TextChanged);
             // 
@@ -795,6 +819,7 @@ namespace GUI
             this.accountListDGV.Name = "accountListDGV";
             this.accountListDGV.ReadOnly = true;
             this.accountListDGV.RowHeadersVisible = false;
+            this.accountListDGV.RowHeadersWidth = 51;
             this.accountListDGV.RowTemplate.Height = 25;
             this.accountListDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.accountListDGV.Size = new System.Drawing.Size(534, 466);
@@ -806,15 +831,17 @@ namespace GUI
             // 
             this.STT3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.STT3.HeaderText = "STT";
+            this.STT3.MinimumWidth = 6;
             this.STT3.Name = "STT3";
             this.STT3.ReadOnly = true;
-            this.STT3.Width = 61;
+            this.STT3.Width = 76;
             // 
             // HOTEN3
             // 
             this.HOTEN3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.HOTEN3.DataPropertyName = "HOTEN";
             this.HOTEN3.HeaderText = "Chủ tài khoản";
+            this.HOTEN3.MinimumWidth = 6;
             this.HOTEN3.Name = "HOTEN3";
             this.HOTEN3.ReadOnly = true;
             // 
@@ -822,23 +849,28 @@ namespace GUI
             // 
             this.MATAIKHOAN.DataPropertyName = "MATAIKHOAN";
             this.MATAIKHOAN.HeaderText = "Mã tài khoản ";
+            this.MATAIKHOAN.MinimumWidth = 6;
             this.MATAIKHOAN.Name = "MATAIKHOAN";
             this.MATAIKHOAN.ReadOnly = true;
             this.MATAIKHOAN.Visible = false;
+            this.MATAIKHOAN.Width = 125;
             // 
             // MANV1
             // 
             this.MANV1.DataPropertyName = "MANV";
             this.MANV1.HeaderText = "Mã nhân viên";
+            this.MANV1.MinimumWidth = 6;
             this.MANV1.Name = "MANV1";
             this.MANV1.ReadOnly = true;
             this.MANV1.Visible = false;
+            this.MANV1.Width = 125;
             // 
             // TENDANGNHAP
             // 
             this.TENDANGNHAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TENDANGNHAP.DataPropertyName = "TENDANGNHAP";
             this.TENDANGNHAP.HeaderText = "Tên đăng nhập";
+            this.TENDANGNHAP.MinimumWidth = 6;
             this.TENDANGNHAP.Name = "TENDANGNHAP";
             this.TENDANGNHAP.ReadOnly = true;
             // 
@@ -847,6 +879,7 @@ namespace GUI
             this.MATKHAU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MATKHAU.DataPropertyName = "MATKHAU";
             this.MATKHAU.HeaderText = "Mật khẩu";
+            this.MATKHAU.MinimumWidth = 6;
             this.MATKHAU.Name = "MATKHAU";
             this.MATKHAU.ReadOnly = true;
             // 
@@ -855,6 +888,7 @@ namespace GUI
             this.CAPBAC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.CAPBAC.DataPropertyName = "CAPBAC";
             this.CAPBAC.HeaderText = "Quyền quản trị";
+            this.CAPBAC.MinimumWidth = 6;
             this.CAPBAC.Name = "CAPBAC";
             this.CAPBAC.ReadOnly = true;
             // 
@@ -864,7 +898,7 @@ namespace GUI
             this.textBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.Location = new System.Drawing.Point(-551, 48);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(239, 25);
+            this.textBox1.Size = new System.Drawing.Size(239, 29);
             this.textBox1.TabIndex = 13;
             // 
             // metroSetLabel9
@@ -922,7 +956,7 @@ namespace GUI
             this.acc_name_cbb.FormattingEnabled = true;
             this.acc_name_cbb.Location = new System.Drawing.Point(206, 37);
             this.acc_name_cbb.Name = "acc_name_cbb";
-            this.acc_name_cbb.Size = new System.Drawing.Size(239, 25);
+            this.acc_name_cbb.Size = new System.Drawing.Size(239, 31);
             this.acc_name_cbb.TabIndex = 32;
             this.acc_name_cbb.SelectedIndexChanged += new System.EventHandler(this.acc_name_cbb_SelectedIndexChanged);
             this.acc_name_cbb.TextChanged += new System.EventHandler(this.acc_name_cbb_TextChanged);
@@ -1016,6 +1050,7 @@ namespace GUI
             this.loginHistoryDGV.Name = "loginHistoryDGV";
             this.loginHistoryDGV.ReadOnly = true;
             this.loginHistoryDGV.RowHeadersVisible = false;
+            this.loginHistoryDGV.RowHeadersWidth = 51;
             this.loginHistoryDGV.RowTemplate.Height = 25;
             this.loginHistoryDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.loginHistoryDGV.Size = new System.Drawing.Size(650, 260);
@@ -1026,23 +1061,27 @@ namespace GUI
             // 
             this.STT2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.STT2.HeaderText = "STT";
+            this.STT2.MinimumWidth = 6;
             this.STT2.Name = "STT2";
             this.STT2.ReadOnly = true;
-            this.STT2.Width = 61;
+            this.STT2.Width = 76;
             // 
             // MATAIKHOAN1
             // 
             this.MATAIKHOAN1.DataPropertyName = "MATAIKHOAN";
             this.MATAIKHOAN1.HeaderText = "Mã tài khoản";
+            this.MATAIKHOAN1.MinimumWidth = 6;
             this.MATAIKHOAN1.Name = "MATAIKHOAN1";
             this.MATAIKHOAN1.ReadOnly = true;
             this.MATAIKHOAN1.Visible = false;
+            this.MATAIKHOAN1.Width = 125;
             // 
             // DANGNHAP
             // 
             this.DANGNHAP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DANGNHAP.DataPropertyName = "DANGNHAP";
             this.DANGNHAP.HeaderText = "Đăng nhập";
+            this.DANGNHAP.MinimumWidth = 6;
             this.DANGNHAP.Name = "DANGNHAP";
             this.DANGNHAP.ReadOnly = true;
             // 
@@ -1051,6 +1090,7 @@ namespace GUI
             this.DANGXUAT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DANGXUAT.DataPropertyName = "DANGXUAT";
             this.DANGXUAT.HeaderText = "Đăng xuất ";
+            this.DANGXUAT.MinimumWidth = 6;
             this.DANGXUAT.Name = "DANGXUAT";
             this.DANGXUAT.ReadOnly = true;
             // 
@@ -1059,6 +1099,7 @@ namespace GUI
             this.THOILUONG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.THOILUONG.DataPropertyName = "THOILUONG";
             this.THOILUONG.HeaderText = "Thời lượng";
+            this.THOILUONG.MinimumWidth = 6;
             this.THOILUONG.Name = "THOILUONG";
             this.THOILUONG.ReadOnly = true;
             // 
@@ -1073,7 +1114,7 @@ namespace GUI
             "Quản trị viên"});
             this.acc_permission_Combobox.Location = new System.Drawing.Point(206, 230);
             this.acc_permission_Combobox.Name = "acc_permission_Combobox";
-            this.acc_permission_Combobox.Size = new System.Drawing.Size(121, 25);
+            this.acc_permission_Combobox.Size = new System.Drawing.Size(121, 31);
             this.acc_permission_Combobox.TabIndex = 22;
             // 
             // acc_pwrd_Textbox
@@ -1082,7 +1123,7 @@ namespace GUI
             this.acc_pwrd_Textbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.acc_pwrd_Textbox.Location = new System.Drawing.Point(206, 162);
             this.acc_pwrd_Textbox.Name = "acc_pwrd_Textbox";
-            this.acc_pwrd_Textbox.Size = new System.Drawing.Size(206, 25);
+            this.acc_pwrd_Textbox.Size = new System.Drawing.Size(206, 29);
             this.acc_pwrd_Textbox.TabIndex = 21;
             this.acc_pwrd_Textbox.UseSystemPasswordChar = true;
             this.acc_pwrd_Textbox.TextChanged += new System.EventHandler(this.acc_pwrd_Textbox_TextChanged);
@@ -1122,7 +1163,7 @@ namespace GUI
             this.acc_username_Textbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.acc_username_Textbox.Location = new System.Drawing.Point(206, 95);
             this.acc_username_Textbox.Name = "acc_username_Textbox";
-            this.acc_username_Textbox.Size = new System.Drawing.Size(239, 25);
+            this.acc_username_Textbox.Size = new System.Drawing.Size(239, 29);
             this.acc_username_Textbox.TabIndex = 18;
             // 
             // metroSetLabel11
@@ -1155,7 +1196,7 @@ namespace GUI
             // 
             // NhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.materialTabControl1);
             this.Controls.Add(this.materialTabSelector1);

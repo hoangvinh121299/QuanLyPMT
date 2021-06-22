@@ -146,10 +146,10 @@ namespace GUI
             this.BENHAN.Controls.Add(this.groupBox3);
             this.BENHAN.Controls.Add(this.groupBox1);
             this.BENHAN.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BENHAN.Location = new System.Drawing.Point(4, 24);
+            this.BENHAN.Location = new System.Drawing.Point(4, 26);
             this.BENHAN.Name = "BENHAN";
             this.BENHAN.Padding = new System.Windows.Forms.Padding(3);
-            this.BENHAN.Size = new System.Drawing.Size(1210, 562);
+            this.BENHAN.Size = new System.Drawing.Size(1210, 560);
             this.BENHAN.TabIndex = 0;
             this.BENHAN.Text = "Bệnh án";
             this.BENHAN.UseVisualStyleBackColor = true;
@@ -194,7 +194,7 @@ namespace GUI
             this.chanDoanCBB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.chanDoanCBB.Location = new System.Drawing.Point(172, 167);
             this.chanDoanCBB.Name = "chanDoanCBB";
-            this.chanDoanCBB.Size = new System.Drawing.Size(163, 25);
+            this.chanDoanCBB.Size = new System.Drawing.Size(163, 29);
             this.chanDoanCBB.TabIndex = 60;
             // 
             // metroSetLabel11
@@ -216,7 +216,7 @@ namespace GUI
             this.examFee_textbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.examFee_textbox.Location = new System.Drawing.Point(555, 207);
             this.examFee_textbox.Name = "examFee_textbox";
-            this.examFee_textbox.Size = new System.Drawing.Size(163, 25);
+            this.examFee_textbox.Size = new System.Drawing.Size(163, 29);
             this.examFee_textbox.TabIndex = 58;
             // 
             // ngayTaiKhamDTPicker
@@ -224,7 +224,7 @@ namespace GUI
             this.ngayTaiKhamDTPicker.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ngayTaiKhamDTPicker.Location = new System.Drawing.Point(555, 22);
             this.ngayTaiKhamDTPicker.Name = "ngayTaiKhamDTPicker";
-            this.ngayTaiKhamDTPicker.Size = new System.Drawing.Size(163, 21);
+            this.ngayTaiKhamDTPicker.Size = new System.Drawing.Size(163, 25);
             this.ngayTaiKhamDTPicker.TabIndex = 4;
             // 
             // ngayKhamDTPicker
@@ -232,7 +232,7 @@ namespace GUI
             this.ngayKhamDTPicker.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ngayKhamDTPicker.Location = new System.Drawing.Point(172, 24);
             this.ngayKhamDTPicker.Name = "ngayKhamDTPicker";
-            this.ngayKhamDTPicker.Size = new System.Drawing.Size(163, 21);
+            this.ngayKhamDTPicker.Size = new System.Drawing.Size(163, 25);
             this.ngayKhamDTPicker.TabIndex = 0;
             // 
             // deleteBtn
@@ -311,7 +311,7 @@ namespace GUI
             this.huongxulyTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.huongxulyTxtBox.Location = new System.Drawing.Point(555, 163);
             this.huongxulyTxtBox.Name = "huongxulyTxtBox";
-            this.huongxulyTxtBox.Size = new System.Drawing.Size(163, 25);
+            this.huongxulyTxtBox.Size = new System.Drawing.Size(163, 29);
             this.huongxulyTxtBox.TabIndex = 7;
             // 
             // adddBtn
@@ -334,10 +334,10 @@ namespace GUI
             // 
             this.loaiBenhCBB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.loaiBenhCBB.FormattingEnabled = true;
-            this.loaiBenhCBB.ItemHeight = 17;
+            this.loaiBenhCBB.ItemHeight = 22;
             this.loaiBenhCBB.Location = new System.Drawing.Point(555, 111);
             this.loaiBenhCBB.Name = "loaiBenhCBB";
-            this.loaiBenhCBB.Size = new System.Drawing.Size(163, 25);
+            this.loaiBenhCBB.Size = new System.Drawing.Size(163, 30);
             this.loaiBenhCBB.TabIndex = 57;
             // 
             // trieuchungTxtBox
@@ -345,7 +345,7 @@ namespace GUI
             this.trieuchungTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.trieuchungTxtBox.Location = new System.Drawing.Point(555, 65);
             this.trieuchungTxtBox.Name = "trieuchungTxtBox";
-            this.trieuchungTxtBox.Size = new System.Drawing.Size(163, 25);
+            this.trieuchungTxtBox.Size = new System.Drawing.Size(163, 29);
             this.trieuchungTxtBox.TabIndex = 5;
             // 
             // tienSuBenhTxtBox
@@ -353,7 +353,7 @@ namespace GUI
             this.tienSuBenhTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tienSuBenhTxtBox.Location = new System.Drawing.Point(172, 116);
             this.tienSuBenhTxtBox.Name = "tienSuBenhTxtBox";
-            this.tienSuBenhTxtBox.Size = new System.Drawing.Size(163, 25);
+            this.tienSuBenhTxtBox.Size = new System.Drawing.Size(163, 29);
             this.tienSuBenhTxtBox.TabIndex = 2;
             // 
             // metroSetLabel9
@@ -403,7 +403,7 @@ namespace GUI
             this.nameTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nameTxtBox.Location = new System.Drawing.Point(172, 65);
             this.nameTxtBox.Name = "nameTxtBox";
-            this.nameTxtBox.Size = new System.Drawing.Size(163, 25);
+            this.nameTxtBox.Size = new System.Drawing.Size(163, 29);
             this.nameTxtBox.TabIndex = 1;
             // 
             // metroSetLabel7
@@ -539,7 +539,7 @@ namespace GUI
             this.STT1.HeaderText = "STT";
             this.STT1.MinimumWidth = 6;
             this.STT1.Name = "STT1";
-            this.STT1.Width = 61;
+            this.STT1.Width = 76;
             // 
             // TIENKHAM
             // 
@@ -671,7 +671,7 @@ namespace GUI
             // 
             this.searchTextbox.Location = new System.Drawing.Point(131, 504);
             this.searchTextbox.Name = "searchTextbox";
-            this.searchTextbox.Size = new System.Drawing.Size(185, 25);
+            this.searchTextbox.Size = new System.Drawing.Size(185, 29);
             this.searchTextbox.TabIndex = 9;
             this.searchTextbox.TextChanged += new System.EventHandler(this.searchTextbox_TextChanged);
             // 
@@ -721,7 +721,7 @@ namespace GUI
             this.STT.HeaderText = "STT";
             this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
-            this.STT.Width = 61;
+            this.STT.Width = 76;
             // 
             // CMND
             // 
@@ -787,10 +787,10 @@ namespace GUI
             this.DONTHUOC.Controls.Add(this.button1);
             this.DONTHUOC.Controls.Add(this.label1);
             this.DONTHUOC.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.DONTHUOC.Location = new System.Drawing.Point(4, 24);
+            this.DONTHUOC.Location = new System.Drawing.Point(4, 26);
             this.DONTHUOC.Name = "DONTHUOC";
             this.DONTHUOC.Padding = new System.Windows.Forms.Padding(3);
-            this.DONTHUOC.Size = new System.Drawing.Size(1210, 562);
+            this.DONTHUOC.Size = new System.Drawing.Size(1210, 560);
             this.DONTHUOC.TabIndex = 1;
             this.DONTHUOC.Text = "Đơn thuốc";
             this.DONTHUOC.UseVisualStyleBackColor = true;
@@ -799,10 +799,10 @@ namespace GUI
             // 
             this.thuoc_cbb.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.thuoc_cbb.FormattingEnabled = true;
-            this.thuoc_cbb.ItemHeight = 17;
+            this.thuoc_cbb.ItemHeight = 22;
             this.thuoc_cbb.Location = new System.Drawing.Point(152, 67);
             this.thuoc_cbb.Name = "thuoc_cbb";
-            this.thuoc_cbb.Size = new System.Drawing.Size(203, 25);
+            this.thuoc_cbb.Size = new System.Drawing.Size(203, 30);
             this.thuoc_cbb.TabIndex = 59;
             // 
             // luubtn
@@ -964,7 +964,7 @@ namespace GUI
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(22, 175);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 18);
+            this.label3.Size = new System.Drawing.Size(95, 23);
             this.label3.TabIndex = 52;
             this.label3.Text = "Liều dùng";
             // 
@@ -974,7 +974,7 @@ namespace GUI
             this.unittextBox.Location = new System.Drawing.Point(152, 175);
             this.unittextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.unittextBox.Name = "unittextBox";
-            this.unittextBox.Size = new System.Drawing.Size(206, 26);
+            this.unittextBox.Size = new System.Drawing.Size(206, 30);
             this.unittextBox.TabIndex = 51;
             // 
             // label2
@@ -983,7 +983,7 @@ namespace GUI
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(22, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 18);
+            this.label2.Size = new System.Drawing.Size(91, 23);
             this.label2.TabIndex = 50;
             this.label2.Text = "Số lượng";
             // 
@@ -993,7 +993,7 @@ namespace GUI
             this.quantitytextBox.Location = new System.Drawing.Point(152, 120);
             this.quantitytextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.quantitytextBox.Name = "quantitytextBox";
-            this.quantitytextBox.Size = new System.Drawing.Size(206, 26);
+            this.quantitytextBox.Size = new System.Drawing.Size(206, 30);
             this.quantitytextBox.TabIndex = 49;
             // 
             // addBtn
@@ -1018,7 +1018,7 @@ namespace GUI
             this.lbname.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbname.Location = new System.Drawing.Point(22, 69);
             this.lbname.Name = "lbname";
-            this.lbname.Size = new System.Drawing.Size(75, 18);
+            this.lbname.Size = new System.Drawing.Size(96, 23);
             this.lbname.TabIndex = 45;
             this.lbname.Text = "Tên thuốc";
             // 
@@ -1043,17 +1043,17 @@ namespace GUI
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(19, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 18);
+            this.label1.Size = new System.Drawing.Size(74, 23);
             this.label1.TabIndex = 36;
             this.label1.Text = "Kê toa ";
             // 
             // HOADON
             // 
             this.HOADON.Controls.Add(this.reportViewer1);
-            this.HOADON.Location = new System.Drawing.Point(4, 24);
+            this.HOADON.Location = new System.Drawing.Point(4, 26);
             this.HOADON.Name = "HOADON";
             this.HOADON.Padding = new System.Windows.Forms.Padding(3);
-            this.HOADON.Size = new System.Drawing.Size(1210, 562);
+            this.HOADON.Size = new System.Drawing.Size(1210, 560);
             this.HOADON.TabIndex = 2;
             this.HOADON.Text = "Hóa đơn";
             this.HOADON.UseVisualStyleBackColor = true;
@@ -1065,7 +1065,8 @@ namespace GUI
             this.reportViewer1.Location = new System.Drawing.Point(3, 3);
             this.reportViewer1.Name = "ReportViewer";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1204, 556);
+            this.reportViewer1.Size = new System.Drawing.Size(1204, 554);
+            this.reportViewer1.TabIndex = 0;
             // 
             // materialTabSelector1
             // 
@@ -1080,7 +1081,7 @@ namespace GUI
             // 
             // KhamBenh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.examTabControl);
