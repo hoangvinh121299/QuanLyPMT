@@ -29,7 +29,6 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelAbout = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -38,7 +37,7 @@ namespace GUI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImage = global::GUI.Properties.Resources.About_Back;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.labelAbout);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -51,14 +50,14 @@ namespace GUI
             // 
             this.labelAbout.AutoSize = true;
             this.labelAbout.BackColor = System.Drawing.Color.Transparent;
-            this.labelAbout.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelAbout.Font = new System.Drawing.Font(".VnAvantH", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelAbout.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.labelAbout.Location = new System.Drawing.Point(659, 232);
+            this.labelAbout.Location = new System.Drawing.Point(645, 236);
             this.labelAbout.Name = "labelAbout";
-            this.labelAbout.Size = new System.Drawing.Size(161, 36);
+            this.labelAbout.Size = new System.Drawing.Size(153, 32);
             this.labelAbout.TabIndex = 0;
             this.labelAbout.Text = "labelAbout";
-            this.labelAbout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // About
             // 
