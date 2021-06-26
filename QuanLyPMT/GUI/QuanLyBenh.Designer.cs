@@ -200,6 +200,7 @@ namespace GUI
             this.dtg_DanhSachBenh.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtg_DanhSachBenh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtg_DanhSachBenh.Location = new System.Drawing.Point(3, 25);
+            this.dtg_DanhSachBenh.MultiSelect = false;
             this.dtg_DanhSachBenh.Name = "dtg_DanhSachBenh";
             this.dtg_DanhSachBenh.ReadOnly = true;
             this.dtg_DanhSachBenh.RowHeadersVisible = false;
@@ -346,7 +347,7 @@ namespace GUI
             // 
             // numeric
             // 
-            this.numeric.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.numeric.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.numeric.FillWeight = 53.47594F;
             this.numeric.HeaderText = "STT";
             this.numeric.MinimumWidth = 10;
@@ -356,7 +357,7 @@ namespace GUI
             // 
             // TENBENH
             // 
-            this.TENBENH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.TENBENH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.TENBENH.DataPropertyName = "TENBENH";
             this.TENBENH.FillWeight = 146.5241F;
             this.TENBENH.HeaderText = "Tên bệnh";
@@ -367,7 +368,7 @@ namespace GUI
             // 
             // TENLB
             // 
-            this.TENLB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.TENLB.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.TENLB.DataPropertyName = "TENLB";
             this.TENLB.HeaderText = "Loại Bệnh";
             this.TENLB.MinimumWidth = 6;
@@ -377,23 +378,22 @@ namespace GUI
             // 
             // TRIEUCHUNG
             // 
-            this.TRIEUCHUNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.TRIEUCHUNG.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
             this.TRIEUCHUNG.DataPropertyName = "TRIEUCHUNG";
             this.TRIEUCHUNG.HeaderText = "Triệu Chứng";
             this.TRIEUCHUNG.MinimumWidth = 6;
             this.TRIEUCHUNG.Name = "TRIEUCHUNG";
             this.TRIEUCHUNG.ReadOnly = true;
-            this.TRIEUCHUNG.Width = 144;
+            this.TRIEUCHUNG.Width = 6;
             // 
             // GHICHU
             // 
-            this.GHICHU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.GHICHU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.GHICHU.DataPropertyName = "GHICHU";
             this.GHICHU.HeaderText = "Ghi Chú";
             this.GHICHU.MinimumWidth = 6;
             this.GHICHU.Name = "GHICHU";
             this.GHICHU.ReadOnly = true;
-            this.GHICHU.Width = 107;
             // 
             // QuanLyBenh
             // 
