@@ -26,6 +26,7 @@ namespace GUI
         }
         TaiKhoan taikhoan = new TaiKhoan();
         HoatDongTaiKhoan hoatdongtaikhoan = new HoatDongTaiKhoan();
+        About about = new About();
         HoatDongTaiKhoan_BUS hoatdongtaikhoan_BUS = new HoatDongTaiKhoan_BUS();
         private void patientBtn_Click(object sender, EventArgs e)
         {
@@ -133,6 +134,13 @@ namespace GUI
             ThongKe thongke = new ThongKe();
             displayPanel.Controls.Clear();
             displayPanel.Controls.Add(thongke);
+        }
+
+        private void aboutBtn_Click(object sender, EventArgs e)
+        {
+            displayPanel.Controls.Clear();
+            about.Dock = DockStyle.Fill;
+            displayPanel.Controls.Add(about);
         }
     }
 }

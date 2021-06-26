@@ -190,13 +190,6 @@ namespace GUI
             this.dtg_DanhSachBenh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_DanhSachBenh.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dtg_DanhSachBenh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_DanhSachBenh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.numeric,
-            this.TENBENH,
-            this.TENLB,
-            this.TRIEUCHUNG,
-            this.GHICHU,
-            this.MALB});
             this.dtg_DanhSachBenh.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtg_DanhSachBenh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtg_DanhSachBenh.Location = new System.Drawing.Point(3, 25);
