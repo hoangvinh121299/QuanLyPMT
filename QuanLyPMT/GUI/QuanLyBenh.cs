@@ -51,6 +51,7 @@ namespace GUI
             dtg_DanhSachBenh.Columns["TRIEUCHUNG"].HeaderText = "Triệu chứng";
             dtg_DanhSachBenh.Columns["GHICHU"].HeaderText = "Ghi chú";
             dtg_DanhSachBenh.Columns["MALB"].Visible = false;
+
         }
 
         private void dtg_DanhSachBenh_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

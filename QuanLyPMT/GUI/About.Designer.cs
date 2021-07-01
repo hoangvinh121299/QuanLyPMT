@@ -42,30 +42,32 @@ namespace GUI
             this.panel1.Controls.Add(this.labelAbout);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1229, 615);
+            this.panel1.Size = new System.Drawing.Size(1075, 461);
             this.panel1.TabIndex = 0;
             // 
             // labelAbout
             // 
             this.labelAbout.AutoSize = true;
             this.labelAbout.BackColor = System.Drawing.Color.Transparent;
-            this.labelAbout.Font = new System.Drawing.Font(".VnAvantH", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelAbout.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.labelAbout.Location = new System.Drawing.Point(645, 236);
+            this.labelAbout.Location = new System.Drawing.Point(781, 173);
             this.labelAbout.Name = "labelAbout";
-            this.labelAbout.Size = new System.Drawing.Size(153, 32);
+            this.labelAbout.Size = new System.Drawing.Size(100, 24);
             this.labelAbout.TabIndex = 0;
             this.labelAbout.Text = "labelAbout";
             this.labelAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // About
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "About";
-            this.Size = new System.Drawing.Size(1229, 615);
+            this.Size = new System.Drawing.Size(1075, 461);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
