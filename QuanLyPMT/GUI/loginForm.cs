@@ -28,8 +28,8 @@ namespace GUI
         private void validateAccount()
         {
             setValueFromForm();
-            //if(taikhoan_BUS.validateAccount(TENDANGNHAP,MATKHAU))
-            if(true)
+            if (taikhoan_BUS.validateAccount(TENDANGNHAP, MATKHAU))
+            //if(true)
             {
                 taikhoan = taikhoan_BUS.getLoginAccount(TENDANGNHAP, MATKHAU);
                 MainForm mainForm = new MainForm(taikhoan);

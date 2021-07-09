@@ -410,7 +410,7 @@ namespace GUI
         }
         public void showAllAccount()
         {
-            if(taikhoan.CAPBAC ==4)
+            if(taikhoan.CAPBAC ==4|| taikhoan.CAPBAC == 0)
             accountListDGV.DataSource = taikhoan_BUS.showAllTaiKhoan().Tables[0];
             else
             {
@@ -478,6 +478,10 @@ namespace GUI
             acc_save_Btn.Visible = true ;
             acc_cancel_Btn.Visible = true ;
             acc_pwrd_Textbox.Enabled = true;
+            if(taikhoan.CAPBAC == 4)
+            {
+                acc_permission_Combobox.Enabled = true;
+            }
         }
 
         private void acc_cancel_Btn_Click(object sender, EventArgs e)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Text;
 using System.Windows.Forms;
 using DTO;
@@ -26,6 +27,7 @@ namespace DAL
         //Lấy thông tin gần đúng của theo tên truyền vào
         public void getDataAccount()
         {
+            listTaiKhoan.Clear();
             using (SqlConnection connection = new SqlConnection(connectionString.connectionstring))
             {
                 connection.Open();
@@ -225,6 +227,7 @@ namespace DAL
             }
             catch (Exception e)
             {
+                Debug.WriteLine(e.ToString());
                 return false;
             }
         }

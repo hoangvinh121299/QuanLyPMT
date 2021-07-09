@@ -117,6 +117,7 @@ namespace DAL
             }
             return searchResult;
         }
+        
         public DataSet getHistoryExamByID(int MABENHNHAN)
         {
             DataSet getResult = new DataSet();

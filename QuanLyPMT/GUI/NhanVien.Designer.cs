@@ -158,10 +158,10 @@ namespace GUI
             // 
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1210, 555);
+            this.tabPage1.Size = new System.Drawing.Size(1210, 557);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nhân viên";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -231,7 +231,7 @@ namespace GUI
             this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
-            this.STT.Width = 76;
+            this.STT.Width = 61;
             // 
             // MANV
             // 
@@ -278,7 +278,7 @@ namespace GUI
             this.GIOITINH.MinimumWidth = 6;
             this.GIOITINH.Name = "GIOITINH";
             this.GIOITINH.ReadOnly = true;
-            this.GIOITINH.Width = 117;
+            this.GIOITINH.Width = 91;
             // 
             // DIACHI
             // 
@@ -306,14 +306,14 @@ namespace GUI
             this.CHUCVU.MinimumWidth = 6;
             this.CHUCVU.Name = "CHUCVU";
             this.CHUCVU.ReadOnly = true;
-            this.CHUCVU.Width = 117;
+            this.CHUCVU.Width = 94;
             // 
             // CMNDtextBox2
             // 
             this.CMNDtextBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CMNDtextBox2.Location = new System.Drawing.Point(155, 30);
             this.CMNDtextBox2.Name = "CMNDtextBox2";
-            this.CMNDtextBox2.Size = new System.Drawing.Size(228, 30);
+            this.CMNDtextBox2.Size = new System.Drawing.Size(228, 26);
             this.CMNDtextBox2.TabIndex = 13;
             this.CMNDtextBox2.TextChanged += new System.EventHandler(this.CMNDtextBox2_TextChanged);
             // 
@@ -401,7 +401,7 @@ namespace GUI
             this.STT1.MinimumWidth = 6;
             this.STT1.Name = "STT1";
             this.STT1.ReadOnly = true;
-            this.STT1.Width = 76;
+            this.STT1.Width = 61;
             // 
             // HOTEN1
             // 
@@ -518,7 +518,7 @@ namespace GUI
             "Kế toán "});
             this.positionCbb.Location = new System.Drawing.Point(146, 197);
             this.positionCbb.Name = "positionCbb";
-            this.positionCbb.Size = new System.Drawing.Size(168, 31);
+            this.positionCbb.Size = new System.Drawing.Size(168, 25);
             this.positionCbb.TabIndex = 30;
             // 
             // metroSetLabel1
@@ -541,7 +541,7 @@ namespace GUI
             this.maleBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.maleBtn.Location = new System.Drawing.Point(146, 115);
             this.maleBtn.Name = "maleBtn";
-            this.maleBtn.Size = new System.Drawing.Size(71, 27);
+            this.maleBtn.Size = new System.Drawing.Size(59, 22);
             this.maleBtn.TabIndex = 15;
             this.maleBtn.TabStop = true;
             this.maleBtn.Text = "Nam";
@@ -553,7 +553,7 @@ namespace GUI
             this.femaleBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.femaleBtn.Location = new System.Drawing.Point(233, 115);
             this.femaleBtn.Name = "femaleBtn";
-            this.femaleBtn.Size = new System.Drawing.Size(57, 27);
+            this.femaleBtn.Size = new System.Drawing.Size(48, 22);
             this.femaleBtn.TabIndex = 16;
             this.femaleBtn.TabStop = true;
             this.femaleBtn.Text = "Nữ";
@@ -638,7 +638,7 @@ namespace GUI
             this.birthDateTimePicker.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.birthDateTimePicker.Location = new System.Drawing.Point(146, 150);
             this.birthDateTimePicker.Name = "birthDateTimePicker";
-            this.birthDateTimePicker.Size = new System.Drawing.Size(239, 29);
+            this.birthDateTimePicker.Size = new System.Drawing.Size(239, 25);
             this.birthDateTimePicker.TabIndex = 18;
             // 
             // phoneTxtBox
@@ -646,7 +646,7 @@ namespace GUI
             this.phoneTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.phoneTxtBox.Location = new System.Drawing.Point(146, 241);
             this.phoneTxtBox.Name = "phoneTxtBox";
-            this.phoneTxtBox.Size = new System.Drawing.Size(239, 29);
+            this.phoneTxtBox.Size = new System.Drawing.Size(239, 25);
             this.phoneTxtBox.TabIndex = 21;
             // 
             // CMNDtextBOX1
@@ -654,7 +654,7 @@ namespace GUI
             this.CMNDtextBOX1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CMNDtextBOX1.Location = new System.Drawing.Point(146, 79);
             this.CMNDtextBOX1.Name = "CMNDtextBOX1";
-            this.CMNDtextBOX1.Size = new System.Drawing.Size(239, 29);
+            this.CMNDtextBOX1.Size = new System.Drawing.Size(239, 25);
             this.CMNDtextBOX1.TabIndex = 13;
             // 
             // nameTxtBox
@@ -663,7 +663,7 @@ namespace GUI
             this.nameTxtBox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nameTxtBox.Location = new System.Drawing.Point(146, 33);
             this.nameTxtBox.Name = "nameTxtBox";
-            this.nameTxtBox.Size = new System.Drawing.Size(239, 29);
+            this.nameTxtBox.Size = new System.Drawing.Size(239, 25);
             this.nameTxtBox.TabIndex = 11;
             this.nameTxtBox.Leave += new System.EventHandler(this.nameTxtBox_Leave);
             // 
@@ -755,10 +755,10 @@ namespace GUI
             // 
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1210, 555);
+            this.tabPage2.Size = new System.Drawing.Size(1210, 557);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tài khoản ";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -798,7 +798,7 @@ namespace GUI
             this.acc_search_name_textbox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.acc_search_name_textbox.Location = new System.Drawing.Point(162, 46);
             this.acc_search_name_textbox.Name = "acc_search_name_textbox";
-            this.acc_search_name_textbox.Size = new System.Drawing.Size(228, 30);
+            this.acc_search_name_textbox.Size = new System.Drawing.Size(228, 26);
             this.acc_search_name_textbox.TabIndex = 17;
             this.acc_search_name_textbox.TextChanged += new System.EventHandler(this.acc_search_name_textbox_TextChanged);
             // 
@@ -834,7 +834,7 @@ namespace GUI
             this.STT3.MinimumWidth = 6;
             this.STT3.Name = "STT3";
             this.STT3.ReadOnly = true;
-            this.STT3.Width = 76;
+            this.STT3.Width = 61;
             // 
             // HOTEN3
             // 
@@ -898,7 +898,7 @@ namespace GUI
             this.textBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.Location = new System.Drawing.Point(-551, 48);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(239, 29);
+            this.textBox1.Size = new System.Drawing.Size(239, 25);
             this.textBox1.TabIndex = 13;
             // 
             // metroSetLabel9
@@ -956,7 +956,7 @@ namespace GUI
             this.acc_name_cbb.FormattingEnabled = true;
             this.acc_name_cbb.Location = new System.Drawing.Point(206, 37);
             this.acc_name_cbb.Name = "acc_name_cbb";
-            this.acc_name_cbb.Size = new System.Drawing.Size(239, 31);
+            this.acc_name_cbb.Size = new System.Drawing.Size(239, 25);
             this.acc_name_cbb.TabIndex = 32;
             this.acc_name_cbb.SelectedIndexChanged += new System.EventHandler(this.acc_name_cbb_SelectedIndexChanged);
             this.acc_name_cbb.TextChanged += new System.EventHandler(this.acc_name_cbb_TextChanged);
@@ -1064,7 +1064,7 @@ namespace GUI
             this.STT2.MinimumWidth = 6;
             this.STT2.Name = "STT2";
             this.STT2.ReadOnly = true;
-            this.STT2.Width = 76;
+            this.STT2.Width = 61;
             // 
             // MATAIKHOAN1
             // 
@@ -1108,13 +1108,13 @@ namespace GUI
             this.acc_permission_Combobox.FormattingEnabled = true;
             this.acc_permission_Combobox.Items.AddRange(new object[] {
             "Bác sĩ",
-            "Dược sĩ ",
+            "Dược sĩ",
             "Thu ngân",
             "Kế toán",
             "Quản trị viên"});
             this.acc_permission_Combobox.Location = new System.Drawing.Point(206, 230);
             this.acc_permission_Combobox.Name = "acc_permission_Combobox";
-            this.acc_permission_Combobox.Size = new System.Drawing.Size(121, 31);
+            this.acc_permission_Combobox.Size = new System.Drawing.Size(121, 25);
             this.acc_permission_Combobox.TabIndex = 22;
             // 
             // acc_pwrd_Textbox
@@ -1123,7 +1123,7 @@ namespace GUI
             this.acc_pwrd_Textbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.acc_pwrd_Textbox.Location = new System.Drawing.Point(206, 162);
             this.acc_pwrd_Textbox.Name = "acc_pwrd_Textbox";
-            this.acc_pwrd_Textbox.Size = new System.Drawing.Size(206, 29);
+            this.acc_pwrd_Textbox.Size = new System.Drawing.Size(206, 25);
             this.acc_pwrd_Textbox.TabIndex = 21;
             this.acc_pwrd_Textbox.UseSystemPasswordChar = true;
             this.acc_pwrd_Textbox.TextChanged += new System.EventHandler(this.acc_pwrd_Textbox_TextChanged);
@@ -1163,7 +1163,7 @@ namespace GUI
             this.acc_username_Textbox.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.acc_username_Textbox.Location = new System.Drawing.Point(206, 95);
             this.acc_username_Textbox.Name = "acc_username_Textbox";
-            this.acc_username_Textbox.Size = new System.Drawing.Size(239, 29);
+            this.acc_username_Textbox.Size = new System.Drawing.Size(239, 25);
             this.acc_username_Textbox.TabIndex = 18;
             // 
             // metroSetLabel11
@@ -1196,7 +1196,7 @@ namespace GUI
             // 
             // NhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.materialTabControl1);
             this.Controls.Add(this.materialTabSelector1);

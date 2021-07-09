@@ -59,7 +59,7 @@ namespace GUI
 
         private void sickBtn_Click(object sender, EventArgs e)
         {
-            if (taikhoan.CAPBAC == 0 || taikhoan.CAPBAC == 1 )
+            if (taikhoan.CAPBAC == 0 || taikhoan.CAPBAC == 1 || taikhoan.CAPBAC == 4)
             {
                 QuanLyBenh quanLyBenh = new QuanLyBenh();
                 displayPanel.Controls.Clear();
@@ -74,7 +74,7 @@ namespace GUI
 
         private void examBtn_Click(object sender, EventArgs e)
         {
-            if (taikhoan.CAPBAC == 0 || taikhoan.CAPBAC == 1)
+            if (taikhoan.CAPBAC == 0 || taikhoan.CAPBAC == 1 || taikhoan.CAPBAC == 4)
             {
                 KhamBenh khamBenh = new KhamBenh(taikhoan);
                 displayPanel.Controls.Clear();

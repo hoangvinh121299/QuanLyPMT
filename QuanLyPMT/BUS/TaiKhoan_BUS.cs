@@ -42,9 +42,9 @@ namespace BUS
         {
             return taikhoan_DAL.searchTaiKhoanByTen(Hoten);
         }
-        public bool validateAccount(string TENDANGNHAP, string HOTEN)
+        public bool validateAccount(string TENDANGNHAP, string MATKHAU)
         {
-            return taikhoan_DAL.validateTaiKhoan(TENDANGNHAP, HOTEN);
+            return taikhoan_DAL.validateTaiKhoan(TENDANGNHAP, MATKHAU);
             
         }
         public TaiKhoan getLoginAccount(string TENDANGNHAP, string HOTEN)
